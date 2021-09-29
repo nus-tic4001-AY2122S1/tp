@@ -2,7 +2,7 @@
 
 ## Introduction
 
-{Give a product intro}
+**JustBook: An easy-to-use Appointment CLI App**
 
 ## Quick Start
 
