@@ -13,7 +13,7 @@
 
 ## Features 
 
-{Give detailed description of each feature}
+Program designed for Single User use.
 
 ### Adding a todo: `todo`
 Adds a new item to the list of todo items.
