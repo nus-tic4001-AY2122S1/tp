@@ -8,9 +8,19 @@ import java.util.ArrayList;
  * Serve as a store for saving user command
  */
 public class TaskList {
-    /**
-     * A list of different task type
-     */
-    private ArrayList<Task> list = new ArrayList<>();
+    private static TaskList taskList = null;
+    private static ArrayList<Task> todoList = new ArrayList<>();
+    private TaskList() {}
+
+    public static TaskList getInstance() {
+        if (taskList == null) {
+            taskList = new TaskList();
+        }
+        return taskList;
+    }
+
+    public ArrayList<Task> getList() {
+        return todoList;
+    }
 }
 
