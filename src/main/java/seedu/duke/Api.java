@@ -25,12 +25,11 @@ public class Api {
         URL url = new URL(urlString);
         URLConnection conn = url.openConnection();
         InputStream is = conn.getInputStream();
-        BufferedReader bR = new BufferedReader(  new InputStreamReader(is));
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
         String line = "";
 
         StringBuilder responseStrBuilder = new StringBuilder();
-        while((line =  bR.readLine()) != null){
-
+        while ((line =  br.readLine()) != null) {
             responseStrBuilder.append(line);
         }
         is.close();
