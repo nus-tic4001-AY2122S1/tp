@@ -1,6 +1,6 @@
 Welcome to NUS module tracker 
 What can I do for you?
 
-Type something: Do nothing
+Type something: Do Try again
 Type something: Do exit
-Good Bye!
+Good bye!
