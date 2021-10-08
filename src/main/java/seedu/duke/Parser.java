@@ -28,6 +28,7 @@ public class Parser {
         case ("exit"):
         case ("bye"):
         case ("quit"):
+            System.out.println("Do exit");
             return new ExitCommand();
 
         default:
