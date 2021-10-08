@@ -5,10 +5,10 @@ public class Parser {
         String keyCommand = fullCommand.split(" ")[0].toLowerCase();
         switch (keyCommand) {
         case ("list"):
-        return "list";
+            return "list";
 
         default:
-        return "lol";
+            return "lol";
         }
 
     }
