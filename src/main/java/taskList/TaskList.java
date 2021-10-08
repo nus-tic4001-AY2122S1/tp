@@ -12,5 +12,9 @@ public class TaskList {
      * A list of different task type
      */
     private ArrayList<Task> list = new ArrayList<>();
+
+    public int getSize() {
+        return this.list.size();
+    }
 }
 
