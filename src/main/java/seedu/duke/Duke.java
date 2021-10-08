@@ -13,8 +13,14 @@ public class Duke {
         Module[] allModules = api.getAllModules();
         Boolean isExit = false;
         while (!isExit) {
-            String userInstruction = ui.readCommand();
-            String keyCommand = userInstruction.split(" ")[0].toLowerCase();
+            String keyCommand;
+            try {
+                String userInstruction = ui.readCommand();
+                keyCommand = userInstruction.split(" ")[0].toLowerCase();
+            }
+            catch (Exception e){
+                keyCommand = "exit";
+            }
             switch (keyCommand) {
             case ("add"):
                 System.out.print("Do add");
