@@ -18,21 +18,26 @@ public class Duke {
             switch (keyCommand) {
             case ("add"):
                 System.out.print("Do add");
+                break;
 
             case ("list"):
                 System.out.print("Do list");
+                break;
 
             case ("view"):
                 System.out.print("Do view");
+                break;
 
             case ("delete"):
                 System.out.print("Do delete");
+                break;
 
             case ("exit"):
             case ("bye"):
             case ("quit"):
                 System.out.print("Do exit");
                 isExit = true;
+                break;
 
             default:
                 System.out.print("Do nothing");
