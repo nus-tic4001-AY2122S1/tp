@@ -17,8 +17,7 @@ public class Duke {
             try {
                 String userInstruction = ui.readCommand();
                 keyCommand = userInstruction.split(" ")[0].toLowerCase();
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 keyCommand = "exit";
             }
             switch (keyCommand) {
