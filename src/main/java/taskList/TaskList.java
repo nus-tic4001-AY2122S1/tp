@@ -12,6 +12,16 @@ public class TaskList {
      * A list of different task type
      */
     private ArrayList<Task> list = new ArrayList<>();
+
+    /**
+     * Deletes a task from the task list.
+     *
+     * @param num The index of a task that is required to be removed from the task list.
+     */
+    public void deleteTask(int num) {
+        list.remove(num);
+    }
+
     /**
      * Returns the task from the specified index from the task list.
      *
