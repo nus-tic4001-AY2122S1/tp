@@ -36,6 +36,6 @@ public class Duke {
     }
 
     private void exit() {
-        System.out.println("Good Bye!");
+        Ui.exitMsg();
     }
 }

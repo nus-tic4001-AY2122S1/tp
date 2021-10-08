@@ -18,7 +18,7 @@ public class Ui {
     }
 
     public static void exitMsg() {
-        System.out.println("Good bye");
+        System.out.println("Good bye!");
     }
 
 }

@@ -7,10 +7,8 @@ import seedu.duke.command.PlaceholderCommand;
 public class Parser {
     public static Command parse(String fullCommand) {
         String keyCommand;
-        Ui ui = new Ui();
         try {
-            String userInstruction = ui.readCommand();
-            keyCommand = userInstruction.split(" ")[0].toLowerCase();
+            keyCommand = fullCommand.split(" ")[0].toLowerCase();
         } catch (Exception e) {
             keyCommand = "exit";
         }
@@ -33,8 +31,7 @@ public class Parser {
             return new ExitCommand();
 
         default:
-            System.out.println("Do nothing");
-            return new PlaceholderCommand("Try again");
+            return new PlaceholderCommand("Try again"); //temp place holder
         }
     }
 }
