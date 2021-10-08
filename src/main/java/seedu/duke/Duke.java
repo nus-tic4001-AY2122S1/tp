@@ -4,9 +4,40 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Duke {
+
+
     public static void main(String[] args) throws IOException {
-        System.out.println("Welcome to the module planner!");
+        Ui ui = new Ui();
+        ui.welcome();
         Api api = new Api();
         Module[] allModules = api.getAllModules();
+        Boolean isExit = false;
+        while (!isExit) {
+            String userInstruction = ui.readCommand();
+            String keyCommand = userInstruction.split(" ")[0].toLowerCase();
+            switch (keyCommand) {
+            case ("add"):
+                System.out.print("Do add");
+
+            case ("list"):
+                System.out.print("Do list");
+
+            case ("view"):
+                System.out.print("Do view");
+
+            case ("delete"):
+                System.out.print("Do delete");
+
+            case ("exit"):
+            case ("bye"):
+            case ("quit"):
+                System.out.print("Do exit");
+                isExit = true;
+
+            default:
+                System.out.print("Do nothing");
+            }
+        }
+
     }
 }
