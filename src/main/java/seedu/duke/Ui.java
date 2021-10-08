@@ -17,4 +17,8 @@ public class Ui {
         return line;
     }
 
+    public static void exitMsg() {
+        System.out.println("Good bye");
+    }
+
 }
