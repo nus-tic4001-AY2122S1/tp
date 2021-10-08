@@ -1,10 +1,12 @@
 package seedu.duke;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import static java.lang.System.exit;
+import static java.time.LocalDateTime.parse;
 
 public class Duke {
     /**
@@ -31,21 +33,25 @@ public class Duke {
 
         while (true) {
             System.out.println("User: ");
-            String input = in.nextLine().replace("\\s+", " ");
+            String input = in.nextLine().replace("\\s+", " ").trim();
 
-            if(input.trim().equals("exit")){
+            if(input.equals("exit")){
                 System.out.println("Bye! See you again!");
                 exit(0);
             }
 
-            String[] tokens = input.split(" /");
-            String command = tokens[0].substring(0, tokens[0].indexOf(" "));
+            String[] tokens = input.split(" ", 2);
+            String command = tokens[0];
 
             switch(command) {
             case "add":
-                appointments.add(new Bookings(tokens[0].substring(4),
-                        LocalDateTime.parse(tokens[1].substring(2)),
-                        LocalDateTime.parse(tokens[2].substring(2))));
+                String[] param = tokens[1].split("/[s,e] ");
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
+
+                LocalDateTime start = parse(param[1].trim(), format);
+                LocalDateTime end = parse(param[2], format);
+
+                appointments.add(new Bookings(param[0].trim(), start, end));
                 break;
             case "edit":
 
@@ -57,14 +63,14 @@ public class Duke {
 
                 break;
             case "show":
-                if(tokens[0].contains("--")){
+                if(tokens[1].contains("--")){
 
                 }
-                if(tokens[0].contains(" - ")){
+                if(tokens[1].contains(" - ")){
 
                 }
 
-                String date = tokens[0].substring(5);
+                String date = tokens[1];
                 System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
                 int counter = 1;
 

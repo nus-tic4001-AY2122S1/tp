@@ -15,15 +15,16 @@ public class Bookings {
         }
 
         public String getStartDate(){
-            return String.valueOf(start.toLocalDate());
+            return start.toLocalDate().format(DateTimeFormatter.ofPattern("yyyy-M-d"));
         }
 
         @Override
         public String toString(){
-            String begin = start.format(DateTimeFormatter.ISO_DATE_TIME);
-            String stop = end.format(DateTimeFormatter.ISO_DATE_TIME);
+            DateTimeFormatter pattern = DateTimeFormatter.ofPattern("MMM d yyyy HH:mm");
+            String begin = start.format(pattern);
+            String stop = end.format(pattern);
 
-            return String.format("%s %s - %s", bookDesc, begin, stop);
+            return String.format("Event: %s << >> Start: [%s] - End: [%s]", bookDesc, begin, stop);
         }
     }
 
