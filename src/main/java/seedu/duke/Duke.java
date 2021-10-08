@@ -22,32 +22,32 @@ public class Duke {
             }
             switch (keyCommand) {
             case ("add"):
-                System.out.print("Do add");
+                System.out.println("Do add");
                 break;
 
             case ("list"):
-                System.out.print("Do list");
+                System.out.println("Do list");
                 break;
 
             case ("view"):
-                System.out.print("Do view");
+                System.out.println("Do view");
                 break;
 
             case ("delete"):
-                System.out.print("Do delete");
+                System.out.println("Do delete");
                 break;
 
             case ("exit"):
             case ("bye"):
             case ("quit"):
-                System.out.print("Do exit");
+                System.out.println("Do exit");
                 isExit = true;
                 break;
 
             default:
-                System.out.print("Do nothing");
+                System.out.println("Do nothing");
             }
         }
-
+        System.out.println("Good Bye!");
     }
 }
