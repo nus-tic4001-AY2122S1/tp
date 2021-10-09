@@ -24,18 +24,17 @@ public class Duke {
         System.out.println("What is your name?");
 
         Scanner in = new Scanner(System.in);
-        String name = in.nextLine();
-        System.out.println("Hello " + name);
+        System.out.println("Hello " + in.nextLine());
 
         // write your code here
-        System.out.printf("Hello %s! Welcome back.%n", name);
-        System.out.println("You can now proceed to do your book\n");
+        System.out.printf("Welcome back!%n");
+        System.out.println("You can now proceed to do your booking\n");
 
         while (true) {
             System.out.println("User: ");
             String input = in.nextLine().replace("\\s+", " ").trim();
 
-            if(input.equals("exit")){
+            if (input.equals("exit")) {
                 System.out.println("Bye! See you again!");
                 exit(0);
             }
@@ -43,7 +42,7 @@ public class Duke {
             String[] tokens = input.split(" ", 2);
             String command = tokens[0];
 
-            switch(command) {
+            switch (command) {
             case "add":
                 String[] param = tokens[1].split("/[s,e] ");
                 DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
@@ -63,12 +62,8 @@ public class Duke {
 
                 break;
             case "show":
-                if(tokens[1].contains("--")){
-
-                }
-                if(tokens[1].contains(" - ")){
-
-                }
+                if (tokens[1].contains("--")) {}
+                if (tokens[1].contains(" - ")) {}
 
                 String date = tokens[1];
                 System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
