@@ -7,7 +7,11 @@ import taskList.TaskList;
 import ui.Ui;
 
 public abstract class Command {
-    protected boolean isExit = false;
+    protected boolean isExist = false;
+
+    public boolean getIsExist() {
+        return this.isExist;
+    }
 
     protected int pareTaskNumber(String taskNumber)throws ErrorHandler {
         try {

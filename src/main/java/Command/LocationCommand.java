@@ -15,6 +15,6 @@ public class LocationCommand extends Command {
     }
 
     public void execute(Storage storage, Ui ui, TaskList taskList)  {
-        System.out.println("pending implementation for setting location for appointment");
+        System.out.println("pending implementation for setting location for appointment task. Waiting for implementation of Appointment task");
     }
 }
