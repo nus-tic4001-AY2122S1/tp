@@ -1,6 +1,6 @@
 package seedu.duke;
 
-import Command.Command;
+import command.Command;
 import parser.Parser;
 import storage.Storage;
 import taskList.TaskList;

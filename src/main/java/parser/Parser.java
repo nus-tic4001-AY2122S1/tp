@@ -1,6 +1,8 @@
 package parser;
 
-import Command.*;
+import command.Command;
+import command.LocationCommand;
+import command.DummyCommand;
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
 import exception.ErrorHandler;
@@ -15,10 +17,14 @@ public class Parser {
 
         switch (commandWord) {
             case LOCATION:
-                if (result.length < 2) throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
-                 this.taskNo = result[1].trim();
+                if (result.length < 2) {
+                    throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+                }
+                this.taskNo = result[1].trim();
 
-                if (result.length < 3) throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
+                if (result.length < 3) {
+                    throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
+                }
                 this.content = result[2].trim();
 
                 return new LocationCommand(this.taskNo, this.content);

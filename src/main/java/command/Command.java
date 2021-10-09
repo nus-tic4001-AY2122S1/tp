@@ -1,4 +1,4 @@
-package Command;
+package command;
 
 import constant.ErrorMessage;
 import exception.ErrorHandler;
@@ -13,7 +13,7 @@ public abstract class Command {
         return this.isExist;
     }
 
-    protected int pareTaskNumber(String taskNumber)throws ErrorHandler {
+    protected int pareTaskNumber(String taskNumber) throws ErrorHandler {
         try {
             return Integer.parseInt(taskNumber);
         } catch (Exception e) {
@@ -21,9 +21,10 @@ public abstract class Command {
         }
     }
 
-    protected void checkTaskNumberOutOfRange(int taskNumber, TaskList taskList)throws ErrorHandler {
-        if (taskNumber <= 0 || taskNumber > taskList.getSize())
+    protected void checkTaskNumberOutOfRange(int taskNumber, TaskList taskList) throws ErrorHandler {
+        if (taskNumber <= 0 || taskNumber > taskList.getSize()) {
             throw new ErrorHandler("In Command, " + ErrorMessage.INVALID_TASK_NUMBER);
+        }
     }
 
     public abstract void execute (Storage storage, Ui ui, TaskList taskList) throws ErrorHandler;
