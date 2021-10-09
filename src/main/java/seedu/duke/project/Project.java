@@ -16,6 +16,7 @@ public class Project {
     public Project(String title) {
         this.title = title;
     }
+
     public Project(String title, Project parent) {
         this.title = title;
         this.parent = Optional.of(parent);
@@ -28,6 +29,10 @@ public class Project {
         for (int i = 0; i < subprojects.size(); i++) {
             subprojects.get(i).setID(Integer.toString(i + 1));
         }
+    }
+
+    public ArrayList<Project> getSub() {
+        return subprojects;
     }
 
     public void addParent(Project project) {
@@ -43,7 +48,7 @@ public class Project {
     }
 
     public String updateID() {
-        if(parent.isPresent()) {
+        if (parent.isPresent()) {
             this.dynamicID = parent.get().getID() + "-" + this.getID();
         }
         return this.dynamicID;
@@ -53,12 +58,12 @@ public class Project {
         updateID();
 
         switch (status) {
-            case NONE:
-                System.out.println(dynamicID + " " +this.title);
-                break;
-            default:
-                System.out.println(
-                        dynamicID + " [" + this.status + "] " + this.title);
+        case NONE:
+            System.out.println(dynamicID + " " + this.title);
+            break;
+        default:
+            System.out.println(
+                    dynamicID + " [" + this.status + "] " + this.title);
         }
 
     }
@@ -66,12 +71,16 @@ public class Project {
     public void printRec() {
         this.print();
 
-        if(subprojects.isEmpty()) {
+        if (subprojects.isEmpty()) {
             return;
         }
         for (Project sub : subprojects) {
             sub.printRec();
         }
+    }
+
+    public void setParent(Project project) {
+        this.parent = Optional.of(project);
     }
 
     public Stat getStatus() {
@@ -80,6 +89,14 @@ public class Project {
 
     public void setStatus(Stat status) {
         this.status = status;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setNote(String title) {
+        this.note = note;
     }
 
 }

@@ -11,16 +11,44 @@ public class Next {
      */
     public static void main(String[] args) {
         String logo =
-                " _   _           _   \n" +
-                "| \\ | | _____  _| |_ \n" +
-                "|  \\| |/ _ \\ \\/ / __|\n" +
-                "| |\\  |  __/>  <| |_ \n" +
-                "|_| \\_|\\___/_/\\_\\\\__|\n";
+                          " _   _           _   \n"
+                        + "| \\ | | _____  _| |_ \n"
+                        + "|  \\| |/ _ \\ \\/ / __|\n"
+                        + "| |\\  |  __/>  <| |_ \n"
+                        + "|_| \\_|\\___/_/\\_\\\\__|\n";
 
         System.out.println("PROJECT\n" + logo);
 
-//        Scanner in = new Scanner(System.in);
-//        String input = in.nextLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         String title = "This is my very first task";
         Project p1 = new Project(title);
