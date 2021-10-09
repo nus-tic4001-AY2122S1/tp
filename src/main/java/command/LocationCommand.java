@@ -2,7 +2,7 @@ package command;
 
 import exception.ErrorHandler;
 import storage.Storage;
-import task_list.TaskList;
+import list.TaskList;
 import ui.Ui;
 
 public class LocationCommand extends Command {

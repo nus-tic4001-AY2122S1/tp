@@ -3,7 +3,7 @@ package command;
 import constant.ErrorMessage;
 import exception.ErrorHandler;
 import storage.Storage;
-import task_list.TaskList;
+import list.TaskList;
 import ui.Ui;
 
 public abstract class Command {
