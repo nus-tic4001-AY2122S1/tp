@@ -6,5 +6,6 @@ public enum Stat {
     WAIT,
     PROJ,
     STRT,
+    SOME,
     DONE
 }
