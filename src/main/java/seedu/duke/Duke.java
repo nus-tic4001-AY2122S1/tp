@@ -62,9 +62,8 @@ public class Duke {
 
                 break;
             case "show":
-              /*  if (tokens[1].contains("--")) {}
-
-                if (tokens[1].contains(" - ")) {}*/
+                if (tokens[1].contains("--")) {}
+                if (tokens[1].contains(" - ")) {}
 
                 String date = tokens[1];
                 System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
