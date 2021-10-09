@@ -9,12 +9,13 @@ public class LocationCommand extends Command {
     private int taskNumber;
     private String location;
 
-    public LocationCommand (String taskNumber, String location) throws ErrorHandler {
+    public LocationCommand(String taskNumber, String location) throws ErrorHandler {
         this.taskNumber = this.pareTaskNumber(taskNumber);
         this.location = location;
     }
 
     public void execute(Storage storage, Ui ui, TaskList taskList) {
-        System.out.println("pending implementation for setting location for appointment task. Waiting for implementation of Appointment task");
+        System.out.println("pending implementation for setting location for appointment task. " +
+            "Waiting for implementation of Appointment task");
     }
 }

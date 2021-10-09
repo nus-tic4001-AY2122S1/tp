@@ -27,6 +27,6 @@ public abstract class Command {
         }
     }
 
-    public abstract void execute (Storage storage, Ui ui, TaskList taskList) throws ErrorHandler;
+    public abstract void execute(Storage storage, Ui ui, TaskList taskList) throws ErrorHandler;
 }
 
