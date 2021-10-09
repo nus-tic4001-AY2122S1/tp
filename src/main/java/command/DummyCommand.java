@@ -1,7 +1,7 @@
 package command;
 
 import storage.Storage;
-import taskList.TaskList;
+import task_list.TaskList;
 import ui.Ui;
 
 public class DummyCommand extends Command {

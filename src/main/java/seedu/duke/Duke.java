@@ -3,7 +3,7 @@ package seedu.duke;
 import command.Command;
 import parser.Parser;
 import storage.Storage;
-import taskList.TaskList;
+import task_list.TaskList;
 import ui.Ui;
 
 import java.util.Scanner;
