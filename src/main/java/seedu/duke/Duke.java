@@ -41,6 +41,7 @@ public class Duke {
 
             if (input.equals("exit") || input.equals("bye")) {
                 System.out.println("Bye! See you again!");
+                in.close();
                 exit(0);
             }
             //parses user input
@@ -51,7 +52,7 @@ public class Duke {
             case "add":
                 String[] arguments = tokens[1].split("/[s,e] ");
 
-                DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d HH:mm][yyyy-M-d h:mm a]");
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d K:mm a][yyyy-M-d HH:mm]");
                 LocalDateTime start = parse(arguments[1].trim().toUpperCase(), format);
                 LocalDateTime end = parse(arguments[2].toUpperCase(), format);
 
@@ -89,12 +90,15 @@ public class Duke {
                         }
                         System.out.println();
                     }
-                } else if (tokens[1].matches("^((2[0-9])[0-9]{2})-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                } else if (tokens[1].matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
                     String date = tokens[1];
+                    LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-M-d"));
+                    String putDate = String.valueOf(localDate).replaceAll("-", "/");
+
+                    //displays the specified date booking(s) of user
                     LocalDate dateIso;
-                    //displays user's chosen list of bookings for a specific date
                     System.out.println();
-                    System.out.printf("Date: %s%n", date.replaceAll("-", "/"));
+                    System.out.printf("Date: %s%n", putDate);
 
                     if (date.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
                         dateIso = LocalDate.parse(date);
