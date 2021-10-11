@@ -64,7 +64,7 @@ public class Duke {
 
                 break;
             case "del":
-                if(tokens[1].contains("all")) {
+                if (tokens[1].contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records.");
                 }
@@ -78,36 +78,36 @@ public class Duke {
                     //displays user's complete list of bookings in the database
                     System.out.println();
 
-                    for (int i=0; i < total;) {
+                    for (int i = 0; i < total;) {
                         LocalDate startDate = appointments.get(i).getStartDate();
                         String dateRep = String.valueOf(startDate).replaceAll("-", "/");
                         System.out.printf("Date: %s%n", dateRep);
 
-                        while(i < total && appointments.get(i).getStartDate().equals(startDate)){
+                        while (i < total && appointments.get(i).getStartDate().equals(startDate)) {
                             System.out.printf("%d. %s%n", listNum++, appointments.get(i));
                             i++;
                         }
                         System.out.println();
                     }
-                }else if (tokens[1].matches("^((2[0-9])[0-9]{2})-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                } else if (tokens[1].matches("^((2[0-9])[0-9]{2})-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
                     String date = tokens[1];
-                    LocalDate dateISO;
+                    LocalDate dateIso;
                     //displays user's chosen list of bookings for a specific date
                     System.out.println();
                     System.out.printf("Date: %s%n", date.replaceAll("-", "/"));
 
                     if (date.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
-                        dateISO = LocalDate.parse(date);
+                        dateIso = LocalDate.parse(date);
                     } else {
                         int[] figures = Arrays.stream(date.split("-"))
                                 .mapToInt(Integer::parseInt)
                                 .toArray();
-                        dateISO = LocalDate.of(figures[0], figures[1], figures[2]);
+                        dateIso = LocalDate.of(figures[0], figures[1], figures[2]);
                     }
 
                     for (Bookings item : appointments) {
 
-                        if (dateISO.equals(item.getStartDate())) {
+                        if (dateIso.equals(item.getStartDate())) {
                             System.out.printf("%d. %s%n", listNum++, item);
                         }
                     }
