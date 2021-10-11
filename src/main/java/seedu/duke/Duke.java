@@ -1,12 +1,16 @@
 package seedu.duke;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
 import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
+import static java.util.Comparator.comparing;
 
 public class Duke {
     /**
@@ -24,33 +28,34 @@ public class Duke {
         System.out.println("What is your name?");
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+        String userName = in.nextLine();
+        System.out.printf("Hello %s,%n", userName);
 
         // write your code here
         System.out.printf("Welcome back!%n");
-        System.out.println("You can now proceed to do your booking\n");
+        System.out.printf("You can now proceed to do your booking :)%n");
 
         while (true) {
-            System.out.println("User: ");
+            System.out.printf("%n%s: ", userName);
             String input = in.nextLine().replace("\\s+", " ").trim();
 
-            if (input.equals("exit")) {
+            if (input.equals("exit") || input.equals("bye")) {
                 System.out.println("Bye! See you again!");
                 exit(0);
             }
-
+            //parses user input
             String[] tokens = input.split(" ", 2);
             String command = tokens[0];
 
             switch (command) {
             case "add":
-                String[] param = tokens[1].split("/[s,e] ");
-                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
+                String[] arguments = tokens[1].split("/[s,e] ");
 
-                LocalDateTime start = parse(param[1].trim(), format);
-                LocalDateTime end = parse(param[2], format);
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d HH:mm][yyyy-M-d h:mm a]");
+                LocalDateTime start = parse(arguments[1].trim().toUpperCase(), format);
+                LocalDateTime end = parse(arguments[2].toUpperCase(), format);
 
-                appointments.add(new Bookings(param[0].trim(), start, end));
+                appointments.add(new Bookings(arguments[0].trim(), start, end));
                 break;
             case "edit":
 
@@ -59,23 +64,53 @@ public class Duke {
 
                 break;
             case "del":
-
+                if(tokens[1].contains("all")) {
+                    appointments.clear();
+                    System.out.println("Successfully deleted all appointment records.");
+                }
                 break;
             case "show":
-                if (tokens[1].contains("--")) {}
-                if (tokens[1].contains(" - ")) {}
+                int listNum = 1;
 
-                String date = tokens[1];
-                System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
-                int counter = 1;
+                if (tokens[1].contains("all")) {
+                    appointments.sort(comparing(Bookings::getStartDateTime));
+                    int total = appointments.size();
+                    //displays user's complete list of bookings in the database
+                    System.out.println();
 
-                for (Bookings item : appointments) {
+                    for (int i=0; i < total;) {
+                        LocalDate startDate = appointments.get(i).getStartDate();
+                        String dateRep = String.valueOf(startDate).replaceAll("-", "/");
+                        System.out.printf("Date: %s%n", dateRep);
 
-                    if (date.equals(item.getStartDate())) {
-                        System.out.println(counter + ". " + item);
-                        counter++;
+                        while(i < total && appointments.get(i).getStartDate().equals(startDate)){
+                            System.out.printf("%d. %s%n", listNum++, appointments.get(i));
+                            i++;
+                        }
+                        System.out.println();
+                    }
+                }else if (tokens[1].matches("^((2[0-9])[0-9]{2})-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                    String date = tokens[1];
+                    LocalDate dateISO;
+                    //displays user's chosen list of bookings for a specific date
+                    System.out.println();
+                    System.out.printf("Date: %s%n", date.replaceAll("-", "/"));
+
+                    if (date.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
+                        dateISO = LocalDate.parse(date);
+                    } else {
+                        int[] figures = Arrays.stream(date.split("-"))
+                                .mapToInt(Integer::parseInt)
+                                .toArray();
+                        dateISO = LocalDate.of(figures[0], figures[1], figures[2]);
                     }
 
+                    for (Bookings item : appointments) {
+
+                        if (dateISO.equals(item.getStartDate())) {
+                            System.out.printf("%d. %s%n", listNum++, item);
+                        }
+                    }
                     System.out.println();
                 }
                 break;
@@ -89,7 +124,7 @@ public class Duke {
 
                 break;
             default:
-
+                System.out.println("You have entered an unknown or invalid command, please try again!");
             }
         }
     }
