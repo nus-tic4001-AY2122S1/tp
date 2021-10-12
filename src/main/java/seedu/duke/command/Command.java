@@ -6,7 +6,7 @@ import java.io.IOException;
 public interface Command {
     List<String> run(String[] fullCommand) throws IOException;
 
-    default boolean isExit(){
+    default boolean isExit() {
         return false;
     }
 }
