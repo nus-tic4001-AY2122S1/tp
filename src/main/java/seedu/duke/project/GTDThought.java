@@ -47,18 +47,18 @@ public class GTDThought {
         this.level = lv[n];
     }
 
-    public void addSub(GTDThought thought) {
+    public void addSub(GTDThought sub) {
         try {
-            thought.setlevel(thought.getlevel() + 1);
+            sub.setlevel(this.getlevel() + 1);
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Unable to nest task further");
             return;
         }
 
-        children.add(thought);
+        children.add(sub);
         this.setStatus(Stat.PROJ);
-        thought.setStatus(Stat.TODO);
-        thought.addParent(this);
+        sub.setStatus(Stat.TODO);
+        sub.addParent(this);
 
         // for (int i = 0; i < children.size(); i++) {
             // subprojects.get(i).setID(Integer.toString(i + 1));
@@ -114,15 +114,16 @@ public class GTDThought {
     }
 
     private String aux(String text) { // this + children
-        // text +=
+        String indentation = INDEN.repeat(level);
+
         if (children.isEmpty()) {
-            return this + System.lineSeparator();
+            return indentation + this + System.lineSeparator();
         }
         for (GTDThought sub : children) {
             text += sub.aux(text);
         }
 
-        return this + System.lineSeparator() + text;
+        return indentation + this + System.lineSeparator() + text;
     }
 
 
