@@ -1,7 +1,12 @@
-# Duke project template
+# Project NEXT
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are
-instructions on how to use it.
+This is a task management app that follows the GTD method for GTD enthusiasts who prefer the speed of command line input. 
+
+ _   _           _   
+| \ | | _____  _| |_ 
+|  \| |/ _ \ \/ / __|
+| |\  |  __/>  <| |_ 
+|_| \_|\___/_/\_\\__|
 
 ## General Skeleton for how the Project is structured.
 
@@ -29,6 +34,7 @@ So that the commands run will update their workspace accordingly.
 * If you are new to Gradle, refer to
   the [Gradle Tutorial at se-education.org/guides](https://se-education.org/guides/tutorials/gradle.html).
 
+
 ## Testing
 
 ### I/O redirection tests
@@ -55,12 +61,11 @@ against it, GitHub actions will run automatically to build and verify the code a
 
 ## Documentation
 
-`/docs` folder contains a skeleton version of the project documentation.
+`/docs` folder contains a skeleton version of the thought documentation.
 
 Steps for publishing documentation to the public:
 
-1. If you are using this project template for an individual project, go your fork on GitHub.<br>
-   If you are using this project template for a team project, go to the team fork on GitHub.
+1. If you are using this project template for an individual project, go your fork on GitHub.
 1. Click on the `settings` tab.
 1. Scroll down to the `GitHub Pages` section.
 1. Set the `source` as `master branch /docs folder`.
