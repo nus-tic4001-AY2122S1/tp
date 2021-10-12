@@ -1,26 +1,31 @@
 package seedu.duke;
+
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class DeleteCommand {
-    LocalDateTime startDate;
+    LocalDate startDate;
     int option_number = 0;
 
-    public DeleteCommand(String date, String option){
-        this.startDate = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyy-M-d"));
-        option_number = Integer.parseInt(option);
+    public DeleteCommand(String date, String option) {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d");
+        this.startDate = LocalDate.parse(date, format);
+        this.option_number = Integer.parseInt(option);
     }
 
-    public void execute(List<Bookings> bookings){
+    public void execute(List<Bookings> bookings) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
-        for(Bookings booking : bookings){
-            if(LocalDateTime.parse(booking.getStartDate().format(formatter), formatter)  == startDate ){
+        LocalDate temp;
+        for (Bookings booking : bookings) {
+            temp = LocalDate.parse(booking.getStartDate().format(formatter), formatter);
+            if (temp.equals(startDate)) {
                 option_number = option_number - 1;
             }
-            if(option_number == 0){
+            if (option_number == 0) {
                 bookings.remove(booking);
-                System.out.println("Successfully removed Appointment at" + booking.getStartDateString());
+                System.out.println("Successfully removed Appointment at " + booking.getStartDateString());
                 return;
             }
         }
@@ -28,7 +33,7 @@ public class DeleteCommand {
         System.out.println("Your appointment is not stored in our calendar. Please input a new command");
     }
 
-    public static String getHelp(){
+    public static String getHelp() {
         return "del [Appointment_Start_Date] /o [Option_Number]";
     }
 }

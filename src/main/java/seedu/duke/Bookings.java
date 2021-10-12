@@ -14,7 +14,7 @@ public class Bookings {
         this.end = end;
     }
 
-    public LocalDateTime getStartDate(){
+    public LocalDateTime getStartDate() {
         return start;
     }
 
