@@ -48,12 +48,8 @@ public class Expense {
         this.description = description;
     }
 
-    /***
-     *
-     * @return Override the toString() method
-     */
     @Override
-    public String toString(){
-        return date + " "+ type +" "+ description + " " + "$"+amount ;
+    public String toString() {
+        return date + " " + type + " " + description + " " + "$" + amount;
     }
 }
