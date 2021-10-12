@@ -17,7 +17,5 @@ public class Duke {
 
         Scanner in = new Scanner(System.in);
         System.out.println("Hello " + in.nextLine());
-
-//        Expense expense = new Expense("1/10/2021","Mean", 10.0 ,"Lunch");
     }
 }
