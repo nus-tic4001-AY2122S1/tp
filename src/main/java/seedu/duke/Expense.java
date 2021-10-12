@@ -47,4 +47,13 @@ public class Expense {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    /***
+     *
+     * @return Override the toString() method
+     */
+    @Override
+    public String toString(){
+        return date + " "+ type +" "+ description + " " + "$"+amount ;
+    }
 }
