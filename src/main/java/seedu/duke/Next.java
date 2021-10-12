@@ -1,8 +1,12 @@
 package seedu.duke;
 
+import seedu.duke.storage.GTDList;
+import seedu.duke.commands.Command;
+import seedu.duke.commands.ExitCommand;
+import seedu.duke.parser.Parser;
 import seedu.duke.project.GTDThought;
 import seedu.duke.project.Stat;
-import seedu.duke.storage.GTDList;
+import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 
@@ -21,37 +25,25 @@ public class Next {
         System.out.println("PROJECT\n" + logo);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Ui ui = new Ui();
+        boolean isExit = false;
+        while (!isExit) {
+            try {
+                String fullCommand = ui.readCommand();
+                ui.showLine(); // show the divider line ("_______")
+                Command c = new Parser().parse(fullCommand);
+                c.execute();
+                isExit = ExitCommand.isExit(c);
+            } catch (Exception e) {
+                ui.showError(e.getMessage());
+            } finally {
+                ui.showLine();
+            }
+        }
+      
+      
+      
+      
         String title = "This is my very first task";
         GTDThought p1 = new GTDThought(title);
 
@@ -80,5 +72,7 @@ public class Next {
         System.out.println(System.lineSeparator());
 
         next.print(); // TODO: need to add INDEN and numbering
+
+
     }
 }
