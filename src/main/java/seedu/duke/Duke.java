@@ -67,7 +67,7 @@ public class Duke {
                 LocalDateTime end = parse(arguments[2].toUpperCase(), format);
 
                 appointments.add(new Bookings(arguments[0].trim(), start, end));
-            break;
+                break;
             case "edit":
 
                 break;
@@ -144,9 +144,9 @@ public class Duke {
                 break;
             default:
                 System.out.println("You have entered an unknown or invalid command, please try again!");
+            }
         }
     }
-}
 
     static boolean isInRange(LocalDate testDate) {
         boolean flag = false;
