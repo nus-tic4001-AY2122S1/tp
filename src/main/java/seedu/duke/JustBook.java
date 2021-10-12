@@ -8,7 +8,9 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
 
-public class Duke {
+//import seedu.duke.*;
+
+public class JustBook {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
@@ -39,7 +41,7 @@ public class Duke {
                 exit(0);
             }
 
-            String[] tokens = input.split(" ", 2);
+            String[] tokens = input.split(" ", 5);
             String command = tokens[0];
 
             switch (command) {
@@ -70,12 +72,10 @@ public class Duke {
                 int counter = 1;
 
                 for (Bookings item : appointments) {
-
-                    if (date.equals(item.getStartDate())) {
+                    if (date.equals(item.getStartDateString())) {
                         System.out.println(counter + ". " + item);
                         counter++;
                     }
-
                     System.out.println();
                 }
                 break;
