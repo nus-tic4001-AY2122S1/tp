@@ -5,6 +5,8 @@ import seedu.duke.project.GTDThought;
 import java.util.ArrayList;
 
 public class GTDList {
+    private static final String INDEN = "  ";
+
     ArrayList<GTDThought> list = new ArrayList<>();
 
     public GTDList() {}
@@ -15,12 +17,14 @@ public class GTDList {
 
     public void print() {
         for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).getTextRec());
-            format();
+            String text = list.get(i).getTextRec();
+            System.out.println(addNum(text));
         }
     }
 
-    public void format() {
+    public String addNum(String text) {
+        String[] lines = text.split(System.lineSeparator());
 
+        return text; // TODO: Unfishied for adding number like 1-2-1
     }
 }
