@@ -1,9 +1,10 @@
 package seedu.duke;
 
-import seedu.duke.project.Project;
+import seedu.duke.project.GTDThought;
 import seedu.duke.project.Stat;
+import seedu.duke.storage.GTDList;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Next {
     /**
@@ -50,14 +51,15 @@ public class Next {
 
 
 
+
         String title = "This is my very first task";
-        Project p1 = new Project(title);
+        GTDThought p1 = new GTDThought(title);
 
         p1.print();
 
-        Project sub1 = new Project("sub task a");
-        Project sub2 = new Project("sub task b");
-        Project subsub1 = new Project("sub task a.1");
+        GTDThought sub1 = new GTDThought("sub task a");
+        GTDThought sub2 = new GTDThought("sub task b");
+        GTDThought subsub1 = new GTDThought("sub sub task a.1");
 
         p1.addSub(sub1);
         p1.addSub(sub2);
@@ -67,6 +69,16 @@ public class Next {
 
         p1.printRec();
 
+        GTDList next = new GTDList();
+        GTDList inbox = new GTDList();
+        next.add(p1);
+        inbox.add(p1);
+        p1.setStatus(Stat.NEXT);
+        next.get(0).print();
+        inbox.get(0).print();
 
+        System.out.println(System.lineSeparator());
+
+        next.print(); // TODO: need to add INDEN and numbering
     }
 }
