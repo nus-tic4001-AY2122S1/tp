@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Duke {
 
     private Ui ui;
+    private NusModList allModules;
 
     public static void main(String[] args) throws IOException {
         new Duke().run();
@@ -20,10 +21,10 @@ public class Duke {
     }
 
     private void start() throws IOException {
-        this.ui = new Ui();
+        ui = new Ui();
         ui.welcome();
         Api api = new Api();
-        Module[] allModules = api.getAllModulesDetailed();
+        allModules = api.getAllModulesDetailed();
     }
 
     private void runCommandLoopUntilExitCommand() {

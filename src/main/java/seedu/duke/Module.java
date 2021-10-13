@@ -60,4 +60,8 @@ public class Module {
                 + ", semesterData='" + semesterData + '\''
                 + '}';
     }
+
+    public String getModuleCode() {
+        return moduleCode;
+    }
 }
