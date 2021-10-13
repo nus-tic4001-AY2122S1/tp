@@ -45,56 +45,55 @@ public class JustBook {
             String command = tokens[0];
 
             switch (command) {
-                case "add":
-                    String[] param = tokens[1].split("/[s,e] ");
-                    DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
+            case "add":
+                String[] param = tokens[1].split("/[s,e] ");
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
 
-                    LocalDateTime start = parse(param[1].trim(), format);
-                    LocalDateTime end = parse(param[2], format);
-                    appointments.add(new Bookings(param[0].trim(), start, end));
-                    break;
-                case "edit":
+                LocalDateTime start = parse(param[1].trim(), format);
+                LocalDateTime end = parse(param[2], format);
+                appointments.add(new Bookings(param[0].trim(), start, end));
+                break;
+            case "edit":
 
-                    break;
-                case "save":
+                break;
+            case "save":
 
-                    break;
-                case "del":
-                    int index = tokens[1].indexOf("/o");
-                    String inputDate = tokens[1].substring(0, index).trim();
-                    String option_number = tokens[1].substring(index).replace("/o", "").trim();
-                    DeleteCommand del = new DeleteCommand(inputDate, option_number);
-                    del.execute(appointments);
-                    break;
-                case "show":
-                    if (tokens[1].contains("--")) {
+                break;
+            case "del":
+                int index = tokens[1].indexOf("/o");
+                String inputDate = tokens[1].substring(0, index).trim();
+                String option_number = tokens[1].substring(index).replace("/o", "").trim();
+                DeleteCommand del = new DeleteCommand(inputDate, option_number);
+                del.execute(appointments);
+                break;
+            case "show":
+                if (tokens[1].contains("--")) {
+                }
+                if (tokens[1].contains(" - ")) {
+                }
+
+                String date = tokens[1];
+                System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
+                int counter = 1;
+
+                for (Bookings item : appointments) {
+                    if (date.equals(item.getStartDateString())) {
+                        System.out.println(counter + ". " + item);
+                        counter++;
                     }
-                    if (tokens[1].contains(" - ")) {
-                    }
+                    System.out.println();
+                }
+                break;
+            case "block":
 
-                    String date = tokens[1];
-                    System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
-                    int counter = 1;
-
-                    for (Bookings item : appointments) {
-                        if (date.equals(item.getStartDateString())) {
-                            System.out.println(counter + ". " + item);
-                            counter++;
-                        }
-                        System.out.println();
-                    }
-                    break;
-                case "block":
-
-                    break;
-                case "unblock":
-
-                    break;
-                case "help":
-                    HelpCommand help = new HelpCommand();
-                    help.execute();
-                    break;
-                default:
+                break;
+            case "unblock":
+                break;
+            case "help":
+                HelpCommand help = new HelpCommand();
+                help.execute();
+                break;
+            default:
 
             }
         }

@@ -7,12 +7,12 @@ import java.util.List;
 
 public class DeleteCommand {
     LocalDate startDate;
-    int option_number = 0;
+    int optionNumber = 0;
 
     public DeleteCommand(String date, String option) {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d");
         this.startDate = LocalDate.parse(date, format);
-        this.option_number = Integer.parseInt(option);
+        this.optionNumber = Integer.parseInt(option);
     }
 
     public void execute(List<Bookings> bookings) {
@@ -21,9 +21,9 @@ public class DeleteCommand {
         for (Bookings booking : bookings) {
             temp = LocalDate.parse(booking.getStartDate().format(formatter), formatter);
             if (temp.equals(startDate)) {
-                option_number = option_number - 1;
+                optionNumber = optionNumber - 1;
             }
-            if (option_number == 0) {
+            if (optionNumber == 0) {
                 bookings.remove(booking);
                 System.out.println("Successfully removed Appointment at " + booking.getStartDateString());
                 return;
