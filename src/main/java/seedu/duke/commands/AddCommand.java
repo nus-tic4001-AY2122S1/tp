@@ -1,6 +1,7 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.project.GTDThought;
 import seedu.duke.storage.GTDList;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class AddCommand extends Command {
     @Override
     public void execute(ArrayList<GTDList> folders) {
         System.out.println("This is an add command, the added task is " + taskname);
+        folders.get(0).add(new GTDThought(taskname));
     }
 
 
