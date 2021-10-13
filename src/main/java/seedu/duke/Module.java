@@ -17,7 +17,9 @@ public class Module {
     String corequisite;
     Semesterdata[] semesterData;
 
-  public Module() {}
+    public Module() {
+
+    }
 
     public Module(String moduleCode, String title, Integer[] semesters, String description, Float moduleCredit,
                   String department, String faculty, String prerequisite, String preclusion, String corequisite,
