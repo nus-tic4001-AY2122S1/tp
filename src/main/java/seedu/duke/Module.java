@@ -61,7 +61,7 @@ public class Module {
                 + '}';
     }
 
-    public String getModuleCode(){
+    public String getModuleCode() {
         return moduleCode;
     }
 }
