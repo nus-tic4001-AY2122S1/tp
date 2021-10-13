@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.justbook;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

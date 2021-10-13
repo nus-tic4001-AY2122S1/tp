@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.justbook;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -10,7 +10,7 @@ import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
 
 
-public class Duke {
+public class JustBook {
     /**
      * Main entry-point for the java.duke.Duke application.
      */

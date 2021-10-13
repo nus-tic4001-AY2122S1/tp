@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.0'
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.0'
+    testCompile("org.junit.jupiter:junit-jupiter-params:5.8.1")
     implementation group:'com.google.guava', name:'guava', version: '31.0.1-jre'
 }
 
@@ -30,11 +31,11 @@ test {
 }
 
 application {
-    mainClassName = "seedu.duke.Duke"
+    mainClassName = "seedu.justbook.JustBook"
 }
 
 shadowJar {
-    archiveBaseName = "duke"
+    archiveBaseName = "justbook"
     archiveClassifier = null
 }
 

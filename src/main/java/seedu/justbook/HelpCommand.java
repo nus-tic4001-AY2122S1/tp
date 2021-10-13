@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.justbook;
 
 public class HelpCommand {
     public HelpCommand() {
