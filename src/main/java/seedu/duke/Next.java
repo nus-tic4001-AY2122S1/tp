@@ -16,13 +16,19 @@ public class Next {
      */
     public static void main(String[] args) {
         String logo =
-                          " _   _           _   \n"
-                        + "| \\ | | _____  _| |_ \n"
-                        + "|  \\| |/ _ \\ \\/ / __|\n"
-                        + "| |\\  |  __/>  <| |_ \n"
-                        + "|_| \\_|\\___/_/\\_\\\\__|\n";
+                   " _   _           _   \n"
+                + "| \\ | | _____  _| |_ \n"
+                + "|  \\| |/ _ \\ \\/ / __|\n"
+                + "| |\\  |  __/>  <| |_ \n"
+                + "|_| \\_|\\___/_/\\_\\\\__|\n";
 
         System.out.println("PROJECT\n" + logo);
+
+        GTDList inbox = new GTDList();
+        GTDList proj = new GTDList();
+        GTDList next = new GTDList();
+        GTDList wait = new GTDList();
+        GTDList some = new GTDList();
 
 
         Ui ui = new Ui();
@@ -40,12 +46,11 @@ public class Next {
                 ui.showLine();
             }
         }
-      
-      
-      
-      
+
+
         String title = "This is my very first task";
         GTDThought p1 = new GTDThought(title);
+        GTDThought p2 = new GTDThought("Second level 0 task");
 
         p1.print();
 
@@ -61,9 +66,8 @@ public class Next {
 
         p1.printRec();
 
-        GTDList next = new GTDList();
-        GTDList inbox = new GTDList();
         next.add(p1);
+        next.add(p2);
         inbox.add(p1);
         p1.setStatus(Stat.NEXT);
         next.get(0).print();
@@ -71,7 +75,9 @@ public class Next {
 
         System.out.println(System.lineSeparator());
 
-        next.print(); // TODO: need to add INDEN and numbering
+        next.print();
+
+        next.get("1-1-1").print();
 
 
     }

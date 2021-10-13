@@ -33,7 +33,7 @@ public class GTDThought {
 
     public int checkLevel() {
         int n = 0;
-        if(parent.isEmpty()) {
+        if (parent.isEmpty()) {
             n = 0;
         }
         return n;
@@ -136,8 +136,9 @@ public class GTDThought {
     }
 
     public void setStatus(Stat status) {
-        if (status == Stat.NEXT && children.isEmpty()) {
-            System.out.println("Can only put actionable task to Next!");
+        if (status == Stat.NEXT && !children.isEmpty()) {
+            System.out.println("Only actionable tasks can be set to NEXT!");
+            return;
         }
 
         this.status = status;
@@ -154,10 +155,10 @@ public class GTDThought {
     @Override
     public String toString() {
         switch (status) {
-            case NONE:
-                return this.title;
-            default:
-                return "[" + this.status + "] " + title;
+        case NONE:
+            return this.title;
+        default:
+            return "[" + this.status + "] " + title;
         }
     }
 }
