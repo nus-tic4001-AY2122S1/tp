@@ -1,7 +1,8 @@
-package seedu.duke;
+package seedu.justbook;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Bookings {
     String bookDesc;
@@ -22,11 +23,12 @@ public class Bookings {
         return start.toLocalDate();
     }
 
+    public String getStartDateString() {
+        return start.toLocalDate().format(DateTimeFormatter.ofPattern("yyyy-M-d"));
+    }
+
     @Override
     public String toString() {
-
         return String.format("%s %s - %s", bookDesc, start.toLocalTime(), end.toLocalTime());
     }
 }
-
-

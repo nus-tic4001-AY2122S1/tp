@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.justbook;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -48,7 +48,7 @@ public class JustBook {
                 in.close();
                 exit(0);
             }
-            //parses user input
+
             String[] tokens = input.split(" ", 2);
             String command = tokens[0];
 
@@ -82,6 +82,12 @@ public class JustBook {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records.");
                 }
+
+                int index = tokens[1].indexOf("/o");
+                String inputDate = tokens[1].substring(0, index).trim();
+                String optionNumber = tokens[1].substring(index).replace("/o", "").trim();
+                DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
+                del.execute(appointments);
                 break;
             case "show":
                 int listNum = 1;
@@ -147,7 +153,8 @@ public class JustBook {
                 BLOCKLIST.remove(unLockDate);
                 break;
             case "help":
-
+                HelpCommand help = new HelpCommand();
+                help.execute();
                 break;
             default:
                 System.out.println("You have entered an unknown or invalid command, please try again!");
