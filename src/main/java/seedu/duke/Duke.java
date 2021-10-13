@@ -23,7 +23,7 @@ public class Duke {
         this.ui = new Ui();
         ui.welcome();
         Api api = new Api();
-        Module[] allModules = api.getAllModules();
+        Module[] allModules = api.getAllModulesDetailed();
     }
 
     private void runCommandLoopUntilExitCommand() {
