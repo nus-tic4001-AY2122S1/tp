@@ -15,7 +15,7 @@ import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
 import static java.util.Comparator.comparing;
 
-public class Duke {
+public class JustBook {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
