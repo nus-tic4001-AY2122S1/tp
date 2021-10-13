@@ -62,15 +62,12 @@ public class JustBook {
             case "del":
                 int index = tokens[1].indexOf("/o");
                 String inputDate = tokens[1].substring(0, index).trim();
-                String option_number = tokens[1].substring(index).replace("/o", "").trim();
-                DeleteCommand del = new DeleteCommand(inputDate, option_number);
+                String optionNumber = tokens[1].substring(index).replace("/o", "").trim();
+                DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
                 del.execute(appointments);
                 break;
             case "show":
-                if (tokens[1].contains("--")) {
-                }
-                if (tokens[1].contains(" - ")) {
-                }
+
 
                 String date = tokens[1];
                 System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
