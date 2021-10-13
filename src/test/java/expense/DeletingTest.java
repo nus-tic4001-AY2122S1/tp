@@ -1,4 +1,4 @@
-package Expense;
+package expense;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DeletingTest {
     @Test
-    void deleteExp(){
+    void deleteExp() {
         ArrayList<Expense> testList = new ArrayList<Expense>();
         ArrayList<Expense> expectedList = new ArrayList<Expense>();
 
