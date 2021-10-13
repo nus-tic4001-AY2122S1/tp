@@ -9,6 +9,7 @@ import seedu.duke.project.Stat;
 import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class Next {
     /**
@@ -24,12 +25,12 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-        GTDList inbox = new GTDList();
-        GTDList proj = new GTDList();
-        GTDList next = new GTDList();
-        GTDList wait = new GTDList();
-        GTDList some = new GTDList();
-
+        Hashtable<String, GTDList> GTDLists = new Hashtable<>();
+        GTDLists.put("inbox", new GTDList());
+        GTDLists.put("proj", new GTDList());
+        GTDLists.put("next", new GTDList());
+        GTDLists.put("wait", new GTDList());
+        GTDLists.put("some", new GTDList());
 
         Ui ui = new Ui();
         boolean isExit = false;
@@ -66,18 +67,18 @@ public class Next {
 
         p1.printRec();
 
-        next.add(p1);
-        next.add(p2);
-        inbox.add(p1);
+        GTDLists.get("next").add(p1);
+        GTDLists.get("next").add(p2);
+        GTDLists.get("inbox").add(p1);
         p1.setStatus(Stat.NEXT);
-        next.get(0).print();
-        inbox.get(0).print();
+        GTDLists.get("next").get(0).print();
+        GTDLists.get("inbox").get(0).print();
 
         System.out.println(System.lineSeparator());
 
-        next.print();
+        GTDLists.get("next").print();
 
-        next.get("1-1-1").print();
+        GTDLists.get("next").get("1-1-1").print();
 
 
     }
