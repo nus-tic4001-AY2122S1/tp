@@ -136,8 +136,9 @@ public class GTDThought {
     }
 
     public void setStatus(Stat status) {
-        if (status == Stat.NEXT && children.isEmpty()) {
-            System.out.println("Can only put actionable task to Next!");
+        if (status == Stat.NEXT && !children.isEmpty()) {
+            System.out.println("Only actionable tasks can be set to NEXT!");
+            return;
         }
 
         this.status = status;
