@@ -22,7 +22,7 @@ public class Api {
     public Api() {
     }
 
-    public Module[] getAllModules() throws IOException {
+    public NusModList getAllModules() throws IOException {
         URL url = new URL(urlString);
         URLConnection conn = url.openConnection();
         InputStream is = conn.getInputStream();
@@ -37,10 +37,11 @@ public class Api {
         Gson gson = new Gson();
         String tmpStr = responseStrBuilder.toString();
         Module[] myMods = gson.fromJson(tmpStr, Module[].class);
-        return myMods;
+        NusModList nusModList = new NusModList(myMods);
+        return nusModList;
     }
 
-    public Module[] getAllModulesDetailed() throws IOException {
+    public NusModList getAllModulesDetailed() throws IOException {
         URL url = new URL(urlStringDetailed);
         URLConnection conn = url.openConnection();
         InputStream is = conn.getInputStream();
@@ -55,6 +56,7 @@ public class Api {
         Gson gson = new Gson();
         String tmpStr = responseStrBuilder.toString();
         Module[] myMods = gson.fromJson(tmpStr, Module[].class);
-        return myMods;
+        NusModList nusModList = new NusModList(myMods);
+        return nusModList;
     }
 }
