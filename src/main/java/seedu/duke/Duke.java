@@ -20,7 +20,7 @@ public class Duke {
      * Main entry-point for the java.duke.Duke application.
      */
     static final List<Bookings> appointments = new ArrayList<>();
-    static final HashMap<LocalDate, LocalDate> BLOCKLIST = new HashMap<>();
+    static final HashMap<LocalDate, LocalDate> BLOCKLIST = new HashMap<>(5);
 
     public static void main(String[] args) {
         String logo = " ____        _        \n"
