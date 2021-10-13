@@ -78,7 +78,9 @@ public class Next {
 
         System.out.println(System.lineSeparator());
 
-        next.print(); // TODO: need to add INDEN and numbering
+        next.print();
+
+        next.get("1-1-1").print();
 
 
     }
