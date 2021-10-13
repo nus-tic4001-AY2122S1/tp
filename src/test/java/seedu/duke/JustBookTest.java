@@ -18,9 +18,10 @@ class JustBookTest {
     LocalDateTime endDate = LocalDateTime.parse("2021-06-07T11:00:00");
     LocalDate expected = LocalDate.of(2021, 6, 7);
     private final Bookings testModel = new Bookings("Meeting@Hall One", startDate, endDate);
+
     @Test
     @DisplayName("get LocalDate from start LocalDateTime")
-    public void getStartDateTest(){
-        assertEquals(expected, testModel.getStartDate() );
+    public void getStartDateTest() {
+        assertEquals(expected, testModel.getStartDate());
     }
 }
