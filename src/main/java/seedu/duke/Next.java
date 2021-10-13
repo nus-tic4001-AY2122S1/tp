@@ -66,6 +66,7 @@ public class Next {
 
         p1.printRec();
 
+
         next.add(p1);
         next.add(p2);
         inbox.add(p1);
@@ -79,6 +80,7 @@ public class Next {
 
         next.get("1-1-1").print();
 
+        System.out.println(p1.getTextRec());
 
     }
 }
