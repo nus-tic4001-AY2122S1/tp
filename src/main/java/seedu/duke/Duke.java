@@ -3,6 +3,7 @@ package seedu.duke;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -59,8 +60,11 @@ public class Duke {
                 DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d K:mm a][yyyy-M-d HH:mm]");
                 LocalDateTime start = parse(arguments[1].trim().toUpperCase(), format);
 
-                if (isInRange(start.toLocalDate())) {
-                    System.out.println("The start date you enter is denied by the current BLOCKLIST");
+                Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> result = isInRange(start.toLocalDate());
+
+                if (result.getKey()) {
+                    System.out.printf("'%s' denied by current BLOCKLIST = StartDate: [%s] - EndDate: [%s]%n",
+                            start.toLocalDate(), result.getValue().getKey(), result.getValue().getValue());
                     continue;
                 }
 
@@ -148,16 +152,19 @@ public class Duke {
         }
     }
 
-    static boolean isInRange(LocalDate testDate) {
+    private static Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> isInRange(LocalDate testDate) {
         boolean flag = false;
+        Map.Entry<LocalDate, LocalDate> member = null;
+
         for (Map.Entry<LocalDate, LocalDate> entry : BLOCKLIST.entrySet()) {
 
             if (!(testDate.isBefore(entry.getKey()) || testDate.isAfter(entry.getValue()))) {
+                member = entry;
                 flag = true;
                 break;
             }
         }
-        return flag;
+        return new SimpleEntry<Boolean, Map.Entry<LocalDate, LocalDate>>(flag, member);
     }
 
     private static LocalDate getLocalDate(String date) {
@@ -166,7 +173,7 @@ public class Duke {
                 .mapToInt(Integer::parseInt)
                 .toArray();
         dateIso = LocalDate.of(figures[0], figures[1], figures[2]);
+
         return dateIso;
     }
 }
-
