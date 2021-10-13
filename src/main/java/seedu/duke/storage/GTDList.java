@@ -46,6 +46,10 @@ public class GTDList {
         return null;
     }
 
+    public void remove(int index) {
+        list.remove(index);
+    }
+
     public void print() {
         for (int i = 0; i < list.size(); i++) {
             String text = list.get(i).getTextRec();
