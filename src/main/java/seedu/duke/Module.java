@@ -3,7 +3,7 @@ package seedu.duke;
 import java.util.Arrays;
 import java.util.List;
 
-public class Module<SemesterData> {
+public class Module<Semesterdata> {
 
     String moduleCode;
     String title;
@@ -15,13 +15,13 @@ public class Module<SemesterData> {
     String prerequisite;
     String preclusion;
     String corequisite;
-    SemesterData[] semesterData;
+    Semesterdata[] semesterData;
 
   public Module() {}
 
     public Module(String moduleCode, String title, Integer[] semesters, String description, Float moduleCredit,
                   String department, String faculty, String prerequisite, String preclusion, String corequisite,
-                  SemesterData[] semesterData) {
+                  Semesterdata[] semesterData) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.semesters = semesters;

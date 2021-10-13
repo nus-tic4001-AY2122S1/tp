@@ -15,10 +15,10 @@ public class Semesterdata {
 
     @Override
     public String toString() {
-        return "SemesterData{" +
-                "semester=" + semester +
-                ", examDate='" + examDate + '\'' +
-                ", examDuration=" + examDuration +
-                '}';
+        return "SemesterData{"
+                + "semester=" + semester
+                + ", examDate='" + examDate + '\''
+                + ", examDuration=" + examDuration
+                + '}';
     }
 }
