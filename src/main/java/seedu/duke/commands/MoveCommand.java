@@ -4,7 +4,7 @@ package seedu.duke.commands;
 import java.util.Arrays;
 
 /**
- * Move a task to a folder
+ * Move a task to a folder.
  */
 public class MoveCommand extends Command {
 
