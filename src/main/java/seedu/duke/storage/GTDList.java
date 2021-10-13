@@ -48,6 +48,7 @@ public class GTDList {
 
     public void remove(int index) {
         list.remove(index);
+
     }
 
     public void print() {
