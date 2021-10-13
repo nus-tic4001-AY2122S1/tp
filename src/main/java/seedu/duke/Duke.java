@@ -4,7 +4,7 @@ public class Duke {
     private void run() {
         UI.welcome();
         boolean isExit = false;
-        while(!isExit) {
+        while (!isExit) {
             String fullCommand = UI.readCommand();
             if (fullCommand.equals("exit")) {
                 isExit = true;
