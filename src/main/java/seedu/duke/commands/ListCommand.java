@@ -18,33 +18,33 @@ public class ListCommand extends Command {
     public void execute() {
 
         switch (folderType) {
-            case "inbox":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "next":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "wait":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "proj":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "someday":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            default:
-                System.out.println("");
+        case "inbox":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "next":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "wait":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "proj":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "someday":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        default:
+            System.out.println("");
 
         }
 

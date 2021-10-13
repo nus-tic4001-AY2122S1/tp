@@ -1,12 +1,13 @@
 # Project NEXT
 
 This is a task management app that follows the GTD method for GTD enthusiasts who prefer the speed of command line input. 
-
- _   _           _   
+``` 
+_   _           _   
 | \ | | _____  _| |_ 
 |  \| |/ _ \ \/ / __|
 | |\  |  __/>  <| |_ 
 |_| \_|\___/_/\_\\__|
+```
 
 ## General Skeleton for how the Project is structured.
 
