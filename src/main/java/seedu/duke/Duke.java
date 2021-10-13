@@ -10,7 +10,7 @@ import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
 
 
-public class JustBook {
+public class Duke {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
