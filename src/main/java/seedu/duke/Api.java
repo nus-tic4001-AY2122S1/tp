@@ -17,12 +17,31 @@ import java.util.List;
 public class Api {
 
     String urlString = "https://api.nusmods.com/v2/2020-2021/moduleList.json";
+    String urlStringDetailed = "https://api.nusmods.com/v2/2020-2021/moduleInfo.json";
 
     public Api() {
     }
 
     public Module[] getAllModules() throws IOException {
         URL url = new URL(urlString);
+        URLConnection conn = url.openConnection();
+        InputStream is = conn.getInputStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line = "";
+
+        StringBuilder responseStrBuilder = new StringBuilder();
+        while ((line =  br.readLine()) != null) {
+            responseStrBuilder.append(line);
+        }
+        is.close();
+        Gson gson = new Gson();
+        String tmpStr = responseStrBuilder.toString();
+        Module[] myMods = gson.fromJson(tmpStr, Module[].class);
+        return myMods;
+    }
+
+    public Module[] getAllModulesDetailed() throws IOException {
+        URL url = new URL(urlStringDetailed);
         URLConnection conn = url.openConnection();
         InputStream is = conn.getInputStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
