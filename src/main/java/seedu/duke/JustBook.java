@@ -27,14 +27,14 @@ public class JustBook {
 
         Scanner in = new Scanner(System.in);
         String userName = in.nextLine();
-        System.out.println("Hello " + userName);
+        System.out.printf("Hello %s, %n" + userName);
 
         // write your code here
         System.out.printf("Welcome back!%n");
-        System.out.println("You can now proceed to do your booking\n");
+        System.out.printf("You can now proceed to do your booking :)%n");
 
         while (true) {
-            System.out.println("User: ");
+            System.out.printf("%n%s: ",userName);
             String input = in.nextLine().replace("\\s+", " ").trim();
 
             if (input.equals("exit")) {
