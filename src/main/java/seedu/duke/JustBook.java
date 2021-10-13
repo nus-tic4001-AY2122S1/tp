@@ -27,11 +27,11 @@ public class JustBook {
 
         Scanner in = new Scanner(System.in);
         String userName = in.nextLine();
-        System.out.printf("Hello " + userName);
+        System.out.println("Hello " + userName);
 
         // write your code here
-        System.out.printf("Welcome back!" + userName);
-        System.out.printf("You can now proceed to do your booking :)%n");
+        System.out.println("Welcome back!");
+        System.out.println("You can now proceed to do your booking :)");
 
         while (true) {
             System.out.printf(userName + ": ");
