@@ -25,6 +25,10 @@ public class Next {
         System.out.println("PROJECT\n" + logo);
 
 
+        ArrayList<GTDList> folders = new ArrayList<>();
+        GTDList inbox = new GTDList();
+        folders.add(inbox);
+
         Ui ui = new Ui();
         boolean isExit = false;
         while (!isExit) {
@@ -32,7 +36,7 @@ public class Next {
                 String fullCommand = ui.readCommand();
                 ui.showLine(); // show the divider line ("_______")
                 Command c = new Parser().parse(fullCommand);
-                c.execute();
+                c.execute(folders);
                 isExit = ExitCommand.isExit(c);
             } catch (Exception e) {
                 ui.showError(e.getMessage());
@@ -62,7 +66,6 @@ public class Next {
         p1.printRec();
 
         GTDList next = new GTDList();
-        GTDList inbox = new GTDList();
         next.add(p1);
         inbox.add(p1);
         p1.setStatus(Stat.NEXT);

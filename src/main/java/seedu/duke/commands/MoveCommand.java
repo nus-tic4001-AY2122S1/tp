@@ -1,6 +1,9 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.storage.GTDList;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -19,7 +22,7 @@ public class MoveCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(ArrayList<GTDList> folders) {
         System.out.println("This is a move command. The target index is " + Arrays.toString(targetIndex)
                 + " and target folder is " + folderType.toString());
     }

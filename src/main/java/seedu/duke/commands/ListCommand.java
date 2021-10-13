@@ -1,6 +1,10 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.storage.GTDList;
+
+import java.util.ArrayList;
+
 /**
  * List all the tasks in the taskList.
  */
@@ -15,7 +19,7 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(ArrayList<GTDList> folders) {
 
         switch (folderType) {
             case "inbox":

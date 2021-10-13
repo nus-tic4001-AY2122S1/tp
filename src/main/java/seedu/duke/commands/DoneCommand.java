@@ -1,6 +1,9 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.storage.GTDList;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -16,7 +19,7 @@ public class DoneCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(ArrayList<GTDList> folders) {
         System.out.println("This is a done command, the target index is " + Arrays.toString(targetIndex));
 
     }

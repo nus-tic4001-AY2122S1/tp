@@ -1,6 +1,9 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.storage.GTDList;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -17,7 +20,7 @@ public class DeleteCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(ArrayList<GTDList> folders) {
         System.out.println("This is a delete command, the target index is " + Arrays.toString(targetIndex));
     }
 }

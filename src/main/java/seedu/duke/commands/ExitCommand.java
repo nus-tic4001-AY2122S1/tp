@@ -1,5 +1,9 @@
 package seedu.duke.commands;
 
+import seedu.duke.storage.GTDList;
+
+import java.util.ArrayList;
+
 /**
  * Exit the program.
  */
@@ -9,7 +13,7 @@ public class ExitCommand extends Command {
 
 
     @Override
-    public void execute() {
+    public void execute(ArrayList<GTDList> folders) {
         System.out.print("See you next time.\n");
     }
 
