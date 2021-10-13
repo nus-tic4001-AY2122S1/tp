@@ -1,7 +1,7 @@
 package seedu.duke;
 
 import task.Task;
-import taskList.TaskList;
+import tasklist.TaskList;
 import ui.Ui;
 
 import java.util.ArrayList;

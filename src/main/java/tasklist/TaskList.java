@@ -1,16 +1,15 @@
-package taskList;
+package tasklist;
 
 import task.Task;
 
 import java.util.ArrayList;
 
 /**
- * Serve as a store for saving user command
- */
+* Serve as a store for saving user command.
+*/
 public class TaskList {
     private static TaskList taskList = null;
     private static ArrayList<Task> todoList = new ArrayList<>();
-    private TaskList() {}
 
     public static TaskList getInstance() {
         if (taskList == null) {

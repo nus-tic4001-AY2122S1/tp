@@ -4,7 +4,7 @@ public abstract class Task {
     private String description;
     private boolean isDone;
 
-    public Task(String description){
+    public Task(String description) {
         this.description = description;
         this.isDone = false;
     }
@@ -30,5 +30,6 @@ public abstract class Task {
     }
 
     public abstract String taskToStringFormat();
+
     public abstract String getType();
 }
