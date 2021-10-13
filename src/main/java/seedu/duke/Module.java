@@ -1,19 +1,18 @@
 package seedu.duke;
 
-import java.util.List;
 
+// This class stores the module information.
 public class Module {
 
-    String moduleCode;
-    String title;
-    Integer[] semesters;
+  String moduleCode;
+  String title;
+  Integer[] semesters;
 
-    public Module() {
-    }
+  public Module() {}
 
-    public Module(String moduleCode, String title, Integer[] semesters) {
-        this.moduleCode = moduleCode;
-        this.title = title;
-        this.semesters = semesters;
-    }
+  public Module(String moduleCode, String title, Integer[] semesters) {
+    this.moduleCode = moduleCode;
+    this.title = title;
+    this.semesters = semesters;
+  }
 }
