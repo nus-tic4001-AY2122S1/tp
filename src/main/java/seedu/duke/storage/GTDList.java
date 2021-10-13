@@ -28,20 +28,20 @@ public class GTDList {
         String[] indexes = numbering.split("-");
         int index0, index1, index2;
         switch (indexes.length) {
-            case 1:
-                index0 = Integer.parseInt(indexes[0]) - 1;
-                return get(index0);
-            case 2:
-                index0 = Integer.parseInt(indexes[0]) - 1;
-                index1 = Integer.parseInt(indexes[1]) - 1;
-                return get(index0).getSub().get(index1);
-            case 3:
-                index0 = Integer.parseInt(indexes[0]) - 1;
-                index1 = Integer.parseInt(indexes[1]) - 1;
-                index2 = Integer.parseInt(indexes[2]) - 1;
-                return get(index0)
-                        .getSub().get(index1)
-                        .getSub().get(index2);
+        case 1:
+            index0 = Integer.parseInt(indexes[0]) - 1;
+            return get(index0);
+        case 2:
+            index0 = Integer.parseInt(indexes[0]) - 1;
+            index1 = Integer.parseInt(indexes[1]) - 1;
+            return get(index0).getSub().get(index1);
+        case 3:
+            index0 = Integer.parseInt(indexes[0]) - 1;
+            index1 = Integer.parseInt(indexes[1]) - 1;
+            index2 = Integer.parseInt(indexes[2]) - 1;
+            return get(index0)
+                    .getSub().get(index1)
+                    .getSub().get(index2);
         }
         return null;
     }
