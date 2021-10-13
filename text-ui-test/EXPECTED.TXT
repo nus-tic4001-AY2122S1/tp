@@ -10,4 +10,5 @@ Hello James Gosling,
 Welcome back!
 You can now proceed to do your booking
 
+User:
 Bye! See you again!
