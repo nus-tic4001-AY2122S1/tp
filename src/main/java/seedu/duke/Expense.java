@@ -49,7 +49,7 @@ public class Expense {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return date + " " + type + " " + description + " " + "$" + amount;
     }
 }
