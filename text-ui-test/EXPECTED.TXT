@@ -8,6 +8,6 @@ Hello from
 What is your name?
 Hello James Gosling,
 Welcome back!
-You can now proceed to do your booking:)
+You can now proceed to do your booking
 
 Bye! See you again!
