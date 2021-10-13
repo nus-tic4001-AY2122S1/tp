@@ -26,7 +26,8 @@ public class JustBook {
         System.out.println("What is your name?");
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+        String userName = in.nextLine();
+        System.out.println("Hello " + userName);
 
         // write your code here
         System.out.printf("Welcome back!%n");
