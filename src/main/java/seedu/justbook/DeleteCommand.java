@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DeleteCommand {
     LocalDate startDate;
-    int optionNumber = 0;
+    int optionNumber;
 
     public DeleteCommand(String date, String option) {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d");

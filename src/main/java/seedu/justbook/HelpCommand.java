@@ -1,10 +1,6 @@
 package seedu.justbook;
 
 public class HelpCommand {
-    public HelpCommand() {
-
-    }
-
     public void execute() {
         String instructions = "Commands: "
                 + "\n"
