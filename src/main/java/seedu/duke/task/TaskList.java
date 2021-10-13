@@ -7,23 +7,23 @@ import java.util.StringJoiner;
 public class TaskList {
     private List<Task> tasks = new ArrayList<>();
 
-    public TaskList(){
+    public TaskList() {
 
     }
 
-    public void add(Task task){
+    public void add(Task task) {
         tasks.add(task);
     }
 
-    public Task remove(int index){
+    public Task remove(int index) {
         return tasks.remove(index);
     }
 
-    public Task get(int index){
+    public Task get(int index) {
         return tasks.get(index);
     }
 
-    public int size(){
+    public int size() {
         return tasks.size();
     }
 }

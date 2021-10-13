@@ -1,6 +1,7 @@
 package seedu.duke.task;
 
 import seedu.duke.task.TaskList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +14,11 @@ public class Task {
         this.isDone = false;
     }
 
-    public void markAsDone(){
+    public void markAsDone() {
         isDone = true;
     }
 
-    public List<String> getList(){
+    public List<String> getList() {
         return List.of(isDone ? "1" : "0", description);
     }
 }
