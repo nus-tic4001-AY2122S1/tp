@@ -10,4 +10,4 @@ Hello James Gosling,
 Welcome back!
 You can now proceed to do your booking:)
 
-James Gosling: Bye! See you again!
+Bye! See you again!
