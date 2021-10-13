@@ -15,6 +15,7 @@ public class Parser {
     public static final Pattern INDEX_ARGS_FORMAT = Pattern.compile("(?<targetIndex>\\d+(?:\\s+\\d+)*)");
 
     public static final Pattern MOVE_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)-f\\s*=(?<folderType>.*)");
+    public static final Pattern MOVE_CMD_FORMAT_OPTIONAL = Pattern.compile("(?<folderType>inbox|next|wait|proj|someday)\\s+(?<targetIndex>\\d+.*)",Pattern.CASE_INSENSITIVE);
 
     public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday"};
 
@@ -94,17 +95,24 @@ public class Parser {
     }
 
     private Command prepareMove(String args) {
+
         try {
+            int[] targetIndex;
+            String folderType;
             Matcher matcher = MOVE_CMD_FORMAT.matcher(args.trim());
-            if (!matcher.matches()) {
-                return new IncorrectCommand("This is a incorrect format, " +
+            Matcher matcher1 = MOVE_CMD_FORMAT_OPTIONAL.matcher(args.trim());
+            if (matcher.matches()) {
+                targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
+                folderType = matcher.group("folderType").trim().toLowerCase();
+            } else if (matcher1.matches()) {
+                targetIndex = parseArgsAsIndex(matcher1.group("targetIndex"));
+                folderType = matcher1.group("folderType").trim().toLowerCase();
+            } else {
+                return new IncorrectCommand("This is a incorrect move command format, " +
                         " you may type 'help' to see all the commands.");
             }
-            int[] targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
-            String folderType = matcher.group("folderType").trim();
-
-            return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(folderType.toLowerCase()::equals) ?
-                    new MoveCommand(targetIndex,folderType) :
+            return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(folderType::equals) ?
+                    new MoveCommand(targetIndex, folderType) :
                     new IncorrectCommand("This is a move command but you enter a incorrect folder," +
                             " the folder name behind -f= should be one of " + String.join(",", LIST_FOLDER_TYPE));
 
