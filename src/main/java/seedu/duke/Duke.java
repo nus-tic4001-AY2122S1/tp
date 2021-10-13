@@ -88,9 +88,11 @@ public class Duke {
                 int listNum = 1;
 
                 if (tokens[1].contains("all")) {
+
                     if (appointments.size() == 0) {
                         System.out.println("Current appointments list is : empty");
                     }
+                    // sorts the database in ascending order
                     appointments.sort(comparing(Bookings::getStartDateTime));
                     int total = appointments.size();
                     //displays user's complete list of bookings in the database
@@ -98,13 +100,15 @@ public class Duke {
 
                     for (int i = 0; i < total; ) {
                         LocalDate startDate = appointments.get(i).getStartDate();
-                        String dateRep = String.valueOf(startDate).replaceAll("-", "/");
-                        System.out.printf("Date: %s%n", dateRep);
+                        String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
+                        System.out.printf("Date: %s%n", dateHeader);
 
                         while (i < total && appointments.get(i).getStartDate().equals(startDate)) {
                             System.out.printf("%d. %s%n", listNum++, appointments.get(i));
                             i++;
                         }
+                        // resets ListNum value to 1 for next date header
+                        listNum = 1;
                         System.out.println();
                     }
                 } else if (tokens[1].matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
