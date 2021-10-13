@@ -6,11 +6,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
@@ -21,7 +20,7 @@ public class Duke {
      * Main entry-point for the java.duke.Duke application.
      */
     static final List<Bookings> appointments = new ArrayList<>();
-    static final SortedMap<LocalDate, LocalDate> BLOCKLIST = new TreeMap<>();
+    static final HashMap<LocalDate, LocalDate> BLOCKLIST = new HashMap<>();
 
     public static void main(String[] args) {
         String logo = " ____        _        \n"
@@ -63,7 +62,7 @@ public class Duke {
                 Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> result = isInRange(start.toLocalDate());
 
                 if (result.getKey()) {
-                    System.out.printf("'%s' denied by current BLOCKLIST = StartDate: [%s] - EndDate: [%s]%n",
+                    System.out.printf("'%s' denied process by current BLOCKLIST => StartDate: [%s] - EndDate: [%s]%n",
                             start.toLocalDate(), result.getValue().getKey(), result.getValue().getValue());
                     continue;
                 }
@@ -168,7 +167,7 @@ public class Duke {
                 break;
             }
         }
-        return new SimpleEntry<Boolean, Map.Entry<LocalDate, LocalDate>>(flag, member);
+        return new SimpleEntry<>(flag, member);
     }
 
     private static LocalDate getLocalDate(String date) {
