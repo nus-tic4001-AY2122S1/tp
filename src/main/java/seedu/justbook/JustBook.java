@@ -1,14 +1,16 @@
-package seedu.duke;
+package seedu.justbook;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
 
-public class Duke {
+
+public class JustBook {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
@@ -24,14 +26,15 @@ public class Duke {
         System.out.println("What is your name?");
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+        String userName = in.nextLine();
+        System.out.println("Hello " + userName);
 
         // write your code here
-        System.out.printf("Welcome back!%n");
-        System.out.println("You can now proceed to do your booking\n");
+        System.out.println("Welcome back!");
+        System.out.println("You can now proceed to do your booking :)");
 
         while (true) {
-            System.out.println("User: ");
+            System.out.printf(userName + ": ");
             String input = in.nextLine().replace("\\s+", " ").trim();
 
             if (input.equals("exit")) {
@@ -49,7 +52,6 @@ public class Duke {
 
                 LocalDateTime start = parse(param[1].trim(), format);
                 LocalDateTime end = parse(param[2], format);
-
                 appointments.add(new Bookings(param[0].trim(), start, end));
                 break;
             case "edit":
@@ -59,23 +61,24 @@ public class Duke {
 
                 break;
             case "del":
-
+                int index = tokens[1].indexOf("/o");
+                String inputDate = tokens[1].substring(0, index).trim();
+                String optionNumber = tokens[1].substring(index).replace("/o", "").trim();
+                DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
+                del.execute(appointments);
                 break;
             case "show":
-                if (tokens[1].contains("--")) {}
-                if (tokens[1].contains(" - ")) {}
+
 
                 String date = tokens[1];
                 System.out.printf("Date: %s\n", date.replaceAll("-", "/"));
                 int counter = 1;
 
                 for (Bookings item : appointments) {
-
-                    if (date.equals(item.getStartDate())) {
+                    if (date.equals(item.getStartDateString())) {
                         System.out.println(counter + ". " + item);
                         counter++;
                     }
-
                     System.out.println();
                 }
                 break;
@@ -83,10 +86,10 @@ public class Duke {
 
                 break;
             case "unblock":
-
                 break;
             case "help":
-
+                HelpCommand help = new HelpCommand();
+                help.execute();
                 break;
             default:
 

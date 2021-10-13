@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.justbook;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +14,12 @@ public class Bookings {
         this.end = end;
     }
 
-    public String getStartDate() {
+    public LocalDateTime getStartDate() {
+        return start;
+    }
+
+
+    public String getStartDateString() {
         return start.toLocalDate().format(DateTimeFormatter.ofPattern("yyyy-M-d"));
     }
 
