@@ -3,7 +3,7 @@ package seedu.duke;
 import java.util.Arrays;
 import java.util.List;
 
-public class Module<Semesterdata> {
+public class Module {
 
     String moduleCode;
     String title;
