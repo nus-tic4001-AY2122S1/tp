@@ -2,6 +2,7 @@ package seedu.duke;
 
 import seedu.duke.command.Command;
 import seedu.duke.command.ExitCommand;
+import seedu.duke.command.ListCommand;
 import seedu.duke.command.PlaceholderCommand;
 
 public class Parser {
@@ -17,7 +18,7 @@ public class Parser {
             return new PlaceholderCommand("add");
 
         case ("list"):
-            return new PlaceholderCommand("list");
+            return new ListCommand("list");
 
         case ("view"):
             return new PlaceholderCommand("view");
