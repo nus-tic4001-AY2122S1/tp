@@ -2,12 +2,12 @@ package seedu.duke;
 
 import java.util.Date;
 
-public class SemesterData {
+public class Semesterdata {
     Integer semester;
     Date examDate;
     Integer examDuration;
 
-    public SemesterData(Integer semester, Date examDate, Integer examDuration) {
+    public Semesterdata(Integer semester, Date examDate, Integer examDuration) {
         this.semester = semester;
         this.examDate = examDate;
         this.examDuration = examDuration;

@@ -18,6 +18,7 @@ public class Api {
 
     String urlString = "https://api.nusmods.com/v2/2020-2021/moduleList.json";
     String urlStringDetailed = "https://api.nusmods.com/v2/2020-2021/moduleInfo.json";
+
     public Api() {
     }
 

@@ -19,7 +19,9 @@ public class Module<SemesterData> {
 
   public Module() {}
 
-    public Module(String moduleCode, String title, Integer[] semesters, String description, Float moduleCredit, String department, String faculty, String prerequisite, String preclusion, String corequisite, SemesterData[] semesterData) {
+    public Module(String moduleCode, String title, Integer[] semesters, String description, Float moduleCredit,
+                  String department, String faculty, String prerequisite, String preclusion, String corequisite,
+                  SemesterData[] semesterData) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.semesters = semesters;
@@ -42,18 +44,18 @@ public class Module<SemesterData> {
 
     @Override
     public String toString() {
-        return "Module{" +
-                "moduleCode='" + moduleCode + '\'' +
-                ", title='" + title + '\'' +
-                ", semesters=" + Arrays.toString(semesters) +
-                ", description='" + description + '\'' +
-                ", moduleCredit=" + moduleCredit +
-                ", department='" + department + '\'' +
-                ", faculty='" + faculty + '\'' +
-                ", prerequisite='" + prerequisite + '\'' +
-                ", preclusion='" + preclusion + '\'' +
-                ", corequisite='" + corequisite + '\'' +
-                ", semesterData='" + semesterData + '\'' +
-                '}';
+        return "Module{"
+                + "moduleCode='" + moduleCode + '\''
+                + ", title='" + title + '\''
+                + ", semesters=" + Arrays.toString(semesters)
+                + ", description='" + description + '\''
+                + ", moduleCredit=" + moduleCredit
+                + ", department='" + department + '\''
+                + ", faculty='" + faculty + '\''
+                + ", prerequisite='" + prerequisite + '\''
+                + ", preclusion='" + preclusion + '\''
+                + ", corequisite='" + corequisite + '\''
+                + ", semesterData='" + semesterData + '\''
+                + '}';
     }
 }
