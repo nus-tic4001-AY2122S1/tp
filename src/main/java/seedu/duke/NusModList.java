@@ -3,9 +3,21 @@ package seedu.duke;
 public class NusModList {
 
     private static Module[] ModListForYear;
+    public static NusModList _Final;
 
-    public NusModList(Module[] modules) {
+    private NusModList(Module[] modules) {
         ModListForYear = modules;
+    }
+
+    public static NusModList createInstance(Module[] modules) {
+        if (_Final == null) {
+            _Final = new NusModList(modules);
+        }
+        return  _Final; // Converting NusModList to Singleton Class to only have 1 Instance for easier retrieval
+    }
+
+    public static NusModList sharedInstance() {
+        return  _Final;
     }
 
     public int getSize() {

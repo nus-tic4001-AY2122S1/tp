@@ -25,6 +25,7 @@ public class Duke {
         ui.welcome();
         Api api = new Api();
         allModules = api.getAllModulesDetailed();
+
     }
 
     private void runCommandLoopUntilExitCommand() {
