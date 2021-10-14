@@ -34,8 +34,6 @@ public class Duke {
         Scanner in = new Scanner(System.in);
         boolean isExit = false;
 
-//        System.out.println("Hello " + in.nextLine());
-
         while (!isExit) {
             try {
                 String userCommand = in.nextLine().trim();

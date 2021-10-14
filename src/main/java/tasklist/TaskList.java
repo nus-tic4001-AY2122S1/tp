@@ -52,6 +52,7 @@ public class TaskList {
     }
 
     /**
+     * Add a task to the list.
      * @param task is a type of task, could be Event, Deadline.
      */
     public void addItem(Task task) {

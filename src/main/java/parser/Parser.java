@@ -33,19 +33,6 @@ public class Parser {
             this.taskNo = result[1].trim();
 
             return new DeleteCommand(this.taskNo);
-//        case LOCATION:
-//            String restInput
-//            if (result.length < 2) {
-//                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
-//            }
-//            this.taskNo = result[1].trim();
-//
-//            if (result.length < 3) {
-//                throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
-//            }
-//            this.content = result[2].trim();
-//
-//            return new LocationCommand(this.taskNo, this.content);
         case BYE:
         default:
             return new ByeCommand();

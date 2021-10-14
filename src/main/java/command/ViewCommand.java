@@ -9,7 +9,7 @@ import tasklist.TaskList;
  * Lists all tasks in the task list to the user.
  */
 public class ViewCommand extends Command {
-//    protected static Ui ui = new Ui();
+    protected static Ui ui = new Ui();
 
     /**
      * Executes the command.
