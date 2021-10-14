@@ -1,6 +1,10 @@
 package seedu.justbook;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -240,7 +244,7 @@ public class JustBook {
         System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
     }
     private static void onLoad() throws FileNotFoundException {
-        File f = new File("duke.txt");
+        File f = new File("justbook.txt");
         Scanner sc = new Scanner(f);
         while(sc.hasNextLine()) {
             String input = sc.nextLine();
@@ -253,7 +257,7 @@ public class JustBook {
 
     private static void onSave(Bookings bookings) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("duke.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("justbook.txt"));
             //writes all tasks into file
             for (Bookings item : appointments) {
                 String description = item.getBookDesc();
@@ -263,7 +267,7 @@ public class JustBook {
                 writer.newLine();
             }
             writer.close();
-        } catch ( IOException e){
+        } catch (IOException e){
             //prints exception message.
             System.out.println(e.getMessage());
         }
