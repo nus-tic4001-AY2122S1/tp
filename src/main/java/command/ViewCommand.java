@@ -9,11 +9,12 @@ import tasklist.TaskList;
  * Lists all tasks in the task list to the user.
  */
 public class ViewCommand extends Command {
-    protected static Ui ui = new Ui();
+//    protected static Ui ui = new Ui();
 
     /**
      * Executes the command.
-     * @param list   The tasks stored in an ArrayList.
+     *
+     * @param list    The tasks stored in an ArrayList.
      * @param ui      The User Interface (UI).
      * @param storage The storage to allow reading and storing of tasks from and to a txt file.
      */
@@ -23,7 +24,6 @@ public class ViewCommand extends Command {
             throw new ErrorHandler("The list is empty.");
         }
         ui.printTaskList(list);
-        ui.printEmptyLine();
     }
 
 }

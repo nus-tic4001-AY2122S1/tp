@@ -1,8 +1,10 @@
 package parser;
 
+import command.ByeCommand;
 import command.Command;
-import command.LocationCommand;
-import command.DummyCommand;
+import command.DeleteCommand;
+import command.TodoCommand;
+import command.ViewCommand;
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
 import exception.ErrorHandler;
@@ -12,24 +14,41 @@ public class Parser {
     private String taskNo;
 
     public Command parse(String input) throws ErrorHandler {
-        String[] result = input.split(" ", 3);
+        String[] result = input.split(" ", 2);
         CommandKeyWords commandWord = CommandKeyWords.getEnum(result[0].toUpperCase());
 
         switch (commandWord) {
-        case LOCATION:
+        case VIEW:
+            return new ViewCommand();
+        case TODO:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TODO);
+            }
+            this.content = result[1].trim();
+            return new TodoCommand(this.content);
+        case DELETE:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
             }
             this.taskNo = result[1].trim();
 
-            if (result.length < 3) {
-                throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
-            }
-            this.content = result[2].trim();
-
-            return new LocationCommand(this.taskNo, this.content);
+            return new DeleteCommand(this.taskNo);
+//        case LOCATION:
+//            String restInput
+//            if (result.length < 2) {
+//                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+//            }
+//            this.taskNo = result[1].trim();
+//
+//            if (result.length < 3) {
+//                throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
+//            }
+//            this.content = result[2].trim();
+//
+//            return new LocationCommand(this.taskNo, this.content);
+        case BYE:
         default:
-            return new DummyCommand();
+            return new ByeCommand();
         }
     }
 }

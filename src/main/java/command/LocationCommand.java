@@ -10,7 +10,7 @@ public class LocationCommand extends Command {
     private final String location;
 
     public LocationCommand(String taskNumber, String location) throws ErrorHandler {
-        this.taskNumber = this.parseTaskNumber(taskNumber);
+        this.taskNumber = this.parseTaskNumberToIndex(taskNumber);
         this.location = location;
     }
 
