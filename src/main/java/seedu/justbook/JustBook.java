@@ -247,7 +247,7 @@ public class JustBook {
     private static void onLoad() throws FileNotFoundException {
         File f = new File("justbook.txt");
 
-        if(f.isDirectory() == false || f.exists() == false){
+        if (f.isDirectory() == false || f.exists() == false) {
             f.mkdir();
         }
 
