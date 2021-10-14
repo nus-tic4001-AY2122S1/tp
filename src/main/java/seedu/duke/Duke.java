@@ -30,7 +30,7 @@ public class Duke {
     public void run() {
         this.ui.welcome();
         Scanner in = new Scanner(System.in);
-        boolean isExit = false;
+        System.out.println("Hello " + in.nextLine());
 
         // exit program
         System.exit(0);
