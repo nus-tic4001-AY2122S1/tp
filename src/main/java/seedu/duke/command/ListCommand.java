@@ -12,7 +12,7 @@ public class ListCommand extends Command {
 
     @Override
     public void execute() {
-       // System.out.println("Do " + userInstruction);
+        // System.out.println("Do " + userInstruction);
 
         // Get Data
         NusModList modData = NusModList.sharedInstance();
@@ -29,7 +29,8 @@ public class ListCommand extends Command {
             System.out.println("* Data was retrieved using NUS MODS API. *");
         } else {
             // TODO: Make Search non-case sensitive.
-            IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index).getModuleCode().contains(userInstruction))
+            IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
+                            .getModuleCode().contains(userInstruction))
                                 .forEach(index -> System.out.println(modData.getMod(index).getModuleCode() + " | "
                                         + modData.getMod(index).getModuleTitle()));
         }
