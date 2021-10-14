@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
-    /**
-     * Welcome message to be shown when the programme starts.
-     */
     public static void welcome() {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -21,6 +18,7 @@ public class UI {
 
     public static String readCommand() {
         Scanner in = new Scanner(System.in);
+        assert !in.toString().isEmpty() : "Input is blank";
         return in.nextLine();
     }
 
