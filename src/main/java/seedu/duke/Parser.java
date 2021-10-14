@@ -7,18 +7,26 @@ import seedu.duke.command.PlaceholderCommand;
 
 public class Parser {
     public static Command parse(String fullCommand) {
+        // Trim to get KeyCommand
         String keyCommand;
         try {
             keyCommand = fullCommand.split(" ")[0].toLowerCase();
         } catch (Exception e) {
             keyCommand = "exit";
         }
+        // Trim to get SubCommand
+        String subCommand;
+        try {
+            subCommand = fullCommand.split(" ")[1].toLowerCase();
+        } catch (Exception e) {
+            subCommand = "exit";
+        }
         switch (keyCommand) {
         case ("add"):
             return new PlaceholderCommand("add");
 
         case ("list"):
-            return new ListCommand("list");
+            return new ListCommand(subCommand);
 
         case ("view"):
             return new PlaceholderCommand("view");
