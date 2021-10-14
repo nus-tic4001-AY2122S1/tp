@@ -31,12 +31,23 @@ public class Ui {
         System.out.print("List is empty!");
     }
 
-    public static void printRemoveTask() {
-        System.out.print("Noted. I've removed this task:");
+    public static void printRemoveModule() {
+        System.out.println("Noted. I've removed this module:");
     }
 
-    public static void printNumberOfTasks(ArrayList<Module> userList) {
-        System.out.print("Now you have " + (userList.size()) + " tasks in the list.");
+    public static void printNumberOfModules(ArrayList<Module> userList) {
+        System.out.println("Now you have " + (userList.size()) + " modules in the list.");
+    }
+
+    public static void printAddedModules(ArrayList<Module> userList) {
+        System.out.print(userList.get(userList.size() - 1).getModuleCode() + " - ") ;
+        System.out.println(userList.get(userList.size() - 1).getModuleTitle());
+    }
+
+    public static void printModule(ArrayList<Module> userList) {
+        System.out.println("Got it. I've added this module:");
+        printAddedModules(userList);
+        printNumberOfModules(userList);
     }
 
     public static void printNumberFormatException() {
