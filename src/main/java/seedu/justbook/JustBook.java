@@ -249,13 +249,13 @@ public class JustBook {
     private static void onLoad() throws IOException {
         File directory = new File("data");
 
-        if (directory.isDirectory() == false || directory.exists() == false) {
+        if (!directory.exists()) {
             directory.mkdir();
         }
 
         File f = new File("justbook.txt");
 
-        if (f.isDirectory() == false || f.exists() == false) {
+        if (!f.exists()) {
             f.createNewFile();
         }
 
