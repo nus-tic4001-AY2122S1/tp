@@ -1,6 +1,8 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.project.Stat;
+
 import java.util.Arrays;
 
 /**
@@ -16,8 +18,12 @@ public class DoneCommand extends Command {
     }
 
     @Override
-    public void execute() {
-        System.out.println("This is a done command, the target index is " + Arrays.toString(targetIndex));
-
+    public void execute() {;
+        var inbox = this.GTDLists.get("inbox");
+        for (int i : targetIndex) {
+            var thought = inbox.get(i);
+            System.out.println("Marking " + thought + " as " + Stat.DONE);
+            thought.setStatus(Stat.DONE);
+        }
     }
 }
