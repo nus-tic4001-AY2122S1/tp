@@ -28,7 +28,6 @@ public class UserList {
             String theStrIndex = line.substring(7);
             String[] theStrIndexArr = theStrIndex.split(",");
             int[] intArr = new int[theStrIndexArr.length];
-
             for (int i = 0; i < theStrIndexArr.length; i++) {
                 String num = theStrIndexArr[i];
                 intArr[i] = Integer.parseInt(num);
@@ -36,7 +35,6 @@ public class UserList {
             }
 
             Ui.printRemoveTask();
-
             for (int i = 0; i < intArr.length; i++) {
                 Module m = userList.get(intArr[i] - (i + 1));
                 System.out.print(m.toString());
@@ -61,9 +59,9 @@ public class UserList {
         }
     }
 
-    static void checkListEmpty( ArrayList<Module> userList) throws ListEmptyException {
+    static void checkListEmpty(ArrayList<Module> userList) throws ListEmptyException {
         if (userList.isEmpty()) {
-            throw new ListEmptyException ();
+            throw new ListEmptyException();
         }
     }
 
