@@ -1,10 +1,6 @@
 package seedu.duke.commands;
 
 
-import seedu.duke.storage.GTDList;
-
-import java.util.ArrayList;
-
 /**
  * List all the tasks in the taskList.
  */
@@ -19,36 +15,36 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute(ArrayList<GTDList> folders) {
-
+    public void execute() {
+        System.out.println("Passed List:" + GTDLists);
         switch (folderType) {
-            case "inbox":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "next":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "wait":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "proj":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            case "someday":
-                System.out.println("this is " + folderType + " list");
-                break;
-                //logic to list for the specific folder
-                //implementation
-            default:
-                System.out.println("");
+        case "inbox":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "next":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "wait":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "proj":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        case "someday":
+            System.out.println("this is " + folderType + " list");
+            break;
+            //logic to list for the specific folder
+            //implementation
+        default:
+            System.out.println("");
 
         }
 

@@ -1,6 +1,13 @@
 package seedu.duke.parser;
 
-import seedu.duke.commands.*;
+import seedu.duke.commands.AddCommand;
+import seedu.duke.commands.Command;
+import seedu.duke.commands.DeleteCommand;
+import seedu.duke.commands.DoneCommand;
+import seedu.duke.commands.ExitCommand;
+import seedu.duke.commands.IncorrectCommand;
+import seedu.duke.commands.ListCommand;
+import seedu.duke.commands.MoveCommand;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -15,6 +22,11 @@ public class Parser {
     public static final Pattern INDEX_ARGS_FORMAT = Pattern.compile("(?<targetIndex>\\d+(?:\\s+\\d+)*)");
 
     public static final Pattern MOVE_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)-f\\s*=(?<folderType>.*)");
+    public static final Pattern MOVE_CMD_FORMAT_OPTIONAL =
+            Pattern.compile(
+            "(?<folderType>inbox|next|wait|proj|someday)\\s+(?<targetIndex>\\d+.*)",
+                    Pattern.CASE_INSENSITIVE
+            );
 
     public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday"};
 
@@ -27,36 +39,36 @@ public class Parser {
     public Command parse(String inputCommand) {
         Matcher matcher = BASIC_COMMAND_FORMAT.matcher(inputCommand.trim());
         if (!matcher.matches()) {
-            return new IncorrectCommand("This is a incorrect format, " +
-                    " you may type the list to see all the commands.");
+            return new IncorrectCommand("This is a incorrect format, "
+                    + " you may type the list to see all the commands.");
         }
 
         String commandWord = matcher.group("commandWord");
         String arguments = matcher.group("arguments");
 
         switch (commandWord) {
+        case AddCommand.COMMAND_WORD:
+            return prepareAdd(arguments);
+        case ListCommand.COMMAND_WORD:
+            return prepareList(arguments);
 
-            case AddCommand.COMMAND_WORD:
-                return prepareAdd(arguments);
-            case ListCommand.COMMAND_WORD:
-                return prepareList(arguments);
+        case DoneCommand.COMMAND_WORD:
+            return prepareDone(arguments);
+        case DeleteCommand.COMMAND_WORD:
+            return prepareDelete(arguments);
 
-            case DoneCommand.COMMAND_WORD:
-                return prepareDone(arguments);
-            case DeleteCommand.COMMAND_WORD:
-                return prepareDelete(arguments);
+        case MoveCommand.COMMAND_WORD:
+            return prepareMove(arguments);
 
-            case MoveCommand.COMMAND_WORD:
-                return prepareMove(arguments);
+        case ExitCommand.COMMAND_WORD:
+            return new ExitCommand();
 
-            case ExitCommand.COMMAND_WORD:
-                return new ExitCommand();
-//
 //            case HelpCommand.COMMAND_WORD:
 //            default:
 //                return new HelpCommand();
-            default:
-                return new IncorrectCommand("default");
+
+        default:
+            return new IncorrectCommand("default");
         }
 
     }
@@ -66,10 +78,10 @@ public class Parser {
     }
 
     private Command prepareList(String args) {
-        return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(args.trim().toLowerCase()::equals) ?
-                new ListCommand(args.trim()) :
-                new IncorrectCommand("This is a list command but you enter a incorrect folder," +
-                        " the second word should be one of " + String.join(",", LIST_FOLDER_TYPE));
+        return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(args.trim().toLowerCase()::equals)
+                ? new ListCommand(args.trim()) :
+                  new IncorrectCommand("This is a list command but you enter a incorrect folder,"
+                          + " the second word should be one of " + String.join(",", LIST_FOLDER_TYPE));
     }
 
     private Command prepareDone(String args) {
@@ -77,8 +89,8 @@ public class Parser {
             int[] targetIndex = parseArgsAsIndex(args);
             return new DoneCommand(targetIndex);
         } catch (ParseException pe) {
-            return new IncorrectCommand("This is a incorrect format, " +
-                    " you may type 'help' to see all the commands.");
+            return new IncorrectCommand("This is a incorrect format, "
+                    + " you may type 'help' to see all the commands.");
         }
 
     }
@@ -88,29 +100,36 @@ public class Parser {
             int[] targetIndex = parseArgsAsIndex(args);
             return new DeleteCommand(targetIndex);
         } catch (ParseException pe) {
-            return new IncorrectCommand("This is a incorrect format, " +
-                    " you may type 'help' to see all the commands.");
+            return new IncorrectCommand("This is a incorrect format, "
+                    + " you may type 'help' to see all the commands.");
         }
     }
 
     private Command prepareMove(String args) {
-        try {
-            Matcher matcher = MOVE_CMD_FORMAT.matcher(args.trim());
-            if (!matcher.matches()) {
-                return new IncorrectCommand("This is a incorrect format, " +
-                        " you may type 'help' to see all the commands.");
-            }
-            int[] targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
-            String folderType = matcher.group("folderType").trim();
 
-            return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(folderType.toLowerCase()::equals) ?
-                    new MoveCommand(targetIndex,folderType) :
-                    new IncorrectCommand("This is a move command but you enter a incorrect folder," +
-                            " the folder name behind -f= should be one of " + String.join(",", LIST_FOLDER_TYPE));
+        try {
+            int[] targetIndex;
+            String folderType;
+            Matcher matcher = MOVE_CMD_FORMAT.matcher(args.trim());
+            Matcher matcher1 = MOVE_CMD_FORMAT_OPTIONAL.matcher(args.trim());
+            if (matcher.matches()) {
+                targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
+                folderType = matcher.group("folderType").trim().toLowerCase();
+            } else if (matcher1.matches()) {
+                targetIndex = parseArgsAsIndex(matcher1.group("targetIndex"));
+                folderType = matcher1.group("folderType").trim().toLowerCase();
+            } else {
+                return new IncorrectCommand("This is a incorrect move command format, "
+                        + " you may type 'help' to see all the commands.");
+            }
+            return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(folderType::equals)
+                    ? new MoveCommand(targetIndex, folderType) :
+                      new IncorrectCommand("This is a move command but you enter a incorrect folder,"
+                            + " the folder name behind -f= should be one of " + String.join(",", LIST_FOLDER_TYPE));
 
         } catch (ParseException pe) {
-            return new IncorrectCommand("This is a incorrect format, " +
-                    " you may type 'help' to see all the commands.");
+            return new IncorrectCommand("This is a incorrect format, "
+                    + " you may type 'help' to see all the commands.");
         }
 
     }

@@ -9,6 +9,7 @@ import seedu.duke.project.Stat;
 import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class Next {
     /**
@@ -16,18 +17,20 @@ public class Next {
      */
     public static void main(String[] args) {
         String logo =
-                          " _   _           _   \n"
-                        + "| \\ | | _____  _| |_ \n"
-                        + "|  \\| |/ _ \\ \\/ / __|\n"
-                        + "| |\\  |  __/>  <| |_ \n"
-                        + "|_| \\_|\\___/_/\\_\\\\__|\n";
+                   " _   _           _   \n"
+                + "| \\ | | _____  _| |_ \n"
+                + "|  \\| |/ _ \\ \\/ / __|\n"
+                + "| |\\  |  __/>  <| |_ \n"
+                + "|_| \\_|\\___/_/\\_\\\\__|\n";
 
         System.out.println("PROJECT\n" + logo);
 
-
-        ArrayList<GTDList> folders = new ArrayList<>();
-        GTDList inbox = new GTDList();
-        folders.add(inbox);
+        Hashtable<String, GTDList> GTDLists = new Hashtable<>();
+        GTDLists.put("inbox", new GTDList());
+        GTDLists.put("proj", new GTDList());
+        GTDLists.put("next", new GTDList());
+        GTDLists.put("wait", new GTDList());
+        GTDLists.put("some", new GTDList());
 
         Ui ui = new Ui();
         boolean isExit = false;
@@ -36,7 +39,8 @@ public class Next {
                 String fullCommand = ui.readCommand();
                 ui.showLine(); // show the divider line ("_______")
                 Command c = new Parser().parse(fullCommand);
-                c.execute(folders);
+                c.setData(GTDLists);
+                c.execute();
                 isExit = ExitCommand.isExit(c);
             } catch (Exception e) {
                 ui.showError(e.getMessage());
@@ -44,12 +48,11 @@ public class Next {
                 ui.showLine();
             }
         }
-      
-      
-      
-      
+
+
         String title = "This is my very first task";
         GTDThought p1 = new GTDThought(title);
+        GTDThought p2 = new GTDThought("Second level 0 task");
 
         p1.print();
 
@@ -65,16 +68,18 @@ public class Next {
 
         p1.printRec();
 
-        GTDList next = new GTDList();
-        next.add(p1);
-        inbox.add(p1);
+        GTDLists.get("next").add(p1);
+        GTDLists.get("next").add(p2);
+        GTDLists.get("inbox").add(p1);
         p1.setStatus(Stat.NEXT);
-        next.get(0).print();
-        inbox.get(0).print();
+        GTDLists.get("next").get(0).print();
+        GTDLists.get("inbox").get(0).print();
 
         System.out.println(System.lineSeparator());
 
-        next.print(); // TODO: need to add INDEN and numbering
+        GTDLists.get("next").print();
+
+        GTDLists.get("next").get("1-1-1").print();
 
 
     }

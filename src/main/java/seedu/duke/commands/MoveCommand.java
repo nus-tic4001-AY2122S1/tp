@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Move a task to a folder
+ * Move a task to a folder.
  */
 public class MoveCommand extends Command {
 
@@ -22,7 +22,7 @@ public class MoveCommand extends Command {
     }
 
     @Override
-    public void execute(ArrayList<GTDList> folders) {
+    public void execute() {
         System.out.println("This is a move command. The target index is " + Arrays.toString(targetIndex)
                 + " and target folder is " + folderType.toString());
     }

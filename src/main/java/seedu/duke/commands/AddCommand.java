@@ -18,9 +18,9 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public void execute(ArrayList<GTDList> folders) {
+    public void execute() {
         System.out.println("This is an add command, the added task is " + taskname);
-        folders.get(0).add(new GTDThought(taskname));
+        GTDLists.get(0).add(new GTDThought(taskname));
     }
 
 

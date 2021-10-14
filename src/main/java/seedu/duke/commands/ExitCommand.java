@@ -13,7 +13,7 @@ public class ExitCommand extends Command {
 
 
     @Override
-    public void execute(ArrayList<GTDList> folders) {
+    public void execute() {
         System.out.print("See you next time.\n");
     }
 

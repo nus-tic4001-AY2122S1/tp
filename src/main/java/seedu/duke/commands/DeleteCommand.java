@@ -20,7 +20,7 @@ public class DeleteCommand extends Command {
     }
 
     @Override
-    public void execute(ArrayList<GTDList> folders) {
+    public void execute() {
         System.out.println("This is a delete command, the target index is " + Arrays.toString(targetIndex));
     }
 }

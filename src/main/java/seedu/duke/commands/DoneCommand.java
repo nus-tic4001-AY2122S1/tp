@@ -19,7 +19,7 @@ public class DoneCommand extends Command {
     }
 
     @Override
-    public void execute(ArrayList<GTDList> folders) {
+    public void execute() {
         System.out.println("This is a done command, the target index is " + Arrays.toString(targetIndex));
 
     }
