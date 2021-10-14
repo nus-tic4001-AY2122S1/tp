@@ -40,7 +40,6 @@ public class UserList {
                 System.out.print(m.toString());
                 userList.remove(intArr[i] - (i + 1));
             }
-
             Ui.printNumberOfTasks(userList);
 
         } catch (NumberFormatException e) {
