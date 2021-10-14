@@ -33,13 +33,16 @@ public class UserList {
                 intArr[i] = Integer.parseInt(num);
                 checkIndexOutOfRange(userList.size(), intArr[i]);
             }
+
             Ui.printRemoveTask();
             for (int i = 0; i < intArr.length; i++) {
-                Module m = userList.get(intArr[i] - (i + 1));
+                Module m = userList.get(intArr[i]-(i + 1));
                 System.out.print(m.toString());
-                userList.remove(intArr[i] - (i + 1));
+                userList.remove(intArr[i]-(i + 1));
             }
+
             Ui.printNumberOfTasks(userList);
+
         } catch (NumberFormatException e) {
             Ui.printNumberFormatException();
         } catch (IndexOutOfRangeException e) {
