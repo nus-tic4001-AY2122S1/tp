@@ -40,7 +40,7 @@ public class Ui {
     }
 
     public static void printAddedModules(ArrayList<Module> userList) {
-        System.out.print(userList.get(userList.size() - 1).getModuleCode() + " - ") ;
+        System.out.print(userList.get(userList.size() - 1).getModuleCode() + " - ");
         System.out.println(userList.get(userList.size() - 1).getModuleTitle());
     }
 
