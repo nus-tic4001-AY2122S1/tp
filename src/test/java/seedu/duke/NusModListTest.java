@@ -1,12 +1,6 @@
-package seedu.duke.command;
+package seedu.duke;
 
 import org.junit.jupiter.api.Test;
-
-import seedu.duke.Module;
-import seedu.duke.NusModList;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,6 +30,7 @@ public class NusModListTest {
         NusModList nusModList = new NusModList(moduleList);
 
         assertEquals(2, nusModList.getSize());
+        assertEquals(nusModList, nusModList.getAllModule());
         assertEquals(module1, nusModList.getMod("TIC4001"));
         assertEquals(false, nusModList.hasMod("TIC4002"));
         assertEquals(true, nusModList.hasMod("TIC4005"));
