@@ -6,6 +6,9 @@ public class Parser {
     }
 
     public static int index(String fullCommand) {
+        String buffer = fullCommand.split(" ")[1];
+
+        assert (!buffer.matches("\\d+")) : "Index must be Integer!";
         return Integer.parseInt(fullCommand.split(" ")[1]) - 1;
     }
 
