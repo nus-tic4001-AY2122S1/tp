@@ -32,16 +32,19 @@ public class NusModList {
 
     public boolean hasMod(String moduleCode) {
         for (Module m : ModListForYear) {
-            if (m.getModuleCode().equals(moduleCode))
+            if (m.getModuleCode().equals(moduleCode)) {
                 return true;
+            }
         }
         return false;
     }
 
     public int moduleIndex(String moduleCode) {
-        for (int i = 0; i < this.getSize(); i++)
-            if (ModListForYear[i].getModuleCode().equals(moduleCode))
+        for (int i = 0; i < this.getSize(); i++) {
+            if (ModListForYear[i].getModuleCode().equals(moduleCode)) {
                 return i;
+            }
+        }
         return -1;
     }
 
