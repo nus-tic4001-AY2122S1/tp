@@ -9,6 +9,7 @@ public class ListCommand extends Command {
     }
 
     public void run(ExpenseList expenseList) {
+
         UI.listMessage(expenseList.expenses);
     }
 }
