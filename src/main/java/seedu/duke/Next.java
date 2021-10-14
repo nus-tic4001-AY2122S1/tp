@@ -7,6 +7,7 @@ import seedu.duke.parser.Parser;
 import seedu.duke.project.GTDThought;
 import seedu.duke.project.Stat;
 import seedu.duke.ui.Ui;
+import seedu.duke.exception.InvalidListArgumentException;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -42,6 +43,8 @@ public class Next {
                 c.setData(GTDLists);
                 c.execute();
                 isExit = ExitCommand.isExit(c);
+            } catch (InvalidListArgumentException e) {
+                ui.showError("Invalid list argument");
             } catch (Exception e) {
                 ui.showError(e.getMessage());
             } finally {
