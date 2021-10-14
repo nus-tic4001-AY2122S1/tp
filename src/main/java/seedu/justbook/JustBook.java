@@ -32,6 +32,8 @@ public class JustBook {
             onLoad();
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -244,11 +246,17 @@ public class JustBook {
         System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
     }
 
-    private static void onLoad() throws FileNotFoundException {
+    private static void onLoad() throws IOException {
+        File directory = new File ("data");
+
+        if (directory.isDirectory() == false || directory.exists() == false) {
+            directory.mkdir();
+        }
+
         File f = new File("justbook.txt");
 
         if (f.isDirectory() == false || f.exists() == false) {
-            f.mkdir();
+            f.createNewFile();
         }
 
         Scanner sc = new Scanner(f);
