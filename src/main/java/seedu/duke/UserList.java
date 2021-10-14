@@ -38,9 +38,9 @@ public class UserList {
             Ui.printRemoveTask();
 
             for (int i = 0; i < intArr.length; i++) {
-                Module m = userList.get(intArr[i]-(i+1));
+                Module m = userList.get(intArr[i] - (i + 1));
                 System.out.print(m.toString());
-                userList.remove(intArr[i]-(i+1));
+                userList.remove(intArr[i] - (i + 1));
             }
 
             Ui.printNumberOfTasks(userList);
