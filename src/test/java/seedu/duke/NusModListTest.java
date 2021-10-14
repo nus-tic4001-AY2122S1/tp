@@ -30,7 +30,7 @@ public class NusModListTest {
         NusModList nusModList = new NusModList(moduleList);
 
         assertEquals(2, nusModList.getSize());
-        assertEquals(nusModList, nusModList.getAllModule());
+        assertEquals(moduleList, nusModList.getAllModule());
         assertEquals(module1, nusModList.getMod("TIC4001"));
         assertEquals(false, nusModList.hasMod("TIC4002"));
         assertEquals(true, nusModList.hasMod("TIC4005"));
