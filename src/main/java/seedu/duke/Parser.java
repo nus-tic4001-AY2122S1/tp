@@ -12,14 +12,14 @@ public class Parser {
         try {
             keyCommand = fullCommand.split(" ")[0].toLowerCase();
         } catch (Exception e) {
-            keyCommand = "exit";
+            keyCommand = "";
         }
         // Trim to get SubCommand
         String subCommand;
         try {
-            subCommand = fullCommand.split(" ")[1].toLowerCase();
+            subCommand = fullCommand.split(" ")[1];
         } catch (Exception e) {
-            subCommand = "exit";
+            subCommand = " ";
         }
         switch (keyCommand) {
         case ("add"):
