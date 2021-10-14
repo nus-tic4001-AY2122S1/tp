@@ -31,7 +31,6 @@ public class Parser {
         case ("quit"):
             System.out.println("Do exit");
             return new ExitCommand();
-
         default:
             return new PlaceholderCommand("Try again"); //temp place holder
         }

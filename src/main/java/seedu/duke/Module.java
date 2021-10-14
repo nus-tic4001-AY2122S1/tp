@@ -64,4 +64,8 @@ public class Module {
     public String getModuleCode() {
         return moduleCode;
     }
+
+    public String getModuleTitle() {
+        return title;
+    }
 }
