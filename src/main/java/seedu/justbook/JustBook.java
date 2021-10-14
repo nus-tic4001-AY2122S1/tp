@@ -246,6 +246,10 @@ public class JustBook {
 
     private static void onLoad() throws FileNotFoundException {
         File f = new File("justbook.txt");
+        if(f.isDirectory() == false || f.exists() == false){
+            f.mkdir();
+        }
+
         Scanner sc = new Scanner(f);
 
         while (sc.hasNextLine()) {
