@@ -60,7 +60,7 @@ public class JustBook {
                 int size = appointments.size();
                 int i = 0;
                 while (i < size) {
-                    onSave(appointments.get(i));
+                    onSave();
                     i++;
                 }
                 in.close();
@@ -108,7 +108,7 @@ public class JustBook {
                 int size = appointments.size();
                 int i = 0;
                 while (i < size) {
-                    onSave(appointments.get(i));
+                    onSave();
                     i++;
                 }
                 break;
@@ -280,7 +280,7 @@ public class JustBook {
 
     }
 
-    private static void onSave(Bookings bookings) {
+    private static void onSave() {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("justbook.txt"));
             //writes all tasks into file
