@@ -243,9 +243,11 @@ public class JustBook {
         }
         System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
     }
+
     private static void onLoad() throws FileNotFoundException {
         File f = new File("justbook.txt");
         Scanner sc = new Scanner(f);
+
         while(sc.hasNextLine()) {
             String input = sc.nextLine();
             String[] readData = input.split(" \\| ");
@@ -253,6 +255,7 @@ public class JustBook {
             LocalDateTime end = parse(readData[2]);
             appointments.add(new Bookings(readData[0], start, end));
         }
+
     }
 
     private static void onSave(Bookings bookings) {
@@ -266,7 +269,9 @@ public class JustBook {
                 writer.write(description + " | " + startDate + " | " + endDate);
                 writer.newLine();
             }
+
             writer.close();
+
         } catch (IOException e){
             //prints exception message.
             System.out.println(e.getMessage());
