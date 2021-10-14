@@ -1,5 +1,10 @@
 package seedu.justbook;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +28,13 @@ public class JustBook {
     static final HashMap<LocalDate, LocalDate> BLOCKLIST = new HashMap<>(5);
 
     public static void main(String[] args) {
+        try {
+            onLoad();
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -45,6 +57,12 @@ public class JustBook {
 
             if (input.equals("exit") || input.equals("bye")) {
                 System.out.println("Bye! See you again!");
+                int size = appointments.size();
+                int i = 0;
+                while (i < size) {
+                    onSave(appointments.get(i));
+                    i++;
+                }
                 in.close();
                 exit(0);
             }
@@ -86,7 +104,12 @@ public class JustBook {
                 edit(bookDesc, chosenDate, optionNum);
                 break;
             case "save":
-
+                int size = appointments.size();
+                int i = 0;
+                while (i < size) {
+                    onSave(appointments.get(i));
+                    i++;
+                }
                 break;
             case "del":
                 if (inputContent.contains("all")) {
@@ -114,7 +137,7 @@ public class JustBook {
                     //displays user's complete list of bookings in the database
                     System.out.println();
 
-                    for (int i = 0; i < total; ) {
+                    for (i = 0; i < total; ) {
                         LocalDate startDate = appointments.get(i).getStartDate();
                         String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
                         System.out.printf("Date: %s%n", dateHeader);
@@ -221,5 +244,50 @@ public class JustBook {
             }
         }
         System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
+    }
+
+    private static void onLoad() throws IOException {
+        File directory = new File("data");
+
+        if (!directory.exists()) {
+            directory.mkdir();
+        }
+
+        File f = new File("justbook.txt");
+
+        if (!f.exists()) {
+            f.createNewFile();
+        }
+
+        Scanner sc = new Scanner(f);
+
+        while (sc.hasNextLine()) {
+            //read all lines
+            String input = sc.nextLine();
+            String[] readData = input.split(" \\| ");
+            LocalDateTime start = parse(readData[1]);
+            LocalDateTime end = parse(readData[2]);
+            appointments.add(new Bookings(readData[0], start, end));
+        }
+
+    }
+
+    private static void onSave(Bookings bookings) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("justbook.txt"));
+            //writes all tasks into file
+            for (Bookings item : appointments) {
+                String description = item.getBookDesc();
+                LocalDateTime startDate = item.getStartDateTime();
+                LocalDateTime endDate = item.getEndDateTime();
+                writer.write(description + " | " + startDate + " | " + endDate);
+                writer.newLine();
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            //prints exception message.
+            System.out.println(e.getMessage());
+        }
     }
 }
