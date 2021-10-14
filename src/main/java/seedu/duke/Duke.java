@@ -31,17 +31,17 @@ public class Duke {
         Scanner in = new Scanner(System.in);
         boolean isExit = false;
 
-        while (!isExit) {
-            try {
-                String userCommand = in.nextLine().trim();
-
-                Command command = new Parser().parse(userCommand);
-                command.execute(this.storage, this.ui, this.tasklist);
-                isExit = command.getIsExist();
-            } catch (Exception e) {
-                this.ui.print("Error: " + e.getMessage());
-            }
-        }
+//        while (!isExit) {
+//            try {
+//                String userCommand = in.nextLine().trim();
+//
+//                Command command = new Parser().parse(userCommand);
+//                command.execute(this.storage, this.ui, this.tasklist);
+//                isExit = command.getIsExist();
+//            } catch (Exception e) {
+//                this.ui.print("Error: " + e.getMessage());
+//            }
+//        }
 
         // exit program
         System.exit(0);
