@@ -72,7 +72,13 @@ public class JustBook {
                 appointments.add(new Bookings(arguments[0].trim(), start, end));
                 break;
             case "edit":
+                String[] segments = tokens[1].split(" /o ", 2);
+                String[] subSeg = segments[0].split(" /s ", 2);
+                int optionNum = Integer.parseInt(segments[1]);
+                String bookDesc = subSeg[0];
+                String chosenDate = subSeg[1];
 
+                edit(bookDesc, chosenDate, optionNum);
                 break;
             case "save":
 
@@ -185,5 +191,30 @@ public class JustBook {
         dateIso = LocalDate.of(figures[0], figures[1], figures[2]);
 
         return dateIso;
+    }
+
+    public static void edit(String amendDesc, String startDate, int optionNumber) {
+        int bookNum = optionNumber;
+        LocalDate testDate = getLocalDate(startDate);
+        LocalDate temp;
+
+        for (Bookings booking : appointments) {
+            temp = booking.getStartDate();
+
+            if (temp.equals(testDate)) {
+                --optionNumber;
+            }
+
+            if (optionNumber == 0) {
+                String bookingDesc = booking.getBookDesc();
+                booking.setBookDesc(amendDesc);
+
+                System.out.printf("Successfully changed \"%s\" on %s : book #%d%n", bookingDesc,
+                        startDate.replaceAll("-", "/"), bookNum);
+                System.out.printf("To \"%s\" on %s : book #%d%n", amendDesc, testDate, bookNum);
+                return;
+            }
+        }
+        System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
     }
 }

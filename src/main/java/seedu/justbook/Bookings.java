@@ -15,6 +15,22 @@ public class Bookings {
         this.end = end;
     }
 
+    public void setBookDesc(String bookDesc) {
+        this.bookDesc = bookDesc;
+    }
+
+    public void setStart(LocalDateTime start) {
+        this.start = start;
+    }
+
+    public void setEnd(LocalDateTime end) {
+        this.end = end;
+    }
+
+    public String getBookDesc() {
+        return bookDesc;
+    }
+
     public LocalDateTime getStartDateTime() {
         return start;
     }
