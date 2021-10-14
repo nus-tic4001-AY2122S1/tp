@@ -249,6 +249,7 @@ public class JustBook {
         Scanner sc = new Scanner(f);
 
         while(sc.hasNextLine()) {
+            //read all lines
             String input = sc.nextLine();
             String[] readData = input.split(" \\| ");
             LocalDateTime start = parse(readData[1]);
@@ -272,7 +273,8 @@ public class JustBook {
 
             writer.close();
 
-        } catch (IOException e){
+        }
+        catch (IOException e){
             //prints exception message.
             System.out.println(e.getMessage());
         }
