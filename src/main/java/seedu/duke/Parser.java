@@ -1,8 +1,11 @@
 package seedu.duke;
 
 import seedu.duke.command.Command;
+import seedu.duke.command.AddCommand;
 import seedu.duke.command.ExitCommand;
 import seedu.duke.command.ListCommand;
+import seedu.duke.command.MyListCommand;
+import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.PlaceholderCommand;
 
 public class Parser {
@@ -23,7 +26,7 @@ public class Parser {
         }
         switch (keyCommand) {
         case ("add"):
-            return new PlaceholderCommand("add");
+            return new AddCommand(subCommand);
 
         case ("list"):
             return new ListCommand(subCommand);
@@ -32,7 +35,10 @@ public class Parser {
             return new PlaceholderCommand("view");
 
         case ("delete"):
-            return new PlaceholderCommand("delete");
+            return new DeleteCommand(subCommand);
+
+        case ("mylist"):
+            return new MyListCommand();
 
         case ("exit"):
         case ("bye"):
