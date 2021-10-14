@@ -14,8 +14,11 @@ public class NusModList {
         return ModListForYear.length;
     }
 
-    public Module getMod(String moduleCode) {
+    public Module[] getAllModule() {
+        return ModListForYear;
+    }
 
+    public Module getMod(String moduleCode) {
         Module module = new Module();
         for (int i = 0; i < getSize(); i++) {
             if (ModListForYear[i].getModuleCode() == moduleCode) {
