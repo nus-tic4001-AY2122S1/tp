@@ -72,9 +72,9 @@ public class JustBook {
                 appointments.add(new Bookings(arguments[0].trim(), start, end));
                 break;
             case "edit":
-                String[] segments = tokens[1].split ( " /o ", 2);
-                String[] subSeg = segments[0].split (" /s ", 2);
-                int optionNum = Integer.parseInt (segments[1]);
+                String[] segments = tokens[1].split(" /o ", 2);
+                String[] subSeg = segments[0].split(" /s ", 2);
+                int optionNum = Integer.parseInt(segments[1]);
                 String bookDesc = subSeg[0];
                 String chosenDate = subSeg[1];
 
