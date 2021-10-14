@@ -3,9 +3,12 @@ package seedu.duke;
 import seedu.duke.expense.Expense;
 
 import java.util.ArrayList;
+import java.util.logging.*;
 
 public class Duke {
     private ExpenseList expenseList;
+    private static Logger logger = Logger.getLogger("Foo");
+
 
     private Duke() {
         ArrayList<Expense> expenses = new ArrayList<>();
@@ -14,6 +17,8 @@ public class Duke {
 
     private void run() {
         UI.welcome();
+        // log a message at INFO level
+        logger.log(Level.INFO, "Duke start processing");
         boolean isExit = false;
         while (!isExit) {
             try {
