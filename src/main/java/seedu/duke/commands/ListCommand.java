@@ -16,7 +16,7 @@ public class ListCommand extends Command {
 
     @Override
     public void execute() {
-
+        System.out.println("Passed List:" + GTDLists);
         switch (folderType) {
         case "inbox":
             System.out.println("this is " + folderType + " list");

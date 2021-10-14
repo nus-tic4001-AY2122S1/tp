@@ -39,6 +39,7 @@ public class Next {
                 String fullCommand = ui.readCommand();
                 ui.showLine(); // show the divider line ("_______")
                 Command c = new Parser().parse(fullCommand);
+                c.setData(GTDLists);
                 c.execute();
                 isExit = ExitCommand.isExit(c);
             } catch (Exception e) {

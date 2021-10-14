@@ -19,7 +19,8 @@ public class Ui {
     }
 
     /**
-     * read command from the userInput
+     * read command from the userInput.
+     *
      * @return the string of user input
      */
     public String readCommand() {
@@ -36,7 +37,8 @@ public class Ui {
     }
 
     /**
-     * show the error message
+     * show the error message.
+     *
      * @param message the passed message to show
      */
     public void showError(String message) {
