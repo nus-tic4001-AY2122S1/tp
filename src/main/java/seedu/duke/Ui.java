@@ -35,7 +35,7 @@ public class Ui {
         System.out.print("Noted. I've removed this task:");
     }
 
-    public static void printNumberOfTasks( ArrayList<Module> userList) {
+    public static void printNumberOfTasks(ArrayList<Module> userList) {
         System.out.print("Now you have " + (userList.size()) + " tasks in the list.");
     }
 
