@@ -37,7 +37,7 @@ public class Api {
         Gson gson = new Gson();
         String tmpStr = responseStrBuilder.toString();
         Module[] myMods = gson.fromJson(tmpStr, Module[].class);
-        NusModList nusModList = NusModList.CreateInstance(myMods);
+        NusModList nusModList = NusModList.createInstance(myMods);
         return nusModList;
     }
 
@@ -56,7 +56,7 @@ public class Api {
         Gson gson = new Gson();
         String tmpStr = responseStrBuilder.toString();
         Module[] myMods = gson.fromJson(tmpStr, Module[].class);
-        NusModList nusModList = NusModList.CreateInstance(myMods);
+        NusModList nusModList = NusModList.createInstance(myMods);
         return nusModList;
     }
 }

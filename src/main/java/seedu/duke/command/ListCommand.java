@@ -14,11 +14,11 @@ public class ListCommand extends Command {
 
         // Refactor into UI Class
         // Get Data
-        NusModList modData = NusModList.SharedInstance();
+        NusModList modData = NusModList.sharedInstance();
 
         //List and Format Data - List 15 Modules tbc
         System.out.println("Here are the list of available Modules (Limit to 10) : ");
-        for (int i = 0; i < 15; i++){
+        for (int i = 0; i < 15; i++) {
             System.out.println(modData.getMod(i).getModuleCode() + " | "
                                 + modData.getMod(i).getModuleTitle());
         }

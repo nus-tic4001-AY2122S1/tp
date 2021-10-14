@@ -13,14 +13,14 @@ public class NusModList {
 
     public static NusModList _Final;
 
-    public static NusModList CreateInstance(Module[] modules) {
+    public static NusModList createInstance(Module[] modules) {
         if (_Final == null) {
             _Final = new NusModList(modules);
         }
         return  _Final; // Converting NusModList to Singleton Class to only have 1 Instance for easier retrieval
     }
 
-    public static NusModList SharedInstance() {
+    public static NusModList sharedInstance() {
         return  _Final;
     }
 
