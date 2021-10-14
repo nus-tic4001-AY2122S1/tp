@@ -2,9 +2,6 @@ package seedu.duke.commands;
 
 
 import seedu.duke.project.GTDThought;
-import seedu.duke.storage.GTDList;
-
-import java.util.ArrayList;
 
 public class AddCommand extends Command {
 

@@ -1,9 +1,6 @@
 package seedu.duke.commands;
 
 
-import seedu.duke.storage.GTDList;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 

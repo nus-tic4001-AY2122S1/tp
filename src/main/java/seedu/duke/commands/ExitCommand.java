@@ -1,9 +1,5 @@
 package seedu.duke.commands;
 
-import seedu.duke.storage.GTDList;
-
-import java.util.ArrayList;
-
 /**
  * Exit the program.
  */
