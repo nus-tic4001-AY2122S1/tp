@@ -21,6 +21,7 @@ public class TaskList {
     public ArrayList<Task> getList() {
         return list;
     }
+    
     /**
      * Deletes a task from the task list.
      *
