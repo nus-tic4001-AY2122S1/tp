@@ -248,7 +248,7 @@ public class JustBook {
         File f = new File("justbook.txt");
         Scanner sc = new Scanner(f);
 
-        while(sc.hasNextLine()) {
+        while(sc.hasNextLine()){
             //read all lines
             String input = sc.nextLine();
             String[] readData = input.split(" \\| ");
@@ -272,9 +272,7 @@ public class JustBook {
             }
 
             writer.close();
-
-        }
-        catch (IOException e){
+        } catch (IOException e){
             //prints exception message.
             System.out.println(e.getMessage());
         }
