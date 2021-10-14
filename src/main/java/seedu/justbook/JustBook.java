@@ -245,7 +245,7 @@ public class JustBook {
     }
 
     private static void onLoad() throws FileNotFoundException {
-        File f = new File("src/main/data/justbook.txt");
+        File f = new File("justbook.txt");
         Scanner sc = new Scanner(f);
 
         while (sc.hasNextLine()) {
@@ -261,7 +261,7 @@ public class JustBook {
 
     private static void onSave(Bookings bookings) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/data/justbook.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("justbook.txt"));
             //writes all tasks into file
             for (Bookings item : appointments) {
                 String description = item.getBookDesc();
