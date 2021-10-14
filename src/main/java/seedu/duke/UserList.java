@@ -8,10 +8,28 @@ import java.util.ArrayList;
 public class UserList {
 
     private ArrayList<Module> userList;
+    public static UserList _Final;
 
-    public boolean add(Module m) {
-        return userList.add(m);
+    private UserList() {
+        this.userList = new ArrayList<Module>();
     }
+
+    public static UserList sharedInstance() {
+        if (_Final == null) {
+            _Final = new UserList();
+        }
+        return  _Final;
+    }
+
+
+    public void addModule(String moduleCode) {
+        NusModList allModules = NusModList.sharedInstance();
+        int index = allModules.moduleIndex(moduleCode);
+        Module m = allModules.getMod(index);
+        userList.add(m);
+        Ui.printModule(userList);
+    }
+
 
     public void list() {
         try {
@@ -22,11 +40,10 @@ public class UserList {
         }
     }
 
-    public void deleteTask(String line) {
+    public void deleteModule(String index) {
         try {
             checkListEmpty(userList);
-            String theStrIndex = line.substring(7);
-            String[] theStrIndexArr = theStrIndex.split(",");
+            String[] theStrIndexArr = index.split(",");
             int[] intArr = new int[theStrIndexArr.length];
             for (int i = 0; i < theStrIndexArr.length; i++) {
                 String num = theStrIndexArr[i];
@@ -34,15 +51,16 @@ public class UserList {
                 checkIndexOutOfRange(userList.size(), intArr[i]);
             }
 
-            Ui.printRemoveTask();
+            Ui.printRemoveModule();
 
             for (int i = 0; i < intArr.length; i++) {
                 Module m = userList.get(intArr[i] - (i + 1));
-                System.out.print(m.toString());
+                System.out.println(m.getModuleCode() + " - " + m.getModuleTitle());
+
                 userList.remove(intArr[i] - (i + 1));
             }
 
-            Ui.printNumberOfTasks(userList);
+            Ui.printNumberOfModules(userList);
 
         } catch (NumberFormatException e) {
             Ui.printNumberFormatException();
@@ -54,9 +72,9 @@ public class UserList {
     }
 
     public void printOutput(ArrayList<Module> userList) {
-        System.out.print("Here are the modules in your list: ");
+        System.out.println("Here are the modules in your list: ");
         for (int i = 0; i < userList.size(); i++) {
-            System.out.print((i + 1) + ". " + userList.get(i).toString());
+            System.out.println(userList.get(i).getModuleCode() + " - " + userList.get(i).getModuleTitle());
         }
     }
 
