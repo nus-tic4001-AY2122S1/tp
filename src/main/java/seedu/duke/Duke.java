@@ -1,11 +1,15 @@
 package seedu.duke;
 
+import task.Task;
+import tasklist.TaskList;
 import ui.Ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
     private final Ui ui;
+    private static ArrayList<Task> todoList = TaskList.getInstance().getList();
 
     public Duke() {
         this.ui = new Ui();
