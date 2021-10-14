@@ -1,5 +1,7 @@
 package seedu.duke;
 
+import java.util.stream.IntStream;
+
 public class NusModList {
 
     private static Module[] ModListForYear;
@@ -29,20 +31,17 @@ public class NusModList {
     }
 
     public boolean hasMod(String moduleCode) {
-        for (int i = 0; i < getSize(); i++) {
-            if (ModListForYear[i].getModuleCode() == moduleCode) {
+        for (Module m : ModListForYear) {
+            if (m.getModuleCode().equals(moduleCode))
                 return true;
-            }
         }
         return false;
     }
 
     public int moduleIndex(String moduleCode) {
-        for (int i = 0; i < getSize(); i++) {
-            if (ModListForYear[i].getModuleCode() == moduleCode) {
+        for (int i = 0; i < this.getSize(); i++)
+            if (ModListForYear[i].getModuleCode().equals(moduleCode))
                 return i;
-            }
-        }
         return -1;
     }
 
