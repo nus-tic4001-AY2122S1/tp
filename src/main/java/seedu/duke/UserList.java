@@ -36,9 +36,9 @@ public class UserList {
 
             Ui.printRemoveTask();
             for (int i = 0; i < intArr.length; i++) {
-                Module m = userList.get(intArr[i]-(i + 1));
-                System.out.print(m.toString());
-                userList.remove(intArr[i]-(i + 1));
+                Module m = userList.get (intArr[i] - (i + 1));
+                System.out.print (m.toString());
+                userList.remove (intArr[i] - (i + 1));
             }
 
             Ui.printNumberOfTasks(userList);
@@ -47,7 +47,7 @@ public class UserList {
             Ui.printNumberFormatException();
         } catch (IndexOutOfRangeException e) {
             Ui.printIndexOutOfRangeException();
-        } catch  (ListEmptyException e) {
+        } catch (ListEmptyException e) {
             Ui.printListEmpty();
         }
     }
