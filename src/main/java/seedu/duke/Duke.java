@@ -2,14 +2,18 @@ package seedu.duke;
 
 import list.TaskList;
 import storage.Storage;
+import task.Task;
+import tasklist.TaskList;
 import ui.Ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
     private final Ui ui;
     private final Storage storage;
     private final TaskList tasklist;
+    private static ArrayList<Task> todoList = TaskList.getInstance().getList();
 
     public Duke() {
         this.ui = new Ui();
