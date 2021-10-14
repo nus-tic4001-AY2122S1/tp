@@ -13,7 +13,7 @@ public abstract class Command {
         return this.isExist;
     }
 
-    protected int pareTaskNumber(String taskNumber) throws ErrorHandler {
+    protected int parseTaskNumber(String taskNumber) throws ErrorHandler {
         try {
             return Integer.parseInt(taskNumber);
         } catch (Exception e) {

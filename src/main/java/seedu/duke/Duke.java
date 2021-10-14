@@ -1,9 +1,7 @@
 package seedu.duke;
 
-import command.Command;
-import parser.Parser;
-import storage.Storage;
 import list.TaskList;
+import storage.Storage;
 import ui.Ui;
 
 import java.util.Scanner;
@@ -30,18 +28,6 @@ public class Duke {
         this.ui.welcome();
         Scanner in = new Scanner(System.in);
         boolean isExit = false;
-
-        while (!isExit) {
-            try {
-                String userCommand = in.nextLine().trim();
-
-                Command command = new Parser().parse(userCommand);
-                command.execute(this.storage, this.ui, this.tasklist);
-                isExit = command.getIsExist();
-            } catch (Exception e) {
-                this.ui.print("Error: " + e.getMessage());
-            }
-        }
 
         // exit program
         System.exit(0);
