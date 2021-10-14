@@ -247,7 +247,7 @@ public class JustBook {
     }
 
     private static void onLoad() throws IOException {
-        File directory = new File ("data");
+        File directory = new File("data");
 
         if (directory.isDirectory() == false || directory.exists() == false) {
             directory.mkdir();
