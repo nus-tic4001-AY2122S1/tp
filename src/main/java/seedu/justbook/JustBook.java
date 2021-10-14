@@ -1,5 +1,10 @@
 package seedu.justbook;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +28,13 @@ public class JustBook {
     static final HashMap<LocalDate, LocalDate> BLOCKLIST = new HashMap<>(5);
 
     public static void main(String[] args) {
+        try {
+            onLoad();
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -45,34 +57,46 @@ public class JustBook {
 
             if (input.equals("exit") || input.equals("bye")) {
                 System.out.println("Bye! See you again!");
+                int size = appointments.size();
+                int i = 0;
+                while (i < size) {
+                    onSave();
+                    i++;
+                }
                 in.close();
                 exit(0);
             }
 
             String[] tokens = input.split(" ", 2);
             String command = tokens[0];
+            String inputContent = "";
+            if (tokens.length >= 2) {
+                inputContent = tokens[1];
+            }
 
             switch (command) {
             case "add":
-                String[] arguments = tokens[1].split("/[s,e] ");
+                String[] arguments = inputContent.split("/[s,e] ");
 
                 DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d K:mm a][yyyy-M-d HH:mm]");
                 LocalDateTime start = parse(arguments[1].trim().toUpperCase(), format);
-
-                Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> result = isInRange(start.toLocalDate());
+                LocalDate startLocalDate = start.toLocalDate();
+                Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> result = isInRange(startLocalDate);
 
                 if (result.getKey()) {
                     System.out.printf("'%s' denied process by current BLOCKLIST => StartDate: [%s] - EndDate: [%s]%n",
-                            start.toLocalDate(), result.getValue().getKey(), result.getValue().getValue());
+                            startLocalDate, result.getValue().getKey(), result.getValue().getValue());
                     continue;
                 }
 
                 LocalDateTime end = parse(arguments[2].toUpperCase(), format);
-
-                appointments.add(new Bookings(arguments[0].trim(), start, end));
+                String booking = arguments[0].trim();
+                appointments.add(new Bookings(booking, start, end));
+                System.out.printf("Successfully added \"%s\" from %s to %s%n",
+                        booking, start, end);
                 break;
             case "edit":
-                String[] segments = tokens[1].split(" /o ", 2);
+                String[] segments = inputContent.split(" /o ", 2);
                 String[] subSeg = segments[0].split(" /s ", 2);
                 int optionNum = Integer.parseInt(segments[1]);
                 String bookDesc = subSeg[0];
@@ -81,24 +105,29 @@ public class JustBook {
                 edit(bookDesc, chosenDate, optionNum);
                 break;
             case "save":
-
+                int size = appointments.size();
+                int i = 0;
+                while (i < size) {
+                    onSave();
+                    i++;
+                }
                 break;
             case "del":
-                if (tokens[1].contains("all")) {
+                if (inputContent.contains("all")) {
                     appointments.clear();
-                    System.out.println("Successfully deleted all appointment records.");
+                    System.out.println("Successfully deleted all appointment records");
                 }
 
-                int index = tokens[1].indexOf("/o");
-                String inputDate = tokens[1].substring(0, index).trim();
-                String optionNumber = tokens[1].substring(index).replace("/o", "").trim();
+                int index = inputContent.indexOf("/o");
+                String inputDate = inputContent.substring(0, index).trim();
+                String optionNumber = inputContent.substring(index).replace("/o", "").trim();
                 DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
                 del.execute(appointments);
                 break;
             case "show":
                 int listNum = 1;
 
-                if (tokens[1].contains("all")) {
+                if (inputContent.contains("all")) {
 
                     if (appointments.size() == 0) {
                         System.out.println("Current appointments list is : empty");
@@ -109,7 +138,7 @@ public class JustBook {
                     //displays user's complete list of bookings in the database
                     System.out.println();
 
-                    for (int i = 0; i < total; ) {
+                    for (i = 0; i < total; ) {
                         LocalDate startDate = appointments.get(i).getStartDate();
                         String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
                         System.out.printf("Date: %s%n", dateHeader);
@@ -122,20 +151,18 @@ public class JustBook {
                         listNum = 1;
                         System.out.println();
                     }
-                } else if (tokens[1].matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
-                    String date = tokens[1];
-                    LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-M-d"));
+                } else if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                    LocalDate localDate = LocalDate.parse(inputContent, DateTimeFormatter.ofPattern("yyyy-M-d"));
                     String putDate = String.valueOf(localDate).replaceAll("-", "/");
 
                     //displays the specified date booking(s) of user
                     LocalDate dateIso;
-                    System.out.println();
-                    System.out.printf("Date: %s%n", putDate);
+                    System.out.printf("%nDate: %s%n", putDate);
 
-                    if (date.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
-                        dateIso = LocalDate.parse(date);
+                    if (inputContent.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
+                        dateIso = LocalDate.parse(inputContent);
                     } else {
-                        dateIso = getLocalDate(date);
+                        dateIso = getLocalDate(inputContent);
                     }
 
                     for (Bookings item : appointments) {
@@ -148,15 +175,24 @@ public class JustBook {
                 }
                 break;
             case "block":
-                String[] parts = tokens[1].split(" - ");
+                String[] parts = inputContent.split(" - ");
                 LocalDate commence = getLocalDate(parts[0]);
                 LocalDate terminate = getLocalDate(parts[1]);
+                String startString = commence.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                String endString = terminate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                 BLOCKLIST.put(commence, terminate);
+                System.out.printf("Date Range: \"%s - %s\" has been successfully blocked out in your scheduler%n",
+                        startString, endString);
                 break;
             case "unblock":
-                String[] items = tokens[1].split(" - ");
-                LocalDate unLockDate = getLocalDate(items[0]);
-                BLOCKLIST.remove(unLockDate);
+                String[] items = inputContent.split(" - ");
+                LocalDate begin = getLocalDate(items[0]);
+                LocalDate stop = getLocalDate(items[1]);
+                String beginString = begin.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                String stopString = stop.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                BLOCKLIST.remove(begin);
+                System.out.printf("Date Range: \"%s - %s\" has been successfully unblocked out in your scheduler%n",
+                        beginString, stopString);
                 break;
             case "help":
                 HelpCommand help = new HelpCommand();
@@ -216,5 +252,50 @@ public class JustBook {
             }
         }
         System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
+    }
+
+    private static void onLoad() throws IOException {
+        File directory = new File("data");
+
+        if (!directory.exists()) {
+            directory.mkdir();
+        }
+
+        File f = new File("justbook.txt");
+
+        if (!f.exists()) {
+            f.createNewFile();
+        }
+
+        Scanner sc = new Scanner(f);
+
+        while (sc.hasNextLine()) {
+            //read all lines
+            String input = sc.nextLine();
+            String[] readData = input.split(" \\| ");
+            LocalDateTime start = parse(readData[1]);
+            LocalDateTime end = parse(readData[2]);
+            appointments.add(new Bookings(readData[0], start, end));
+        }
+
+    }
+
+    private static void onSave() {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("justbook.txt"));
+            //writes all tasks into file
+            for (Bookings item : appointments) {
+                String description = item.getBookDesc();
+                LocalDateTime startDate = item.getStartDateTime();
+                LocalDateTime endDate = item.getEndDateTime();
+                writer.write(description + " | " + startDate + " | " + endDate);
+                writer.newLine();
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            //prints exception message.
+            System.out.println(e.getMessage());
+        }
     }
 }

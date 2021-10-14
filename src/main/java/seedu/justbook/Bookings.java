@@ -47,4 +47,8 @@ public class Bookings {
     public String toString() {
         return String.format("%s %s - %s", bookDesc, start.toLocalTime(), end.toLocalTime());
     }
+
+    public LocalDateTime getEndDateTime() {
+        return end;
+    }
 }
