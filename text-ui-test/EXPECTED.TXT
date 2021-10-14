@@ -10,4 +10,51 @@ Hello James Gosling,
 Welcome back!
 You can now proceed to do your booking :)
 
+James Gosling: Added New Appointment:doctor
+
+James Gosling: Added New Appointment:meeting
+
+James Gosling: Added New Appointment:shopping
+
+James Gosling: Added New Appointment:exercise
+
+James Gosling: 
+Date: 2020/08/08
+1. doctor 10:10 - 11:11
+2. exercise 15:15 - 16:16
+
+Date: 2020/09/09
+1. meeting 11:11 - 12:12
+
+Date: 2020/10/10
+1. shopping 10:10 - 20:20
+
+
+James Gosling: Successfully removed Appointment at 2020-8-8
+
+James Gosling: 
+Date: 2020/08/08
+1. doctor 10:10 - 11:11
+
+Date: 2020/09/09
+1. meeting 11:11 - 12:12
+
+Date: 2020/10/10
+1. shopping 10:10 - 20:20
+
+
+James Gosling: Successfully changed "shopping" on 2020/10/10 : book #1
+To "resting" on 2020-10-10 : book #1
+
+James Gosling: 
+Date: 2020/08/08
+1. doctor 10:10 - 11:11
+
+Date: 2020/09/09
+1. meeting 11:11 - 12:12
+
+Date: 2020/10/10
+1. resting 10:10 - 20:20
+
+
 James Gosling: Bye! See you again!

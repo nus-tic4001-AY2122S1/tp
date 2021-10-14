@@ -51,10 +51,14 @@ public class JustBook {
 
             String[] tokens = input.split(" ", 2);
             String command = tokens[0];
+            String inputContent = "";
+            if (tokens.length >= 2) {
+                inputContent = tokens[1];
+            }
 
             switch (command) {
             case "add":
-                String[] arguments = tokens[1].split("/[s,e] ");
+                String[] arguments = inputContent.split("/[s,e] ");
 
                 DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d K:mm a][yyyy-M-d HH:mm]");
                 LocalDateTime start = parse(arguments[1].trim().toUpperCase(), format);
@@ -70,9 +74,10 @@ public class JustBook {
                 LocalDateTime end = parse(arguments[2].toUpperCase(), format);
 
                 appointments.add(new Bookings(arguments[0].trim(), start, end));
+                System.out.println("Added New Appointment:" + arguments[0].trim());
                 break;
             case "edit":
-                String[] segments = tokens[1].split(" /o ", 2);
+                String[] segments = inputContent.split(" /o ", 2);
                 String[] subSeg = segments[0].split(" /s ", 2);
                 int optionNum = Integer.parseInt(segments[1]);
                 String bookDesc = subSeg[0];
@@ -84,21 +89,21 @@ public class JustBook {
 
                 break;
             case "del":
-                if (tokens[1].contains("all")) {
+                if (inputContent.contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records.");
                 }
 
-                int index = tokens[1].indexOf("/o");
-                String inputDate = tokens[1].substring(0, index).trim();
-                String optionNumber = tokens[1].substring(index).replace("/o", "").trim();
+                int index = inputContent.indexOf("/o");
+                String inputDate = inputContent.substring(0, index).trim();
+                String optionNumber = inputContent.substring(index).replace("/o", "").trim();
                 DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
                 del.execute(appointments);
                 break;
             case "show":
                 int listNum = 1;
 
-                if (tokens[1].contains("all")) {
+                if (inputContent.contains("all")) {
 
                     if (appointments.size() == 0) {
                         System.out.println("Current appointments list is : empty");
@@ -122,8 +127,8 @@ public class JustBook {
                         listNum = 1;
                         System.out.println();
                     }
-                } else if (tokens[1].matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
-                    String date = tokens[1];
+                } else if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                    String date = inputContent;
                     LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-M-d"));
                     String putDate = String.valueOf(localDate).replaceAll("-", "/");
 
@@ -148,13 +153,13 @@ public class JustBook {
                 }
                 break;
             case "block":
-                String[] parts = tokens[1].split(" - ");
+                String[] parts = inputContent.split(" - ");
                 LocalDate commence = getLocalDate(parts[0]);
                 LocalDate terminate = getLocalDate(parts[1]);
                 BLOCKLIST.put(commence, terminate);
                 break;
             case "unblock":
-                String[] items = tokens[1].split(" - ");
+                String[] items = inputContent.split(" - ");
                 LocalDate unLockDate = getLocalDate(items[0]);
                 BLOCKLIST.remove(unLockDate);
                 break;
