@@ -17,6 +17,7 @@ public class Duke {
         boolean isExit = false;
         while (!isExit) {
             try {
+                logger.log(Level.INFO, "New input to execute");
                 String fullCommand = UI.readCommand();
                 Execution execution = new Execution(fullCommand);
                 execution.execute(expenseList);
