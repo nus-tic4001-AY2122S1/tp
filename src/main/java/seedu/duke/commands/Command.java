@@ -1,5 +1,6 @@
 package seedu.duke.commands;
 
+import seedu.duke.exception.InvalidListArgumentException;
 import seedu.duke.storage.GTDList;
 
 import java.util.Hashtable;
@@ -12,7 +13,7 @@ public class Command {
 
     }
 
-    public void execute() {
+    public void execute() throws InvalidListArgumentException {
     }
 
     /**
