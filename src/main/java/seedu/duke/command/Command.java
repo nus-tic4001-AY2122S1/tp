@@ -1,12 +1,13 @@
 package seedu.duke.command;
 
-import java.util.List;
-import java.io.IOException;
+import seedu.duke.ExpenseList;
 
-public interface Command {
-    List<String> run(String[] fullCommand) throws IOException;
+public abstract class Command {
+    protected String fullCommand;
 
-    default boolean isExit() {
-        return false;
+    public Command(String fullCommand) {
+        this.fullCommand = fullCommand;
     }
+
+    public abstract void run(ExpenseList expenseList);
 }
