@@ -5,13 +5,11 @@ import java.util.stream.IntStream;
 public class NusModList {
 
     private static Module[] ModListForYear;
+    public static NusModList _Final;
 
     private NusModList(Module[] modules) {
-
         ModListForYear = modules;
     }
-
-    public static NusModList _Final;
 
     public static NusModList createInstance(Module[] modules) {
         if (_Final == null) {

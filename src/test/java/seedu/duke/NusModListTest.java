@@ -27,11 +27,11 @@ public class NusModListTest {
         Module module2 = new Module("TIC4005", "Parallel and Distributed Software Engineering", sem, desTic4002);
         Module[] moduleList = {module1, module2};
 
-        NusModList nusModList = new NusModList(moduleList);
+        NusModList nusModList = NusModList.createInstance(moduleList);
 
         assertEquals(2, nusModList.getSize());
         assertEquals(moduleList, nusModList.getAllModule());
-        assertEquals(module1, nusModList.getMod("TIC4001"));
+        assertEquals(module2, nusModList.getMod("TIC4005"));
         assertEquals(false, nusModList.hasMod("TIC4002"));
         assertEquals(true, nusModList.hasMod("TIC4005"));
         assertEquals(0, nusModList.moduleIndex("TIC4001"));
