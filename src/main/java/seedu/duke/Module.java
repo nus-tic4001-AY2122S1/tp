@@ -65,5 +65,5 @@ public class Module {
         return moduleCode;
     }
 
-    public String getModuleTitle() {return title;};
+    public String getModuleTitle() { return title; }
 }
