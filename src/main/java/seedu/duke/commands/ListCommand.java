@@ -22,8 +22,6 @@ public class ListCommand extends Command {
             System.out.println("this is " + folderType + " list");
             GTDLists.get("inbox").print();
             break;
-            //logic to list for the specific folder
-            //implementation
         case "next":
             System.out.println("this is " + folderType + " list");
             break;
