@@ -1,10 +1,10 @@
 package command;
 
 import storage.Storage;
-import list.TaskList;
+import tasklist.TaskList;
 import ui.Ui;
 
 public class DummyCommand extends Command {
-    public void execute(Storage storage, Ui ui, TaskList taskList) {
+    public void execute(TaskList list, Ui ui, Storage storage) {
     }
 }

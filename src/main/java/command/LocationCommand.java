@@ -2,7 +2,7 @@ package command;
 
 import exception.ErrorHandler;
 import storage.Storage;
-import list.TaskList;
+import tasklist.TaskList;
 import ui.Ui;
 
 public class LocationCommand extends Command {
@@ -14,7 +14,7 @@ public class LocationCommand extends Command {
         this.location = location;
     }
 
-    public void execute(Storage storage, Ui ui, TaskList taskList) {
+    public void execute(TaskList list, Ui ui, Storage storage) {
         System.out.println("pending implementation for setting location for appointment task. "
             + "Waiting for implementation of Appointment task");
     }
