@@ -248,7 +248,7 @@ public class JustBook {
         File f = new File("justbook.txt");
         Scanner sc = new Scanner(f);
 
-        while(sc.hasNextLine()) {
+        while (sc.hasNextLine()) {
             //read all lines
             String input = sc.nextLine();
             String[] readData = input.split(" \\| ");
