@@ -47,42 +47,5 @@ public class Next {
                 ui.showLine();
             }
         }
-
-
-        String title = "This is my very first task";
-        GTDThought p1 = new GTDThought(title);
-        GTDThought p2 = new GTDThought("Second level 0 task");
-
-        p1.print();
-
-        GTDThought sub1 = new GTDThought("sub task a");
-        GTDThought sub2 = new GTDThought("sub task b");
-        GTDThought subsub1 = new GTDThought("sub sub task a.1");
-
-        p1.addSub(sub1);
-        p1.addSub(sub2);
-        sub1.addSub(subsub1);
-
-        subsub1.setStatus(Stat.NEXT);
-
-        p1.printRec();
-
-
-        GTDLists.get("next").add(p1);
-        GTDLists.get("next").add(p2);
-        GTDLists.get("inbox").add(p1);
-
-        p1.setStatus(Stat.NEXT);
-        GTDLists.get("next").get(0).print();
-        GTDLists.get("inbox").get(0).print();
-
-        System.out.println(System.lineSeparator());
-
-        GTDLists.get("next").print();
-
-        GTDLists.get("next").get("1-1-1").print();
-
-        System.out.println(p1.getTextRec());
-
     }
 }
