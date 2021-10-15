@@ -1,5 +1,9 @@
 package seedu.duke.commands;
 
+import seedu.duke.project.Stat;
+import seedu.duke.exception.InvalidListArgumentException;
+import seedu.duke.storage.GTDList;
+import seedu.duke.project.GTDThought;
 
 /**
  * List all the tasks in the taskList.
@@ -15,37 +19,34 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute() {
-        System.out.println("Passed List:" + GTDLists);
+    public void execute() throws InvalidListArgumentException {
+        System.out.println("this is " + folderType + " list");
+        Stat stat;
         switch (folderType) {
         case "inbox":
-            System.out.println("this is " + folderType + " list");
+            stat = Stat.NONE;
             break;
-            //logic to list for the specific folder
-            //implementation
         case "next":
-            System.out.println("this is " + folderType + " list");
+            stat = Stat.NEXT;
             break;
-            //logic to list for the specific folder
-            //implementation
         case "wait":
-            System.out.println("this is " + folderType + " list");
+            stat = Stat.WAIT;
             break;
-            //logic to list for the specific folder
-            //implementation
-        case "proj":
-            System.out.println("this is " + folderType + " list");
-            break;
-            //logic to list for the specific folder
-            //implementation
         case "someday":
-            System.out.println("this is " + folderType + " list");
+            stat = Stat.SOME;
             break;
-            //logic to list for the specific folder
-            //implementation
+        //case "proj":
+            //break;
         default:
-            System.out.println("");
+            throw new InvalidListArgumentException();
+        }
 
+        GTDList gtdList = GTDLists.get("inbox");
+        for (int i = 0; i < gtdList.size(); i++) {
+            GTDThought gtdThought = gtdList.get(i);
+            if (gtdThought.getStatus() == stat) {
+                System.out.println(i + ". " + gtdThought.getTextRec());
+            }
         }
 
         //if the logic is basically the same then no need switch
