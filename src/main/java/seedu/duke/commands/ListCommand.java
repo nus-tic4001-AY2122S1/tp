@@ -45,7 +45,7 @@ public class ListCommand extends Command {
         for (int i = 0; i < gtdList.size(); i++) {
             GTDThought gtdThought = gtdList.get(i);
             if (gtdThought.getStatus() == stat) {
-                System.out.println(i + ". " + gtdThought.getTextRec());
+                System.out.println((i+1) + ". " + gtdThought.getTextRec());
             }
         }
 
