@@ -16,6 +16,10 @@ public class GTDList {
         return list.size();
     }
 
+    public ArrayList<GTDThought> getList() {
+        return list;
+    }
+
     public void add(GTDThought thought) {
         list.add(thought);
     }

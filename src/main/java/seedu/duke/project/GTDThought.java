@@ -2,6 +2,7 @@ package seedu.duke.project;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Optional;
 
 public class GTDThought {
