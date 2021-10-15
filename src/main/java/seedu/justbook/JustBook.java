@@ -68,7 +68,7 @@ public class JustBook {
                 logger.log(Level.INFO, "going to start processing");
 
                 try {
-                    assert(size != 0) : "database size should not be 0";
+                    assert (size != 0) : "database size should not be 0";
                 } catch (AssertionError ex) {
                     logger.log(Level.WARNING, "processing error", ex);
                 }
