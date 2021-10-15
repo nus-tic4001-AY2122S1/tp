@@ -1,7 +1,7 @@
 package seedu.duke.commands;
 
 
-import seedu.duke.project.GTDThought;
+import seedu.duke.project.GtdThought;
 
 public class AddCommand extends Command {
 
@@ -17,7 +17,7 @@ public class AddCommand extends Command {
     @Override
     public void execute() {
         System.out.println("This is an add command, the added task is:" + System.lineSeparator() + taskname);
-        GTDLists.get("inbox").add(new GTDThought(taskname));
+        GTDLists.get("inbox").add(new GtdThought(taskname));
     }
 
 

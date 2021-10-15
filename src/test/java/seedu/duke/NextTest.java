@@ -4,19 +4,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-import seedu.duke.project.GTDThought;
+import seedu.duke.project.GtdThought;
 import seedu.duke.project.Stat;
-import seedu.duke.storage.GTDList;
+import seedu.duke.storage.GtdList;
 
 class NextTest {
-   private GTDThought p1 = new GTDThought("This is my very first task");
-   private GTDThought p2 = new GTDThought("Second level 0 task");
+   private GtdThought p1 = new GtdThought("This is my very first task");
+   private GtdThought p2 = new GtdThought("Second level 0 task");
 
-   private GTDThought sub1 = new GTDThought("sub task a");
-   private GTDThought sub2 = new GTDThought("sub task b");
-   private GTDThought subsub1 = new GTDThought("sub sub task a.1");
+   private GtdThought sub1 = new GtdThought("sub task a");
+   private GtdThought sub2 = new GtdThought("sub task b");
+   private GtdThought subsub1 = new GtdThought("sub sub task a.1");
 
-   private GTDList proj = new GTDList();
+   private GtdList proj = new GtdList();
 
    public NextTest() {
        p1.addSub(sub1);

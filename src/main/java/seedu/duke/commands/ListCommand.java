@@ -2,8 +2,7 @@ package seedu.duke.commands;
 
 import seedu.duke.project.Stat;
 import seedu.duke.exception.InvalidListArgumentException;
-import seedu.duke.storage.GTDList;
-import seedu.duke.project.GTDThought;
+import seedu.duke.storage.GtdList;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -43,7 +42,7 @@ public class ListCommand extends Command {
             throw new InvalidListArgumentException();
         }
 
-        GTDList gtdList = GTDLists.get("inbox");
+        GtdList gtdList = GTDLists.get("inbox");
         AtomicInteger i = new AtomicInteger(1);
         gtdList.getList().stream()
                 .filter(t -> t.getStatus() == stat)

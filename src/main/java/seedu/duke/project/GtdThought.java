@@ -2,10 +2,9 @@ package seedu.duke.project;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Optional;
 
-public class GTDThought {
+public class GtdThought {
     private static final String INDEN = "  ";
 
     // private String dynamicID = "1";
@@ -14,20 +13,20 @@ public class GTDThought {
     private int level = lv[0];
     private String title;
     private String note;
-    private Optional<GTDThought> parent = Optional.empty();
-    private ArrayList<GTDThought> children = new ArrayList<>();
+    private Optional<GtdThought> parent = Optional.empty();
+    private ArrayList<GtdThought> children = new ArrayList<>();
     private LocalDateTime creation;
     private LocalDateTime due;
     private LocalDateTime done;
 
-    public GTDThought(String title) {
+    public GtdThought(String title) {
         this.title = title;
         this.creation = LocalDateTime.now();
 
 
     }
 
-    public GTDThought(String title, GTDThought parent) {
+    public GtdThought(String title, GtdThought parent) {
         this.title = title;
         this.parent = Optional.of(parent);
     }
@@ -48,7 +47,7 @@ public class GTDThought {
         this.level = lv[n];
     }
 
-    public void addSub(GTDThought sub) {
+    public void addSub(GtdThought sub) {
         try {
             sub.setlevel(this.getlevel() + 1);
         } catch (IndexOutOfBoundsException e) {
@@ -66,15 +65,15 @@ public class GTDThought {
         // }
     }
 
-    public void removeSub(GTDThought thought) {
+    public void removeSub(GtdThought thought) {
         children.remove(thought);
     }
 
-    public ArrayList<GTDThought> getSub() {
+    public ArrayList<GtdThought> getSub() {
         return children;
     }
 
-    public void addParent(GTDThought project) {
+    public void addParent(GtdThought project) {
         this.parent = Optional.of(project);
     }
 
@@ -105,7 +104,7 @@ public class GTDThought {
         if (children.isEmpty()) {
             return;
         }
-        for (GTDThought sub : children) {
+        for (GtdThought sub : children) {
             sub.printRec();
         }
     }
@@ -120,7 +119,7 @@ public class GTDThought {
         if (children.isEmpty()) {
             return indentation + this + System.lineSeparator();
         }
-        for (GTDThought sub : children) {
+        for (GtdThought sub : children) {
             text += sub.aux(text);
         }
 
@@ -128,7 +127,7 @@ public class GTDThought {
     }
 
 
-    public void setParent(GTDThought thought) {
+    public void setParent(GtdThought thought) {
         this.parent = Optional.of(thought);
     }
 

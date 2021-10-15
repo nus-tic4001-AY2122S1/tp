@@ -1,15 +1,12 @@
 package seedu.duke;
 
-import seedu.duke.storage.GTDList;
+import seedu.duke.storage.GtdList;
 import seedu.duke.commands.Command;
 import seedu.duke.commands.ExitCommand;
 import seedu.duke.parser.Parser;
-import seedu.duke.project.GTDThought;
-import seedu.duke.project.Stat;
 import seedu.duke.ui.Ui;
 import seedu.duke.exception.InvalidListArgumentException;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Next {
@@ -26,12 +23,12 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-        Hashtable<String, GTDList> GTDLists = new Hashtable<>();
-        GTDLists.put("inbox", new GTDList());
-        GTDLists.put("proj", new GTDList());
-        GTDLists.put("next", new GTDList());
-        GTDLists.put("wait", new GTDList());
-        GTDLists.put("some", new GTDList());
+        Hashtable<String, GtdList> GTDLists = new Hashtable<>();
+        GTDLists.put("inbox", new GtdList());
+        GTDLists.put("proj", new GtdList());
+        GTDLists.put("next", new GtdList());
+        GTDLists.put("wait", new GtdList());
+        GTDLists.put("some", new GtdList());
 
         Ui ui = new Ui();
         boolean isExit = false;

@@ -1,34 +1,34 @@
 package seedu.duke.storage;
 
-import seedu.duke.project.GTDThought;
+import seedu.duke.project.GtdThought;
 
 import java.util.ArrayList;
 
-public class GTDList {
+public class GtdList {
     private static final String INDEN = "  ";
 
-    ArrayList<GTDThought> list = new ArrayList<>();
+    ArrayList<GtdThought> list = new ArrayList<>();
 
-    public GTDList() {
+    public GtdList() {
     }
 
     public int size() {
         return list.size();
     }
 
-    public ArrayList<GTDThought> getList() {
+    public ArrayList<GtdThought> getList() {
         return list;
     }
 
-    public void add(GTDThought thought) {
+    public void add(GtdThought thought) {
         list.add(thought);
     }
 
-    public GTDThought get(int index) {
+    public GtdThought get(int index) {
         return list.get(index);
     }
 
-    public GTDThought get(String numbering) {
+    public GtdThought get(String numbering) {
         String[] indexes = numbering.split("-");
         int index0, index1, index2;
         switch (indexes.length) {
