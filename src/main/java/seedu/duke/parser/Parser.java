@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 public class Parser {
 
-    public static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
+    public static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("\\s*(?<commandWord>\\S+)(?<arguments>.*)");
 
     public static final Pattern INDEX_ARGS_FORMAT = Pattern.compile("(?<targetIndex>\\d+(?:\\s+\\d+)*)");
 
@@ -74,7 +74,8 @@ public class Parser {
     }
 
     private Command prepareAdd(String args) {
-        return new AddCommand(args.trim());
+        String argsTrim=args.trim();
+        return new AddCommand(argsTrim);
     }
 
     private Command prepareList(String args) {
