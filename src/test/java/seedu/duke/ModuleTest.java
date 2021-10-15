@@ -22,7 +22,7 @@ class ModuleTest {
     }
 
     @Test
-    public void TestPrettyPrint() {
+    public void testPrettyPrint() {
         System.out.println("should return a pretty print");
         Semesterdata[] semData = new Semesterdata[1];
         Integer[] semesters = {1,2};
