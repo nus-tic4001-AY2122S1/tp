@@ -21,7 +21,7 @@ public class DoneCommand extends Command {
     public void execute() {;
         var inbox = this.GTDLists.get("inbox");
         for (int i : targetIndex) {
-            var thought = inbox.get(i);
+            var thought = inbox.get(i - 1);
             System.out.println("Marking " + thought + " as " + Stat.DONE);
             thought.setStatus(Stat.DONE);
         }
