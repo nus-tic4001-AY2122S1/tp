@@ -1,3 +1,16 @@
 Hello! I'm Dafy
 
-Hello James Gosling
+   Noted. I've added this task:
+   [T][ ] buy milk
+   Now you have 1 tasks in the list.
+   Noted. I've added this task:
+   [T][ ] read book
+   Now you have 2 tasks in the list.
+   1.[T][ ] buy milk
+   2.[T][ ] read book
+   Noted. I've removed this task:
+   [T][ ] buy milk
+   Now you have 1 tasks in the list.
+Error: OOPS!!! I'm sorry, you have provided a invalid task number.
+Error: OOPS!!! I'm sorry, but I don't know what that means. Please starts your command with LOCATION, BYE, TODO, DELETE, VIEW. (case insensitive)
+Bye. Hope to see you again soon!

@@ -1,15 +1,16 @@
 package tasklist;
 
+import exception.ErrorHandler;
 import task.Task;
 
 import java.util.ArrayList;
 
 /**
-* Serve as a store for saving user command.
-*/
+ * Serve as a store for saving user command.
+ */
 public class TaskList {
+    private static final ArrayList<Task> list = new ArrayList<>();
     private static TaskList taskList = null;
-    private static ArrayList<Task> list = new ArrayList<>();
 
     public static TaskList getInstance() {
         if (taskList == null) {
@@ -21,7 +22,7 @@ public class TaskList {
     public ArrayList<Task> getList() {
         return list;
     }
-    
+
     /**
      * Deletes a task from the task list.
      *
@@ -48,6 +49,14 @@ public class TaskList {
      */
     public int sizeOfTask() {
         return list.size();
+    }
+
+    /**
+     * Add a task to the list.
+     * @param task is a type of task, could be Event, Deadline.
+     */
+    public void addItem(Task task) {
+        list.add(task);
     }
 }
 

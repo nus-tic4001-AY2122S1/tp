@@ -13,7 +13,8 @@ public class ViewCommand extends Command {
 
     /**
      * Executes the command.
-     * @param list   The tasks stored in an ArrayList.
+     *
+     * @param list    The tasks stored in an ArrayList.
      * @param ui      The User Interface (UI).
      * @param storage The storage to allow reading and storing of tasks from and to a txt file.
      */
@@ -23,7 +24,6 @@ public class ViewCommand extends Command {
             throw new ErrorHandler("The list is empty.");
         }
         ui.printTaskList(list);
-        ui.printEmptyLine();
     }
 
 }

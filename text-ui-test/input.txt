@@ -1,1 +1,7 @@
-James Gosling
+todo buy milk
+todo read book
+view
+delete 1
+delete 2
+a invalid command
+bye
