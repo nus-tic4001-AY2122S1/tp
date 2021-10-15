@@ -24,11 +24,11 @@ public class Parser {
     public static final Pattern MOVE_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)-f\\s*=(?<folderType>.*)");
     public static final Pattern MOVE_CMD_FORMAT_OPTIONAL =
             Pattern.compile(
-            "(?<folderType>inbox|next|wait|proj|someday)\\s+(?<targetIndex>\\d+.*)",
+            "(?<folderType>inbox|next|wait|proj|someday|some)\\s+(?<targetIndex>\\d+.*)",
                     Pattern.CASE_INSENSITIVE
             );
 
-    public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday"};
+    public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some"};
 
     /**
      * Parses user input into command for execution.
@@ -74,7 +74,7 @@ public class Parser {
     }
 
     private Command prepareAdd(String args) {
-        String argsTrim=args.trim();
+        String argsTrim = args.trim();
         assert argsTrim.length() > 0 : "Can not add empty task";
         return new AddCommand(argsTrim);
     }
