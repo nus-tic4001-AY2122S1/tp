@@ -3,7 +3,9 @@ package seedu.duke.command;
 import org.junit.jupiter.api.Test;
 import seedu.duke.ExpenseList;
 import seedu.duke.expense.Expense;
+
 import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListCommandTest {
