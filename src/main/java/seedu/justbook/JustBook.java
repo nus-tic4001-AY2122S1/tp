@@ -134,13 +134,14 @@ public class JustBook {
                 if (inputContent.contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records");
-                }
+                } else {
 
-                int index = inputContent.indexOf("/o");
-                String inputDate = inputContent.substring(0, index).trim();
-                String optionNumber = inputContent.substring(index).replace("/o", "").trim();
-                DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
-                del.execute(appointments);
+                    int index = inputContent.indexOf("/o");
+                    String inputDate = inputContent.substring(0, index).trim();
+                    String optionNumber = inputContent.substring(index).replace("/o", "").trim();
+                    DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
+                    del.execute(appointments);
+                }
                 break;
             case "show":
                 int listNum = 1;
