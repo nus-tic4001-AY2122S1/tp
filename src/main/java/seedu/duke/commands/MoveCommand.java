@@ -26,7 +26,7 @@ public class MoveCommand extends Command {
         Stat stat = Stat.valueOf(folderType);
         var inbox = this.GTDLists.get("inbox");
         for (int i : targetIndex) {
-            var thought = inbox.get(i);
+            var thought = inbox.get(i - 1);
             System.out.println("Moving " + thought + " to " + stat);
             thought.setStatus(stat);
         }

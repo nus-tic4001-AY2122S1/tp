@@ -89,7 +89,7 @@ public class GTDList {
 
         String textWithNum = "";
         for (String line : lines) {
-            textWithNum += line + System.lineSeparator() ;
+            textWithNum += line + System.lineSeparator();
         }
 
         return textWithNum;
