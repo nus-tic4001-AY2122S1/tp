@@ -7,7 +7,7 @@ import java.util.Hashtable;
 
 public class Command {
 
-    protected Hashtable<String, GtdList> GTDLists;
+    protected Hashtable<String, GtdList> gtdLists;
 
     public Command() {
 
@@ -19,7 +19,7 @@ public class Command {
     /**
      * Supplies the data the command will operate on.
      */
-    public void setData(Hashtable<String, GtdList> GTDLists) {
-        this.GTDLists = GTDLists;
+    public void setData(Hashtable<String, GtdList> gtdLists) {
+        this.gtdLists = gtdLists;
     }
 }

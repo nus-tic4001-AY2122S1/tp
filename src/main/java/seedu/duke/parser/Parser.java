@@ -63,9 +63,9 @@ public class Parser {
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
 
-//            case HelpCommand.COMMAND_WORD:
-//            default:
-//                return new HelpCommand();
+        // case HelpCommand.COMMAND_WORD:
+        // default:
+        //     return new HelpCommand();
 
         default:
             return new IncorrectCommand("default");

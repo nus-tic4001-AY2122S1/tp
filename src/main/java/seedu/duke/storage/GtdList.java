@@ -30,7 +30,9 @@ public class GtdList {
 
     public GtdThought get(String numbering) {
         String[] indexes = numbering.split("-");
-        int index0, index1, index2;
+        int index0;
+        int index1;
+        int index2;
         switch (indexes.length) {
         case 1:
             index0 = Integer.parseInt(indexes[0]) - 1;
@@ -46,8 +48,9 @@ public class GtdList {
             return get(index0)
                     .getSub().get(index1)
                     .getSub().get(index2);
+        default:
+            return null;
         }
-        return null;
     }
 
     public void remove(int index) {
@@ -71,7 +74,7 @@ public class GtdList {
         lines[0] = startNum + " " + lines[0];
 
         for (int i = 1; i < lines.length; i++) {
-            if (countINDEN(lines[i]) == 1) {
+            if (countInden(lines[i]) == 1) {
                 lines[i] = INDEN
                         + startNum
                         + "-"
@@ -79,7 +82,7 @@ public class GtdList {
                         + " "
                         + lines[i].replaceFirst(INDEN, "");
             }
-            if (countINDEN(lines[i]) == 2) {
+            if (countInden(lines[i]) == 2) {
                 lines[i] = INDEN.repeat(2)
                         + startNum
                         + "-"
@@ -99,7 +102,7 @@ public class GtdList {
         return textWithNum;
     }
 
-    public int countINDEN(String str) {
+    public int countInden(String str) {
         return str.startsWith(INDEN.repeat(2)) ? 2 : 1;
     }
 }

@@ -7,7 +7,6 @@ import java.util.Optional;
 public class GtdThought {
     private static final String INDEN = "  ";
 
-    // private String dynamicID = "1";
     private Stat status = Stat.NONE;
     private final int[] lv = {0, 1, 2};
     private int level = lv[0];
@@ -60,9 +59,9 @@ public class GtdThought {
         sub.setStatus(Stat.TODO);
         sub.addParent(this);
 
-        // for (int i = 0; i < children.size(); i++) {
-            // subprojects.get(i).setID(Integer.toString(i + 1));
-        // }
+        //         for (int i = 0; i < children.size(); i++) {
+        //             subprojects.get(i).setID(Integer.toString(i + 1));
+        //         }
     }
 
     public void removeSub(GtdThought thought) {
@@ -77,20 +76,6 @@ public class GtdThought {
         this.parent = Optional.of(project);
     }
 
-//    public String getID() {
-//        return dynamicID;
-//    }
-//
-//    public void setID(String id) {
-//        this.dynamicID = id;
-//    }
-//
-//    public String updateID() {
-//        if (parent.isPresent()) {
-//            this.dynamicID = parent.get().getID() + "-" + this.getID();
-//        }
-//        return this.dynamicID;
-//    }
 
     public void print() {
         // updateID();

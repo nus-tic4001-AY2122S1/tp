@@ -23,12 +23,12 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-        Hashtable<String, GtdList> GTDLists = new Hashtable<>();
-        GTDLists.put("inbox", new GtdList());
-        GTDLists.put("proj", new GtdList());
-        GTDLists.put("next", new GtdList());
-        GTDLists.put("wait", new GtdList());
-        GTDLists.put("some", new GtdList());
+        Hashtable<String, GtdList> gtdLists = new Hashtable<>();
+        gtdLists.put("inbox", new GtdList());
+        gtdLists.put("proj", new GtdList());
+        gtdLists.put("next", new GtdList());
+        gtdLists.put("wait", new GtdList());
+        gtdLists.put("some", new GtdList());
 
         Ui ui = new Ui();
         boolean isExit = false;
@@ -37,7 +37,7 @@ public class Next {
                 String fullCommand = ui.readCommand();
                 ui.showLine(); // show the divider line ("_______")
                 Command c = new Parser().parse(fullCommand);
-                c.setData(GTDLists);
+                c.setData(gtdLists);
                 c.execute();
                 isExit = ExitCommand.isExit(c);
             } catch (InvalidListArgumentException e) {

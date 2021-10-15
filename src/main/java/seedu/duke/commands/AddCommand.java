@@ -17,7 +17,7 @@ public class AddCommand extends Command {
     @Override
     public void execute() {
         System.out.println("This is an add command, the added task is:" + System.lineSeparator() + taskname);
-        GTDLists.get("inbox").add(new GtdThought(taskname));
+        gtdLists.get("inbox").add(new GtdThought(taskname));
     }
 
 
