@@ -33,10 +33,14 @@ class NextTest {
     public void testgetTextRec() {
         String actual = p1.getTextRec();
 
-        String expected = "[PROJ] This is my very first task\n"
-                + "  [PROJ] sub task a\n"
-                + "    [NEXT] sub sub task a.1\n"
-                + "  [TODO] sub task b\n";
+        String expected = "[PROJ] This is my very first task"
+                + System.lineSeparator()
+                + "  [PROJ] sub task a"
+                + System.lineSeparator()
+                + "    [NEXT] sub sub task a.1"
+                + System.lineSeparator()
+                + "  [TODO] sub task b"
+                + System.lineSeparator();
 
         assertEquals(expected, actual);
     }
