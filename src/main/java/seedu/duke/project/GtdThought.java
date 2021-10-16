@@ -49,6 +49,7 @@ public class GtdThought {
     public void addSub(GtdThought sub) {
         try {
             sub.setlevel(this.getlevel() + 1);
+            assert(this.level <= 2) : "level should be 0, 1, 2";
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Unable to nest task further");
             return;
@@ -78,12 +79,10 @@ public class GtdThought {
 
 
     public void print() {
-        // updateID();
         System.out.println(this.toString());
     }
 
     public void printRec() {
-        // updateID();
         System.out.println(this.toString());
 
         if (children.isEmpty()) {
@@ -123,6 +122,10 @@ public class GtdThought {
     public void setStatus(Stat status) {
         if (status == Stat.NEXT && !children.isEmpty()) {
             System.out.println("Only actionable tasks can be set to NEXT!");
+            return;
+        }
+        if (status == Stat.DONE) {
+            this.done = LocalDateTime.now();
             return;
         }
 
