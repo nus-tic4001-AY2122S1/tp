@@ -1,36 +1,38 @@
 package seedu.duke.storage;
 
-import seedu.duke.project.GTDThought;
+import seedu.duke.project.GtdThought;
 
 import java.util.ArrayList;
 
-public class GTDList {
+public class GtdList {
     private static final String INDEN = "  ";
 
-    ArrayList<GTDThought> list = new ArrayList<>();
+    ArrayList<GtdThought> list = new ArrayList<>();
 
-    public GTDList() {
+    public GtdList() {
     }
 
     public int size() {
         return list.size();
     }
 
-    public ArrayList<GTDThought> getList() {
+    public ArrayList<GtdThought> getList() {
         return list;
     }
 
-    public void add(GTDThought thought) {
+    public void add(GtdThought thought) {
         list.add(thought);
     }
 
-    public GTDThought get(int index) {
+    public GtdThought get(int index) {
         return list.get(index);
     }
 
-    public GTDThought get(String numbering) {
+    public GtdThought get(String numbering) {
         String[] indexes = numbering.split("-");
-        int index0, index1, index2;
+        int index0;
+        int index1;
+        int index2;
         switch (indexes.length) {
         case 1:
             index0 = Integer.parseInt(indexes[0]) - 1;
@@ -46,8 +48,9 @@ public class GTDList {
             return get(index0)
                     .getSub().get(index1)
                     .getSub().get(index2);
+        default:
+            return null;
         }
-        return null;
     }
 
     public void remove(int index) {
@@ -71,7 +74,7 @@ public class GTDList {
         lines[0] = startNum + " " + lines[0];
 
         for (int i = 1; i < lines.length; i++) {
-            if (countINDEN(lines[i]) == 1) {
+            if (countInden(lines[i]) == 1) {
                 lines[i] = INDEN
                         + startNum
                         + "-"
@@ -79,7 +82,7 @@ public class GTDList {
                         + " "
                         + lines[i].replaceFirst(INDEN, "");
             }
-            if (countINDEN(lines[i]) == 2) {
+            if (countInden(lines[i]) == 2) {
                 lines[i] = INDEN.repeat(2)
                         + startNum
                         + "-"
@@ -99,7 +102,7 @@ public class GTDList {
         return textWithNum;
     }
 
-    public int countINDEN(String str) {
+    public int countInden(String str) {
         return str.startsWith(INDEN.repeat(2)) ? 2 : 1;
     }
 }

@@ -3,8 +3,6 @@ package seedu.duke.commands;
 
 import seedu.duke.project.Stat;
 
-import java.util.ArrayList;
-
 /**
  * Move a task from inbox to a folder. // For v1 at least.
  */
@@ -24,7 +22,7 @@ public class MoveCommand extends Command {
     @Override
     public void execute() {
         Stat stat = Stat.valueOf(folderType);
-        var inbox = this.GTDLists.get("inbox");
+        var inbox = this.gtdLists.get("inbox");
         for (int i : targetIndex) {
             var thought = inbox.get(i - 1);
             System.out.println("Moving " + thought + " to " + stat);

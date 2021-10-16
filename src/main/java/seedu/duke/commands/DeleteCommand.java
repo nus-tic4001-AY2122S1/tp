@@ -18,10 +18,18 @@ public class DeleteCommand extends Command {
 
     @Override
     public void execute() {
-        var inbox = this.GTDLists.get("inbox");
+        var inbox = this.gtdLists.get("inbox");
         for (int i : targetIndex) {
             inbox.remove(i - 1);
         }
         System.out.println("This is a delete command, the target index is " + Arrays.toString(targetIndex));
     }
 }
+
+
+
+
+
+
+
+

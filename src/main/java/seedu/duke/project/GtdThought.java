@@ -2,32 +2,30 @@ package seedu.duke.project;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Optional;
 
-public class GTDThought {
+public class GtdThought {
     private static final String INDEN = "  ";
 
-    // private String dynamicID = "1";
     private Stat status = Stat.NONE;
     private final int[] lv = {0, 1, 2};
     private int level = lv[0];
     private String title;
     private String note;
-    private Optional<GTDThought> parent = Optional.empty();
-    private ArrayList<GTDThought> children = new ArrayList<>();
+    private Optional<GtdThought> parent = Optional.empty();
+    private ArrayList<GtdThought> children = new ArrayList<>();
     private LocalDateTime creation;
     private LocalDateTime due;
     private LocalDateTime done;
 
-    public GTDThought(String title) {
+    public GtdThought(String title) {
         this.title = title;
         this.creation = LocalDateTime.now();
 
 
     }
 
-    public GTDThought(String title, GTDThought parent) {
+    public GtdThought(String title, GtdThought parent) {
         this.title = title;
         this.parent = Optional.of(parent);
     }
@@ -48,9 +46,10 @@ public class GTDThought {
         this.level = lv[n];
     }
 
-    public void addSub(GTDThought sub) {
+    public void addSub(GtdThought sub) {
         try {
             sub.setlevel(this.getlevel() + 1);
+            assert this.level <= 2 : "level should be 0, 1, 2";
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Unable to nest task further");
             return;
@@ -61,51 +60,35 @@ public class GTDThought {
         sub.setStatus(Stat.TODO);
         sub.addParent(this);
 
-        // for (int i = 0; i < children.size(); i++) {
-            // subprojects.get(i).setID(Integer.toString(i + 1));
-        // }
+        //         for (int i = 0; i < children.size(); i++) {
+        //             subprojects.get(i).setID(Integer.toString(i + 1));
+        //         }
     }
 
-    public void removeSub(GTDThought thought) {
+    public void removeSub(GtdThought thought) {
         children.remove(thought);
     }
 
-    public ArrayList<GTDThought> getSub() {
+    public ArrayList<GtdThought> getSub() {
         return children;
     }
 
-    public void addParent(GTDThought project) {
+    public void addParent(GtdThought project) {
         this.parent = Optional.of(project);
     }
 
-//    public String getID() {
-//        return dynamicID;
-//    }
-//
-//    public void setID(String id) {
-//        this.dynamicID = id;
-//    }
-//
-//    public String updateID() {
-//        if (parent.isPresent()) {
-//            this.dynamicID = parent.get().getID() + "-" + this.getID();
-//        }
-//        return this.dynamicID;
-//    }
 
     public void print() {
-        // updateID();
         System.out.println(this.toString());
     }
 
     public void printRec() {
-        // updateID();
         System.out.println(this.toString());
 
         if (children.isEmpty()) {
             return;
         }
-        for (GTDThought sub : children) {
+        for (GtdThought sub : children) {
             sub.printRec();
         }
     }
@@ -120,7 +103,7 @@ public class GTDThought {
         if (children.isEmpty()) {
             return indentation + this + System.lineSeparator();
         }
-        for (GTDThought sub : children) {
+        for (GtdThought sub : children) {
             text += sub.aux(text);
         }
 
@@ -128,7 +111,7 @@ public class GTDThought {
     }
 
 
-    public void setParent(GTDThought thought) {
+    public void setParent(GtdThought thought) {
         this.parent = Optional.of(thought);
     }
 
@@ -139,6 +122,10 @@ public class GTDThought {
     public void setStatus(Stat status) {
         if (status == Stat.NEXT && !children.isEmpty()) {
             System.out.println("Only actionable tasks can be set to NEXT!");
+            return;
+        }
+        if (status == Stat.DONE) {
+            this.done = LocalDateTime.now();
             return;
         }
 
