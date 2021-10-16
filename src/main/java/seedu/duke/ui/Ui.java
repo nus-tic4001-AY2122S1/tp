@@ -24,7 +24,7 @@ public class Ui {
      * @return the string of user input
      */
     public String readCommand() {
-        out.print("Enter Command: ");
+        out.print("Enter Command:\n");
         String line = in.nextLine();
         return line;
     }
