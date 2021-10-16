@@ -9,4 +9,6 @@ public class ErrorMessage {
     public static final String EMPTY_TASK_NUMBER = "OOPS!!! The task number cannot be empty.";
     public static final String EMPTY_TODO = "OOPS!!! The description of a todo cannot be empty.";
     public static final String EMPTY_LOCATION_DESCRIPTION = "OOPS!!! The appointment location cannot be empty.";
+    public static final String INVALID_APPOINTMENT_TASK ="OOPS!!! Set location fail, the task is not of Appointment " +
+            "type.";
 }

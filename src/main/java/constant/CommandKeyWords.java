@@ -3,7 +3,7 @@ package constant;
 import exception.ErrorHandler;
 
 public enum CommandKeyWords {
-    LOCATION("LOCATION"), BYE("BYE"), TODO("TODO"), DELETE("DELETE"), VIEW("VIEW");
+    SET_LOCATION("SET_LOCATION"), BYE("BYE"), TODO("TODO"), DELETE("DELETE"), VIEW("VIEW");
     private final String value;
 
     CommandKeyWords(String value) {
