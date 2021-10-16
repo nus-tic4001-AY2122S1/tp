@@ -49,7 +49,7 @@ public class GtdThought {
     public void addSub(GtdThought sub) {
         try {
             sub.setlevel(this.getlevel() + 1);
-            assert(this.level <= 2) : "level should be 0, 1, 2";
+            assert this.level <= 2 : "level should be 0, 1, 2";
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Unable to nest task further");
             return;
