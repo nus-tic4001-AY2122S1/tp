@@ -17,9 +17,8 @@ public class DoneCommand extends Command {
 
     @Override
     public void execute() {
-        var inbox = this.gtdLists.get("inbox");
         for (int i : targetIndex) {
-            var thought = inbox.get(i - 1);
+            var thought = master.get(i - 1);
             System.out.println("Marking " + thought + " as " + Stat.DONE);
             thought.setStatus(Stat.DONE);
         }

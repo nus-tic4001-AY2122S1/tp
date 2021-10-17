@@ -22,9 +22,8 @@ public class MoveCommand extends Command {
     @Override
     public void execute() {
         Stat stat = Stat.valueOf(folderType);
-        var inbox = this.gtdLists.get("inbox");
         for (int i : targetIndex) {
-            var thought = inbox.get(i - 1);
+            var thought = master.get(i - 1);
             System.out.println("Moving " + thought + " to " + stat);
             thought.setStatus(stat);
         }

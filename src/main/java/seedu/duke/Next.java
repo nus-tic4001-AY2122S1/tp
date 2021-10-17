@@ -7,6 +7,7 @@ import seedu.duke.parser.Parser;
 import seedu.duke.ui.Ui;
 import seedu.duke.exception.InvalidListArgumentException;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Next {
@@ -23,12 +24,11 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-        Hashtable<String, GtdList> gtdLists = new Hashtable<>();
-        gtdLists.put("inbox", new GtdList());
-        gtdLists.put("proj", new GtdList());
-        gtdLists.put("next", new GtdList());
-        gtdLists.put("wait", new GtdList());
-        gtdLists.put("some", new GtdList());
+        GtdList master = new GtdList();
+        GtdList current = new GtdList();
+        ArrayList<GtdList> lists = new ArrayList<>();
+        lists.add(master);
+        lists.add(current);
 
         Ui ui = new Ui();
         boolean isExit = false;
@@ -37,7 +37,7 @@ public class Next {
                 String fullCommand = ui.readCommand();
                 ui.showLine(); // show the divider line ("_______")
                 Command c = new Parser().parse(fullCommand);
-                c.setData(gtdLists);
+                c.setData(lists);
                 c.execute();
                 isExit = ExitCommand.isExit(c);
             } catch (InvalidListArgumentException e) {
