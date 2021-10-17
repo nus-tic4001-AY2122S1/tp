@@ -22,10 +22,10 @@ public class DeleteCommand extends Command {
 
     @Override
     public void execute() {
-        var inbox = this.gtdLists.get("inbox");
-       // for (int i : targetIndex) {
-            inbox.remove(targetIndex, Stat.NONE);
-        //}
+
+//        for (int i : targetIndex) {
+            master.remove(targetIndex,current.getList());
+//        }
         System.out.println("This is a delete command, the target index is " + Arrays.toString(targetIndex));
     }
 }

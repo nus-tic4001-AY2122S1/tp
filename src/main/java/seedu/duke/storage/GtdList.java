@@ -63,13 +63,13 @@ public class GtdList {
 
     }
 
-    public void remove(int[] index, Stat stat) {
-        List<GtdThought> statList = list.stream()
-                            .filter(item -> item.getStatus()==stat)
-                            .collect(Collectors.toList());
-        List<GtdThought> toRemove = IntStream.range(0,statList.size())
+    public void remove(int[] index, List<GtdThought> current) {
+//        List<GtdThought> statList = list.stream()
+//                            .filter(item -> item.getStatus()==stat)
+//                            .collect(Collectors.toList());
+        List<GtdThought> toRemove = IntStream.range(0,current.size())
                             .filter(i -> Arrays.stream(index).anyMatch(idx -> idx == i+1))
-                            .mapToObj(i -> statList.get(i))
+                            .mapToObj(i -> current.get(i))
                             .collect(Collectors.toList());
         list.removeAll(toRemove);
     }
