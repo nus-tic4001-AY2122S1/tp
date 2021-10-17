@@ -42,9 +42,8 @@ public class ListCommand extends Command {
             throw new InvalidListArgumentException();
         }
 
-        GtdList gtdList = gtdLists.get("inbox");
         AtomicInteger i = new AtomicInteger(1);
-        gtdList.getList().stream()
+        master.getList().stream()
                 .filter(t -> t.getStatus() == stat)
                 .forEach(t -> System.out.println(i.getAndIncrement() + " " + t.toString()));
 

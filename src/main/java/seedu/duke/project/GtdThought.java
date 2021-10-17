@@ -22,7 +22,6 @@ public class GtdThought {
         this.title = title;
         this.creation = LocalDateTime.now();
 
-
     }
 
     public GtdThought(String title, GtdThought parent) {
