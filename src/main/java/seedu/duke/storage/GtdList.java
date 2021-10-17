@@ -1,8 +1,13 @@
 package seedu.duke.storage;
 
 import seedu.duke.project.GtdThought;
+import seedu.duke.project.Stat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class GtdList {
     private static final String INDEN = "  ";
@@ -56,6 +61,17 @@ public class GtdList {
     public void remove(int index) {
         list.remove(index);
 
+    }
+
+    public void remove(int[] index, Stat stat) {
+        List<GtdThought> statList = list.stream()
+                            .filter(item -> item.getStatus()==stat)
+                            .collect(Collectors.toList());
+        List<GtdThought> toRemove = IntStream.range(0,statList.size())
+                            .filter(i -> Arrays.stream(index).anyMatch(idx -> idx == i+1))
+                            .mapToObj(i -> statList.get(i))
+                            .collect(Collectors.toList());
+        list.removeAll(toRemove);
     }
 
     public void print() {
