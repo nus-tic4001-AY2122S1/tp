@@ -8,7 +8,7 @@ import tasklist.TaskList;
  */
 public class Ui {
     public void welcome() {
-        print("Hello! I'm Dafy\n");
+        print("Hello! I'm Daffy\n");
     }
 
     public void print(String message) {
