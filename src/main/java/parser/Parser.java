@@ -1,11 +1,6 @@
 package parser;
 
-import command.ByeCommand;
-import command.Command;
-import command.DeleteCommand;
-import command.TodoCommand;
-import command.ViewCommand;
-import command.LocationCommand;
+import command.*;
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
 import exception.ErrorHandler;
@@ -34,6 +29,12 @@ public class Parser {
                 this.taskNo = result[1].trim();
 
                 return new DeleteCommand(this.taskNo);
+            case APPOINTMENT:
+                if (result.length < 2) {
+                    throw new ErrorHandler(ErrorMessage.EMPTY_APPOINTMENT_DESCRIPTION);
+                }
+                return this.handleNewAppointment(result[1].trim());
+
             case SET_LOCATION:
                 if (result.length < 2) {
                     throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
@@ -52,5 +53,24 @@ public class Parser {
             default:
                 return new ByeCommand();
         }
+    }
+
+    private Command handleNewAppointment(String inputContent) throws ErrorHandler {
+        String[] appointmentInput = inputContent.split("/at", 2);
+        this.content = appointmentInput[0].trim();
+
+        if (appointmentInput.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_APPOINTMENT_TIME);
+        }
+        String[] timeContent = appointmentInput[1].split("/l", 2);
+
+        if (timeContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_APPOINTMENT_LOCATION);
+        }
+
+        String at = timeContent[0].trim();
+        String location = timeContent[1].trim();
+
+        return new AppointmentCommand(this.content, at, location);
     }
 }
