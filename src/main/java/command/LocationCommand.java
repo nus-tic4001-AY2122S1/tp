@@ -21,7 +21,7 @@ public class LocationCommand extends Command {
         this.checkTaskNumberOutOfRange(this.taskIndex, list);
         Task task = list.returnTask(this.taskIndex);
 
-        if(task instanceof Appointment) {
+        if (task instanceof Appointment) {
             ((Appointment) task).setLocation(this.location);
         } else {
             ui.print(ErrorMessage.INVALID_APPOINTMENT_TASK);
