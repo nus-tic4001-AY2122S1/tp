@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
@@ -26,8 +28,10 @@ public class JustBook {
      */
     static final List<Bookings> appointments = new ArrayList<>();
     static final HashMap<LocalDate, LocalDate> BLOCKLIST = new HashMap<>(5);
+    private static final Logger logger = Logger.getLogger(JustBook.class.getName());
 
     public static void main(String[] args) {
+
         try {
             onLoad();
         } catch (FileNotFoundException ex) {
@@ -35,6 +39,7 @@ public class JustBook {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -45,8 +50,8 @@ public class JustBook {
 
         Scanner in = new Scanner(System.in);
         String userName = in.nextLine();
-        System.out.printf("Hello %s,%n", userName);
 
+        System.out.printf("Hello %s,%n", userName);
         // write your code here
         System.out.printf("Welcome back!%n");
         System.out.printf("You can now proceed to do your booking :)%n");
@@ -57,12 +62,25 @@ public class JustBook {
 
             if (input.equals("exit") || input.equals("bye")) {
                 System.out.println("Bye! See you again!");
+
                 int size = appointments.size();
+
+                logger.log(Level.INFO, "going to start processing");
+
+                try {
+                    assert (size != 0) : "database size should not be 0";
+                } catch (AssertionError ex) {
+                    logger.log(Level.WARNING, "processing error", ex);
+                }
+
+                logger.log(Level.INFO, "end of processing");
+
                 int i = 0;
                 while (i < size) {
                     onSave();
                     i++;
                 }
+
                 in.close();
                 exit(0);
             }
@@ -116,13 +134,14 @@ public class JustBook {
                 if (inputContent.contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records");
-                }
+                } else {
 
-                int index = inputContent.indexOf("/o");
-                String inputDate = inputContent.substring(0, index).trim();
-                String optionNumber = inputContent.substring(index).replace("/o", "").trim();
-                DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
-                del.execute(appointments);
+                    int index = inputContent.indexOf("/o");
+                    String inputDate = inputContent.substring(0, index).trim();
+                    String optionNumber = inputContent.substring(index).replace("/o", "").trim();
+                    DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
+                    del.execute(appointments);
+                }
                 break;
             case "show":
                 int listNum = 1;
