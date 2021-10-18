@@ -43,7 +43,7 @@ public class ListCommand extends Command {
         }
 
         AtomicInteger i = new AtomicInteger(1);
-        master.getList().stream()
+        master.stream()
                 .filter(t -> t.getStatus() == stat)
                 .forEach(t -> System.out.println(i.getAndIncrement() + " " + t.toString()));
 

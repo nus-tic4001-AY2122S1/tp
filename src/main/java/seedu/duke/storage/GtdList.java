@@ -4,25 +4,33 @@ import seedu.duke.project.GtdThought;
 import seedu.duke.project.Stat;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import java.util.Spliterator;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+
 public class GtdList {
     private static final String INDEN = "  ";
 
     ArrayList<GtdThought> list = new ArrayList<>();
+    Spliterator<GtdThought> gtdSpliterator = new GtdSpliterator(list);
+    Stream<GtdThought> gtdStream = StreamSupport.stream(gtdSpliterator, false);
 
     public GtdList() {
     }
 
-    public int size() {
-        return list.size();
+    public Stream<GtdThought> stream() {
+        return gtdStream;
     }
 
-    public ArrayList<GtdThought> getList() {
-        return list;
+    public int size() {
+        return list.size();
     }
 
     public void add(GtdThought thought) {
@@ -60,10 +68,9 @@ public class GtdList {
 
     public void remove(int index) {
         list.remove(index);
-
     }
 
-    public void remove(int[] index, List<GtdThought> current) {
+    public void remove(int[] index, GtdList current) {
         List<GtdThought> toRemove = IntStream.range(0, current.size())
                 .filter(i -> Arrays.stream(index).anyMatch(idx -> idx == i + 1))
                 .mapToObj(i -> current.get(i))
@@ -74,8 +81,15 @@ public class GtdList {
     public void print() {
         for (int i = 0; i < list.size(); i++) {
             String text = list.get(i).getTextRec();
-            System.out.println(addNum(text, i));
+            System.out.print(addNum(text, i));
         }
+    }
+
+    public GtdList filter(Stat status) {
+        GtdList filtered = new GtdList();
+
+
+        return filtered;
     }
 
     public String addNum(String text, int startNum) {
@@ -119,3 +133,4 @@ public class GtdList {
         return str.startsWith(INDEN.repeat(2)) ? 2 : 1;
     }
 }
+
