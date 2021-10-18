@@ -8,6 +8,8 @@ import seedu.duke.project.GtdThought;
 import seedu.duke.project.Stat;
 import seedu.duke.storage.GtdList;
 
+import java.util.stream.Stream;
+
 class NextTest {
     private GtdThought p1 = new GtdThought("This is my very first task");
     private GtdThought p2 = new GtdThought("Second level 0 task");
@@ -59,6 +61,15 @@ class NextTest {
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
         assertEquals(expected3, actual3);
+
+    }
+
+    @Test
+    public void testListPrint() {
+        proj.print();
+
+        proj.stream().filter(c -> c.getStatus() == Stat.PROJ)
+                .forEach(GtdThought::print);
 
     }
 
