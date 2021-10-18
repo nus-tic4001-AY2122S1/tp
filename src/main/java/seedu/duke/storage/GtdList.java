@@ -3,14 +3,11 @@ package seedu.duke.storage;
 import seedu.duke.project.GtdThought;
 import seedu.duke.project.Stat;
 
-import java.util.ArrayList;
+import java.util.*;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import java.util.Spliterator;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -23,6 +20,22 @@ public class GtdList {
     Stream<GtdThought> gtdStream = StreamSupport.stream(gtdSpliterator, false);
 
     public GtdList() {
+    }
+
+    /**
+     * Constructs a gtdList from the items in the given collection.
+     *
+     * @param gtdThoughts a collection of GtdThought
+     */
+    public GtdList(Collection<GtdThought> gtdThoughts) {
+        list.addAll(gtdThoughts);
+    }
+
+    /**
+     * Constructs a shallow copy of the list.
+     */
+    public GtdList(GtdList source) {
+        list.addAll(source.list);
     }
 
     public Stream<GtdThought> stream() {

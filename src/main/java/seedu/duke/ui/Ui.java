@@ -8,7 +8,7 @@ public class Ui {
     private Scanner in;
     private PrintStream out;
     private static final String SEPARATE_LINE = "_________________________________________________";
-
+    private static final String ERROR_LOADING_MSG="Failed to load this Next Application from storage file.";
     public Ui() {
         this(System.in, System.out);
     }
@@ -44,4 +44,13 @@ public class Ui {
     public void showError(String message) {
         out.println(message);
     }
+
+
+    /**
+     * show the loading error message to the user.
+     */
+    public void showLoadingError() {
+        out.print(ERROR_LOADING_MSG);
+    }
+
 }
