@@ -12,8 +12,8 @@ import java.util.List;
 public class GtdListEncoder {
 
     /**
-     * Encodes all the {@code GtdThought} in the {@code toSave} into a list of decodable and readable string presentation
-     * for storage.
+     * Encodes all the {@code GtdThought} in the {@code toSave} into
+     * a list of decodable and readable string presentation for storage.
      */
     public static List<String> encodeGtdList(GtdList toSave) {
         List<String> encodedGtdThoughts = new ArrayList<>();

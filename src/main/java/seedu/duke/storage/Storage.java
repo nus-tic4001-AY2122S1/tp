@@ -18,7 +18,9 @@ public class Storage {
     public Path path;
 
     /**
-     * @throws InvalidStorageFilePathException if the given file path is invalid
+     * Constructors a Storage based on the file path string.
+     *
+     * @throws InvalidStorageFilePathException if the given file path is invalid.
      */
     public Storage(String filePath) throws InvalidStorageFilePathException {
         path = Paths.get(filePath);

@@ -48,7 +48,9 @@ public class GtdListDecoder {
 
             return new GtdThought(id, status, title, levelNo, parentID);
 
-        } else throw new IllegalValueException("No match, please check your txt file format");
+        } else {
+            throw new IllegalValueException("No match, please check your txt file format");
+        }
 
     }
 }

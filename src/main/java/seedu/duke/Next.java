@@ -44,11 +44,11 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-//        GtdList master = new GtdList();
-//        GtdList current = new GtdList();
-//        ArrayList<GtdList> lists = new ArrayList<>();
+        //GtdList master = new GtdList();
+        //GtdList current = new GtdList();
+        //ArrayList<GtdList> lists = new ArrayList<>();
 
-        new Next(System.getProperty("user.dir")+"/data/next.txt").run();
+        new Next(System.getProperty("user.dir") + "/data/next.txt").run();
 
     }
 
