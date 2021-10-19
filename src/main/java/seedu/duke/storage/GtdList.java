@@ -148,5 +148,7 @@ public class GtdList {
     public int countInden(String str) {
         return str.startsWith(INDEN.repeat(2)) ? 2 : 1;
     }
+
+
 }
 

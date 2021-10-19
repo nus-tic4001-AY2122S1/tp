@@ -20,7 +20,7 @@ public class Next {
     Storage storage;
     static ArrayList<GtdList> lists = new ArrayList<>();
     GtdList master;
-    GtdList current;
+    GtdList current = new GtdList();
 
     public Next(String filePath) {
         try {
