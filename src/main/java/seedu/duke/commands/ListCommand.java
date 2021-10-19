@@ -54,8 +54,8 @@ public class ListCommand extends Command {
 
 
         // For demo only
-        System.out.println("++++ ++++");
-        current.print();
+        //System.out.println("++++ ++++");
+        //current.print();
 
     }
 }
