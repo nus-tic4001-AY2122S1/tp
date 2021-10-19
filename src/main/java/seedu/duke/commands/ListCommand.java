@@ -48,9 +48,9 @@ public class ListCommand extends Command {
         master.stream()
                 .filter(t -> t.getStatus() == stat)
                 .forEach(t -> {
-                            current.add(t);
-                            System.out.println(i.getAndIncrement() + " " + t.toString());
-                        });
+                    current.add(t);
+                    System.out.println(i.getAndIncrement() + " " + t.toString());
+                });
 
 
         // For demo only
