@@ -5,6 +5,7 @@ import seedu.duke.project.Stat;
 
 import java.util.ArrayList;
 import java.util.Spliterator;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -12,14 +13,15 @@ public class GtdList {
     private static final String INDEN = "  ";
 
     ArrayList<GtdThought> list = new ArrayList<>();
-    Spliterator<GtdThought> gtdSpliterator = new GtdSpliterator(list);
-    Stream<GtdThought> gtdStream = StreamSupport.stream(gtdSpliterator, false);
 
     public GtdList() {
     }
 
     public Stream<GtdThought> stream() {
-        return gtdStream;
+        Spliterator<GtdThought> gtdSpliterator = new GtdSpliterator(list);
+        Supplier<Stream<GtdThought>> supplier
+                = () -> StreamSupport.stream(gtdSpliterator, false);
+        return supplier.get();
     }
 
     public int size() {
@@ -116,6 +118,10 @@ public class GtdList {
 
     public int countInden(String str) {
         return str.startsWith(INDEN.repeat(2)) ? 2 : 1;
+    }
+
+    public void clear() {
+        list.clear();
     }
 }
 
