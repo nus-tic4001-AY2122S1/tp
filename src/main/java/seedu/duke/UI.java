@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class UI {
     public static void welcome() {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
+        //String logo = " ____        _        \n"
+        //+ "|  _ \\ _   _| | _____ \n"
+        //+ "| | | | | | | |/ / _ \\\n"
+        //+ "| |_| | |_| |   <  __/\n"
+        //+ "|____/ \\__,_|_|\\_\\___|\n";
+        //System.out.println("Hello from\n" + logo);
         System.out.println("What can I help you?");
     }
 
@@ -37,7 +37,7 @@ public class UI {
 
     public static void deleteMessage(Expense expense, int size) {
         System.out.println("Noted. I've removed this expense: ");
-        System.out.println("  "  + expense);
+        System.out.println("  " + expense);
         System.out.println("Now you have " + size + " expenses in the list.");
     }
 
