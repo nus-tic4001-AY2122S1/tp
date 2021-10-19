@@ -42,21 +42,20 @@ public class ListCommand extends Command {
             throw new InvalidListArgumentException();
         }
 
+        current.clear();
+
         AtomicInteger i = new AtomicInteger(1);
         master.stream()
                 .filter(t -> t.getStatus() == stat)
-                .forEach(t -> System.out.println(i.getAndIncrement() + " " + t.toString()));
+                .forEach(t -> {
+                    current.add(t);
+                    System.out.println(i.getAndIncrement() + " " + t.toString());
+                });
 
-        // for (int i = 0; i < gtdList.size(); i++) {
-        //     GTDThought gtdThought = gtdList.get(i);
-        //     if (gtdThought.getStatus() == stat) {
-        //         System.out.println((i+1) + ". " + gtdThought.getTextRec());
-        //     }
-        // }
 
-        //if the logic is basically the same then no need switch
-        //System.out.println("this is "+folderType+" list");
-        //logic to list for the specific folder
-        //implementation
+        // For demo only
+        System.out.println("++++ ++++");
+        current.print();
+
     }
 }

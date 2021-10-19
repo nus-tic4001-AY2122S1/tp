@@ -8,8 +8,12 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Spliterator;
+
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+
+import java.util.function.Supplier;
 
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -19,8 +23,6 @@ public class GtdList {
     private static final String INDEN = "  ";
 
     ArrayList<GtdThought> list = new ArrayList<>();
-    Spliterator<GtdThought> gtdSpliterator = new GtdSpliterator(list);
-    Stream<GtdThought> gtdStream = StreamSupport.stream(gtdSpliterator, false);
 
     public GtdList() {
     }
@@ -42,7 +44,10 @@ public class GtdList {
     }
 
     public Stream<GtdThought> stream() {
-        return gtdStream;
+        Spliterator<GtdThought> gtdSpliterator = new GtdSpliterator(list);
+        Supplier<Stream<GtdThought>> supplier
+                = () -> StreamSupport.stream(gtdSpliterator, false);
+        return supplier.get();
     }
 
     public int size() {
@@ -149,6 +154,8 @@ public class GtdList {
         return str.startsWith(INDEN.repeat(2)) ? 2 : 1;
     }
 
-
+    public void clear() {
+        list.clear();
+    }
 }
 
