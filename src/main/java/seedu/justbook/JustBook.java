@@ -280,7 +280,7 @@ public class JustBook {
             directory.mkdir();
         }
 
-        File f = new File("justbook.txt");
+        File f = new File("data/justbook.txt");
 
         if (!f.exists()) {
             f.createNewFile();
@@ -301,7 +301,7 @@ public class JustBook {
 
     private static void onSave() {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("justbook.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("data/justbook.txt"));
             //writes all tasks into file
             for (Bookings item : appointments) {
                 String description = item.getBookDesc();
