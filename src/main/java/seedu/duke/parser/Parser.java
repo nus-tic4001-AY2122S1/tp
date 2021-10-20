@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 public class Parser {
 
-    public static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("\\s*(?<commandWord>\\S+)(?<arguments>.*)");
+    public static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("\\s*(?<commandWord>\\S+)(?<arguments>[^|]*)");
 
     public static final Pattern INDEX_ARGS_FORMAT = Pattern.compile("(?<targetIndex>\\d+(?:\\s+\\d+)*)");
 
@@ -40,7 +40,8 @@ public class Parser {
         Matcher matcher = BASIC_COMMAND_FORMAT.matcher(inputCommand.trim());
         if (!matcher.matches()) {
             return new IncorrectCommand("This is a incorrect format, "
-                    + " you may type the list to see all the commands.");
+                    + " you may type the list to see all the commands."
+                    + " the command should not contain the separator '|'");
         }
 
         String commandWord = matcher.group("commandWord");

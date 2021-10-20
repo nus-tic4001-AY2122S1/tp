@@ -4,9 +4,11 @@ import seedu.duke.storage.GtdList;
 import seedu.duke.commands.Command;
 import seedu.duke.commands.ExitCommand;
 import seedu.duke.parser.Parser;
+import seedu.duke.storage.Storage;
 import seedu.duke.ui.Ui;
 import seedu.duke.exception.InvalidListArgumentException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -14,6 +16,24 @@ public class Next {
     /**
      * Main entry-point for the java.duke.Duke application.
      */
+    Ui ui = new Ui();
+    Storage storage;
+    static ArrayList<GtdList> lists = new ArrayList<>();
+    GtdList allList;
+    GtdList current = new GtdList();
+
+    public Next(String filePath) {
+        try {
+            storage = new Storage(filePath);
+            allList = new GtdList(storage.load());
+            lists.add(allList);
+            lists.add(current);
+        } catch (Storage.StorageOperationException | Storage.InvalidStorageFilePathException | IOException e) {
+            ui.showLoadingError();
+            allList = new GtdList();
+        }
+    }
+
     public static void main(String[] args) {
         String logo =
                    " _   _           _\n"
@@ -24,13 +44,15 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-        GtdList master = new GtdList();
-        GtdList current = new GtdList();
-        ArrayList<GtdList> lists = new ArrayList<>();
-        lists.add(master);
-        lists.add(current);
+        //GtdList master = new GtdList();
+        //GtdList current = new GtdList();
+        //ArrayList<GtdList> lists = new ArrayList<>();
 
-        Ui ui = new Ui();
+        new Next(System.getProperty("user.dir") + "/data/next.txt").run();
+
+    }
+
+    public void run() {
         boolean isExit = false;
         while (!isExit) {
             try {
@@ -39,6 +61,7 @@ public class Next {
                 Command c = new Parser().parse(fullCommand);
                 c.setData(lists);
                 c.execute();
+                storage.save(allList);
                 isExit = ExitCommand.isExit(c);
             } catch (InvalidListArgumentException e) {
                 ui.showError("Invalid list argument");
