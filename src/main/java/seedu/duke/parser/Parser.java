@@ -1,13 +1,14 @@
 package seedu.duke.parser;
 
-import seedu.duke.commands.AddCommand;
 import seedu.duke.commands.Command;
+import seedu.duke.commands.AddCommand;
+import seedu.duke.commands.ProjModeCommand;
+import seedu.duke.commands.ListCommand;
+import seedu.duke.commands.MoveCommand;
 import seedu.duke.commands.DeleteCommand;
 import seedu.duke.commands.DoneCommand;
 import seedu.duke.commands.ExitCommand;
 import seedu.duke.commands.IncorrectCommand;
-import seedu.duke.commands.ListCommand;
-import seedu.duke.commands.MoveCommand;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -62,6 +63,9 @@ public class Parser {
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
+
+        case ProjModeCommand.COMMAND_WORD:
+            return new ProjModeCommand();
 
         // case HelpCommand.COMMAND_WORD:
         // default:

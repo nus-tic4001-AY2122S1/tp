@@ -29,6 +29,12 @@ public class Ui {
         return line;
     }
 
+    public String readPut() {
+        out.print("Put:\n");
+        String line = in.nextLine().strip();
+        return line;
+    }
+
     /**
      * show the divider line.
      */

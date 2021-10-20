@@ -24,7 +24,7 @@ public class Next {
 
         System.out.println("PROJECT\n" + logo);
 
-        GtdList master = new GtdList();
+        GtdList master = new GtdList(); // contains lv0 GtdThought
         GtdList current = new GtdList();
         ArrayList<GtdList> lists = new ArrayList<>();
         lists.add(master);
