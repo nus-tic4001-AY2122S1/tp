@@ -71,6 +71,11 @@ class NextTest {
         proj.stream().filter(c -> c.getStatus() == Stat.PROJ)
                 .forEach(GtdThought::print);
 
-    }
+        proj.get("2").setStatus(Stat.NEXT);
 
+        proj.stream().forEach(l0 -> l0.getRec(Stat.NEXT)
+                .stream()
+                .forEach(t -> t.print()));
+
+    }
 }

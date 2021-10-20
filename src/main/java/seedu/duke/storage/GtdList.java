@@ -58,6 +58,12 @@ public class GtdList {
         list.add(thought);
     }
 
+    public void add(ArrayList<GtdThought> thoughts) {
+        for (GtdThought thought : thoughts) {
+            list.add(thought);
+        }
+    }
+
     public GtdThought get(int index) {
         return list.get(index);
     }
@@ -106,12 +112,11 @@ public class GtdList {
         }
     }
 
-    public GtdList filter(Stat status) {
-        GtdList filtered = new GtdList();
-
-
-        return filtered;
-    }
+    // public GtdList filter(Stat status) {
+    //     GtdList filtered = new GtdList();
+    //
+    //     return filtered;
+    // }
 
     public String addNum(String text, int startNum) {
         startNum++;
