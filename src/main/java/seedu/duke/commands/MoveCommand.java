@@ -23,7 +23,7 @@ public class MoveCommand extends Command {
     public void execute() {
         Stat stat = Stat.valueOf(folderType);
         for (int i : targetIndex) {
-            var thought = master.get(i - 1);
+            var thought = current.get(i - 1);
             System.out.println("Moving " + thought + " to " + stat);
             thought.setStatus(stat);
         }

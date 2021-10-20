@@ -20,14 +20,16 @@ public class Next {
     Storage storage;
     static ArrayList<GtdList> lists = new ArrayList<>();
     GtdList allList;
+    GtdList master = new GtdList();
     GtdList current = new GtdList();
 
     public Next(String filePath) {
         try {
             storage = new Storage(filePath);
             allList = new GtdList(storage.load());
-            lists.add(allList);
+            lists.add(master);
             lists.add(current);
+            lists.add(allList);
         } catch (Storage.StorageOperationException | Storage.InvalidStorageFilePathException | IOException e) {
             ui.showLoadingError();
             allList = new GtdList();
@@ -36,19 +38,16 @@ public class Next {
 
     public static void main(String[] args) {
         String logo =
-                   " _   _           _\n"
-                + "| \\ | | _____  _| |_\n"
-                + "|  \\| |/ _ \\ \\/ / __|\n"
-                + "| |\\  |  __/>  <| |_\n"
-                + "|_| \\_|\\___/_/\\_\\\\__|\n";
+                " _   _           _\n"
+                        + "| \\ | | _____  _| |_\n"
+                        + "|  \\| |/ _ \\ \\/ / __|\n"
+                        + "| |\\  |  __/>  <| |_\n"
+                        + "|_| \\_|\\___/_/\\_\\\\__|\n";
 
         System.out.println("PROJECT\n" + logo);
 
-        //GtdList master = new GtdList();
-        //GtdList current = new GtdList();
-        //ArrayList<GtdList> lists = new ArrayList<>();
-
         new Next(System.getProperty("user.dir") + "/data/next.txt").run();
+
 
     }
 

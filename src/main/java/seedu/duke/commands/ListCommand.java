@@ -39,6 +39,10 @@ public class ListCommand extends Command {
         case "proj":
             stat = Stat.PROJ;
             break;
+
+        //    case "master":
+        //    stat =
+        //    break;
         default:
             throw new InvalidListArgumentException();
         }
