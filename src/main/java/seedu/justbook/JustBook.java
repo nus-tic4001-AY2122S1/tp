@@ -217,7 +217,7 @@ public class JustBook {
     }
 
     public static void weekendListings(LocalDate date) {
-        int SerialNo = 1;
+        int serialNo = 1;
         String dateHeader = String.valueOf(date).replaceAll("-", "/");
         String weekendName = date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH).toUpperCase();
         System.out.printf("%nDate: %s (%s)%n", dateHeader, weekendName);
@@ -225,13 +225,13 @@ public class JustBook {
         for (Bookings entry : appointments) {
 
             if (date.equals(entry.getStartDate())) {
-                System.out.printf("%d. %s%n", SerialNo++, entry);
+                System.out.printf("%d. %s%n", serialNo++, entry);
             }
         }
     }
 
     public static void listWeekends() {
-        Set<DayOfWeek> weekEnds = EnumSet.of(DayOfWeek.SATURDAY , DayOfWeek.SUNDAY);
+        Set<DayOfWeek> weekEnds = EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
         LocalDate currentDate = LocalDate.now();
         int year = currentDate.getYear();
         Month month = currentDate.getMonth();
