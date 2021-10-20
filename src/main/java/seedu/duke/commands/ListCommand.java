@@ -36,8 +36,9 @@ public class ListCommand extends Command {
         case "someday":
             stat = Stat.SOME;
             break;
-        //case "proj":
-            //break;
+        case "proj":
+            stat = Stat.PROJ;
+            break;
         default:
             throw new InvalidListArgumentException();
         }
@@ -45,16 +46,17 @@ public class ListCommand extends Command {
         current.clear();
 
         AtomicInteger i = new AtomicInteger(1);
-        master.stream()
-                .filter(t -> t.getStatus() == stat)
-                .forEach(t -> {
-                    current.add(t);
-                    System.out.println(i.getAndIncrement() + " " + t.toString());
-                });
+        if (stat == Stat.PROJ) {
+            master.stream()
+                    .filter(lv0 -> lv0.getStatus() == Stat.PROJ)
+                    .forEach(proj -> current.add(proj));
+        } else {
+            master.stream()
+                    .forEach(lv0 -> {
+                        current.add(lv0.getRec(stat));
+                    });
+        }
 
-
-        // For demo only
-        System.out.println("++++ ++++");
         current.print();
 
     }

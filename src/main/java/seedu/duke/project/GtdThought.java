@@ -109,9 +109,24 @@ public class GtdThought {
         return indentation + this + System.lineSeparator() + text;
     }
 
-
     public void setParent(GtdThought thought) {
         this.parent = Optional.of(thought);
+    }
+
+    public ArrayList<GtdThought> getRec(Stat stat) {
+        ArrayList<GtdThought> filtered = new ArrayList<>();
+        aux(stat, filtered);
+        return filtered;
+    }
+
+    public void aux(Stat stat, ArrayList<GtdThought> filtered) {
+        if (this.getStatus() == stat) {
+            filtered.add(this);
+        }
+        if(!this.children.isEmpty()) {
+            children.stream()
+                    .forEach(t -> t.aux(stat, filtered));
+        }
     }
 
     public Stat getStatus() {
