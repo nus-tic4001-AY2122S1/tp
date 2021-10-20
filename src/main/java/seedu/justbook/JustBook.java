@@ -94,22 +94,18 @@ public class JustBook {
 
             switch (command) {
             case "add":
-                String[] arguments = inputContent.split("/[s,e] ");
+                String[] arguments = inputContent.split(" /[s,e] ");
+                String booking = arguments[0];
+                String start = arguments[1];
+                String date = start.substring(0, start.indexOf(" "));
+                String end = arguments[1];
 
-                DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d K:mm a][yyyy-M-d HH:mm]");
-                LocalDateTime start = parse(arguments[1].trim().toUpperCase(), format);
-                LocalDate startLocalDate = start.toLocalDate();
-                Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> result = isInRange(startLocalDate);
-
-                if (result.getKey()) {
-                    System.out.printf("'%s' denied process by current BLOCKLIST => StartDate: [%s] - EndDate: [%s]%n",
-                            startLocalDate, result.getValue().getKey(), result.getValue().getValue());
+                if (isBlocked(date)) {
                     continue;
                 }
 
-                LocalDateTime end = parse(arguments[2].toUpperCase(), format);
-                String booking = arguments[0].trim();
-                appointments.add(new Bookings(booking, start, end));
+                AddCommand add = new AddCommand(booking, start, end);
+                add.execute();
                 System.out.printf("Successfully added \"%s\" from %s to %s%n",
                         booking, start, end);
                 break;
@@ -135,7 +131,6 @@ public class JustBook {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records");
                 } else {
-
                     int index = inputContent.indexOf("/o");
                     String inputDate = inputContent.substring(0, index).trim();
                     String optionNumber = inputContent.substring(index).replace("/o", "").trim();
@@ -221,6 +216,20 @@ public class JustBook {
                 System.out.println("You have entered an unknown or invalid command, please try again!");
             }
         }
+    }
+
+    public static boolean isBlocked(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+        LocalDate startLocalDate = LocalDate.parse(date, formatter);
+
+        Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> result = isInRange(startLocalDate);
+
+        if (result.getKey()) {
+            System.out.printf("'%s' denied process by current BLOCKLIST => StartDate: [%s] - EndDate: [%s]%n",
+                    startLocalDate, result.getValue().getKey(), result.getValue().getValue());
+            return true;
+        }
+        return false;
     }
 
     private static Map.Entry<Boolean, Map.Entry<LocalDate, LocalDate>> isInRange(LocalDate testDate) {
