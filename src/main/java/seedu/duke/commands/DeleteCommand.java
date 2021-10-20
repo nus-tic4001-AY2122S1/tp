@@ -1,7 +1,11 @@
 package seedu.duke.commands;
 
 
+import seedu.duke.project.GtdThought;
+import seedu.duke.project.Stat;
+
 import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -18,9 +22,7 @@ public class DeleteCommand extends Command {
 
     @Override
     public void execute() {
-        for (int i : targetIndex) {
-            master.remove(i - 1);
-        }
+        master.remove(targetIndex, current);
         System.out.println("This is a delete command, the target index is " + Arrays.toString(targetIndex));
     }
 }

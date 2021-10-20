@@ -18,15 +18,48 @@ public class GtdThought {
     private LocalDateTime due;
     private LocalDateTime done;
 
+    private int id;
+    private int parentID = 0;
+    private int levelNo = 0;
+
+    public static int maxID = 0;
+
     public GtdThought(String title) {
         this.title = title;
         this.creation = LocalDateTime.now();
+        this.id = maxID + 1;
+        maxID++;
 
     }
 
     public GtdThought(String title, GtdThought parent) {
         this.title = title;
         this.parent = Optional.of(parent);
+    }
+
+    public GtdThought(int id, Stat status, String title, int levelNo, int parentID) {
+        this.id = id;
+        this.status = status;
+        this.title = title;
+        this.levelNo = levelNo;
+        this.parentID = parentID;
+        maxID = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getParentID() {
+        return parentID;
+    }
+
+    public int getLevelNo() {
+        return levelNo;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public int checkLevel() {

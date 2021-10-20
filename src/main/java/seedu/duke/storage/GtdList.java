@@ -4,10 +4,20 @@ import seedu.duke.project.GtdThought;
 import seedu.duke.project.Stat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Spliterator;
+
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+
 import java.util.function.Supplier;
+
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+
 
 public class GtdList {
     private static final String INDEN = "  ";
@@ -15,6 +25,22 @@ public class GtdList {
     ArrayList<GtdThought> list = new ArrayList<>();
 
     public GtdList() {
+    }
+
+    /**
+     * Constructs a gtdList from the items in the given collection.
+     *
+     * @param gtdThoughts a collection of GtdThought
+     */
+    public GtdList(Collection<GtdThought> gtdThoughts) {
+        list.addAll(gtdThoughts);
+    }
+
+    /**
+     * Constructs a shallow copy of the list.
+     */
+    public GtdList(GtdList source) {
+        list.addAll(source.list);
     }
 
     public Stream<GtdThought> stream() {
@@ -69,6 +95,14 @@ public class GtdList {
 
     public void remove(int index) {
         list.remove(index);
+    }
+
+    public void remove(int[] index, GtdList current) {
+        List<GtdThought> toRemove = IntStream.range(0, current.size())
+                .filter(i -> Arrays.stream(index).anyMatch(idx -> idx == i + 1))
+                .mapToObj(i -> current.get(i))
+                .collect(Collectors.toList());
+        list.removeAll(toRemove);
     }
 
     public void print() {
