@@ -210,11 +210,11 @@ public class JustBook {
         String begin = commence.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         String stop = terminate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-        if(command.equals("block")) {
+        if (command.equals("block")) {
             BLOCKLIST.put(commence, terminate);
             System.out.printf("Date Range: \"%s - %s\" has been successfully blocked out in your scheduler%n",
                     begin, stop);
-        }else {
+        } else {
             BLOCKLIST.remove(commence);
             System.out.printf("Date Range: \"%s - %s\" has been successfully unblocked out in your scheduler%n",
                     begin, stop);
