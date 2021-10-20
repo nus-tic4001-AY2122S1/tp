@@ -96,8 +96,9 @@ public class JustBook {
             case "add":
                 String[] arguments = inputContent.split(" /[s,e] ");
                 String booking = arguments[0];
-                String start = arguments[1]; String end = arguments[1];
+                String start = arguments[1];
                 String date = start.substring(0, start.indexOf(" "));
+                String end = arguments[1];
 
                 if (isBlocked(date)) {
                     continue;
