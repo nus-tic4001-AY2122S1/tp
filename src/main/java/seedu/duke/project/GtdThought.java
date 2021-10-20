@@ -93,17 +93,17 @@ public class GtdThought {
     }
 
     public String getTextRec() {
-        return aux("");
+        return auxgetTextRec("");
     }
 
-    private String aux(String text) { // this + children
+    private String auxgetTextRec(String text) { // this + children
         String indentation = INDEN.repeat(level);
 
         if (children.isEmpty()) {
             return indentation + this + System.lineSeparator();
         }
         for (GtdThought sub : children) {
-            text += sub.aux(text);
+            text += sub.auxgetTextRec(text);
         }
 
         return indentation + this + System.lineSeparator() + text;
@@ -115,17 +115,17 @@ public class GtdThought {
 
     public ArrayList<GtdThought> getRec(Stat stat) {
         ArrayList<GtdThought> filtered = new ArrayList<>();
-        aux(stat, filtered);
+        auxgetRec(stat, filtered);
         return filtered;
     }
 
-    public void aux(Stat stat, ArrayList<GtdThought> filtered) {
+    public void auxgetRec(Stat stat, ArrayList<GtdThought> filtered) {
         if (this.getStatus() == stat) {
             filtered.add(this);
         }
-        if(!this.children.isEmpty()) {
+        if (!this.children.isEmpty()) {
             children.stream()
-                    .forEach(t -> t.aux(stat, filtered));
+                    .forEach(t -> t.auxgetRec(stat, filtered));
         }
     }
 
