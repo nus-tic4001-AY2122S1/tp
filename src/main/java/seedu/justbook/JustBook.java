@@ -188,25 +188,8 @@ public class JustBook {
                     System.out.println();
                 }
                 break;
-            case "block":
-                String[] parts = inputContent.split(" - ");
-                LocalDate commence = getLocalDate(parts[0]);
-                LocalDate terminate = getLocalDate(parts[1]);
-                String startString = commence.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                String endString = terminate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                BLOCKLIST.put(commence, terminate);
-                System.out.printf("Date Range: \"%s - %s\" has been successfully blocked out in your scheduler%n",
-                        startString, endString);
-                break;
-            case "unblock":
-                String[] items = inputContent.split(" - ");
-                LocalDate begin = getLocalDate(items[0]);
-                LocalDate stop = getLocalDate(items[1]);
-                String beginString = begin.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                String stopString = stop.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                BLOCKLIST.remove(begin);
-                System.out.printf("Date Range: \"%s - %s\" has been successfully unblocked out in your scheduler%n",
-                        beginString, stopString);
+            case "block": case "unblock":
+                setEntryRules(command, inputContent);
                 break;
             case "help":
                 HelpCommand help = new HelpCommand();
@@ -215,6 +198,26 @@ public class JustBook {
             default:
                 System.out.println("You have entered an unknown or invalid command, please try again!");
             }
+        }
+    }
+
+    private static void setEntryRules(String command, String inputContent) {
+        String[] parts = inputContent.split(" - ");
+
+        LocalDate commence = getLocalDate(parts[0]);
+        LocalDate terminate = getLocalDate(parts[1]);
+
+        String begin = commence.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        String stop = terminate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+        if (command.equals("block")) {
+            BLOCKLIST.put(commence, terminate);
+            System.out.printf("Date Range: \"%s - %s\" has been successfully blocked out in your scheduler%n",
+                    begin, stop);
+        } else {
+            BLOCKLIST.remove(commence);
+            System.out.printf("Date Range: \"%s - %s\" has been successfully unblocked out in your scheduler%n",
+                    begin, stop);
         }
     }
 
