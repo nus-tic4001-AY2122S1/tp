@@ -19,18 +19,18 @@ public class Next {
     Ui ui = new Ui();
     Storage storage;
     static ArrayList<GtdList> lists = new ArrayList<>();
-    GtdList master;
+    GtdList allList;
     GtdList current = new GtdList();
 
     public Next(String filePath) {
         try {
             storage = new Storage(filePath);
-            master = new GtdList(storage.load());
-            lists.add(master);
+            allList = new GtdList(storage.load());
+            lists.add(allList);
             lists.add(current);
         } catch (Storage.StorageOperationException | Storage.InvalidStorageFilePathException | IOException e) {
             ui.showLoadingError();
-            master = new GtdList();
+            allList = new GtdList();
         }
     }
 
@@ -61,7 +61,7 @@ public class Next {
                 Command c = new Parser().parse(fullCommand);
                 c.setData(lists);
                 c.execute();
-                storage.save(master);
+                storage.save(allList);
                 isExit = ExitCommand.isExit(c);
             } catch (InvalidListArgumentException e) {
                 ui.showError("Invalid list argument");
