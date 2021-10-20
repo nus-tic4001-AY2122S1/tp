@@ -19,6 +19,12 @@ public class ExpenseList {
         size++;
     }
 
+    public void addIncome(String date, String description, double amount) {
+        Expense income = new Expense(date, description, amount);
+        expenses.add(income);
+        size++;
+    }
+
     public void delete(int index) {
         expenses.remove(index);
         size--;
