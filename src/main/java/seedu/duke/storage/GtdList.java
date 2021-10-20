@@ -108,15 +108,20 @@ public class GtdList {
     public void print() {
         for (int i = 0; i < list.size(); i++) {
             String text = list.get(i).getTextRec();
-            System.out.print(addNum(text, i));
+            String line = addNum(text, i);
+            System.out.print(line);
         }
     }
 
-    // public GtdList filter(Stat status) {
-    //     GtdList filtered = new GtdList();
-    //
-    //     return filtered;
-    // }
+    public String getlines() {
+        String lines = "";
+        for (int i = 0; i < list.size(); i++) {
+            String text = list.get(i).getTextRec();
+            String line = addNum(text, i);
+            lines += line;
+        }
+        return lines;
+    }
 
     public String addNum(String text, int startNum) {
         startNum++;
