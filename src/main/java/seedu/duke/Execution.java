@@ -5,6 +5,8 @@ import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.ExitCommand;
 import seedu.duke.command.ListCommand;
 
+import java.text.ParseException;
+
 public class Execution {
     protected String fullCommand;
     protected String command;
@@ -16,7 +18,7 @@ public class Execution {
         this.isExit = false;
     }
 
-    public void execute(ExpenseList expenseList) {
+    public void execute(ExpenseList expenseList) throws InputErrorException {
         switch (command) {
         case "list":
             new ListCommand(fullCommand).run(expenseList);

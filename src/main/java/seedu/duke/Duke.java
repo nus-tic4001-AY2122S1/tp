@@ -2,6 +2,7 @@ package seedu.duke;
 
 import seedu.duke.expense.Expense;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -28,8 +29,13 @@ public class Duke {
                 Execution execution = new Execution(fullCommand);
                 execution.execute(expenseList);
                 isExit = execution.isExit;
-            } catch (Exception e) {
-                System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
+            } catch (InputErrorException d) {
+                if(d.errorType.equals("DateFormatError")){
+                    InputErrorException.toPrintDateFormatError();
+                }
+                else {
+                    System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
+                }
             }
         }
     }

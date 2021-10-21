@@ -1,11 +1,13 @@
 package seedu.duke.expense;
 
+import java.util.Date;
+
 public class Expense {
-    String date;
+    Date date;
     String description;
     double amount;
 
-    public Expense(String date, String description, double amount) {
+    public Expense(Date date, String description, double amount) {
         this.date = date;
         this.description = description;
         this.amount = amount;
