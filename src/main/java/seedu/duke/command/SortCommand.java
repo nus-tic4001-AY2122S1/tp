@@ -19,6 +19,14 @@ public class SortCommand extends Command implements Comparable<Expense> {
         }
     };
 
+    public static Comparator<Expense> expenseDescComparator = new Comparator<Expense>() {
+        public int compare(Expense e1, Expense e2) {
+            int expense1 = (int)e1.getAmount();
+            int expense2 = (int)e2.getAmount();
+            return expense2 - expense1;
+        }
+    };
+
     public static Comparator<Expense> expenseDateComparator = new Comparator<Expense>() {
         public int compare(Expense e1, Expense e2) {
             String expenseDate1 = e1.getDate();
@@ -40,14 +48,13 @@ public class SortCommand extends Command implements Comparable<Expense> {
             break;
         }
         case "desc": {
-            Collections.sort(expenseList.expenses, Collections.reverseOrder());
+            Collections.sort(expenseList.expenses, expenseDescComparator);
             break;
         }
         default:
             System.out.println("Please key in valid sorting command!");
         }
 
-        //Collections.sort(expenseList.expenses, expenseComparator);
         UI.listMessage(expenseList.expenses);
     }
 
