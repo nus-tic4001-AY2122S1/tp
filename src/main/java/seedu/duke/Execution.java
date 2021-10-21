@@ -4,6 +4,7 @@ import seedu.duke.command.AddExpenseCommand;
 import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.ExitCommand;
 import seedu.duke.command.ListCommand;
+import seedu.duke.command.AddIncomeCommand;
 
 public class Execution {
     protected String fullCommand;
@@ -26,6 +27,9 @@ public class Execution {
             break;
         case "delete":
             new DeleteCommand(fullCommand).run(expenseList);
+            break;
+        case "income":
+            new AddIncomeCommand(fullCommand).run(expenseList);
             break;
         case "exit":
             new ExitCommand(fullCommand).run(expenseList);
