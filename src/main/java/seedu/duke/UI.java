@@ -25,11 +25,17 @@ public class UI {
     public static void addMessage(Expense expense, int size) {
         System.out.println("Got it. I've added this expense: ");
         System.out.println("  " + expense.toString());
-        System.out.println("Now you have " + size + " expenses in the list.");
+        System.out.println("Now you have " + size + " expenses/income in the list.");
+    }
+
+    public static void addMessageIncome(Expense expense, int size) {
+        System.out.println("Got it. I've added this income: ");
+        System.out.println("  " + expense.toString());
+        System.out.println("Now you have " + size + " expenses/income in the list.");
     }
 
     public static void listMessage(ArrayList<Expense> expenses) {
-        System.out.println("Here are the expenses in your list:");
+        System.out.println("Here are the expenses/income in your list:");
         for (int i = 0; i < expenses.size(); i++) {
             System.out.println(i + 1 + "." + expenses.get(i).toString());
         }

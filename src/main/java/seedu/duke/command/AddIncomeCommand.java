@@ -7,8 +7,8 @@ import seedu.duke.UI;
 import java.sql.Timestamp;
 import java.util.Date;
 
-public class AddExpenseCommand extends Command {
-    public AddExpenseCommand(String fullCommand) {
+public class AddIncomeCommand extends Command {
+    public AddIncomeCommand(String fullCommand) {
         super(fullCommand);
     }
 
@@ -19,8 +19,9 @@ public class AddExpenseCommand extends Command {
         Date recordDate = new Date();
         long time = recordDate.getTime();
         Timestamp timestamp = new Timestamp(time);
-        expenseList.addExpense(date, description, amount, timestamp);
+
+        expenseList.addIncome(date, description, amount, timestamp);
         int size = expenseList.size;
-        UI.addMessage(expenseList.expenses.get(size - 1), size);
+        UI.addMessageIncome(expenseList.expenses.get(size - 1), size);
     }
 }
