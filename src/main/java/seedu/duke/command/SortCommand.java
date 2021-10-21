@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 
-public class SortCommand extends Command implements Comparable<Expense>{
+public class SortCommand extends Command implements Comparable<Expense> {
 
     public static Comparator<Expense> expenseComparator = new Comparator<Expense>() {
         public int compare(Expense e1, Expense e2) {
@@ -34,13 +34,12 @@ public class SortCommand extends Command implements Comparable<Expense>{
     public void run(ExpenseList expenseList) {
 
         String sortingIndex = Parser.sortingIndex(fullCommand);
-        System.out.println("ssss "+sortingIndex);
         switch (sortingIndex) {
         case "asc": {
             Collections.sort(expenseList.expenses, expenseComparator);
             break;
         }
-        case "dsc": {
+        case "desc": {
             Collections.sort(expenseList.expenses, Collections.reverseOrder());
             break;
         }
@@ -48,7 +47,7 @@ public class SortCommand extends Command implements Comparable<Expense>{
             System.out.println("Please key in valid sorting command!");
         }
 
-//        Collections.sort(expenseList.expenses, expenseComparator);
+//      Collections.sort(expenseList.expenses, expenseComparator);
         UI.listMessage(expenseList.expenses);
     }
 
