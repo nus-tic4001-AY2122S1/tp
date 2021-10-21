@@ -47,7 +47,7 @@ public class SortCommand extends Command implements Comparable<Expense> {
             System.out.println("Please key in valid sorting command!");
         }
 
-//      Collections.sort(expenseList.expenses, expenseComparator);
+        //Collections.sort(expenseList.expenses, expenseComparator);
         UI.listMessage(expenseList.expenses);
     }
 

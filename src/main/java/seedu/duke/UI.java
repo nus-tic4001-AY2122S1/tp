@@ -18,7 +18,7 @@ public class UI {
 
     public static String readCommand() {
         Scanner in = new Scanner(System.in);
-//      assert !in.nextLine().isEmpty() : "Input is blank";
+        //assert !in.nextLine().isEmpty() : "Input is blank";
         return in.nextLine();
     }
 
