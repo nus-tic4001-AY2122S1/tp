@@ -82,12 +82,7 @@ public class JustBook {
 
                 logger.log(Level.INFO, "end of processing");
 
-                int i = 0;
-                while (i < size) {
-                    onSave();
-                    i++;
-                }
-
+                onSave();
                 in.close();
                 exit(0);
             }
@@ -125,12 +120,7 @@ public class JustBook {
                 edit(bookDesc, chosenDate, optionNum);
                 break;
             case "save":
-                int size = appointments.size();
-                int i = 0;
-                while (i < size) {
-                    onSave();
-                    i++;
-                }
+                onSave();
                 break;
             case "del":
                 if (inputContent.contains("all")) {
@@ -145,64 +135,29 @@ public class JustBook {
                 }
                 break;
             case "show":
-                int listNum = 1;
                 // sorts the database in ascending order
                 appointments.sort(comparing(Bookings::getStartDateTime));
+
+                int listNum = 1;
                 int totalRecords = appointments.size();
 
                 if (inputContent.contains("all")) {
-
-                    if (appointments.size() == 0) {
-                        System.out.println("Current appointments list is : empty");
-                    }
-
                     //displays user's complete list of bookings in the database
-                    System.out.println();
-
-                    for (i = 0; i < totalRecords; ) {
-                        LocalDate startDate = appointments.get(i).getStartDate();
-                        String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
-                        System.out.printf("Date: %s%n", dateHeader);
-
-                        while (i < totalRecords && appointments.get(i).getStartDate().equals(startDate)) {
-                            System.out.printf("%d. %s%n", listNum++, appointments.get(i));
-                            i++;
-                        }
-                        // resets ListNum value to 1 for next date header
-                        listNum = 1;
-                        System.out.println();
-                    }
+                    displayRecords(listNum, totalRecords);
                 }
 
                 if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
-                    LocalDate localDate = LocalDate.parse(inputContent, DateTimeFormatter.ofPattern("yyyy-M-d"));
-                    String putDate = String.valueOf(localDate).replaceAll("-", "/");
-
-                    //displays the specified date booking(s) of user
-                    LocalDate dateIso;
-                    System.out.printf("%nDate: %s%n", putDate);
-
-                    if (inputContent.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
-                        dateIso = LocalDate.parse(inputContent);
-                    } else {
-                        dateIso = getLocalDate(inputContent);
-                    }
-
-                    for (Bookings item : appointments) {
-
-                        if (dateIso.equals(item.getStartDate())) {
-                            System.out.printf("%d. %s%n", listNum++, item);
-                        }
-                    }
-                    System.out.println();
+                    //displays user's selected date list of bookings in the database
+                    displayDateBookings(inputContent, listNum);
                 }
 
                 if (inputContent.equals("weekends")) {
+                    //displays user's current month list of weekend bookings in the database
                     listWeekends();
                 }
                 break;
             case "block": case "unblock":
-                setEntryRules(command, inputContent);
+                setBlockRules(command, inputContent);
                 break;
             case "help":
                 HelpCommand help = new HelpCommand();
@@ -212,6 +167,52 @@ public class JustBook {
                 System.out.println("You have entered an unknown or invalid command, please try again!");
             }
         }
+    }
+
+    private static void displayRecords(int listNum, int totalRecords) {
+
+        if (totalRecords == 0) {
+            System.out.println("Current appointments list is : empty");
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < totalRecords; ) {
+            LocalDate startDate = appointments.get(i).getStartDate();
+            String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
+            System.out.printf("Date: %s%n", dateHeader);
+
+            while (i < totalRecords && appointments.get(i).getStartDate().equals(startDate)) {
+                System.out.printf("%d. %s%n", listNum++, appointments.get(i));
+                i++;
+            }
+            // resets ListNum value to 1 for next date header
+            listNum = 1;
+            System.out.println();
+        }
+    }
+
+    private static void displayDateBookings(String inputContent, int listNum) {
+        LocalDate localDate = LocalDate.parse(inputContent, DateTimeFormatter.ofPattern("yyyy-M-d"));
+        String putDate = String.valueOf(localDate).replaceAll("-", "/");
+
+        //displays the specified date booking(s) of user
+        LocalDate dateIso;
+        System.out.printf("%nDate: %s%n", putDate);
+
+        if (inputContent.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
+            dateIso = LocalDate.parse(inputContent);
+        } else {
+            dateIso = formLocalDate(inputContent);
+        }
+
+        for (Bookings item : appointments) {
+
+            if (dateIso.equals(item.getStartDate())) {
+                System.out.printf("%d. %s%n", listNum++, item);
+            }
+        }
+        System.out.println();
     }
 
     public static void weekendListings(LocalDate date) {
@@ -250,11 +251,11 @@ public class JustBook {
                 .forEach(JustBook::weekendListings);
     }
 
-    private static void setEntryRules(String command, String inputContent) {
+    private static void setBlockRules(String command, String inputContent) {
         String[] parts = inputContent.split(" - ");
 
-        LocalDate commence = getLocalDate(parts[0]);
-        LocalDate terminate = getLocalDate(parts[1]);
+        LocalDate commence = formLocalDate(parts[0]);
+        LocalDate terminate = formLocalDate(parts[1]);
 
         String begin = commence.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         String stop = terminate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
@@ -299,7 +300,7 @@ public class JustBook {
         return new SimpleEntry<>(flag, member);
     }
 
-    private static LocalDate getLocalDate(String date) {
+    private static LocalDate formLocalDate(String date) {
         LocalDate dateIso;
         int[] figures = Arrays.stream(date.split("-"))
                 .mapToInt(Integer::parseInt)
@@ -311,7 +312,7 @@ public class JustBook {
 
     public static void edit(String amendDesc, String startDate, int optionNumber) {
         int bookNum = optionNumber;
-        LocalDate testDate = getLocalDate(startDate);
+        LocalDate testDate = formLocalDate(startDate);
         LocalDate temp;
 
         for (Bookings booking : appointments) {
