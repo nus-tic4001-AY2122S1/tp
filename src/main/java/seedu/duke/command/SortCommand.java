@@ -36,16 +36,16 @@ public class SortCommand extends Command implements Comparable<Expense>{
         String sortingIndex = Parser.sortingIndex(fullCommand);
         System.out.println("ssss "+sortingIndex);
         switch (sortingIndex) {
-            case "asc": {
-                Collections.sort(expenseList.expenses, expenseComparator);
-                break;
-            }
-            case "dsc": {
-                Collections.sort(expenseList.expenses, Collections.reverseOrder());
-                break;
-            }
-            default:
-                System.out.println("Please key in valid sorting command!");
+        case "asc": {
+            Collections.sort(expenseList.expenses, expenseComparator);
+            break;
+        }
+        case "dsc": {
+            Collections.sort(expenseList.expenses, Collections.reverseOrder());
+            break;
+        }
+        default:
+            System.out.println("Please key in valid sorting command!");
         }
 
 //        Collections.sort(expenseList.expenses, expenseComparator);
