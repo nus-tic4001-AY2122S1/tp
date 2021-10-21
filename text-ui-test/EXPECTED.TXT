@@ -10,37 +10,37 @@ Hello James Gosling,
 Welcome back!
 You can now proceed to do your booking :)
 
-James Gosling: Successfully added "doctor" from 2020-8-8 10:10 to 2020-8-8 10:10
+James Gosling: Successfully added "doctor" from 2020-08-08T10:10 to 2020-08-08T11:11
 
-James Gosling: Successfully added "meeting" from 2020-9-9 11:11 to 2020-9-9 11:11
+James Gosling: Successfully added "meeting" from 2020-09-09T11:11 to 2020-09-09T12:12
 
-James Gosling: Successfully added "shopping" from 2020-10-10 10:10 to 2020-10-10 10:10
+James Gosling: Successfully added "shopping" from 2020-10-10T10:10 to 2020-10-10T20:20
 
-James Gosling: Successfully added "exercise" from 2020-8-8 15:15 to 2020-8-8 15:15
+James Gosling: Successfully added "exercise" from 2020-08-08T15:15 to 2020-08-08T16:16
 
 James Gosling: 
 Date: 2020/08/08
-1. doctor 10:10 - 10:10
-2. exercise 15:15 - 15:15
+1. doctor 10:10 - 11:11
+2. exercise 15:15 - 16:16
 
 Date: 2020/09/09
-1. meeting 11:11 - 11:11
+1. meeting 11:11 - 12:12
 
 Date: 2020/10/10
-1. shopping 10:10 - 10:10
+1. shopping 10:10 - 20:20
 
 
 James Gosling: Successfully removed Appointment at 2020-8-8
 
 James Gosling: 
 Date: 2020/08/08
-1. doctor 10:10 - 10:10
+1. doctor 10:10 - 11:11
 
 Date: 2020/09/09
-1. meeting 11:11 - 11:11
+1. meeting 11:11 - 12:12
 
 Date: 2020/10/10
-1. shopping 10:10 - 10:10
+1. shopping 10:10 - 20:20
 
 
 James Gosling: Successfully changed "shopping" on 2020/10/10 : book #1
@@ -48,13 +48,13 @@ To "resting" on 2020-10-10 : book #1
 
 James Gosling: 
 Date: 2020/08/08
-1. doctor 10:10 - 10:10
+1. doctor 10:10 - 11:11
 
 Date: 2020/09/09
-1. meeting 11:11 - 11:11
+1. meeting 11:11 - 12:12
 
 Date: 2020/10/10
-1. resting 10:10 - 10:10
+1. resting 10:10 - 20:20
 
 
 James Gosling: Bye! See you again!
