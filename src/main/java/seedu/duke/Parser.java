@@ -29,6 +29,9 @@ public class Parser {
     }
 
     public static double amount(String fullCommand) {
+        String dollar = fullCommand.split(" /SGD")[1];
+
+        assert (!dollar.matches("\\d++")) : "Amount must be number!";
         return Double.parseDouble(fullCommand.split(" /SGD")[1]);
     }
 }
