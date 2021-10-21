@@ -5,18 +5,25 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
 
 import static java.lang.System.exit;
 import static java.time.LocalDateTime.parse;
@@ -88,6 +95,7 @@ public class JustBook {
             String[] tokens = input.split(" ", 2);
             String command = tokens[0];
             String inputContent = "";
+
             if (tokens.length >= 2) {
                 inputContent = tokens[1];
             }
@@ -140,24 +148,25 @@ public class JustBook {
                 break;
             case "show":
                 int listNum = 1;
+                // sorts the database in ascending order
+                appointments.sort(comparing(Bookings::getStartDateTime));
+                int totalRecords = appointments.size();
 
                 if (inputContent.contains("all")) {
 
                     if (appointments.size() == 0) {
                         System.out.println("Current appointments list is : empty");
                     }
-                    // sorts the database in ascending order
-                    appointments.sort(comparing(Bookings::getStartDateTime));
-                    int total = appointments.size();
+
                     //displays user's complete list of bookings in the database
                     System.out.println();
 
-                    for (i = 0; i < total; ) {
+                    for (i = 0; i < totalRecords; ) {
                         LocalDate startDate = appointments.get(i).getStartDate();
                         String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
                         System.out.printf("Date: %s%n", dateHeader);
 
-                        while (i < total && appointments.get(i).getStartDate().equals(startDate)) {
+                        while (i < totalRecords && appointments.get(i).getStartDate().equals(startDate)) {
                             System.out.printf("%d. %s%n", listNum++, appointments.get(i));
                             i++;
                         }
@@ -165,7 +174,9 @@ public class JustBook {
                         listNum = 1;
                         System.out.println();
                     }
-                } else if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                }
+
+                if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
                     LocalDate localDate = LocalDate.parse(inputContent, DateTimeFormatter.ofPattern("yyyy-M-d"));
                     String putDate = String.valueOf(localDate).replaceAll("-", "/");
 
@@ -187,6 +198,10 @@ public class JustBook {
                     }
                     System.out.println();
                 }
+
+                if (inputContent.equals("weekends")) {
+                    listWeekends();
+                }
                 break;
             case "block": case "unblock":
                 setEntryRules(command, inputContent);
@@ -199,6 +214,34 @@ public class JustBook {
                 System.out.println("You have entered an unknown or invalid command, please try again!");
             }
         }
+    }
+
+    public static void weekendListings(LocalDate date) {
+        int serialNo = 1;
+        String dateHeader = String.valueOf(date).replaceAll("-", "/");
+        String weekendName = date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH).toUpperCase();
+        System.out.printf("%nDate: %s (%s)%n", dateHeader, weekendName);
+
+        for (Bookings entry : appointments) {
+
+            if (date.equals(entry.getStartDate())) {
+                System.out.printf("%d. %s%n", serialNo++, entry);
+            }
+        }
+    }
+
+    public static void listWeekends() {
+        Set<DayOfWeek> weekEnds = EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
+        LocalDate currentDate = LocalDate.now();
+        int year = currentDate.getYear();
+        Month month = currentDate.getMonth();
+        int currentDay = currentDate.getDayOfMonth();
+        int daysOfMth = currentDate.lengthOfMonth();
+
+        IntStream.rangeClosed(currentDay, daysOfMth)
+                .mapToObj(day -> LocalDate.of(year, month, day))
+                .filter(date -> weekEnds.contains(date.getDayOfWeek()))
+                .forEach(JustBook::weekendListings);
     }
 
     private static void setEntryRules(String command, String inputContent) {
