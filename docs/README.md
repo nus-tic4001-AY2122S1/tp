@@ -1,4 +1,4 @@
-# Duke
+# JustBook Command Line Java Program
 
 **JustBook: An easy-to-use Appointment CLI App**
 
