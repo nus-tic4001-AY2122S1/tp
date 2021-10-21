@@ -106,7 +106,7 @@ public class JustBook {
                 String booking = arguments[0];
                 String start = arguments[1];
                 String date = start.substring(0, start.indexOf(" "));
-                String end = arguments[1];
+                String end = arguments[2];
 
                 if (isBlocked(date)) {
                     continue;
@@ -114,8 +114,6 @@ public class JustBook {
 
                 AddCommand add = new AddCommand(booking, start, end);
                 add.execute();
-                System.out.printf("Successfully added \"%s\" from %s to %s%n",
-                        booking, start, end);
                 break;
             case "edit":
                 String[] segments = inputContent.split(" /o ", 2);
@@ -221,17 +219,25 @@ public class JustBook {
         String dateHeader = String.valueOf(date).replaceAll("-", "/");
         String weekendName = date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH).toUpperCase();
         System.out.printf("%nDate: %s (%s)%n", dateHeader, weekendName);
+        // flag to reduce unneeded loop searches
+        boolean isWkEnd = false;
 
         for (Bookings entry : appointments) {
 
             if (date.equals(entry.getStartDate())) {
                 System.out.printf("%d. %s%n", serialNo++, entry);
+                continue;
+            }
+
+            if (isWkEnd) {
+                break;
             }
         }
     }
 
     public static void listWeekends() {
         Set<DayOfWeek> weekEnds = EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
+
         LocalDate currentDate = LocalDate.now();
         int year = currentDate.getYear();
         Month month = currentDate.getMonth();

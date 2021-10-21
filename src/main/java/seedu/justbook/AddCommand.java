@@ -5,18 +5,23 @@ import java.time.format.DateTimeFormatter;
 import static java.time.LocalDateTime.parse;
 
 public class AddCommand {
-    String bookDesc;
-    LocalDateTime begin;
-    LocalDateTime end;
+    Bookings record;
 
     public AddCommand(String bookDesc, String begin, String end) {
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d K:mm a][yyyy-M-d HH:mm]");
-        this.begin = parse(begin.toUpperCase(), format);
-        this.bookDesc = bookDesc;
-        this.end = parse(end.toUpperCase(), format);
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d HH:mm]");
+        record = new Bookings(bookDesc, parse(begin, format), parse(end, format));
     }
 
     public void execute() {
-        JustBook.appointments.add(new Bookings(bookDesc, begin, end));
+        LocalDateTime begin = record.getStartDateTime();
+        LocalDateTime end = record.getEndDateTime();
+
+        if (begin.isBefore(end)) {
+            JustBook.appointments.add(record);
+            System.out.printf("Successfully added \"%s\" from %s to %s%n",
+                    record.getBookDesc(), begin, end);
+        } else {
+            System.out.println("Invalid entry: the start time is after the end time, retry again?");
+        }
     }
 }
