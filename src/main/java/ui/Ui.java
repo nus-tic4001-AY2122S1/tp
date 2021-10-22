@@ -1,6 +1,7 @@
 package ui;
 
 import task.Task;
+import category.Category;
 import tasklist.TaskList;
 
 /**
@@ -42,8 +43,18 @@ public class Ui {
      */
     public void printTaskList(TaskList list) {
         for (int i = 1; i <= list.sizeOfTask(); i++) {
-            System.out.print("   " + i + ".");
+            System.out.print("   " + i + ". ");
             System.out.println(list.returnTask(i - 1).taskToStringFormat());
+        }
+    }
+
+    /**
+     * Shows a list of tasks to the user, formatted as an indexed list.
+     */
+    public void printCategoryList(Category list) {
+        for (int i = 1; i <= list.size(); i++) {
+            System.out.print("   " + i + ". ");
+            System.out.println(list.getCategory(i - 1));
         }
     }
 
