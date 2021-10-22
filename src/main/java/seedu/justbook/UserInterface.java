@@ -42,10 +42,9 @@ public class UserInterface {
         System.out.println("What is your name?");
     }
 
-    static void welcomeUser(String userName){
+    static void welcomeUser(String userName) {
         System.out.printf("Hello %s,%n", userName);
         System.out.printf("Welcome back!%n");
         System.out.printf("You can now proceed to do your booking :)%n");
     }
-
 }
