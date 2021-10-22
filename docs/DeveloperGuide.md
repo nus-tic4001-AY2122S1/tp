@@ -4,7 +4,8 @@
 
 - [docs.oracle.com Java time References](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html) 
 - [Java Streams Reference](http://tutorials.jenkov.com/java-functional-programming/streams.html)
-- Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft, *Modern Java in Action: Lambdas, streams, functional and reactive programming 2nd Edition*, Manning, 2018.   
+- Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft, *Modern Java in Action: Lambdas, streams, functional and reactive programming 2nd Edition*, Manning, 2018. 
+- Team members: **Wan Yin, Hanna, Yeu Chai and Sze Chun**  
 
 
 ## Design & implementation
@@ -46,16 +47,21 @@ Users are able to make, check, delete, view, change, and source in real-time for
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
-|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
-|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
+|v1.0|new user|see help usage instructions|refer to them when I forget how to use the application|
+|v1.0|regular user|I can add in a booking entry in one line|make an entry and have it stored online fast|
+|v1.0|a quick user|I can edit a booking entry description|modify an entry description easily at will|
+|v1.0|date planner|I find a booking item by date|locate a to-do without having to go through the entire list|
 |v1.0|efficient student|I can order all my tasks and appointment by their due date|order all my tasks and appointment by their due date|
-|v1.0|structured student|I can see my appointments arranged together and tasks arranged together|have a clear distinct view of appointments and tasks.|
-|v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day.|
-|v1.0|student|I can save my appointments and schedule|not need to re-create them everytime I log in|
-|v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month |
-|v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done and which ones left to attend to that day .|
-|v2.0|student who always does late minute work| I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline.|
+|v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day|
+|v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month|
+|v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month|
+|v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done and which ones left to attend to that day|
+|v2.0|student|I can save or load at start up my appointments and schedule|not need to re-create them everytime I log in|
+|v2.0|structured student|I can see my appointments arranged together and tasks arranged together|have a clear distinct view of appointments and tasks|
+|v2.0|student who always does late minute work|I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline (a coming feature)|
+|v2.0|social student|I can view the block of weekend outstanding schedules for the entire current month displayed|check if I can add further bookings for the weekends|
 |v2.0|busy student|I can quit the application immediately with an automatic save|move on to my other activities quickly|
+
 
 ## Non-Functional Requirements
 1. Users are able to run the application as long as Java11 is installed
