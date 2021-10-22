@@ -2,6 +2,7 @@ package seedu.duke.expense;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.sql.Timestamp;
 
 public class Expense {
     Date date;

@@ -2,7 +2,6 @@ package seedu.duke;
 
 import seedu.duke.expense.Expense;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 import java.util.logging.Level;

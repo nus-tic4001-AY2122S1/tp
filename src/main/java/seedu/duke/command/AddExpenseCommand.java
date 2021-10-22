@@ -5,6 +5,7 @@ import seedu.duke.InputErrorException;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class AddExpenseCommand extends Command {
