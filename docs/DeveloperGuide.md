@@ -21,11 +21,26 @@
 ## Product scope
 ### Target user profile
 
-{Describe the target user profile}
+Target User: John
+
+Age: 18 (typical)
+
+Occupation: Student
+
+Education: Currently in Poly or JC
+
+Commitments: CCAs, recreational activities, Studies
+
+Traits: Is technologically literate, active in activities, comfortable with typing commands
+
+Our target user is a Student that is currently schooling. As an active student, the Target User has multiple activities that may be hard to keep track of. With the scheduler, John will be able to plan and organize multiple appointments at the same time.
+
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
+JustBook provides, throughout the app use, a consistent user-friendly and error-free interface, helpful message feedback or alerts. The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
+
+Users are able to make, check, delete, view, change, and source in real-time for available slots for appointments using this application. This application will display a range of time slots available for users to choose from, may also list available dates and unavailable dates when the User is trying to schedule an appointment. The User can also choose to work on a 6-calendar-months view/basis (an up and coming feature), or per month, per week, down to a day’s view/basis.  
 
 ## User Stories
 
@@ -33,12 +48,20 @@
 |--------|----------|---------------|------------------|
 |v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
 |v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
+|v1.0|efficient student|I can order all my tasks and appointment by their due date|order all my tasks and appointment by their due date|
+|v1.0|structured student|I can see my appointments arranged together and tasks arranged together|have a clear distinct view of appointments and tasks.|
+|v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day.|
+|v2.0|student who always does late minute work| I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline.|
+|v2.0|busy student|I can quit the application immediately with an automatic save|move on to my other activities quickly|
+|v1.0|student|I can save my appointments and schedule|not need to re-create them everytime I log in|
+|v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month |
+|v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done| & which ones left to attend to that day .|
 
 ## Non-Functional Requirements
 1. Users are able to run the application as long as Java11 is installed
-1. The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
-1. The application should preferably be executable on Windows OS or compatible software-emulated terminal.
-2. User-friendly features incorporated in helpful messages feedback and diagnostic prompts (more to come) 
+2. The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
+3. The application should preferably be executable on Windows OS or compatible software-emulated terminal.
+4. User-friendly features incorporated in helpful messages feedback and diagnostic prompts (more to come) 
 
 
 ## Glossary
