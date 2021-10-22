@@ -47,6 +47,17 @@ public class UI {
         System.out.println("Now you have " + size + " expenses in the list.");
     }
 
+    public static void findMessage(ArrayList<Expense> expenses, ArrayList<Integer> findResult) {
+        if (findResult.size() == 0) {
+            System.out.println("Oops!!! None of task can be found");
+        } else {
+            System.out.println("Here are the matching tasks in your list:");
+            for (int index : findResult) {
+                System.out.println(index + 1 + "." + expenses.get(index).toString());
+            }
+        }
+    }
+
     public static void byeMessage() {
         System.out.println("Bye. Hope to see you again soon!");
     }

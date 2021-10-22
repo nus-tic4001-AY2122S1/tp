@@ -26,6 +26,14 @@ public class ExpenseList {
         size++;
     }
 
+    public void find(String keyword, ArrayList<Integer> findResult) {
+        for (int i = 0; i < expenses.size(); i++) {
+            if (expenses.get(i).toString().contains(keyword)) {
+                findResult.add(i);
+            }
+        }
+    }
+
     public void delete(int index) {
         expenses.remove(index);
         size--;
