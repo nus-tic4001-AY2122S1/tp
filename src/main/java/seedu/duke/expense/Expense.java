@@ -1,5 +1,6 @@
 package seedu.duke.expense;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Expense {
@@ -14,6 +15,8 @@ public class Expense {
     }
 
     public String toString() {
-        return "[" + date + "] " + description + " ($" + amount + ")";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MMM.dd");
+
+        return "[" + sdf.format(date) + "] " + description + " ($" + amount + ")";
     }
 }

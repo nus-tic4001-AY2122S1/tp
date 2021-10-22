@@ -6,6 +6,8 @@ import seedu.duke.command.ExitCommand;
 import seedu.duke.command.ListCommand;
 
 import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Execution {
     protected String fullCommand;
@@ -19,11 +21,14 @@ public class Execution {
     }
 
     public void execute(ExpenseList expenseList) throws InputErrorException {
+        Logger logger = Logger.getLogger("Foo");
+
         switch (command) {
         case "list":
             new ListCommand(fullCommand).run(expenseList);
             break;
         case "add":
+            logger.log(Level.INFO, "Add command to execute");
             new AddExpenseCommand(fullCommand).run(expenseList);
             break;
         case "delete":

@@ -22,4 +22,8 @@ public class InputErrorException extends Exception {
     static void toPrintInValidListTypeCode() {
         System.out.println("OOPS!!! The list type code invalid. Please try again. ");
     }
+
+    static void toPrintAddCommandFormatWrong() {
+        System.out.println("OOPS!!! The add command format wrong (Add format: command description / dd-MMM-yyyy / SGDxxxx). Please try again");
+    }
 }

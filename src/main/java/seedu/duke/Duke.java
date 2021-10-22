@@ -40,6 +40,9 @@ public class Duke {
                     case "InValidListTypeCode":
                         InputErrorException.toPrintInValidListTypeCode();
                         break;
+                    case "AddCommandFormatWrong":
+                        InputErrorException.toPrintAddCommandFormatWrong();
+                        break;
                     default:
                         System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }

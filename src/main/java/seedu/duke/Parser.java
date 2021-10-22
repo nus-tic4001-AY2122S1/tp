@@ -23,9 +23,11 @@ public class Parser {
     }
 
     public static Date date(String fullCommand) throws InputErrorException {
-        String[] s1 = fullCommand.split(" /SGD");
-        String[] s2 = s1[0].split(" /");
-        return convertStrToDate(s2[1]);
+        String[] str = fullCommand.split("\\/");
+        if(str.length != 3) {
+            throw new InputErrorException("AddCommandFormatWrong");
+        }
+        return convertStrToDate(str[1]);
     }
 
     public static double amount(String fullCommand) {

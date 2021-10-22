@@ -38,7 +38,7 @@ public class ListCommand extends Command {
                 break;
             case "e":
                 UI.listMessage(expenseList.expenses);
-        }*/ 
+        }*/
 
         UI.listMessage(expenseList.expenses);
     }
