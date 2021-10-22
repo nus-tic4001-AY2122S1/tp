@@ -92,3 +92,9 @@ Users are able to make, check, delete, view, change, and source in real-time for
 
 <img width="552" alt="Screenshot 2021-10-22 at 12 40 41 PM" src="https://user-images.githubusercontent.com/88772711/138399952-42c4ebfa-ac1a-4a35-922b-c9979d7b1402.png">
 
+## Instructions for Regression testing
+1. Navigate to text-ui-test folder
+2. Depending on your (User's) OS, if windows, run runtest.bat, if Linux or MacOS, run runtest.sh
+3. The CMD window or shell output will display if the comparison between the expected output and actual output are the same
+4. If there are any differences, they will be displayed at the CMD or shell window as well.
+5. The regression test would have passed if no differences are found.
