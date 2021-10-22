@@ -14,44 +14,50 @@ public class Parser {
         CommandKeyWords commandWord = CommandKeyWords.getEnum(result[0].toUpperCase());
 
         switch (commandWord) {
-            case VIEW:
-                return new ViewCommand();
-            case TODO:
-                if (result.length < 2) {
-                    throw new ErrorHandler(ErrorMessage.EMPTY_TODO);
-                }
-                this.content = result[1].trim();
-                return new TodoCommand(this.content);
-            case DELETE:
-                if (result.length < 2) {
-                    throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
-                }
-                this.taskNo = result[1].trim();
+        case VIEW:
+            return new ViewCommand();
+        case TODO:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TODO);
+            }
+            this.content = result[1].trim();
+            return new TodoCommand(this.content);
+        case DELETE:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+            this.taskNo = result[1].trim();
 
-                return new DeleteCommand(this.taskNo);
-            case APPOINTMENT:
-                if (result.length < 2) {
-                    throw new ErrorHandler(ErrorMessage.EMPTY_APPOINTMENT_DESCRIPTION);
-                }
-                return this.handleNewAppointment(result[1].trim());
+            return new DeleteCommand(this.taskNo);
+        case APPOINTMENT:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_APPOINTMENT_DESCRIPTION);
+            }
+            return this.handleNewAppointment(result[1].trim());
 
-            case SET_LOCATION:
-                if (result.length < 2) {
-                    throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
-                }
-                String[] inputContent = result[1].split(" ", 2);
+        case SET_LOCATION:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+            String[] inputContent = result[1].split(" ", 2);
 
-                if (inputContent.length < 2) {
-                    throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
-                }
+            if (inputContent.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_LOCATION_DESCRIPTION);
+            }
 
-                this.taskNo = inputContent[0];
-                this.content = inputContent[1];
+            this.taskNo = inputContent[0];
+            this.content = inputContent[1];
 
-                return new LocationCommand(this.taskNo, this.content);
-            case BYE:
-            default:
-                return new ByeCommand();
+            return new LocationCommand(this.taskNo, this.content);
+        case SET_TIME:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+
+            return this.handleSetTime(result[1]);
+        case BYE:
+        default:
+            return new ByeCommand();
         }
     }
 
@@ -72,5 +78,17 @@ public class Parser {
         String location = timeContent[1].trim();
 
         return new AppointmentCommand(this.content, at, location);
+    }
+
+    private Command handleSetTime(String input) throws ErrorHandler {
+        String[] inputContent = input.split(" ", 2);
+
+        if (inputContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_TIME_DESCRIPTION);
+        }
+        this.taskNo = inputContent[0];
+        this.content = inputContent[1];
+
+        return new AppointmentTimeCommand(this.taskNo, this.content);
     }
 }
