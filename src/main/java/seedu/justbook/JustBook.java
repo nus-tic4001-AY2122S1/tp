@@ -235,6 +235,7 @@ public class JustBook {
             }
         }
     }
+
     // displays the full current month's weekends listings
     public static void listWeekends() {
         Set<DayOfWeek> weekEnds = EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY);
