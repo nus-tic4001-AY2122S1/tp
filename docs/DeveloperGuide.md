@@ -51,11 +51,11 @@ Users are able to make, check, delete, view, change, and source in real-time for
 |v1.0|efficient student|I can order all my tasks and appointment by their due date|order all my tasks and appointment by their due date|
 |v1.0|structured student|I can see my appointments arranged together and tasks arranged together|have a clear distinct view of appointments and tasks.|
 |v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day.|
-|v2.0|student who always does late minute work| I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline.|
-|v2.0|busy student|I can quit the application immediately with an automatic save|move on to my other activities quickly|
 |v1.0|student|I can save my appointments and schedule|not need to re-create them everytime I log in|
 |v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month |
 |v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done| & which ones left to attend to that day .|
+|v2.0|student who always does late minute work| I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline.|
+|v2.0|busy student|I can quit the application immediately with an automatic save|move on to my other activities quickly|
 
 ## Non-Functional Requirements
 1. Users are able to run the application as long as Java11 is installed
