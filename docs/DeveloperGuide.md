@@ -81,4 +81,7 @@ Users are able to make, check, delete, view, change, and source in real-time for
 - Copy the sample test file to a local folder named data
 - start up the app, eg.` java -jar justbook.jar` via a windows cmd or compatible terminal
 - Type in a user name of your choice
-- Type `show --all` or `show all` to check the display list tallies with those saved in the justbook.txt file   
+- Type `show --all` or `show all` to check the display list tallies with those saved in the justbook.txt file
+- Sample instruction:
+- <img width="552" alt="Screenshot 2021-10-22 at 12 40 41 PM" src="https://user-images.githubusercontent.com/88772711/138399952-42c4ebfa-ac1a-4a35-922b-c9979d7b1402.png">
+
