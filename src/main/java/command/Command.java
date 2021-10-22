@@ -36,13 +36,13 @@ public abstract class Command {
         }
     }
 
-    protected Date parseDateTime( String time) throws ErrorHandler {
+    protected Date parseDateTime(String time) throws ErrorHandler {
         SimpleDateFormat formatter = new SimpleDateFormat(Utils.DATE_TIME_FORMAT);
 
         try {
-            return  formatter.parse(time);
+            return formatter.parse(time);
         } catch (ParseException e) {
-            throw  new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
+            throw new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
         }
     }
 

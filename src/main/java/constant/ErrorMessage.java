@@ -13,9 +13,9 @@ public class ErrorMessage {
     public static final String INVALID_APPOINTMENT_TIME = "OOPS!!! The appointment time format is invalid, please " +
         "refer to this format '22-09-2018 1:23:43 pm'.";
     public static final String INVALID_APPOINTMENT_TASK = "OOPS!!! Set location fail, the task is not of Appointment " +
-            "type.";
+        "type.";
     public static final String EMPTY_APPOINTMENT_DESCRIPTION = "OOPS!!! The appointment description cannot be empty.";
     public static final String EMPTY_APPOINTMENT_TIME = "OOPS!!! The appointment time is missing, missing '/at'";
     public static final String EMPTY_APPOINTMENT_LOCATION = "OOPS!!! The appointment location is missing, missing " +
-            "'/l'";
+        "'/l'";
 }

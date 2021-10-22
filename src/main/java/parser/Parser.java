@@ -1,8 +1,17 @@
 package parser;
 
-import command.*;
+import command.Command;
+import command.ViewCommand;
+import command.TodoCommand;
+import command.LocationCommand;
+import command.ByeCommand;
+import command.DeleteCommand;
+import command.AppointmentCommand;
+import command.AppointmentTimeCommand;
+
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
+
 import exception.ErrorHandler;
 
 public class Parser {
