@@ -24,6 +24,10 @@ public class Parser {
         return s2[1];
     }
 
+    public static String sortingIndex(String fullCommand) {
+        return fullCommand.split(" ")[1];
+    }
+
     public static double amount(String fullCommand) {
         String dollar = fullCommand.split(" /SGD")[1];
 

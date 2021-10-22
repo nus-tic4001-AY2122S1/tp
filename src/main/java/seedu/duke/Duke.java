@@ -2,14 +2,16 @@ package seedu.duke;
 
 import seedu.duke.expense.Expense;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.SimpleFormatter;
 
 public class Duke {
     private ExpenseList expenseList;
     private static Logger logger = Logger.getLogger("Foo");
-
 
     private Duke() {
         ArrayList<Expense> expenses = new ArrayList<>();
@@ -19,7 +21,18 @@ public class Duke {
     private void run() {
         UI.welcome();
         // log a message at INFO level
-        logger.log(Level.INFO, "Duke start processing");
+        FileHandler fh;
+        try {
+            fh = new FileHandler("./log/ExpensesTrackerLogFile.log");
+            logger.addHandler(fh);
+            logger.setUseParentHandlers(false);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            logger.log(Level.INFO, "Duke start processing");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         boolean isExit = false;
         while (!isExit) {
             try {

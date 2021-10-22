@@ -3,10 +3,19 @@ package seedu.duke.expense;
 import java.sql.Timestamp;
 
 public class Expense {
+
     String date;
     String description;
     double amount;
     Timestamp recordDateTime;
+
+    public String getDate() {
+        return date;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
 
     public Expense(String date, String description, double amount, Timestamp recordDateTime) {
         this.date = date;
