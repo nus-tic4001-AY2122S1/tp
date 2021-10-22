@@ -35,12 +35,19 @@ public class ProjModeCommand extends Command {
     public void execute() {
         String input = "";
 
+        String welcome = "begin proj-mode >>>"
+                + System.lineSeparator()
+                + "use `#no #no .. -> #no` to move from left to right"
+                + System.lineSeparator();
+
+        System.out.println(welcome);
+
         printSideBySide();
 
         while (true) {
             input = ui.readCommand().strip();
             if (input.equals("q")) {
-                System.out.println("end proj-mode");
+                System.out.println("end proj-mode <<<");
                 return;
             }
             String[] parts = parse(input); // TODO: pass to @rt for integrad into parser
@@ -64,8 +71,11 @@ public class ProjModeCommand extends Command {
 
         init();
 
-        String[] left = inbox.getlines().split(System.lineSeparator());
-        String[] right = proj.getlines().split(System.lineSeparator());
+        String inboxText = "inbox:" + System.lineSeparator() + inbox.getlines();
+        String projText = "proj:" + System.lineSeparator() + proj.getlines();
+
+        String[] left = inboxText.split(System.lineSeparator());
+        String[] right = projText.split(System.lineSeparator());
 
         int vertical = longestWidth(left);
 
@@ -97,7 +107,7 @@ public class ProjModeCommand extends Command {
 
         lines.stream()
                 .forEach(s -> System.out.println(s));
-
+        System.out.print(System.lineSeparator());
     }
 
     private String[] parse(String input) {
