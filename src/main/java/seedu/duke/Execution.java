@@ -1,8 +1,10 @@
 package seedu.duke;
 
 import seedu.duke.command.AddExpenseCommand;
+import seedu.duke.command.AddIncomeCommand;
 import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.ExitCommand;
+import seedu.duke.command.FindCommand;
 import seedu.duke.command.ListCommand;
 import seedu.duke.command.AddIncomeCommand;
 import seedu.duke.command.SortCommand;
@@ -34,6 +36,9 @@ public class Execution {
             break;
         case "sort":
             new SortCommand(fullCommand).run(expenseList);
+            break;
+        case "find":
+            new FindCommand(fullCommand).run(expenseList);
             break;
         case "exit":
             new ExitCommand(fullCommand).run(expenseList);

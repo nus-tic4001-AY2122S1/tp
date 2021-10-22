@@ -25,6 +25,9 @@
 |v1.0|new user|||
 |v2.0|user|I need to do ascending or descending sorting by date|I can view the latest expenses|
 |v2.0|user|I need to do ascending or descending sorting by expenses|I can view the highest expenses|
+|v2.0|user|I need to put in my income|I can know how much I can spend|
+|v2.0|user|I need to know when I spend and record enter time|I can check whether miss out any spend item|
+|v2.0|user|I need to classify those spend item|I can know the spend category|
 
 ## Use Cases
 
