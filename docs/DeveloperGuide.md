@@ -53,7 +53,7 @@ Users are able to make, check, delete, view, change, and source in real-time for
 |v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day.|
 |v1.0|student|I can save my appointments and schedule|not need to re-create them everytime I log in|
 |v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month |
-|v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done| & which ones left to attend to that day .|
+|v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done and which ones left to attend to that day .|
 |v2.0|student who always does late minute work| I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline.|
 |v2.0|busy student|I can quit the application immediately with an automatic save|move on to my other activities quickly|
 
@@ -83,5 +83,6 @@ Users are able to make, check, delete, view, change, and source in real-time for
 - Type in a user name of your choice
 - Type `show --all` or `show all` to check the display list tallies with those saved in the justbook.txt file
 - Sample instruction:
+
 <img width="552" alt="Screenshot 2021-10-22 at 12 40 41 PM" src="https://user-images.githubusercontent.com/88772711/138399952-42c4ebfa-ac1a-4a35-922b-c9979d7b1402.png">
 
