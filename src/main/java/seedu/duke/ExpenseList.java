@@ -17,10 +17,10 @@ public class ExpenseList {
 
 //<<<<<<< master
     public void addExpense(Date date, String description, double amount,  Timestamp recordDateTime) {
-        Expense expense = new Expense(date, description, amount);
+        Expense expense = new Expense(date, description, amount, recordDateTime);
 //=======
 //    public void addExpense(String date, String description, double amount, Timestamp recordDateTime) {
-        Expense expense = new Expense(date, description, amount, recordDateTime);
+//        Expense expense = new Expense(date, description, amount, recordDateTime);
 //>>>>>>> master
         expenses.add(expense);
         size++;
