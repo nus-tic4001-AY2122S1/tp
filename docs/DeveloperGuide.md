@@ -2,35 +2,30 @@
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+- [docs.oracle.com Java time References](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html) 
+- [Java Streams Reference](http://tutorials.jenkov.com/java-functional-programming/streams.html)
+- Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft, *Modern Java in Action: Lambdas, streams, functional and reactive programming 2nd Edition*, Manning, 2018.   
+
 
 ## Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+**JustBook Command Line App** leverages on the help of a total five Java classes, viz. **JustBook, Bookings, AddCommand, DeleteCommand and HelpCommand** created by the team. It takes advantage of an optimal use of Java Stream and latest java.time APIs, e.g. LocalDateTime and LocalDate, among others, together with a judicious choice of data structures, to allow a single user good at the keyboard to make and register bookings / appointments online fast. 
+
+- Each user booking entry is stored in an `Arraylist<Bookings>` data structure (sorted before each displaym, allowing for editing or deleting functions onscreen). 
+  
+- The **Bookings** class will capture the user booking description, the scheduled start localDateTime and end localDateTime data of a specific booking. 
+  
+- Another data structure, `HashMap<LocalDate, LocalDate>`, is used to store, for efficient search/retrieval, a blocklist consisting of blocking periods where the user will not be able to make any bookings.  
 
 
 ## Product scope
 ### Target user profile
 
-Target User: John 
-
-Age: 18 (typical)
-
-Occupation: Student
-
-Education: Currently in Poly or JC
-
-Commitments: CCAs, recreational activities, Studies
-
-Traits: Is technologically literate, active in activities, comfortable with typing commands
-
-Our target user is a Student that is currently schooling. As an active student, the Target User has multiple activities that may be hard to keep track of. With the scheduler, John will be able to plan and organize multiple appointments at the same time.
-
+{Describe the target user profile}
 
 ### Value proposition
 
-Our Value Proposition is that our scheduler provides, throughout the app use, a consistent user-friendly and error-free interface, helpful message feedback or alerts and capability to suggest time slots to the user in addition to the time slots available (an up and coming feature). The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
-
+{Describe the value proposition: what problem does it solve?}
 
 ## User Stories
 
@@ -38,36 +33,29 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 |--------|----------|---------------|------------------|
 |v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
 |v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
-|v1.0|efficient student|I can order all my tasks and appointment by their due date| order all my tasks and appointment by their due date|
-|v1.0|structured student| I can see my appointments arranged together and tasks arranged together|have a clear distinct view of appointments and tasks.|
-|v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day.|
-|v1.0|student|I can save my appointments and schedule| not need to re-create them everytime I log in|
-|v1.0|active student|I can view the block of outstanding schedules for the month displayed| in chronological order preferably with a visual color coded calendar on top to show days that are booked and those that are unbooked.|so that I can check if I can add further bookings for that month |
-|v1.0|As a fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done and which ones left to attend to that day .|
-|v2.0|student who always does late minute work|I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time| meet the deadline.|
-|v2.0|busy student| I can quit the application immediately with an automatic save|move on to my other activities quickly|
 
 ## Non-Functional Requirements
-
-- Users are able to run the application with Java11 installed
-
-- The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
-
-- The application should preferably be executable on Windows OS or compatible software-emulated terminal.
+1. Users are able to run the application as long as Java11 is installed
+1. The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
+1. The application should preferably be executable on Windows OS or compatible software-emulated terminal.
+2. User-friendly features incorporated in helpful messages feedback and diagnostic prompts (more to come) 
 
 
 ## Glossary
 
-* *glossary item* - Definition
-* JustBook - application name
+* *Mainstream OS* - Windows, Linux, Unix, OS-X
+* *JustBook App*  - A single-user command line app for making and storing student bookings online 
+* *CLI*           - Command Line Interface
+* *booking*       - A typed entry consisting of booking text description, a start Date-Time and end Date-Time 
+* *ISO(time)*     - For Java time Standards, it follows this format: "yyyy-MM-dd HH:mm"
+* "Date-Time*     - Java LocalDateTime implemented with format as "yyy-M-d HH:mm", using a 24 hr format
 
 ## Instructions for manual testing
 
-1. use the "help" command for guidance.
-
-<img width="829" alt="Screenshot 2021-10-22 at 12 40 28 PM" src="https://user-images.githubusercontent.com/88772711/138394613-e2b6b7ef-a56a-4987-b8cb-dc96c4dce2d4.png">
-
-2. use the "add" command in the following format to add new appointments and "show all" command to list all your appointments.
-
-<img width="552" alt="Screenshot 2021-10-22 at 12 40 41 PM" src="https://user-images.githubusercontent.com/88772711/138394757-a348e32b-89f8-432e-a6b2-ad2bb5c26e66.png">
-
+- Ensure Java jdk 11 is installed
+- Download the justbook.jar file from Release v2.0
+- Obtain a sample test file, eg. justbook.txt with saved entries (correctly formatted)
+- Copy the sample test file to a local folder named data
+- start up the app, eg.` java -jar justbook.jar` via a windows cmd or compatible terminal
+- Type in a user name of your choice
+- Type `show --all` or `show all` to check the display list tallies with those saved in the justbook.txt file   
