@@ -23,6 +23,7 @@ public class LocationCommand extends Command {
 
         if(task instanceof Appointment) {
             ((Appointment) task).setLocation(this.location);
+            ui.printUpdatedTask(task.taskToStringFormat(), list.sizeOfTask());
         } else {
             ui.print(ErrorMessage.INVALID_APPOINTMENT_TASK);
         }

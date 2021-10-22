@@ -55,6 +55,10 @@ public class Ui {
             + " tasks in the list.");
     }
 
+    public void printUpdatedTask(String task, int num) {
+        System.out.println("   Noted. I've updated this task:\n   " + task + "\n");
+    }
+
     public void bye() {
         print("Bye. Hope to see you again soon!");
     }
