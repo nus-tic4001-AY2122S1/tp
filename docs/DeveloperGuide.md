@@ -22,16 +22,31 @@
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
-|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
-|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
+|v1.0|new user|||
+|v2.0|user|I need to do ascending or descending sorting by date|I can view the latest expenses|
+|v2.0|user|I need to do ascending or descending sorting by expenses|I can view the highest expenses|
+|v2.0|user|I need to put in my income|I can know how much I can spend|
+|v2.0|user|I need to know when I spend and record enter time|I can check whether miss out any spend item|
+|v2.0|user|I need to classify those spend item|I can know the spend category|
+
+## Use Cases
+
+(For all use cases below, the System is the Expenses Tracking App and the Actor is the user, unless specified otherwise)
+
+####Use case: Add Expenses
+
+####Use case: Delete Expenses
+
+####Use case: List Expenses
+
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+* Should work on any mainstream OS as long as it has Java 11 or above installed.
 
 ## Glossary
 
-* *glossary item* - Definition
+* **Mainstream OS**:  Windows, Linux, Unix, OS-X
 
 ## Instructions for manual testing
 

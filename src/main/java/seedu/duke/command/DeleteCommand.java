@@ -4,8 +4,12 @@ import seedu.duke.ExpenseList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 import seedu.duke.expense.Expense;
+
+import java.io.IOException;
+import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.SimpleFormatter;
 
 public class DeleteCommand extends Command {
     public DeleteCommand(String fullCommand) {
@@ -16,8 +20,19 @@ public class DeleteCommand extends Command {
     private static Logger logger = Logger.getLogger("YSG");
 
     public void run(ExpenseList expenseList) {
+
         // log a message at INFO level
-        logger.log(Level.INFO, "Duke Expense deleting processing");
+        FileHandler fh;
+        try {
+            fh = new FileHandler("./log/DeleteLogFile.log");
+            logger.addHandler(fh);
+            logger.setUseParentHandlers(false);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            logger.log(Level.INFO, "Duke Expense deleting processing");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         int index = Parser.index(fullCommand);
         assert (index >= 0) : "Index number cannot smaller than 0!";

@@ -10,7 +10,7 @@ public class Parser {
     }
 
     public static int index(String fullCommand) {
-        String buffer = fullCommand.split(" ")[1];
+        //String buffer = fullCommand.split(" ")[1];
 
         //assert (!buffer.matches("\\d+")) : "Index must be Integer!";
         return Integer.parseInt(fullCommand.split(" ")[1]) - 1;
@@ -30,7 +30,14 @@ public class Parser {
         return convertStrToDate(str[1]);
     }
 
+    public static String sortingIndex(String fullCommand) {
+        return fullCommand.split(" ")[1];
+    }
+
     public static double amount(String fullCommand) {
+        String dollar = fullCommand.split(" /SGD")[1];
+
+        assert (!dollar.matches("\\d++")) : "Amount must be number!";
         return Double.parseDouble(fullCommand.split(" /SGD")[1]);
     }
 
