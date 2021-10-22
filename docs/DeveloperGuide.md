@@ -41,11 +41,11 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 
 ## Non-Functional Requirements
 
--Users are able to run the application with Java11 installed
+- Users are able to run the application with Java11 installed
 
--The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
+- The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
 
--The application should preferably be executable on Windows OS or compatible software-emulated terminal.
+- The application should preferably be executable on Windows OS or compatible software-emulated terminal.
 
 
 ## Glossary
