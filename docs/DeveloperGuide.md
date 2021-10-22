@@ -53,12 +53,12 @@ Users are able to make, check, delete, view, change, and source in real-time for
 |v1.0|date planner|I find a booking item by date|locate a to-do without having to go through the entire list|
 |v1.0|efficient student|I can order all my tasks and appointment by their due date|order all my tasks and appointment by their due date|
 |v1.0|systematic student|I can see my list upfront |know what tasks I have clear for the day|
-|v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month|
-|v1.0|active student|I can view the block of outstanding schedules for the month displayed|check if I can add further bookings for that month|
-|v1.0|fast moving student|I can view the the day's block of remaining schedules.|remind myself of the schedules done and which ones left to attend to that day|
+|v1.0|active student|I can view the block of outstanding schedules for the month displayed (coming feature)|check if I can add further bookings for that month|
+|v1.0|fast-moving student|I can view the the day's block of remaining schedules|remind myself of the schedules done and which ones left to attend to that day|
+|v1.0|studious student|I can input a blocking period into the database|so that I'm unable to book within that critical period|
 |v2.0|student|I can save or load at start up my appointments and schedule|not need to re-create them everytime I log in|
 |v2.0|structured student|I can see my appointments arranged together and tasks arranged together|have a clear distinct view of appointments and tasks|
-|v2.0|student who always does late minute work|I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline (a coming feature)|
+|v2.0|student who always does late minute work|I want to see tasks or appointments going to be due being highlighted to me in ordered deadline date and time|can meet the deadline (coming feature)|
 |v2.0|social student|I can view the block of weekend outstanding schedules for the entire current month displayed|check if I can add further bookings for the weekends|
 |v2.0|busy student|I can quit the application immediately with an automatic save|move on to my other activities quickly|
 
