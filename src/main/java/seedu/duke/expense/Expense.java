@@ -6,19 +6,12 @@ import java.util.Date;
 import java.sql.Timestamp;
 
 public class Expense {
-    Date date;
-//=======
-//import java.sql.Timestamp;
+    private Date date;
+    private String description;
+    private double amount;
+    private Timestamp recordDateTime;
 
-//public class Expense {
-
-//    String date;
-//>>>>>>> master
-    String description;
-    double amount;
-    Timestamp recordDateTime;
-
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -26,11 +19,7 @@ public class Expense {
         return amount;
     }
 
-//<<<<<<< master
     public Expense(Date date, String description, double amount,  Timestamp recordDateTime) {
-//=======
-//  public Expense(String date, String description, double amount, Timestamp recordDateTime) {
-//>>>>>>> master
         this.date = date;
         this.description = description;
         this.amount = amount;
@@ -38,12 +27,9 @@ public class Expense {
     }
 
     public String toString() {
-//<<<<<<< master
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MMM.dd");
 
         return "[" + sdf.format(date) + "] " + description + " ($" + amount + " (System datetime:" + recordDateTime + ")";
-//=======
-//        return "[" + date + "] " + description + " ($" + amount + ")" + " (System datetime:" + recordDateTime + ")";
-//>>>>>>> master
     }
 }

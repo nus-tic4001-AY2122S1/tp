@@ -15,18 +15,13 @@ public class ExpenseList {
         this.size = expenses.size();
     }
 
-//<<<<<<< master
     public void addExpense(Date date, String description, double amount,  Timestamp recordDateTime) {
         Expense expense = new Expense(date, description, amount, recordDateTime);
-//=======
-//    public void addExpense(String date, String description, double amount, Timestamp recordDateTime) {
-//        Expense expense = new Expense(date, description, amount, recordDateTime);
-//>>>>>>> master
         expenses.add(expense);
         size++;
     }
 
-    public void addIncome(String date, String description, double amount, Timestamp recordDateTime) {
+    public void addIncome(Date date, String description, double amount, Timestamp recordDateTime) {
         Expense income = new Expense(date, description, amount, recordDateTime);
         expenses.add(income);
         size++;
