@@ -21,6 +21,12 @@ public class ExpenseList {
         size++;
     }
 
+    public void addExpense(Date date, String description, double amount,  Timestamp recordDateTime, String category) {
+        Expense expense = new Expense(date, description, amount, recordDateTime, category);
+        expenses.add(expense);
+        size++;
+    }
+
     public void addIncome(Date date, String description, double amount, Timestamp recordDateTime) {
         Expense income = new Expense(date, description, amount, recordDateTime);
         expenses.add(income);

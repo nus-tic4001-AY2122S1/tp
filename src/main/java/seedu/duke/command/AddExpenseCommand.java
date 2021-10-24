@@ -20,8 +20,17 @@ public class AddExpenseCommand extends Command {
         Date recordDate = new Date();
         long time = recordDate.getTime();
         Timestamp timestamp = new Timestamp(time);
-        expenseList.addExpense(date, description, amount, timestamp);
+
+        String category = Parser.getCategory(fullCommand);
+
+        if (category.equals("No Category")) {
+            expenseList.addExpense(date, description, amount, timestamp);
+        } else {
+            expenseList.addExpense(date, description, amount, timestamp, category);
+        }
+
         int size = expenseList.size;
+
         UI.addMessage(expenseList.expenses.get(size - 1), size);
     }
 }

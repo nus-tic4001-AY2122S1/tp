@@ -26,6 +26,11 @@ public class InputErrorException extends Exception {
     }
 
     static void toPrintInvalidCommand() {
+
         System.out.println("OOPS!!! Invalid command input. Please try again. ");
+    }
+
+    static void toPrintInvalidAddCommandFormat() {
+        System.out.println("OOPS!!! Invalid Add command format. Please try again. ");
     }
 }

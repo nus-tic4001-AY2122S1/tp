@@ -73,4 +73,15 @@ public class Parser {
             throw new InputErrorException("InvalidCommand");
         }
     }
+
+    public static String getCategory(String fullCommand) throws InputErrorException {
+        String[] str = fullCommand.split("\\/");
+        if (str.length == 4) {
+            return str[3];
+        } else if (str.length == 3) {
+            return "No Category";
+        } else {
+            throw new InputErrorException("InvalidAddCommandFormat");
+        }
+    }
 }
