@@ -8,7 +8,7 @@ public class AddCommand {
     Bookings record;
 
     public AddCommand(String bookDesc, String begin, String end) {
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("[yyyy-M-d HH:mm]");
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d HH:mm");
         record = new Bookings(bookDesc, parse(begin, format), parse(end, format));
     }
 
