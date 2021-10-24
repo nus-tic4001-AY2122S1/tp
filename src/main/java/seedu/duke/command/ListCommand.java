@@ -50,7 +50,8 @@ public class ListCommand extends Command {
             case "e":
                 UI.listMessage(expenseList.expenses);
         }*/
-
-        UI.listMessage(expenseList.expenses);
+        if (type.equals("o")) {
+            UI.listMessage(expenseList.expenses);
+        }
     }
 }
