@@ -24,4 +24,8 @@ public class InputErrorException extends Exception {
         System.out.print("(Add format: command description / dd-MMM-yyyy / SGDxxxx).");
         System.out.println(" Please try again");
     }
+
+    static void toPrintInvalidCommand() {
+        System.out.println("OOPS!!! Invalid command input. Please try again. ");
+    }
 }

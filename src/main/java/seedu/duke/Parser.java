@@ -66,7 +66,11 @@ public class Parser {
 
             return typeCode;
         } else {
-            return "o";
+            if (s1[0].toLowerCase().equals("list")) {
+                return "o";
+            }
+
+            throw new InputErrorException("InvalidCommand");
         }
     }
 }

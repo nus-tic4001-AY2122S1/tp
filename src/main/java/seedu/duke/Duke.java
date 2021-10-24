@@ -55,6 +55,9 @@ public class Duke {
                 case "AddCommandFormatWrong":
                     InputErrorException.toPrintAddCommandFormatWrong();
                     break;
+                case "InvalidCommand":
+                    InputErrorException.toPrintInvalidCommand();
+                    break;
                 default:
                     System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
