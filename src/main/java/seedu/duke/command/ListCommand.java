@@ -15,17 +15,6 @@ import java.util.logging.SimpleFormatter;
 public class ListCommand extends Command {
     private String type;
 
-    /**
-     * To initial ListCommand variable
-     * Input format: "list" + space + "-type"
-     *
-     * Four types list command: i stand for income
-     *                          c stand for category
-     *                          d stand for date
-     *                          e stand for expense
-     *
-     * @param fullCommand The entire command user input
-     */
     public ListCommand(String fullCommand) throws InputErrorException {
         super(fullCommand);
         this.type = Parser.getListType(fullCommand);
@@ -48,7 +37,7 @@ public class ListCommand extends Command {
             e.printStackTrace();
         }
 
-/*        switch(type) {
+        /*switch(type) {
             case "i":
                 UI.listMessage(expenseList.expenses);
                 break;

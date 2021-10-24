@@ -24,7 +24,7 @@ public class Parser {
 
     public static Date date(String fullCommand) throws InputErrorException {
         String[] str = fullCommand.split("\\/");
-        if(str.length != 3) {
+        if (str.length != 3) {
             throw new InputErrorException("AddCommandFormatWrong");
         }
         return convertStrToDate(str[1]);
@@ -43,24 +43,24 @@ public class Parser {
 
     private static Date convertStrToDate(String date) throws InputErrorException {
 
-        SimpleDateFormat formatter=new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
 
-        try{
+        try {
             return formatter.parse(date);
         } catch (ParseException p) {
             throw new InputErrorException("DateFormatError");
         }
     }
 
-    public static String getListType (String fullCommand) throws InputErrorException {
+    public static String getListType(String fullCommand) throws InputErrorException {
         String[] s1 = fullCommand.split(" ");
-        if(s1.length != 2) {
+        if (s1.length != 2) {
             throw new InputErrorException("ListCommandFormatError");
         }
 
         String typeCode = Character.toString(s1[1].charAt(1));
 
-        if(typeCode != "i" && typeCode != "c" && typeCode != "e" && typeCode != "d") {
+        if (typeCode != "i" && typeCode != "c" && typeCode != "e" && typeCode != "d") {
             throw new InputErrorException("InValidListTypeCode");
         }
 

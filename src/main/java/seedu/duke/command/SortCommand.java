@@ -27,13 +27,13 @@ public class SortCommand extends Command implements Comparable<Expense> {
         }
     };
 
-    public static Comparator<Expense> expenseDateComparator = new Comparator<Expense>() {
-        public int compare(Expense e1, Expense e2) {
-            String expenseDate1 = e1.getDate();
-            String expenseDate2 = e2.getDate();
-            return expenseDate1.compareTo(expenseDate2);
-        }
-    };
+    //public static Comparator<Expense> expenseDateComparator = new Comparator<Expense>() {
+    //public int compare(Expense e1, Expense e2) {
+    //String expenseDate1 = e1.getDate();
+    //String expenseDate2 = e2.getDate();
+    //return expenseDate1.compareTo(expenseDate2);
+    //}
+    //};
 
     public SortCommand(String fullCommand) {
         super(fullCommand);

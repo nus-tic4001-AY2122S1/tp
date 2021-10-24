@@ -28,8 +28,11 @@ public class Expense {
 
     public String toString() {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MMM.dd");
-
-        return "[" + sdf.format(date) + "] " + description + " ($" + amount + " (System datetime:" + recordDateTime + ")";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
+        String dateInfo = "[" + sdf.format(date) + "] ";
+        String des = description;
+        String amountInfo = " ($" + amount + ")";
+        String sysDatetime = " (System datetime: " + recordDateTime + ")";
+        return dateInfo + des + amountInfo + sysDatetime;
     }
 }

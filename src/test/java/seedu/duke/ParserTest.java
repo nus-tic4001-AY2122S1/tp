@@ -1,6 +1,12 @@
 package seedu.duke;
 
 import org.junit.jupiter.api.Test;
+import seedu.duke.command.AddExpenseCommand;
+import seedu.duke.expense.Expense;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,8 +27,14 @@ public class ParserTest {
     }
 
     @Test
-    void dateTest() {
-        assertEquals("Monday", Parser.date("add lunch /Monday /SGD12.50"));
+    void dateTest() throws InputErrorException, ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+
+        String d1s = "12-Dec-2021";
+        Date d1 = formatter.parse(d1s);
+        Date d2 = Parser.date("add lunch /12-Dec-2021 /SGD12.50");
+
+        assertEquals(d1, d2);
     }
 
     @Test

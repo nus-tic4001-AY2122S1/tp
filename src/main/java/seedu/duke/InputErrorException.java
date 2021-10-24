@@ -3,11 +3,7 @@ package seedu.duke;
 public class InputErrorException extends Exception {
     String errorType;
 
-    /**
-     * To initialize InputErrorException
-     * @param errorType the error type
-     */
-    InputErrorException(String errorType){
+    InputErrorException(String errorType) {
         this.errorType = errorType;
     }
 
@@ -24,6 +20,8 @@ public class InputErrorException extends Exception {
     }
 
     static void toPrintAddCommandFormatWrong() {
-        System.out.println("OOPS!!! The add command format wrong (Add format: command description / dd-MMM-yyyy / SGDxxxx). Please try again");
+        System.out.print("OOPS!!! The add command format wrong ");
+        System.out.print("(Add format: command description / dd-MMM-yyyy / SGDxxxx).");
+        System.out.println(" Please try again");
     }
 }
