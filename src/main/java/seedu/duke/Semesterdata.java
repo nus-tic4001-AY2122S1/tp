@@ -13,6 +13,15 @@ public class Semesterdata {
         this.examDuration = examDuration;
     }
 
+    public String getPrettyString() {
+        String result = "";
+        result += "Semester: " + semester + " | ";
+        result += "Exam date: " + examDate + " | ";
+        result +=  "Exam duration: " + examDuration;
+
+        return result;
+    }
+
     @Override
     public String toString() {
         return "SemesterData{"

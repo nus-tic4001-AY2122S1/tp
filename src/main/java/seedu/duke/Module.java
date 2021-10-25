@@ -68,4 +68,33 @@ public class Module {
     public String getModuleTitle() {
         return title;
     }
+
+    public String getPrettyPrint() {
+        String semesterString = "";
+        for (int i = 0; i < semesters.length; i++) {
+            semesterString += Integer.toString(semesters[i]);
+            if (i < semesters.length - 1) {
+                semesterString += ", ";
+            }
+        }
+
+        String semesterDataString = "";
+        for (Semesterdata sem : semesterData) {
+            semesterDataString += sem.getPrettyString();
+        }
+
+        String result = "";
+        result += moduleCode + " | ";
+        result += title + " | ";
+        result += "Semesters: " + semesterString + " | ";
+        result += description + " | ";
+        result += "Module credit: " + moduleCredit + " | ";
+        result += "Department: " + department + " | ";
+        result += "Faculty: " + faculty + " | ";
+        result += "Prerequisites: " + prerequisite + " | ";
+        result += "Corequisites: " + corequisite + " | ";
+        result += "Detailed semester data:" + semesterDataString;
+
+        return result;
+    }
 }
