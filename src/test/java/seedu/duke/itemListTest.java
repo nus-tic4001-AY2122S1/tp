@@ -1,7 +1,7 @@
 package seedu.duke;
 
 import org.junit.jupiter.api.Test;
-import seedu.duke.expense.Expense;
+import seedu.duke.item.Item;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -10,7 +10,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ExpenseListTest {
+class itemListTest {
 
     @Test
     public void addExpense() throws ParseException {
@@ -22,9 +22,9 @@ class ExpenseListTest {
         Date recordDate = new Date();
         long time = recordDate.getTime();
         Timestamp timestamp = new Timestamp(time);
-        Expense tester = new Expense(d1, "lunch", 12.0, timestamp);
+        Item tester = new Item(d1, "lunch", 12.0, timestamp);
 
         assertEquals("[2021-Dec-11] lunch ($12.0) (System datetime: " + timestamp + ")",
-                new Expense(d1, "lunch", 12.0, timestamp).toString());
+                new Item(d1, "lunch", 12.0, timestamp).toString());
     }
 }
