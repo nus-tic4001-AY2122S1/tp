@@ -24,19 +24,18 @@ public class ListCommand extends Command {
             //List and Format Data - List 15 Modules tbc
             System.out.println("Here are the list of available Modules (Limit to 10) : ");
             for (int i = 0; i < 15; i++) {
-                Ui.printAPIModules(modData,i);
+                Ui.printApiModules(modData,i);
             }
             System.out.println("* Data was retrieved using NUS MODS API. *");
         } else if (userInstruction.contains("Semester")) {
             // TODO: Make Search non-case sensitive.
-                System.out.println(userInstruction);
                 IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
                         .getModuleSemester().contains(userInstruction))
-                        .forEach(index -> Ui.printAPIModules(modData,index));
+                        .forEach(index -> Ui.printApiModules(modData,index));
         } else {
             IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
                         .getModuleCode().contains(userInstruction))
-                        .forEach(index -> Ui.printAPIModules(modData,index));
-            }
+                        .forEach(index -> Ui.printApiModules(modData,index));
         }
+    }
 }
