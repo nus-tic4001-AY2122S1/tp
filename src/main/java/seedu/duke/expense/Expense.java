@@ -1,15 +1,18 @@
 package seedu.duke.expense;
 
+//<<<<<<< master
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.sql.Timestamp;
 
 public class Expense {
+    private Date date;
+    private String description;
+    private double amount;
+    private Timestamp recordDateTime;
+    private String category;
 
-    String date;
-    String description;
-    double amount;
-    Timestamp recordDateTime;
-
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -17,14 +20,32 @@ public class Expense {
         return amount;
     }
 
-    public Expense(String date, String description, double amount, Timestamp recordDateTime) {
+    public Expense(Date date, String description, double amount,  Timestamp recordDateTime) {
         this.date = date;
         this.description = description;
         this.amount = amount;
         this.recordDateTime = recordDateTime;
     }
 
+    public Expense(Date date, String description, double amount,  Timestamp recordDateTime, String category) {
+        this.date = date;
+        this.description = description;
+        this.amount = amount;
+        this.recordDateTime = recordDateTime;
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+
     public String toString() {
-        return "[" + date + "] " + description + " ($" + amount + ")" + " (System datetime:" + recordDateTime + ")";
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
+        String dateInfo = "[" + sdf.format(date) + "] ";
+        String des = description;
+        String amountInfo = " ($" + amount + ")";
+        String sysDatetime = " (System datetime: " + recordDateTime + ")";
+        return dateInfo + des + amountInfo + sysDatetime;
     }
 }

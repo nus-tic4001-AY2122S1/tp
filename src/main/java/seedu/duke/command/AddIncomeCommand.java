@@ -1,6 +1,7 @@
 package seedu.duke.command;
 
 import seedu.duke.ExpenseList;
+import seedu.duke.InputErrorException;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 
@@ -12,8 +13,8 @@ public class AddIncomeCommand extends Command {
         super(fullCommand);
     }
 
-    public void run(ExpenseList expenseList) {
-        String date = Parser.date(fullCommand);
+    public void run(ExpenseList expenseList) throws InputErrorException {
+        Date date = Parser.date(fullCommand);
         String description = Parser.description(fullCommand);
         double amount = Parser.amount(fullCommand);
         Date recordDate = new Date();

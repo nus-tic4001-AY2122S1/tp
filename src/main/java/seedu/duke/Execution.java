@@ -9,6 +9,10 @@ import seedu.duke.command.ListCommand;
 import seedu.duke.command.AddIncomeCommand;
 import seedu.duke.command.SortCommand;
 
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Execution {
     protected String fullCommand;
     protected String command;
@@ -20,12 +24,15 @@ public class Execution {
         this.isExit = false;
     }
 
-    public void execute(ExpenseList expenseList) {
+    public void execute(ExpenseList expenseList) throws InputErrorException {
+        Logger logger = Logger.getLogger("Foo");
+
         switch (command) {
         case "list":
             new ListCommand(fullCommand).run(expenseList);
             break;
         case "add":
+            logger.log(Level.INFO, "Add command to execute");
             new AddExpenseCommand(fullCommand).run(expenseList);
             break;
         case "delete":

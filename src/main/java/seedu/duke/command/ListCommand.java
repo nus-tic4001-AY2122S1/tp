@@ -1,6 +1,8 @@
 package seedu.duke.command;
 
 import seedu.duke.ExpenseList;
+import seedu.duke.InputErrorException;
+import seedu.duke.Parser;
 import seedu.duke.UI;
 
 import java.io.IOException;
@@ -11,8 +13,11 @@ import java.util.logging.SimpleFormatter;
 
 
 public class ListCommand extends Command {
-    public ListCommand(String fullCommand) {
+    private String type;
+
+    public ListCommand(String fullCommand) throws InputErrorException {
         super(fullCommand);
+        this.type = Parser.getListType(fullCommand);
     }
 
     private static Logger logger = Logger.getLogger("LIST");
@@ -32,6 +37,21 @@ public class ListCommand extends Command {
             e.printStackTrace();
         }
 
-        UI.listMessage(expenseList.expenses);
+        /*switch(type) {
+            case "i":
+                UI.listMessage(expenseList.expenses);
+                break;
+            case "c":
+                UI.listMessage(expenseList.expenses);
+                break;
+            case "d":
+                UI.listMessage(expenseList.expenses);
+                break;
+            case "e":
+                UI.listMessage(expenseList.expenses);
+        }*/
+        if (type.equals("o")) {
+            UI.listMessage(expenseList.expenses);
+        }
     }
 }

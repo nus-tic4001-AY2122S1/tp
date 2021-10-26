@@ -41,8 +41,26 @@ public class Duke {
                 Execution execution = new Execution(fullCommand);
                 execution.execute(expenseList);
                 isExit = execution.isExit;
-            } catch (Exception e) {
-                System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
+            } catch (InputErrorException d) {
+                switch (d.errorType) {
+                case "DateFormatError":
+                    InputErrorException.toPrintDateFormatError();
+                    break;
+                case "ListCommandFormatError":
+                    InputErrorException.toPrintListFormatError();
+                    break;
+                case "InValidListTypeCode":
+                    InputErrorException.toPrintInValidListTypeCode();
+                    break;
+                case "AddCommandFormatWrong":
+                    InputErrorException.toPrintAddCommandFormatWrong();
+                    break;
+                case "InvalidCommand":
+                    InputErrorException.toPrintInvalidCommand();
+                    break;
+                default:
+                    System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
+                }
             }
         }
     }
