@@ -29,13 +29,13 @@ public class ListCommand extends Command {
             System.out.println("* Data was retrieved using NUS MODS API. *");
         } else if (userInstruction.contains("Semester")) {
             // TODO: Make Search non-case sensitive.
-                IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
-                        .getModuleSemester().contains(userInstruction))
-                        .forEach(index -> Ui.printApiModules(modData,index));
+            IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
+                    .getModuleSemester().contains(userInstruction))
+                    .forEach(index -> Ui.printApiModules(modData,index));
         } else {
             IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
-                        .getModuleCode().contains(userInstruction))
-                        .forEach(index -> Ui.printApiModules(modData,index));
+                    .getModuleCode().contains(userInstruction))
+                    .forEach(index -> Ui.printApiModules(modData,index));
         }
     }
 }
