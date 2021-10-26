@@ -1,7 +1,6 @@
 package seedu.duke;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Module {
 
@@ -67,6 +66,21 @@ public class Module {
 
     public String getModuleTitle() {
         return title;
+    }
+
+    public Float getModuleCredit() {
+        return moduleCredit;
+    }
+
+    public String getModuleSemester() {
+        String semesterDataString = "";
+        for (int i = 0; i < semesterData.length; i++) {
+            semesterDataString += semesterData[i].getPrettyString();
+            if (i < semesterData.length - 1) {
+                semesterDataString += " | ";
+            }
+        }
+        return semesterDataString;
     }
 
     public String getPrettyPrint() {
