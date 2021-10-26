@@ -50,13 +50,6 @@ public class Ui {
         printNumberOfModules(userList);
     }
 
-    public static void printApiModules(NusModList modData, int index) {
-        System.out.println(modData.getMod(index).getModuleCode() + " | "
-                + modData.getMod(index).getModuleTitle() + " | "
-                + modData.getMod(index).getModuleSemester());
-    }
-
-
     public static void printNumberFormatException() {
         System.out.print("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
     }
