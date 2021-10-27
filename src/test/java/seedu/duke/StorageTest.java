@@ -32,16 +32,16 @@ class StorageTest {
         return mod;
     }
 
-    public String getSampleModuleArrayJson(){
-        return "[{\"moduleCode\":\"TIC1234\",\"title\":\"Software Eng\",\"semesters\":[1,2]," +
-                "\"description\":\"A description\",\"moduleCredit\":4.0,\"department\":\"Computing\"," +
-                "\"faculty\":\"Faculty of Comp\",\"prerequisite\":\"TIC2001\",\"preclusion\":\"a\"," +
-                "\"corequisite\":\"b\",\"semesterData\":[{\"semester\":1,\"examDate\":\"Jan 20, 2021, 9:30:00 AM\"," +
-                "\"examDuration\":100}]},{\"moduleCode\":\"TIC4001\",\"title\":\"Software Eng\",\"semesters\":[1,2]," +
-                "\"description\":\"A description\",\"moduleCredit\":4.0,\"department\":\"Computing\"," +
-                "\"faculty\":\"Faculty of Comp\",\"prerequisite\":\"TIC2001\",\"preclusion\":\"a\"," +
-                "\"corequisite\":\"b\",\"semesterData\":[{\"semester\":1,\"examDate\":\"Jan 20, 2021, 9:30:00 AM\"," +
-                "\"examDuration\":100}]}]";
+    public String getSampleModuleArrayJson() {
+        return "[{\"moduleCode\":\"TIC1234\",\"title\":\"Software Eng\",\"semesters\":[1,2],"
+                + "\"description\":\"A description\",\"moduleCredit\":4.0,\"department\":\"Computing\","
+                + "\"faculty\":\"Faculty of Comp\",\"prerequisite\":\"TIC2001\",\"preclusion\":\"a\","
+                + "\"corequisite\":\"b\",\"semesterData\":[{\"semester\":1,\"examDate\":\"Jan 20, 2021, 9:30:00 AM\","
+                + "\"examDuration\":100}]},{\"moduleCode\":\"TIC4001\",\"title\":\"Software Eng\",\"semesters\":[1,2],"
+                + "\"description\":\"A description\",\"moduleCredit\":4.0,\"department\":\"Computing\","
+                + "\"faculty\":\"Faculty of Comp\",\"prerequisite\":\"TIC2001\",\"preclusion\":\"a\","
+                + "\"corequisite\":\"b\",\"semesterData\":[{\"semester\":1,\"examDate\":\"Jan 20, 2021, 9:30:00 AM\","
+                + "\"examDuration\":100}]}]";
     }
 
     @Test
