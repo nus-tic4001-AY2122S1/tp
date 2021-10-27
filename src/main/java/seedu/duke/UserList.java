@@ -83,7 +83,7 @@ public class UserList {
         }
     }
 
-    public void deleteAllModules(){
+    public void deleteAllModules() {
         userList.clear();
     }
 

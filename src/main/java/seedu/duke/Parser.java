@@ -1,6 +1,14 @@
 package seedu.duke;
 
-import seedu.duke.command.*;
+import seedu.duke.command.Command;
+import seedu.duke.command.AddCommand;
+import seedu.duke.command.ExitCommand;
+import seedu.duke.command.ListCommand;
+import seedu.duke.command.MyListCommand;
+import seedu.duke.command.DeleteCommand;
+import seedu.duke.command.PlaceholderCommand;
+import seedu.duke.command.SaveToStorageCommand;
+import seedu.duke.command.LoadFromStorageCommand;
 
 public class Parser {
     public static Command parse(String fullCommand) {
