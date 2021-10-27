@@ -1,12 +1,6 @@
 package seedu.duke;
 
-import seedu.duke.command.Command;
-import seedu.duke.command.AddCommand;
-import seedu.duke.command.ExitCommand;
-import seedu.duke.command.ListCommand;
-import seedu.duke.command.MyListCommand;
-import seedu.duke.command.DeleteCommand;
-import seedu.duke.command.PlaceholderCommand;
+import seedu.duke.command.*;
 
 public class Parser {
     public static Command parse(String fullCommand) {
@@ -40,7 +34,13 @@ public class Parser {
         case ("mylist"):
             return new MyListCommand();
 
-        case ("exit"):
+        case ("save"):
+            return new SaveToStorageCommand("save");
+
+        case ("load"):
+            return new LoadFromStorageCommand("load");
+
+            case ("exit"):
         case ("bye"):
         case ("quit"):
             System.out.println("Do exit");

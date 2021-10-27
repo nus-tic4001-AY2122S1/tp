@@ -71,10 +71,12 @@ public class Module {
 
     public String getPrettyPrint() {
         String semesterString = "";
-        for (int i = 0; i < semesters.length; i++) {
-            semesterString += Integer.toString(semesters[i]);
-            if (i < semesters.length - 1) {
-                semesterString += ", ";
+        if (semesters != null) {
+            for (int i = 0; i < semesters.length; i++) {
+                semesterString += Integer.toString(semesters[i]);
+                if (i < semesters.length - 1) {
+                    semesterString += ", ";
+                }
             }
         }
 
