@@ -37,13 +37,11 @@ public class GtdThought {
         this.parent = Optional.of(parent);
     }
 
-    public GtdThought(int id, Stat status, String title, int levelNo, int parentID) {
+    public GtdThought(int id, Stat status, String title) {
         this.id = id;
         this.status = status;
         this.title = title;
-        this.levelNo = levelNo;
-        this.parentID = parentID;
-        maxID = id;
+        maxID = Math.max(maxID, id);
     }
 
     public int getId() {
