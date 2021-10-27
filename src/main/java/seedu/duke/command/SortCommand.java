@@ -1,26 +1,26 @@
+/*
 package seedu.duke.command;
 
-import seedu.duke.ExpenseList;
+import seedu.duke.itemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
-import seedu.duke.expense.Expense;
+import seedu.duke.item.Item;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 
-public class SortCommand extends Command implements Comparable<Expense> {
+public class SortCommand extends Command implements Comparable<Item> {
 
-    public static Comparator<Expense> expenseComparator = new Comparator<Expense>() {
-        public int compare(Expense e1, Expense e2) {
+    public static Comparator<Item> expenseComparator = new Comparator<Item>() {
+        public int compare(Item e1, Item e2) {
             int expense1 = (int)e1.getAmount();
             int expense2 = (int)e2.getAmount();
             return expense1 - expense2;
         }
     };
 
-    public static Comparator<Expense> expenseDescComparator = new Comparator<Expense>() {
-        public int compare(Expense e1, Expense e2) {
+    public static Comparator<Item> expenseDescComparator = new Comparator<Item>() {
+        public int compare(Item e1, Item e2) {
             int expense1 = (int)e1.getAmount();
             int expense2 = (int)e2.getAmount();
             return expense2 - expense1;
@@ -39,27 +39,28 @@ public class SortCommand extends Command implements Comparable<Expense> {
         super(fullCommand);
     }
 
-    public void run(ExpenseList expenseList) {
+    public void run(itemList itemList) {
 
         String sortingIndex = Parser.sortingIndex(fullCommand);
         switch (sortingIndex) {
         case "asc": {
-            Collections.sort(expenseList.expenses, expenseComparator);
+            Collections.sort(itemList.expenses, expenseComparator);
             break;
         }
         case "desc": {
-            Collections.sort(expenseList.expenses, expenseDescComparator);
+            Collections.sort(itemList.expenses, expenseDescComparator);
             break;
         }
         default:
             System.out.println("Please key in valid sorting command!");
         }
 
-        UI.listMessage(expenseList.expenses);
+        UI.listMessage(itemList.expenses);
     }
 
     @Override
-    public int compareTo(Expense o) {
+    public int compareTo(Item o) {
         return 0;
     }
 }
+*/

@@ -1,9 +1,9 @@
 package seedu.duke.command;
 
-import seedu.duke.ExpenseList;
+import seedu.duke.itemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
-import seedu.duke.expense.Expense;
+import seedu.duke.item.Item;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -12,15 +12,13 @@ import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
 public class DeleteCommand extends Command {
-    public DeleteCommand(String fullCommand) {
-
-        super(fullCommand);
+    public DeleteCommand(String command) {
+        super(command);
     }
 
     private static Logger logger = Logger.getLogger("YSG");
 
-    public void run(ExpenseList expenseList) {
-
+    public void run(itemList itemList) {
         // log a message at INFO level
         FileHandler fh;
         try {
@@ -34,12 +32,14 @@ public class DeleteCommand extends Command {
             e.printStackTrace();
         }
 
-        int index = Parser.index(fullCommand);
+        System.out.println("Please key in the index:");
+        String inputIndex = UI.readCommand();
+        int index = Parser.index(inputIndex);
         assert (index >= 0) : "Index number cannot smaller than 0!";
-        assert (index < expenseList.size - 1) : "Invalid index number!";
+        assert (index < itemList.size - 1) : "Invalid index number!";
 
-        Expense deletedTask = expenseList.expenses.get(index);
-        expenseList.delete(index);
-        UI.deleteMessage(deletedTask, expenseList.size);
+        Item deletedTask = itemList.items.get(index);
+        itemList.delete(index);
+        UI.deleteMessage(deletedTask, itemList.size);
     }
 }

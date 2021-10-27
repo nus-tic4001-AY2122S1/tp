@@ -1,8 +1,8 @@
 package seedu.duke.command;
 
 import org.junit.jupiter.api.Test;
-import seedu.duke.ExpenseList;
-import seedu.duke.expense.Expense;
+import seedu.duke.itemList;
+import seedu.duke.item.Item;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,19 +28,19 @@ class DeleteCommandTest {
         long time = recordDate.getTime();
         Timestamp timestamp = new Timestamp(time);
 
-        Expense testerExpense1 = new Expense(d1, "taxi", 22, timestamp);
-        Expense testerExpense2 = new Expense(d2,"dinner", 33, timestamp);
+        Item testerExpense1 = new Item(d1, "taxi", 22, timestamp);
+        Item testerExpense2 = new Item(d2,"dinner", 33, timestamp);
 
-        ArrayList<Expense> arrayListExpLst = new ArrayList<>();
-        ArrayList<Expense> expectedArrayLst = new ArrayList<>();
+        ArrayList<Item> arrayListExpLst = new ArrayList<>();
+        ArrayList<Item> expectedArrayLst = new ArrayList<>();
 
         arrayListExpLst.add(testerExpense1);
         arrayListExpLst.add(testerExpense2);
 
         expectedArrayLst.add(testerExpense2);
 
-        ExpenseList newExpLst = new ExpenseList(arrayListExpLst);
-        ExpenseList expect = new ExpenseList(expectedArrayLst);
+        itemList newExpLst = new itemList(arrayListExpLst);
+        itemList expect = new itemList(expectedArrayLst);
 
         //System.out.println("newExpLst size: " + newExpLst.size);
         DeleteCommand newDC = new DeleteCommand("Delete 1");

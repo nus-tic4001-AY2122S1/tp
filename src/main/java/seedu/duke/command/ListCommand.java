@@ -1,6 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.ExpenseList;
+import seedu.duke.itemList;
 import seedu.duke.InputErrorException;
 import seedu.duke.Parser;
 import seedu.duke.UI;
@@ -13,16 +13,13 @@ import java.util.logging.SimpleFormatter;
 
 
 public class ListCommand extends Command {
-    private String type;
-
-    public ListCommand(String fullCommand) throws InputErrorException {
-        super(fullCommand);
-        this.type = Parser.getListType(fullCommand);
+    public ListCommand(String command) {
+        super(command);
     }
 
     private static Logger logger = Logger.getLogger("LIST");
 
-    public void run(ExpenseList expenseList) {
+    public void run(itemList itemList) {
         // log a message at INFO level
         FileHandler fh;
 
@@ -50,8 +47,6 @@ public class ListCommand extends Command {
             case "e":
                 UI.listMessage(expenseList.expenses);
         }*/
-        if (type.equals("o")) {
-            UI.listMessage(expenseList.expenses);
-        }
+        UI.listMessage(itemList.items);
     }
 }

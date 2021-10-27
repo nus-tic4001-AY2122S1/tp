@@ -1,28 +1,31 @@
 package seedu.duke.command;
 
-import seedu.duke.ExpenseList;
 import seedu.duke.InputErrorException;
+import seedu.duke.itemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class AddIncomeCommand extends Command {
-    public AddIncomeCommand(String fullCommand) {
-        super(fullCommand);
+    public AddIncomeCommand(String command) {
+        super(command);
     }
 
-    public void run(ExpenseList expenseList) throws InputErrorException {
-        Date date = Parser.date(fullCommand);
-        String description = Parser.description(fullCommand);
-        double amount = Parser.amount(fullCommand);
-        Date recordDate = new Date();
-        long time = recordDate.getTime();
-        Timestamp timestamp = new Timestamp(time);
+    public void run(itemList itemList) throws InputErrorException {
+        System.out.println("Please key in the income description:");
+        String description = UI.readCommand();
+        System.out.println("Please key in the category:");
+        String category = UI.readCommand();
+        System.out.println("Please key in the amount:");
+        String inputAmount = UI.readCommand();
+        Double amount = Parser.amount(inputAmount);
+        System.out.println("Please key in the date:");
+        String inputDate = UI.readCommand();
+        Date date = Parser.date(inputDate);
 
-        expenseList.addIncome(date, description, amount, timestamp);
-        int size = expenseList.size;
-        UI.addMessageIncome(expenseList.expenses.get(size - 1), size);
+        itemList.addIncome(description, category, amount, date);
+        int size = itemList.size;
+        UI.addMessage(itemList.items.get(size - 1), size);
     }
 }

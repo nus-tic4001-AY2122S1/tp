@@ -1,8 +1,6 @@
 package seedu.duke;
 
 import org.junit.jupiter.api.Test;
-import seedu.duke.command.AddExpenseCommand;
-import seedu.duke.expense.Expense;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -6,49 +6,44 @@ import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.ExitCommand;
 import seedu.duke.command.FindCommand;
 import seedu.duke.command.ListCommand;
-import seedu.duke.command.AddIncomeCommand;
-import seedu.duke.command.SortCommand;
+//import seedu.duke.command.SortCommand;
 
-import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Execution {
-    protected String fullCommand;
     protected String command;
     protected boolean isExit;
 
-    public Execution(String fullCommand) {
-        this.fullCommand = fullCommand;
-        this.command = Parser.command(fullCommand);
+    public Execution(String command) {
+        this.command = command;
         this.isExit = false;
     }
 
-    public void execute(ExpenseList expenseList) throws InputErrorException {
+    public void execute(itemList itemList) throws InputErrorException {
         Logger logger = Logger.getLogger("Foo");
 
         switch (command) {
         case "list":
-            new ListCommand(fullCommand).run(expenseList);
+            new ListCommand(command).run(itemList);
             break;
-        case "add":
-            logger.log(Level.INFO, "Add command to execute");
-            new AddExpenseCommand(fullCommand).run(expenseList);
-            break;
-        case "delete":
-            new DeleteCommand(fullCommand).run(expenseList);
+        case "expense":
+            new AddIncomeCommand(command).run(itemList);
             break;
         case "income":
-            new AddIncomeCommand(fullCommand).run(expenseList);
+            new AddExpenseCommand(command).run(itemList);
             break;
-        case "sort":
-            new SortCommand(fullCommand).run(expenseList);
+        case "delete":
+            new DeleteCommand(command).run(itemList);
             break;
+        //case "sort":
+            //new SortCommand(command).run(itemList);
+            //break;
         case "find":
-            new FindCommand(fullCommand).run(expenseList);
+            new FindCommand(command).run(itemList);
             break;
         case "exit":
-            new ExitCommand(fullCommand).run(expenseList);
+            new ExitCommand(command).run(itemList);
             isExit = true;
             break;
         default:

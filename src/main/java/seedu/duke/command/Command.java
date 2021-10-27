@@ -1,16 +1,16 @@
 package seedu.duke.command;
 
-import seedu.duke.ExpenseList;
+import seedu.duke.itemList;
 import seedu.duke.InputErrorException;
 
 import java.text.ParseException;
 
 public abstract class Command {
-    protected String fullCommand;
+    protected String command;
 
-    public Command(String fullCommand) {
-        this.fullCommand = fullCommand;
+    public Command(String command) {
+        this.command = command;
     }
 
-    public abstract void run(ExpenseList expenseList) throws ParseException, InputErrorException;
+    public abstract void run(itemList itemList) throws ParseException, InputErrorException;
 }

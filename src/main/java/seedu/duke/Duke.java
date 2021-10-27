@@ -1,6 +1,6 @@
 package seedu.duke;
 
-import seedu.duke.expense.Expense;
+import seedu.duke.item.Item;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,12 +10,12 @@ import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
 public class Duke {
-    private ExpenseList expenseList;
+    private itemList itemList;
     private static Logger logger = Logger.getLogger("Foo");
 
     private Duke() {
-        ArrayList<Expense> expenses = new ArrayList<>();
-        this.expenseList = new ExpenseList(expenses);
+        ArrayList<Item> items = new ArrayList<>();
+        this.itemList = new itemList(items);
     }
 
     private void run() {
@@ -37,9 +37,9 @@ public class Duke {
         while (!isExit) {
             try {
                 logger.log(Level.INFO, "New input to execute");
-                String fullCommand = UI.readCommand();
-                Execution execution = new Execution(fullCommand);
-                execution.execute(expenseList);
+                String command = UI.readCommand();
+                Execution execution = new Execution(command);
+                execution.execute(itemList);
                 isExit = execution.isExit;
             } catch (InputErrorException d) {
                 switch (d.errorType) {
