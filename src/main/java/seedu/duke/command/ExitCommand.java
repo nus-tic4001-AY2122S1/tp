@@ -1,6 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.itemList;
+import seedu.duke.ItemList;
 import seedu.duke.UI;
 
 public class ExitCommand extends Command {
@@ -8,7 +8,7 @@ public class ExitCommand extends Command {
         super(command);
     }
 
-    public void run(itemList itemList) {
+    public void run(ItemList itemList) {
         UI.byeMessage();
     }
 }

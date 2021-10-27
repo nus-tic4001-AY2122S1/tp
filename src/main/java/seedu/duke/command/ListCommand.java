@@ -1,8 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.itemList;
-import seedu.duke.InputErrorException;
-import seedu.duke.Parser;
+import seedu.duke.ItemList;
 import seedu.duke.UI;
 
 import java.io.IOException;
@@ -19,7 +17,7 @@ public class ListCommand extends Command {
 
     private static Logger logger = Logger.getLogger("LIST");
 
-    public void run(itemList itemList) {
+    public void run(ItemList itemList) {
         // log a message at INFO level
         FileHandler fh;
 

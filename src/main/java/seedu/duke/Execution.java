@@ -8,7 +8,6 @@ import seedu.duke.command.FindCommand;
 import seedu.duke.command.ListCommand;
 //import seedu.duke.command.SortCommand;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Execution {
@@ -20,7 +19,7 @@ public class Execution {
         this.isExit = false;
     }
 
-    public void execute(itemList itemList) throws InputErrorException {
+    public void execute(ItemList itemList) throws InputErrorException {
         Logger logger = Logger.getLogger("Foo");
 
         switch (command) {
@@ -28,10 +27,10 @@ public class Execution {
             new ListCommand(command).run(itemList);
             break;
         case "expense":
-            new AddIncomeCommand(command).run(itemList);
+            new AddExpenseCommand(command).run(itemList);
             break;
         case "income":
-            new AddExpenseCommand(command).run(itemList);
+            new AddIncomeCommand(command).run(itemList);
             break;
         case "delete":
             new DeleteCommand(command).run(itemList);

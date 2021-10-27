@@ -10,12 +10,12 @@ import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
 public class Duke {
-    private itemList itemList;
+    private ItemList itemList;
     private static Logger logger = Logger.getLogger("Foo");
 
     private Duke() {
         ArrayList<Item> items = new ArrayList<>();
-        this.itemList = new itemList(items);
+        this.itemList = new ItemList(items);
     }
 
     private void run() {
