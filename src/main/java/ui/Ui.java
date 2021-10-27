@@ -38,7 +38,7 @@ public class Ui {
     }
 
     /**
-     * Displays the response when a task is marked as done
+     * Displays the response when a task is marked as done.
     */
     public void printDoneCommand(String task) {
         System.out.println("   Nice! I've marked this task as done:\n   " + task);
@@ -61,8 +61,8 @@ public class Ui {
         int count = 0;
         for (int i = 1; i <= list.sizeOfTask(); i++) {
             Task task = list.returnTask(i - 1);
-            if (!task.getStatus()){ // pending task
-                count ++; 
+            if (!task.getStatus()) { // pending task
+                count++; 
                 System.out.print("   " + i + ".");
                 System.out.println(list.returnTask(i - 1).taskToStringFormat());
             }

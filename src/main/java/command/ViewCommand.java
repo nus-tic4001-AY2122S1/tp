@@ -13,13 +13,13 @@ public class ViewCommand extends Command {
     private boolean isViewAll;
 
     public ViewCommand(String[] input) {
-        if (input.length>1 && input[1].equals("-a")){
+        if (input.length > 1 && input[1].equals("-a")) {
             this.isViewAll = true;
-        }
-        else{
+        } else {
             this.isViewAll = false;
         }
     }
+
     /**
      * Executes the command.
      *
@@ -34,8 +34,7 @@ public class ViewCommand extends Command {
         }
         if (isViewAll) {
             ui.printTaskList(list);
-        }
-        else {
+        } else {
             ui.printPendingTaskList(list);
         }
     }
