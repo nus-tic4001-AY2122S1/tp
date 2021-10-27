@@ -4,13 +4,12 @@ import seedu.duke.commands.Command;
 import seedu.duke.commands.AddCommand;
 import seedu.duke.commands.ProjModeCommand;
 import seedu.duke.commands.ListCommand;
-import seedu.duke.commands.MoveCommand;
+import seedu.duke.commands.SetCommand;
 import seedu.duke.commands.DeleteCommand;
 import seedu.duke.commands.DoneCommand;
 import seedu.duke.commands.ExitCommand;
 import seedu.duke.commands.IncorrectCommand;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,8 +21,8 @@ public class Parser {
 
     public static final Pattern INDEX_ARGS_FORMAT = Pattern.compile("(?<targetIndex>\\d+(?:\\s+\\d+)*)");
 
-    public static final Pattern MOVE_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)-f\\s*=(?<folderType>.*)");
-    public static final Pattern MOVE_CMD_FORMAT_OPTIONAL =
+    public static final Pattern SET_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)\\s(?<folderType>.*)");
+    public static final Pattern SET_CMD_FORMAT_OPTIONAL =
             Pattern.compile(
             "(?<folderType>inbox|next|wait|proj|someday|some)\\s+(?<targetIndex>\\d+.*)",
                     Pattern.CASE_INSENSITIVE
@@ -59,8 +58,8 @@ public class Parser {
         case DeleteCommand.COMMAND_WORD:
             return prepareDelete(arguments);
 
-        case MoveCommand.COMMAND_WORD:
-            return prepareMove(arguments);
+        case SetCommand.COMMAND_WORD:
+            return prepareSet(arguments);
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
@@ -112,13 +111,13 @@ public class Parser {
         }
     }
 
-    private Command prepareMove(String args) {
+    private Command prepareSet(String args) {
 
         try {
             int[] targetIndex;
             String folderType;
-            Matcher matcher = MOVE_CMD_FORMAT.matcher(args.trim());
-            Matcher matcher1 = MOVE_CMD_FORMAT_OPTIONAL.matcher(args.trim());
+            Matcher matcher = SET_CMD_FORMAT.matcher(args.trim());
+            Matcher matcher1 = SET_CMD_FORMAT_OPTIONAL.matcher(args.trim());
             if (matcher.matches()) {
                 targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
                 folderType = matcher.group("folderType").trim().toLowerCase();
@@ -126,12 +125,12 @@ public class Parser {
                 targetIndex = parseArgsAsIndex(matcher1.group("targetIndex"));
                 folderType = matcher1.group("folderType").trim().toLowerCase();
             } else {
-                return new IncorrectCommand("This is a incorrect move command format, "
+                return new IncorrectCommand("This is a incorrect set command format, "
                         + " you may type 'help' to see all the commands.");
             }
             return Arrays.stream(LIST_FOLDER_TYPE).anyMatch(folderType::equals)
-                    ? new MoveCommand(targetIndex, folderType) :
-                      new IncorrectCommand("This is a move command but you enter a incorrect folder,"
+                    ? new SetCommand(targetIndex, folderType) :
+                      new IncorrectCommand("This is a set command but you enter a incorrect folder,"
                             + " the folder name behind -f= should be one of " + String.join(",", LIST_FOLDER_TYPE));
 
         } catch (ParseException pe) {

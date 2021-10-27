@@ -4,16 +4,16 @@ package seedu.duke.commands;
 import seedu.duke.project.Stat;
 
 /**
- * Move a task from inbox to a folder. // For v1 at least.
+ * Set a task from inbox to a folder. // For v1 at least.
  */
-public class MoveCommand extends Command {
+public class SetCommand extends Command {
 
-    public static final String COMMAND_WORD = "move";
+    public static final String COMMAND_WORD = "set";
     private int[] targetIndex;
 
     private String folderType;
 
-    public MoveCommand(int[] targetIndex, String folderType) {
+    public SetCommand(int[] targetIndex, String folderType) {
         this.targetIndex = targetIndex;
         this.folderType = folderType.toUpperCase(); //enum is all in uppercase.
 
