@@ -37,13 +37,11 @@ public class GtdThought {
         this.parent = Optional.of(parent);
     }
 
-    public GtdThought(int id, Stat status, String title, int levelNo, int parentID) {
+    public GtdThought(int id, Stat status, String title) {
         this.id = id;
         this.status = status;
         this.title = title;
-        this.levelNo = levelNo;
-        this.parentID = parentID;
-        maxID = id;
+        maxID = Math.max(maxID, id);
     }
 
     public int getId() {
@@ -52,6 +50,10 @@ public class GtdThought {
 
     public int getParentID() {
         return parentID;
+    }
+
+    public Optional<GtdThought> getParent() {
+        return parent;
     }
 
     public int getLevelNo() {
@@ -89,7 +91,9 @@ public class GtdThought {
 
         children.add(sub);
         this.setStatus(Stat.PROJ);
-        sub.setStatus(Stat.TODO);
+        if (sub.getStatus() == Stat.NONE) {
+            sub.setStatus(Stat.TODO);
+        }
         sub.addParent(this);
 
         //         for (int i = 0; i < children.size(); i++) {
@@ -173,7 +177,6 @@ public class GtdThought {
         }
         if (status == Stat.DONE) {
             this.done = LocalDateTime.now();
-            return;
         }
 
         this.status = status;
