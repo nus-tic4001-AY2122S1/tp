@@ -33,12 +33,12 @@ public class UserList {
         Ui.printModule(userList);
     }
 
-    public void addModule(Module module){
+    public void addModule(Module module) {
         userList.add(module);
     }
 
-    public void addModule(Module[] moduleArray){
-        for (Module mod : moduleArray){
+    public void addModule(Module[] moduleArray) {
+        for (Module mod : moduleArray) {
             userList.add(mod);
         }
     }

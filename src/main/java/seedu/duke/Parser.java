@@ -40,7 +40,7 @@ public class Parser {
         case ("load"):
             return new LoadFromStorageCommand("load");
 
-            case ("exit"):
+        case ("exit"):
         case ("bye"):
         case ("quit"):
             System.out.println("Do exit");
