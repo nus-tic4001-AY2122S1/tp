@@ -177,7 +177,6 @@ public class GtdThought {
         }
         if (status == Stat.DONE) {
             this.done = LocalDateTime.now();
-            return;
         }
 
         this.status = status;
