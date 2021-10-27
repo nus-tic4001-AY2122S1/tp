@@ -41,6 +41,17 @@ public class GtdListEncoder {
 
     }
 
+    private static String getParents(GtdThought gtdThought) {
+        StringBuilder parents = new StringBuilder();
+        if (gtdThought.getParent().isPresent()) {
+            GtdThought parent = gtdThought.getParent().get(); //.get() to get values from Optional
+            parents.append(getParents(parent));
+            parents.append("|");
+            parents.append(parent.getId());
+        }
+        return parents.toString();
+    }
+
     /**
      * Encodes the {@code gtdThought} into a decodable and readable string representation.
      */
@@ -52,10 +63,8 @@ public class GtdListEncoder {
         encodedGtdThoughtBuilder.append(gtdThought.getStatus());
         encodedGtdThoughtBuilder.append("|");
         encodedGtdThoughtBuilder.append(gtdThought.getTitle());
-        encodedGtdThoughtBuilder.append("|||");
-        encodedGtdThoughtBuilder.append(gtdThought.getLevelNo());
-        encodedGtdThoughtBuilder.append("|");
-        encodedGtdThoughtBuilder.append(gtdThought.getParentID());
+        encodedGtdThoughtBuilder.append("||");
+        encodedGtdThoughtBuilder.append(getParents(gtdThought));
 
 
         return encodedGtdThoughtBuilder.toString();

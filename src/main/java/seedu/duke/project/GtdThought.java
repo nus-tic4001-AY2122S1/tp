@@ -54,6 +54,10 @@ public class GtdThought {
         return parentID;
     }
 
+    public Optional<GtdThought> getParent() {
+        return parent;
+    }
+
     public int getLevelNo() {
         return levelNo;
     }
