@@ -28,7 +28,7 @@ public class GtdListEncoder {
 
     }
 
-    public static List<String> encodeGtdThought(GtdThought toSave) {
+    private static List<String> encodeGtdThought(GtdThought toSave) {
         List<String> encodedGtdThoughts = new ArrayList<>();
         for (int i = 0; i < toSave.getSub().size(); i++) {
             GtdThought gtdThought = toSave.getSub().get(i);
