@@ -15,6 +15,8 @@ public class Bookings {
         this.end = end;
     }
 
+
+
     public void setBookDesc(String bookDesc) {
         this.bookDesc = bookDesc;
     }
@@ -46,5 +48,9 @@ public class Bookings {
     @Override
     public String toString() {
         return String.format("%s %s - %s", bookDesc, start.toLocalTime(), end.toLocalTime());
+    }
+
+    public LocalDateTime getEndDateTime() {
+        return end;
     }
 }

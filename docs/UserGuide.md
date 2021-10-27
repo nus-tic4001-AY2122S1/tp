@@ -6,28 +6,28 @@
 
 ## Quick Start
 
-{Give steps to get started quickly}
-
 1. Ensure that you have Java 11 or above installed.
-1. Down the latest version of `Duke` from [here](http://link.to/duke).
+1. Down the latest version of `JustBook App` from [here](https://github.com/AY2122S1-TIC4001-F18-4/tp/releases/tag/v2.0).
 
 ## Features 
 
-Program designed for Single User use.
+Program designed for someone adept with the keyboard, for Single User use. 
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+### Adding a booking: `add`
+Adds a new item to the list of booking items.
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+Format: `add BOOKING_DESC /s DATE TIME /e DATE TIME`
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
+* The `BOOKING_DESC` can be in a natural language format.
+* The `DATE TIME` uses format "yyyy-M-d" "HH:mm"  
+* Current version allows within same day booking only
+* User expected to input non-clashing same day timing ranges 
 
 Example of usage: 
 
-`todo n/Write the rest of the User Guide d/next week`
+`add meet@Sports Hall One lvl 3 /s 2021-6-7 09:00 /e 2021-6-7 10:30`
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+`todo attend IT Exhibit Changi Expo Halls /s 2021-06-07 11:00 /e 2021-06-07 13:30`
 
 ## FAQ
 
@@ -36,7 +36,6 @@ Example of usage:
 **A**: {your answer here}
 
 ## Command Summary
+['Cheat sheet' of commands]
 
-{Give a 'cheat sheet' of commands here}
-
-* Add todo `todo n/TODO_NAME d/DEADLINE`
+* Add booking `add BOOKING_DESC /s DATE TIME /e DATE TIME`
