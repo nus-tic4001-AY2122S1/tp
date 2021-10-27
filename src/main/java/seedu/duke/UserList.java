@@ -21,6 +21,9 @@ public class UserList {
         return  _Final;
     }
 
+    public ArrayList<Module> getUserList() {
+        return userList;
+    }
 
     public void addModule(String moduleCode) {
         NusModList allModules = NusModList.sharedInstance();
@@ -30,6 +33,15 @@ public class UserList {
         Ui.printModule(userList);
     }
 
+    public void addModule(Module module) {
+        userList.add(module);
+    }
+
+    public void addModule(Module[] moduleArray) {
+        for (Module mod : moduleArray) {
+            userList.add(mod);
+        }
+    }
 
     public void list() {
         try {
@@ -71,6 +83,10 @@ public class UserList {
         }
     }
 
+    public void deleteAllModules() {
+        userList.clear();
+    }
+
     public void printOutput(ArrayList<Module> userList) {
         System.out.println("Here are the modules in your list: ");
         for (int i = 0; i < userList.size(); i++) {
@@ -89,4 +105,6 @@ public class UserList {
             throw new IndexOutOfRangeException();
         }
     }
+
+
 }

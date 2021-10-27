@@ -7,6 +7,8 @@ import seedu.duke.command.ListCommand;
 import seedu.duke.command.MyListCommand;
 import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.PlaceholderCommand;
+import seedu.duke.command.SaveToStorageCommand;
+import seedu.duke.command.LoadFromStorageCommand;
 
 public class Parser {
     public static Command parse(String fullCommand) {
@@ -39,6 +41,12 @@ public class Parser {
 
         case ("mylist"):
             return new MyListCommand();
+
+        case ("save"):
+            return new SaveToStorageCommand("save");
+
+        case ("load"):
+            return new LoadFromStorageCommand("load");
 
         case ("exit"):
         case ("bye"):
