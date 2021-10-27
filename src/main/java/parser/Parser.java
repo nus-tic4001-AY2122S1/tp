@@ -5,6 +5,7 @@ import command.Command;
 import command.DeleteCommand;
 import command.TodoCommand;
 import command.ViewCommand;
+import command.DoneCommand;
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
 import exception.ErrorHandler;
@@ -20,6 +21,12 @@ public class Parser {
         switch (commandWord) {
         case VIEW:
             return new ViewCommand(result);
+        case DONE:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+            this.taskNo = result[1].trim();
+            return new DoneCommand(this.taskNo);
         case TODO:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_TODO);
