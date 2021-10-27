@@ -1,6 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.itemList;
+import seedu.duke.ItemList;
 import seedu.duke.UI;
 
 import java.util.ArrayList;
@@ -10,9 +10,9 @@ public class FindCommand extends Command {
         super(command);
     }
 
-    public void run(itemList itemList) {
+    public void run(ItemList itemList) {
         System.out.println("Please key in the keyword:");
-        String keyword = UI.readCommand();
+        final String keyword = UI.readCommand();
         ArrayList<Integer> findResult = new ArrayList<>();
         itemList.find(keyword, findResult);
         UI.findMessage(itemList.items, findResult);

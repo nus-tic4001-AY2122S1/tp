@@ -7,11 +7,11 @@ import seedu.duke.item.Item;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class itemList {
+public class ItemList {
     public ArrayList<Item> items;
     public int size;
 
-    public itemList(ArrayList<Item> items) {
+    public ItemList(ArrayList<Item> items) {
         this.items = items;
         this.size = items.size();
     }

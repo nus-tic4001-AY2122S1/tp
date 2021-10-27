@@ -1,6 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.itemList;
+import seedu.duke.ItemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 import seedu.duke.item.Item;
@@ -18,7 +18,7 @@ public class DeleteCommand extends Command {
 
     private static Logger logger = Logger.getLogger("YSG");
 
-    public void run(itemList itemList) {
+    public void run(ItemList itemList) {
         // log a message at INFO level
         FileHandler fh;
         try {
@@ -34,7 +34,7 @@ public class DeleteCommand extends Command {
 
         System.out.println("Please key in the index:");
         String inputIndex = UI.readCommand();
-        int index = Parser.index(inputIndex);
+        final int index = Parser.index(inputIndex);
         assert (index >= 0) : "Index number cannot smaller than 0!";
         assert (index < itemList.size - 1) : "Invalid index number!";
 

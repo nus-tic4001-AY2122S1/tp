@@ -14,8 +14,7 @@ public class Parser {
     }
 
     public static Date date(String date) throws InputErrorException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
-
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         try {
             return formatter.parse(date);
         } catch (ParseException p) {

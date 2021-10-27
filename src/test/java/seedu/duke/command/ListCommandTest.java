@@ -1,7 +1,8 @@
+/*
 package seedu.duke.command;
 
 import org.junit.jupiter.api.Test;
-import seedu.duke.itemList;
+import seedu.duke.ItemList;
 import seedu.duke.InputErrorException;
 import seedu.duke.item.Item;
 
@@ -41,8 +42,8 @@ class ListCommandTest {
         expectedArrayLst.add(testerExpense1);
         expectedArrayLst.add(testerExpense2);
 
-        itemList newExpLst = new itemList(arrayListExpLst);
-        itemList expect = new itemList(expectedArrayLst);
+        ItemList newExpLst = new ItemList(arrayListExpLst);
+        ItemList expect = new ItemList(expectedArrayLst);
 
         ListCommand listCommand = new ListCommand("list");
 
@@ -51,3 +52,5 @@ class ListCommandTest {
         assertEquals(expect.expenses, newExpLst.expenses);
     }
 }
+
+ */

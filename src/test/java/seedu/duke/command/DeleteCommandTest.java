@@ -1,7 +1,8 @@
+/*
 package seedu.duke.command;
 
 import org.junit.jupiter.api.Test;
-import seedu.duke.itemList;
+import seedu.duke.ItemList;
 import seedu.duke.item.Item;
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -39,8 +40,8 @@ class DeleteCommandTest {
 
         expectedArrayLst.add(testerExpense2);
 
-        itemList newExpLst = new itemList(arrayListExpLst);
-        itemList expect = new itemList(expectedArrayLst);
+        ItemList newExpLst = new ItemList(arrayListExpLst);
+        ItemList expect = new ItemList(expectedArrayLst);
 
         //System.out.println("newExpLst size: " + newExpLst.size);
         DeleteCommand newDC = new DeleteCommand("Delete 1");
@@ -50,3 +51,4 @@ class DeleteCommandTest {
     }
 }
 
+ */
