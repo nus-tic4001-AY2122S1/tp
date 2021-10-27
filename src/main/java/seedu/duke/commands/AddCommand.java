@@ -18,7 +18,6 @@ public class AddCommand extends Command {
     public void execute() {
         System.out.println("This is an add command, the added task is:" + System.lineSeparator() + taskname);
         master.add(new GtdThought(taskname));
-        //allList.add(new GtdThought(taskname));
     }
 
 }

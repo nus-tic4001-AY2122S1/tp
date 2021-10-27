@@ -19,7 +19,6 @@ public class Next {
     Ui ui = new Ui();
     Storage storage;
     static ArrayList<GtdList> lists = new ArrayList<>();
-    //GtdList allList;
     GtdList master;
     GtdList current = new GtdList();
 
@@ -29,10 +28,8 @@ public class Next {
             master = new GtdList(storage.load());
             lists.add(master);
             lists.add(current);
-            //lists.add(allList);
         } catch (Storage.StorageOperationException | Storage.InvalidStorageFilePathException | IOException e) {
             ui.showLoadingError();
-            //allList = new GtdList();
         }
     }
 
