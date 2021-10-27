@@ -18,10 +18,38 @@ public class GtdListEncoder {
     public static List<String> encodeGtdList(GtdList toSave) {
         List<String> encodedGtdThoughts = new ArrayList<>();
         for (int i = 0; i < toSave.size(); i++) {
-            encodedGtdThoughts.add(encodeGtdThoughtToString(toSave.get(i)));
+            GtdThought gtdThought = toSave.get(i);
+            encodedGtdThoughts.add(encodeGtdThoughtToString(gtdThought));
+            if (gtdThought.getSub().size() > 0) {
+                encodedGtdThoughts.addAll(encodeGtdThought(gtdThought));
+            }
         }
         return encodedGtdThoughts;
 
+    }
+
+    private static List<String> encodeGtdThought(GtdThought toSave) {
+        List<String> encodedGtdThoughts = new ArrayList<>();
+        for (int i = 0; i < toSave.getSub().size(); i++) {
+            GtdThought gtdThought = toSave.getSub().get(i);
+            encodedGtdThoughts.add(encodeGtdThoughtToString(gtdThought));
+            if (gtdThought.getSub().size() > 0) {
+                encodedGtdThoughts.addAll(encodeGtdThought(gtdThought));
+            }
+        }
+        return encodedGtdThoughts;
+
+    }
+
+    private static String getParents(GtdThought gtdThought) {
+        StringBuilder parents = new StringBuilder();
+        if (gtdThought.getParent().isPresent()) {
+            GtdThought parent = gtdThought.getParent().get(); //.get() to get values from Optional
+            parents.append(getParents(parent));
+            parents.append(parent.getId());
+            parents.append("|");
+        }
+        return parents.toString();
     }
 
     /**
@@ -36,9 +64,7 @@ public class GtdListEncoder {
         encodedGtdThoughtBuilder.append("|");
         encodedGtdThoughtBuilder.append(gtdThought.getTitle());
         encodedGtdThoughtBuilder.append("|||");
-        encodedGtdThoughtBuilder.append(gtdThought.getLevelNo());
-        encodedGtdThoughtBuilder.append("|");
-        encodedGtdThoughtBuilder.append(gtdThought.getParentID());
+        encodedGtdThoughtBuilder.append(getParents(gtdThought));
 
 
         return encodedGtdThoughtBuilder.toString();
