@@ -48,6 +48,24 @@ public class Ui {
     }
 
     /**
+     * Shows a list of pending tasks to the user, formatted as an indexed list.
+     */
+    public void printPendingTaskList(TaskList list) {
+        int count = 0;
+        for (int i = 1; i <= list.sizeOfTask(); i++) {
+            Task task = list.returnTask(i - 1);
+            if (!task.getStatus()){ // pending task
+                count ++; 
+                System.out.print("   " + i + ".");
+                System.out.println(list.returnTask(i - 1).taskToStringFormat());
+            }
+        }
+        if (count == 0) { // no pending task
+            System.out.print("   No pending tasks. Try command `view -a` to see all tasks.");
+        }
+    }
+
+    /**
      * Displays the response when a task is added.
      */
     public void printAddedTask(String task, int num) {

@@ -19,7 +19,7 @@ public class Parser {
 
         switch (commandWord) {
         case VIEW:
-            return new ViewCommand();
+            return new ViewCommand(result);
         case TODO:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_TODO);
