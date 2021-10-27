@@ -3,12 +3,12 @@
 # change to script directory
 cd "${0%/*}"
 
-cd ..
+cd ../../
 ./gradlew clean shadowJar
 
 cd text-ui-test
 
-java  -jar $(find ../build/libs/ -mindepth 1 -print -quit) < input.txt > ACTUAL.TXT
+java  -jar $(find ../build/libs/ -mindepth 1 -print -quit) < general_test/input.txt > general_test/ACTUAL.TXT
 
 cp EXPECTED.TXT EXPECTED-UNIX.TXT
 dos2unix EXPECTED-UNIX.TXT ACTUAL.TXT
