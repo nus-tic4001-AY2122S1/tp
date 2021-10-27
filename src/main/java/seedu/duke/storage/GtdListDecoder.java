@@ -51,6 +51,7 @@ public class GtdListDecoder {
                 matchIdx = i;
             }
         }
+        assert matchIdx > -1;
         if (split[1].equals("")) {
             return gtdList.get(matchIdx);
         }
@@ -66,6 +67,7 @@ public class GtdListDecoder {
                 matchIdx = i;
             }
         }
+        assert matchIdx > -1;
         if (split[1].equals("")) {
             return gtdThought.getSub().get(matchIdx);
         }
