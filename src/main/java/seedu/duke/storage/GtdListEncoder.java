@@ -18,7 +18,24 @@ public class GtdListEncoder {
     public static List<String> encodeGtdList(GtdList toSave) {
         List<String> encodedGtdThoughts = new ArrayList<>();
         for (int i = 0; i < toSave.size(); i++) {
-            encodedGtdThoughts.add(encodeGtdThoughtToString(toSave.get(i)));
+            GtdThought gtdThought = toSave.get(i);
+            encodedGtdThoughts.add(encodeGtdThoughtToString(gtdThought));
+            if (gtdThought.getSub().size() > 0) {
+                encodedGtdThoughts.addAll(encodeGtdThought(gtdThought));
+            }
+        }
+        return encodedGtdThoughts;
+
+    }
+
+    public static List<String> encodeGtdThought(GtdThought toSave) {
+        List<String> encodedGtdThoughts = new ArrayList<>();
+        for (int i = 0; i < toSave.getSub().size(); i++) {
+            GtdThought gtdThought = toSave.getSub().get(i);
+            encodedGtdThoughts.add(encodeGtdThoughtToString(gtdThought));
+            if (gtdThought.getSub().size() > 0) {
+                encodedGtdThoughts.addAll(encodeGtdThought(gtdThought));
+            }
         }
         return encodedGtdThoughts;
 
