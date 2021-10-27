@@ -8,7 +8,7 @@ import seedu.duke.commands.DeleteCommand;
 import seedu.duke.commands.DoneCommand;
 import seedu.duke.commands.ExitCommand;
 import seedu.duke.commands.ListCommand;
-import seedu.duke.commands.MoveCommand;
+import seedu.duke.commands.SetCommand;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -55,8 +55,8 @@ public class ParserTest {
 
     @Test
     public void test_Parse_MoveCommand() {
-        final String input = "move 1 2 4 -f= next";
-        parseAndAssertCommandType(input, MoveCommand.class);
+        final String input = "set 1 2 4 next";
+        parseAndAssertCommandType(input, SetCommand.class);
     }
 
 
