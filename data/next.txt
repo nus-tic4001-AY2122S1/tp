@@ -1,5 +1,5 @@
 1|PROJ|task1|||
 2|PROJ|task2|||1|
-4|TODO|task4|||1|2|
+4|NEXT|task4|||1|2|
 5|TODO|task5|||1|2|
 3|TODO|task3|||1|

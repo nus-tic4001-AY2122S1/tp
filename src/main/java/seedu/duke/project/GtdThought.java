@@ -91,7 +91,9 @@ public class GtdThought {
 
         children.add(sub);
         this.setStatus(Stat.PROJ);
-        sub.setStatus(Stat.TODO);
+        if (sub.getStatus() == Stat.NONE) {
+            sub.setStatus(Stat.TODO);
+        }
         sub.addParent(this);
 
         //         for (int i = 0; i < children.size(); i++) {
