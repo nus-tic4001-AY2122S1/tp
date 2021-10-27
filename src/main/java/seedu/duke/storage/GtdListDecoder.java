@@ -29,7 +29,8 @@ public class GtdListDecoder {
         List<GtdThought> decodedGtdThoughts = new ArrayList<>();
         for (String encodedGtdThought : encodedGtdList) {
             HashMap<String, Object> elements = decodeGtdThoughtFromString(encodedGtdThought);
-            GtdThought gtdThought = new GtdThought((int)elements.get("id"), (Stat)elements.get("status"), (String)elements.get("title"));
+            GtdThought gtdThought = new GtdThought((int)elements.get("id"), (Stat)elements.get("status"),
+                    (String)elements.get("title"));
 
             String parents = (String)elements.get("parents");
             if (parents.equals("")) {
@@ -76,7 +77,8 @@ public class GtdListDecoder {
      *
      * @throws IllegalValueException if any field in the {@code encodedGtdThought} is invalid.
      */
-    private static HashMap<String, Object> decodeGtdThoughtFromString(String encodedGtdThought) throws IllegalValueException {
+    private static HashMap<String, Object> decodeGtdThoughtFromString(String encodedGtdThought)
+            throws IllegalValueException {
         HashMap<String, Object> elements = new HashMap<>();
         Matcher matcher = GTD_THOUGHT_TXT_FILE_FORMAT.matcher(encodedGtdThought.trim());
         if (matcher.matches()) {
