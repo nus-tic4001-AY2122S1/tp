@@ -4,14 +4,13 @@ import seedu.duke.project.GtdThought;
 import seedu.duke.project.Stat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Spliterator;
-
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
+import java.util.Iterator;
 
 import java.util.function.Supplier;
 
@@ -19,7 +18,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 
-public class GtdList {
+public class GtdList implements Iterable<GtdThought> {
     private static final String INDEN = "  ";
 
     ArrayList<GtdThought> list = new ArrayList<>();
@@ -97,13 +96,24 @@ public class GtdList {
         list.remove(index);
     }
 
-    public void remove(int[] index, GtdList current) {
-        List<GtdThought> toRemove = IntStream.range(0, current.size())
-                .filter(i -> Arrays.stream(index).anyMatch(idx -> idx == i + 1))
-                .mapToObj(i -> current.get(i))
-                .collect(Collectors.toList());
-        list.removeAll(toRemove);
+    public void removeAll(ArrayList<GtdThought> toRemove) {
+        //        List<GtdThought> toRemove = IntStream.range(0, current.size())
+        //                .filter(i -> Arrays.stream(index).anyMatch(idx -> idx == i + 1))
+        //                .mapToObj(i -> current.get(i))
+        //                .collect(Collectors.toList());
+        List<GtdThought> lv0 = toRemove.stream()
+                                .filter(t -> t.getlevel() == 0)
+                                .collect(Collectors.toList());
+        List<GtdThought> lv1 = toRemove.stream()
+                                .filter(t -> t.getlevel() == 1)
+                                .collect(Collectors.toList());
+        List<GtdThought> lv2 = toRemove.stream()
+                                .filter(t -> t.getlevel() == 2)
+                                .collect(Collectors.toList());
+
+        list.removeAll(lv0);
     }
+
 
     public void print() {
         for (int i = 0; i < list.size(); i++) {
@@ -139,6 +149,7 @@ public class GtdList {
                         + (++l1Num)
                         + " "
                         + lines[i].replaceFirst(INDEN, "");
+                l2Num = 0;
             }
             if (countInden(lines[i]) == 2) {
                 lines[i] = INDEN.repeat(2)
@@ -166,6 +177,11 @@ public class GtdList {
 
     public void clear() {
         list.clear();
+    }
+
+    @Override
+    public Iterator<GtdThought> iterator() {
+        return list.iterator();
     }
 }
 

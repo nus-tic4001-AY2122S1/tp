@@ -64,14 +64,6 @@ public class GtdThought {
         return title;
     }
 
-    public int checkLevel() {
-        int n = 0;
-        if (parent.isEmpty()) {
-            n = 0;
-        }
-        return n;
-    }
-
     public int getlevel() {
         return this.level;
     }
@@ -96,9 +88,6 @@ public class GtdThought {
         }
         sub.addParent(this);
 
-        //         for (int i = 0; i < children.size(); i++) {
-        //             subprojects.get(i).setID(Integer.toString(i + 1));
-        //         }
     }
 
     public void removeSub(GtdThought thought) {
@@ -139,8 +128,9 @@ public class GtdThought {
         if (children.isEmpty()) {
             return indentation + this + System.lineSeparator();
         }
+
         for (GtdThought sub : children) {
-            text += sub.auxgetTextRec(text);
+            text += sub.auxgetTextRec(""); // MAGIC!
         }
 
         return indentation + this + System.lineSeparator() + text;
@@ -180,6 +170,10 @@ public class GtdThought {
         }
 
         this.status = status;
+    }
+
+    public boolean hasChildren() {
+        return children.size() == 0 ? false : true;
     }
 
     public void setTitle(String title) {
