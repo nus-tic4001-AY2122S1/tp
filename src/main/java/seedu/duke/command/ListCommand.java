@@ -1,6 +1,7 @@
 package seedu.duke.command;
 
 import seedu.duke.NusModList;
+import seedu.duke.Ui;
 
 import java.util.stream.IntStream;
 
@@ -23,20 +24,18 @@ public class ListCommand extends Command {
             //List and Format Data - List 15 Modules tbc
             System.out.println("Here are the list of available Modules (Limit to 10) : ");
             for (int i = 0; i < 15; i++) {
-                System.out.println(modData.getMod(i).getModuleCode() + " | "
-                        + modData.getMod(i).getModuleTitle());
+                modData.getFormattedApiModule(modData,i);
             }
             System.out.println("* Data was retrieved using NUS MODS API. *");
-        } else {
+        } else if (userInstruction.contains("Semester")) {
             // TODO: Make Search non-case sensitive.
             IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
-                            .getModuleCode().contains(userInstruction))
-                                .forEach(index -> System.out.println(modData.getMod(index).getModuleCode() + " | "
-                                        + modData.getMod(index).getModuleTitle()));
+                    .getModuleSemester().contains(userInstruction))
+                    .forEach(index -> modData.getFormattedApiModule(modData,index));
+        } else {
+            IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
+                    .getModuleCode().contains(userInstruction))
+                    .forEach(index -> modData.getFormattedApiModule(modData,index));
         }
-
-
-
-
     }
 }
