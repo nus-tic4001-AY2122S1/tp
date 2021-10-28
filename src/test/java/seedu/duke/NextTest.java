@@ -66,10 +66,25 @@ class NextTest {
 
     @Test
     public void testListPrint() {
+        GtdThought subsub2 = new GtdThought("sub sub task b.1");
+        sub2.addSub(subsub2);
+
         proj.print();
+
+        System.out.println("*".repeat(10));
+
+        System.out.print(p1.getTextRec());
+
+        System.out.println("*".repeat(10));
+
+        proj.stream().forEach(t -> System.out.print(t.getTextRec()));
+
+        System.out.println("*".repeat(10));
 
         proj.stream().filter(c -> c.getStatus() == Stat.PROJ)
                 .forEach(GtdThought::print);
+
+        System.out.println("*".repeat(10));
 
         proj.get("2").setStatus(Stat.NEXT);
 
@@ -78,4 +93,5 @@ class NextTest {
                 .forEach(t -> t.print()));
 
     }
+
 }

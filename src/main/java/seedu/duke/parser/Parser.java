@@ -34,7 +34,8 @@ public class Parser {
                     Pattern.CASE_INSENSITIVE
             );
 
-    public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some"};
+    public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some",
+                                                     "current", "master", "all"};
 
     /**
      * Parses user input into command for execution.
@@ -98,8 +99,7 @@ public class Parser {
 
     private Command prepareDone(String args) {
         try {
-            //List<String> targetIndex = parseArgsAsIndexParam(args);
-            int[] targetIndex = parseArgsAsIndex(args);
+            List<String> targetIndex = parseArgsAsIndexParam(args);
             return new DoneCommand(targetIndex);
         } catch (ParseException pe) {
             return new IncorrectCommand(pe.getMessage());
@@ -109,8 +109,8 @@ public class Parser {
 
     private Command prepareDelete(String args) {
         try {
-            //List<String> targetIndex = parseArgsAsIndexParam(args);
-            int[] targetIndex = parseArgsAsIndex(args);
+            List<String> targetIndex = parseArgsAsIndexParam(args);
+            //int[] targetIndex = parseArgsAsIndex(args);
             return new DeleteCommand(targetIndex);
         } catch (ParseException pe) {
             return new IncorrectCommand(pe.getMessage());
@@ -120,18 +120,18 @@ public class Parser {
     private Command prepareSet(String args) {
 
         try {
-            //List<String> targetIndex;
-            int[] targetIndex;
+            List<String> targetIndex;
+            //int[] targetIndex;
             String folderType;
             Matcher matcher = SET_CMD_FORMAT.matcher(args.trim());
             Matcher matcher1 = SET_CMD_FORMAT_OPTIONAL.matcher(args.trim());
             if (matcher.matches()) {
-                //targetIndex = parseArgsAsIndexParam(matcher.group("targetIndex"));
-                targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
+                targetIndex = parseArgsAsIndexParam(matcher.group("targetIndex"));
+                //targetIndex = parseArgsAsIndex(matcher.group("targetIndex"));
                 folderType = matcher.group("folderType").trim().toLowerCase();
             } else if (matcher1.matches()) {
-                //targetIndex = parseArgsAsIndexParam(matcher1.group("targetIndex"));
-                targetIndex = parseArgsAsIndex(matcher1.group("targetIndex"));
+                targetIndex = parseArgsAsIndexParam(matcher1.group("targetIndex"));
+                // targetIndex = parseArgsAsIndex(matcher1.group("targetIndex"));
                 folderType = matcher1.group("folderType").trim().toLowerCase();
             } else {
                 return new IncorrectCommand("This is a incorrect set command format, "
