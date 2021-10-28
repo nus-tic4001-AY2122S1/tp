@@ -34,7 +34,7 @@ public class NusModListTest {
         assertEquals(module2, nusModList.getMod("TIC4005"));
         assertEquals(false, nusModList.hasMod("TIC4002"));
         assertEquals(true, nusModList.hasMod("TIC4005"));
-        assertEquals(0, nusModList.moduleIndex("TIC4001"));
+        assertEquals(0, nusModList.getModuleIndex("TIC4001"));
         assertEquals(module1, nusModList.getMod(0));
 
     }
