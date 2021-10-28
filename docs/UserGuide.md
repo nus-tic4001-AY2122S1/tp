@@ -29,6 +29,28 @@ Example of usage:
 
 `todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
 
+###Deleting a Expense: `delete`
+
+Delete existing expense record from the list of expense items.
+
+Format: 
+* Step I: key in `delete`
+* Step II: key in `expense index` in integer type
+
+Example of usage:
+
+`Hi, I am Duke!`
+
+`What can I help you?`
+
+`delete`
+
+`Please key in the index:`
+
+`1`
+
+
+
 ## FAQ
 
 **Q**: How do I transfer my data to another computer? 
