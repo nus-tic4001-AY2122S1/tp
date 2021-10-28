@@ -39,9 +39,15 @@ Our target user is a Student that is currently schooling. As an active student, 
 
 ### Value proposition
 
+
 JustBook provides, throughout the app use, a consistent user-friendly and error-free interface, helpful message feedback or alerts. The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
 
 Users are able to make, check, delete, view, change, and source in real-time for available slots for appointments using this application. This application will display a range of time slots available for users to choose from, may also list available dates and unavailable dates when the User is trying to schedule an appointment. The User can also choose to work on a 6-calendar-months view/basis (an up and coming feature), or per month, per week, down to a day’s view/basis.  
+
+Possible enhancements include appointment data printout, a file backup in the background to act as a redundancy measure for unforeseen disruption, alerts for the User if so scheduled, etc. 
+
+Our Value Proposition is that our scheduler provides, throughout the app use, a consistent user-friendly and error-free interface, helpful message feedback or alerts and capability to suggest time slots to the user in addition to the time slots available (an up and coming feature). The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
+
 
 ## User Stories
 
@@ -68,6 +74,7 @@ Users are able to make, check, delete, view, change, and source in real-time for
 2. The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
 3. The application should preferably be executable on Windows OS or compatible software-emulated terminal.
 4. User-friendly features incorporated in helpful messages feedback and diagnostic prompts (more to come) 
+
 
 
 ## Glossary
@@ -98,3 +105,11 @@ Users are able to make, check, delete, view, change, and source in real-time for
 3. The CMD window or shell output will display if the comparison between the expected output and actual output are the same
 4. If there are any differences, they will be displayed at the CMD or shell window as well.
 5. The regression test would have passed if no differences are found.
+=======
+-Users are able to run the application with Java11 installed
+
+-The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
+
+-The application should preferably be executable on Windows OS or compatible software-emulated terminal.
+
+
