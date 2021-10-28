@@ -1,6 +1,6 @@
 14|PROJ|tp Project Next|||
 15|PROJ|Issue tracking|||14|
-16|TODO|10-feature-A|||14|15|
+16|DONE|10-feature-A|||14|15|
 17|TODO|20-bug-A|||14|15|
 24|PROJ|Weekly meeting 11|||14|
 25|NEXT|meeting deliverable 1|||14|24|

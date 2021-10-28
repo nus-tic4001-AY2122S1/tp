@@ -30,12 +30,12 @@ public class Parser {
     public static final Pattern SET_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)\\s(?<folderType>.*)");
     public static final Pattern SET_CMD_FORMAT_OPTIONAL =
             Pattern.compile(
-            "(?<folderType>inbox|next|wait|proj|someday|some)\\s+(?<targetIndex>\\d+.*)",
+            "(?<folderType>inbox|next|wait|proj|someday|some|done)\\s+(?<targetIndex>\\d+.*)",
                     Pattern.CASE_INSENSITIVE
             );
 
     public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some",
-                                                     "current", "master", "all"};
+                                                     "current", "master", "all", "done"};
 
     /**
      * Parses user input into command for execution.

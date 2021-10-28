@@ -40,6 +40,9 @@ public class ListCommand extends Command {
         case "proj":
             stat = Stat.PROJ;
             break;
+        case "done":
+            stat = Stat.DONE;
+            break;
 
         case "current":
             current.print();
