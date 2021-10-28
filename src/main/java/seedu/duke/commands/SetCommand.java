@@ -29,13 +29,22 @@ public class SetCommand extends Command {
         }
         if (folderType.equalsIgnoreCase("inbox")) {
             stat = Stat.NONE;
+            for (String i : targetIndex) {
+                var thought = current.get(i);
+                thought.setStatus(stat);
+                thought.setlevel(0);
+                master.add(thought);
+                thought.getParent().get().removeSub(thought);
+                System.out.println("Mark " + thought + " as " + stat);
+            }
+
         } else {
             stat = Stat.valueOf(folderType);
-        }
-        for (String i : targetIndex) {
-            var thought = current.get(i);
-            System.out.println("Mark " + thought + " as " + stat);
-            thought.setStatus(stat);
+            for (String i : targetIndex) {
+                var thought = current.get(i);
+                System.out.println("Mark " + thought + " as " + stat);
+                thought.setStatus(stat);
+            }
         }
     }
 }
