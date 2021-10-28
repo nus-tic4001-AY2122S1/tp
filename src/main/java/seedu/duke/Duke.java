@@ -43,17 +43,8 @@ public class Duke {
                 isExit = execution.isExit;
             } catch (InputErrorException d) {
                 switch (d.errorType) {
-                case "DateFormatError":
-                    InputErrorException.toPrintDateFormatError();
-                    break;
                 case "ListCommandFormatError":
                     InputErrorException.toPrintListFormatError();
-                    break;
-                case "InValidListTypeCode":
-                    InputErrorException.toPrintInValidListTypeCode();
-                    break;
-                case "AddCommandFormatWrong":
-                    InputErrorException.toPrintAddCommandFormatWrong();
                     break;
                 case "InvalidCommand":
                     InputErrorException.toPrintInvalidCommand();

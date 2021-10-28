@@ -32,19 +32,6 @@ public class ListCommand extends Command {
             e.printStackTrace();
         }
 
-        /*switch(type) {
-            case "i":
-                UI.listMessage(expenseList.expenses);
-                break;
-            case "c":
-                UI.listMessage(expenseList.expenses);
-                break;
-            case "d":
-                UI.listMessage(expenseList.expenses);
-                break;
-            case "e":
-                UI.listMessage(expenseList.expenses);
-        }*/
         UI.listMessage(itemList.items);
     }
 }

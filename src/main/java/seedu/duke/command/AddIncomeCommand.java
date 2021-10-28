@@ -12,17 +12,40 @@ public class AddIncomeCommand extends Command {
         super(command);
     }
 
-    public void run(ItemList itemList) throws InputErrorException {
+    public void run(ItemList itemList) {
         System.out.println("Please key in the income description:");
         final String description = UI.readCommand();
         System.out.println("Please key in the category:");
         final String category = UI.readCommand();
-        System.out.println("Please key in the amount:");
-        String inputAmount = UI.readCommand();
-        final Double amount = Parser.amount(inputAmount);
-        System.out.println("Please key in the date:");
-        String inputDate = UI.readCommand();
-        final Date date = Parser.date(inputDate);
+
+        Date date = new Date();
+        double amount = -1;
+        boolean isCorrect = false;
+
+        while (!isCorrect) {
+            try {
+                System.out.println("Please key in the amount:");
+                String inputAmount = UI.readCommand();
+                amount = Parser.amount(inputAmount);
+
+                isCorrect = true;
+            } catch (InputErrorException e) {
+                InputErrorException.toPrintAmountNotNumber();
+            }
+        }
+
+        isCorrect = false;
+        while (!isCorrect) {
+            try {
+                System.out.println("Please key in the date:");
+                String inputDate = UI.readCommand();
+                date = Parser.date(inputDate);
+
+                isCorrect = true;
+            } catch (InputErrorException e) {
+                InputErrorException.toPrintDateFormatError();
+            }
+        }
 
         itemList.addIncome(description, category, amount, date);
         int size = itemList.size;

@@ -19,7 +19,7 @@ public class AddExpenseCommand extends Command {
         final String category = UI.readCommand();
         System.out.println("Please key in the amount:");
         String inputAmount = UI.readCommand();
-        final Double amount = Parser.amount(inputAmount);
+        final double amount = Parser.amount(inputAmount);
         System.out.println("Please key in the date:");
         String inputDate = UI.readCommand();
         final Date date = Parser.date(inputDate);
