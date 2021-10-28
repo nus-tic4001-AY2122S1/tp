@@ -31,11 +31,23 @@ Example of usage:
 
 ## FAQ
 
-**Q**: How do I transfer my data to another computer? 
+**Q**: How do I show all the bookings done for a range of days? 
 
-**A**: {your answer here}
+**A**: you can refer to the _Show all bookings within two date_ in the Command Summary.
+
+**Q**: How do I delete all the bookings done for a range of days?
+
+**A**: you can refer to the _Delete all bookings within two date_ in the Command Summary.
+
+**Q**: How do I save all the bookings on the go?
+
+**A**: you can simply key in `save`.
+
 
 ## Command Summary
 ['Cheat sheet' of commands]
 
 * Add booking `add BOOKING_DESC /s DATE TIME /e DATE TIME`
+* Show all bookings within two date `show /b DATE DATE`
+* Delete all bookings within two date `del /b DATE DATE`
+* Save booking `save`
