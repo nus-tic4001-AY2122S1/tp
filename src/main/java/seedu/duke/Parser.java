@@ -6,27 +6,19 @@ import java.util.Date;
 
 public class Parser {
     public static int index(String index) throws InputErrorException {
-        int i;
-
         try {
-            i = Integer.parseInt(index) - 1;
+            return Integer.parseInt(index) - 1;
         } catch (NumberFormatException e) {
             throw new InputErrorException("IndexNotInt");
         }
-
-        return i;
     }
 
     public static double amount(String amount) throws InputErrorException {
-        double amountD;
-
         try {
-            amountD = Double.parseDouble(amount);
+            return Double.parseDouble(amount);
         } catch (NumberFormatException e) {
             throw new InputErrorException("AmountNotNumber");
         }
-
-        return amountD;
     }
 
     public static Date date(String date) throws InputErrorException {
