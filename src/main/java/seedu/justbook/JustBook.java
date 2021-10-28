@@ -150,16 +150,19 @@ public class JustBook {
                 if (inputContent.contains("all")) {
                     //displays user's complete list of bookings in the database
                     displayRecords(listNum, totalRecords);
-                }
-
-                if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
+                } else if (inputContent.contains("/b")) {
+                    String[] dateRange = inputContent.split(" ",3);
+                    LocalDate startDate = LocalDate.parse(dateRange[1], DateTimeFormatter.ofPattern("yyyy-M-d"));
+                    LocalDate endDate = LocalDate.parse(dateRange[2], DateTimeFormatter.ofPattern("yyyy-M-d"));
+                    showRange(startDate, endDate);
+                } else if (inputContent.matches("^(.*)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$")) {
                     //displays user's selected date list of bookings in the database
                     displayDateBookings(inputContent, listNum);
-                }
-
-                if (inputContent.equals("weekends")) {
+                } else if (inputContent.equals("weekends")) {
                     //displays user's current month list of weekend bookings in the database
                     listWeekends();
+                } else {
+                    System.out.println("You have entered an unknown or invalid date, please try again!");
                 }
                 break;
             case "block": case "unblock":
@@ -174,6 +177,36 @@ public class JustBook {
             }
         }
     }
+
+    private static void showRange(LocalDate startRangeDate, LocalDate endRangeDate) {
+        int listNum = 1;
+
+        // sorts the database in ascending order
+        appointments.sort(comparing(Bookings::getStartDateTime));
+        int total = appointments.size();
+        //displays user's complete list of bookings in the database
+        System.out.println();
+
+        for (int i = 0; i < total; ) {
+            if (appointments.get(i).getStartDate().compareTo(startRangeDate) >= 0 && appointments.get(i).getStartDate().compareTo(endRangeDate) <= 0) {
+                LocalDate startDate = appointments.get(i).getStartDate();
+                String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
+                System.out.printf("Date: %s%n", dateHeader);
+
+                while (appointments.get(i).getStartDate().equals(startDate)) {
+                    System.out.printf("%d. %s%n", listNum++, appointments.get(i));
+                    i++;
+                }
+                // resets ListNum value to 1 for next date header
+                listNum = 1;
+                System.out.println();
+            }
+            else {
+                i++;
+            }
+        }
+    }
+
 
     private static void displayRecords(int listNum, int totalRecords) {
 
