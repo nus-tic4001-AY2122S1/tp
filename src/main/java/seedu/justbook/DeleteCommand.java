@@ -55,8 +55,7 @@ public class DeleteCommand {
                 i.remove();
             }
         }
-
-        System.out.println("Successfully removed all appointments between "+startDate+" to "+endDate+".");
+        System.out.println("Successfully removed all appointments between " + startDate + " to " + endDate + ".");
     }
 
 }
