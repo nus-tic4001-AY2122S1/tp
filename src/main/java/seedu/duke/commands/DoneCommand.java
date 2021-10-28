@@ -3,22 +3,29 @@ package seedu.duke.commands;
 
 import seedu.duke.project.Stat;
 
+import java.util.List;
+
 /**
  * Marks a task as done statement based on the index.
  */
 public class DoneCommand extends Command {
 
     public static final String COMMAND_WORD = "done";
-    private int[] targetIndex;
+    private List<String> targetIndex;
 
-    public DoneCommand(int[] targetIndex) {
+    public DoneCommand(List<String> targetIndex) {
         this.targetIndex = targetIndex;
     }
 
     @Override
     public void execute() {
-        for (int i : targetIndex) {
-            var thought = master.get(i - 1);
+        if (current.size() == 0) {
+            System.out.println("`list` first to get task no. for refering purpose");
+            return;
+        }
+
+        for (String i : targetIndex) {
+            var thought = master.get(i);
             System.out.println("Marking " + thought + " as " + Stat.DONE);
             thought.setStatus(Stat.DONE);
         }
