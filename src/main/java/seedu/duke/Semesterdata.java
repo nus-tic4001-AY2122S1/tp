@@ -15,9 +15,9 @@ public class Semesterdata {
 
     public String getPrettyString() {
         String result = "";
-        result += "Semester: " + semester + " | ";
-        result += "Exam date: " + examDate + " | ";
-        result +=  "Exam duration: " + examDuration;
+        result += "Semester:" + semester + " | ";
+        result += "Exam date:" + examDate + " | ";
+        result +=  "Exam duration:" + examDuration;
 
         return result;
     }

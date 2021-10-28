@@ -32,7 +32,7 @@ class ModuleTest {
                 "a", "b", semData);
         String expected = "TIC4001 | Software Eng | Semesters: 1, 2 | A description | Module credit: 4.0 "
                 + "| Department: Computing | Faculty: Faculty of Comp | Prerequisites: TIC2001 | Corequisites: b "
-                + "| Detailed semester data:Semester: 1 | Exam date: Wed Jan 20 09:30:00 UTC 2021 | Exam duration: 100";
+                + "| Detailed semester data:Semester:1 | Exam date:Wed Jan 20 09:30:00 UTC 2021 | Exam duration:100";
         assertEquals(mod.getPrettyPrint(), expected);
     }
 }

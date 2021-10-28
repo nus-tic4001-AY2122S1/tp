@@ -63,4 +63,10 @@ public class NusModList {
         return -1;
     }
 
+    public static void getFormattedApiModule(NusModList modData, int index) {
+        System.out.println(modData.getMod(index).getModuleCode() + " | "
+                + modData.getMod(index).getModuleTitle() + " | "
+                + modData.getMod(index).getModuleSemester());
+    }
+
 }
