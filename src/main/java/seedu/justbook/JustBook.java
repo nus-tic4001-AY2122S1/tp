@@ -126,6 +126,12 @@ public class JustBook {
                 if (inputContent.contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records");
+                } else if (inputContent.contains("/b")) {
+                    String[] dateRange = inputContent.split(" ",3);
+                    LocalDate startDate = LocalDate.parse(dateRange[1], DateTimeFormatter.ofPattern("yyyy-M-d"));
+                    LocalDate endDate = LocalDate.parse(dateRange[2], DateTimeFormatter.ofPattern("yyyy-M-d"));
+                    DeleteCommand delRange = new DeleteCommand(startDate, endDate);
+                    delRange.deleteRange(appointments);
                 } else {
                     int index = inputContent.indexOf("/o");
                     String inputDate = inputContent.substring(0, index).trim();
