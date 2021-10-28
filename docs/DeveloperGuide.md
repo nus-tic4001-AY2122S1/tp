@@ -12,11 +12,12 @@
 ## Product scope
 ### Target user profile
 
-{Describe the target user profile}
+* Users who have the difficulty to record and manage the incomes and expenses
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
+* Keep track of the income and expense item
+* analysis daily / monthly expense
 
 ## User Stories
 
@@ -35,10 +36,13 @@
 
 ####Use case: Add Expenses
 
-####Use case: Delete Expenses
+####Use case: Add Income
 
-####Use case: List Expenses
+####Use case: Delete Item
 
+####Use case: List Item
+
+####Use case: Find Item
 
 ## Non-Functional Requirements
 
