@@ -27,6 +27,7 @@ public class UI {
         for (int i = 0; i < items.size(); i++) {
             System.out.println(i + 1 + "." + items.get(i).toString());
         }
+        System.out.println("Sorting by expenses amount (Please key in sorting command: sort)");
     }
 
     public static void deleteMessage(Item item, int size) {

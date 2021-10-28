@@ -1,7 +1,7 @@
-/*
+
 package seedu.duke.command;
 
-import seedu.duke.itemList;
+import seedu.duke.ItemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 import seedu.duke.item.Item;
@@ -39,23 +39,26 @@ public class SortCommand extends Command implements Comparable<Item> {
         super(fullCommand);
     }
 
-    public void run(itemList itemList) {
+    public void run(ItemList itemList) {
 
-        String sortingIndex = Parser.sortingIndex(fullCommand);
-        switch (sortingIndex) {
+//        String sortingIndex = Parser.sortingIndex(fullCommand);
+        String sortingCommand = UI.readCommand();
+        System.out.println("Sorting by ascending/ descending please type : asc or desc");
+        String sortingByAscDesc = UI.readCommand();
+        switch (sortingCommand) {
         case "asc": {
-            Collections.sort(itemList.expenses, expenseComparator);
+            Collections.sort(itemList.items, expenseComparator);
             break;
         }
         case "desc": {
-            Collections.sort(itemList.expenses, expenseDescComparator);
+            Collections.sort(itemList.items, expenseDescComparator);
             break;
         }
         default:
             System.out.println("Please key in valid sorting command!");
         }
 
-        UI.listMessage(itemList.expenses);
+        UI.listMessage(itemList.items);
     }
 
     @Override
@@ -63,4 +66,3 @@ public class SortCommand extends Command implements Comparable<Item> {
         return 0;
     }
 }
-*/

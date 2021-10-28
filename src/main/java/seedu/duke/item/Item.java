@@ -9,6 +9,10 @@ public class Item {
     private double amount;
     private String category;
 
+    public double getAmount() {
+        return amount;
+    }
+
     public Item(String description, String category, double amount, Date date) {
         this.description = description;
         this.category = category;
