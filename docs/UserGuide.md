@@ -71,6 +71,28 @@ Got it. I've added this item: <br/>
 [I] [salary] Company A ($3000.0) (0034-Apr-13) <br/>
 Now you have 1 items in the list. <br/>
 
+###Deleting a Expense: `delete`
+
+Delete existing expense record from the list of expense items.
+
+Format: 
+* Step I: key in `delete`
+* Step II: key in `expense index` in integer type
+
+Example of usage:
+
+`Hi, I am Duke!`
+
+`What can I help you?`
+
+`delete`
+
+`Please key in the index:`
+
+`1`
+
+
+
 ## FAQ
 
 **Q**: How do I transfer my data to another computer?
