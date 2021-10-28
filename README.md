@@ -1,6 +1,8 @@
 # Project NEXT
 
-This is a task management app that follows the GTD method for GTD enthusiasts who prefer the speed of command line input. 
+This is a task management app that follows the GTD method for GTD enthusiasts who prefer the speed of command line
+input.
+
 ``` 
 _   _           _   
 | \ | | _____  _| |_ 
@@ -12,21 +14,21 @@ _   _           _
 ## General Skeleton for how the Project is structured.
 
 There are 2 main concepts for the project.
+
 1) We will have **_commands_** as per the following.
 
 | CRUD          | Command                                                             |
 |---------------|---------------------------------------------------------------------|
 | CREATE        | add TASK_NAME                                                       |
 | READ          | list inbox<br>list next  <br>list wait<br>list proj<br>list someday |
-| UPDATE (Move) | move INDEX... -f=FOLDER                                             |
+| UPDATE (Set)  | set INDEX... FOLDER                                                 |
 | UPDATE (Done) | done INDEX...                                                       |
 | DELETE        | delete INDEX...                                                     |
 
 2) we will also track the current project context of the user.  
-So that the commands run will update their workspace accordingly.
+   So that the commands run will update their workspace accordingly.
 
-
-## How to use 
+## How to use
 
 ## Build automation using Gradle
 
@@ -34,7 +36,6 @@ So that the commands run will update their workspace accordingly.
   i.e. the `build.gradle` file).
 * If you are new to Gradle, refer to
   the [Gradle Tutorial at se-education.org/guides](https://se-education.org/guides/tutorials/gradle.html).
-
 
 ## Testing
 

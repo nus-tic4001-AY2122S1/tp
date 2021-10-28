@@ -22,7 +22,7 @@ public class DeleteCommand extends Command {
 
     @Override
     public void execute() {
-        allList.remove(targetIndex, current);
+        master.remove(targetIndex, current);
         System.out.println("This is a delete command, the target index is "
                          + Arrays.toString(targetIndex));
     }
