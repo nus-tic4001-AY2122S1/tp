@@ -63,3 +63,4 @@ empty data file it creates with the file that contains the data of your previous
 **Delete** | ```delete INDEX ``` e.g., ```delete 2 ```
 **Find** | ```find KEYWORD ``` e.g., ```find lunch ```
 **Exit** | ```exit ``` e.g., ```exit ```
+**Sort** | ```sort``` e.g., asc or desc
