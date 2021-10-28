@@ -86,7 +86,9 @@ public class Parser {
     private Command prepareAdd(String args) {
         String argsTrim = args.trim();
         assert argsTrim.length() > 0 : "Can not add empty task";
-        return new AddCommand(argsTrim);
+        return argsTrim.length() > 0
+                ? new AddCommand(argsTrim) :
+                  new IncorrectCommand("Can not add empty task");
     }
 
     private Command prepareList(String args) {
