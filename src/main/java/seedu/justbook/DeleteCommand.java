@@ -2,10 +2,12 @@ package seedu.justbook;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.List;
 
 public class DeleteCommand {
     LocalDate startDate;
+    LocalDate endDate;
     int optionNumber;
 
     public DeleteCommand(String date, String option) {
@@ -13,6 +15,12 @@ public class DeleteCommand {
         this.startDate = LocalDate.parse(date, format);
         this.optionNumber = Integer.parseInt(option);
     }
+
+    public DeleteCommand(LocalDate startDate, LocalDate endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
 
     public void execute(List<Bookings> bookings) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
@@ -35,4 +43,20 @@ public class DeleteCommand {
     public static String getHelp() {
         return "del [Appointment_Start_Date] /o [Option_Number]";
     }
+
+    public void deleteRange(List<Bookings> bookings) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+        LocalDate temp;
+
+        for (Iterator<Bookings> i = bookings.iterator(); i.hasNext();) {
+            Bookings b = i.next();
+            temp = LocalDate.parse(b.getStartDate().format(formatter), formatter);
+            if (temp.compareTo(startDate) >= 0 && temp.compareTo(endDate) <= 0) {
+                i.remove();
+            }
+        }
+
+        System.out.println("Successfully removed all appointments between "+startDate+" to "+endDate+".");
+    }
+
 }
