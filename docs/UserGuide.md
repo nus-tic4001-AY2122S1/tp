@@ -79,6 +79,34 @@ Format:
 * Step I: key in `delete`
 * Step II: key in `expense index` in integer type
 
+
+
+### List an expense: `list`
+
+list expenses items
+
+Format: `income`
+
+Here are the items in your list: <br/>
+1.[E] [F&B] lunch ($15.0) (0034-Apr-13) <br/>
+2.[E] [meal] dinner ($10.0) (0021-Nov-26)
+Wourld you like sorting by expenses by amount
+(Please key in sorting command: sort)
+
+### Sort an expense: `sort`
+
+sorting expenses by amount after `list` to display all expenses items
+
+Format: `sort`
+
+Sorting by ascending/ descending please type : asc or desc <br/>
+`asc` <br/>
+Here are the items in your list: <br/>
+1.[E] [meal] dinner ($10.0) (26-Nov-2021)<br/>
+2.[E] [F&B] lunch ($15.0) (03-Apr-20)<br/>
+Wourld you like sorting by expenses by amount
+(Please key in sorting command: sort)
+
 Example of usage:
 
 `Hi, I am Duke!`
@@ -110,3 +138,4 @@ empty data file it creates with the file that contains the data of your previous
 **Delete** | ```delete INDEX ``` e.g., ```delete 2 ```
 **Find** | ```find KEYWORD ``` e.g., ```find lunch ```
 **Exit** | ```exit ``` e.g., ```exit ```
+**Sort** | ```sort``` e.g., asc or desc
