@@ -20,9 +20,12 @@ Interface (CLI).
 
 ## Features
 
-* Adding an expense: add
+* Adding an expense: expense
+* Adding an income: income
 * Listing all expense: list
 * Delete an expense: delete
+* Search for expense: find
+* Exit the program: exit
 
 ### Adding an expense: `expense`
 
@@ -44,6 +47,28 @@ Please key in the date: <br/>
 `2021-10-28` <br/>
 Got it. I've added this item: <br/>
 [E] [F&B] lunch ($15.0) (0034-Apr-13) <br/>
+Now you have 1 items in the list. <br/>
+
+### Adding an expense: `income`
+
+Adds a new income item to the list of items.
+
+Format: `income`
+
+* `description, category, amount, date`
+
+Example of usage: <br/>
+`income` <br/>
+Please key in the expense description:<br/>
+`Company A` <br/>
+Please key in the category: <br/>
+`salary` <br/>
+Please key in the amount: <br/>
+`3000` <br/>
+Please key in the date: <br/>
+`2021-10-28` <br/>
+Got it. I've added this item: <br/>
+[I] [salary] Company A ($3000.0) (0034-Apr-13) <br/>
 Now you have 1 items in the list. <br/>
 
 ## FAQ
