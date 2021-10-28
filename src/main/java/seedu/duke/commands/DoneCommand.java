@@ -25,7 +25,7 @@ public class DoneCommand extends Command {
         }
 
         for (String i : targetIndex) {
-            var thought = master.get(i);
+            var thought = current.get(i);
             System.out.println("Marking " + thought + " as " + Stat.DONE);
             thought.setStatus(Stat.DONE);
         }
