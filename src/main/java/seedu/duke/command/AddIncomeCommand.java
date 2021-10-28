@@ -19,7 +19,7 @@ public class AddIncomeCommand extends Command {
         final String category = UI.readCommand();
 
         Date date = new Date();
-        double amount = -1;
+        double amount = 0;
         boolean isCorrect = false;
 
         while (!isCorrect) {

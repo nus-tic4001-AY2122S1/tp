@@ -2,7 +2,6 @@
 package seedu.duke.command;
 
 import seedu.duke.ItemList;
-import seedu.duke.Parser;
 import seedu.duke.UI;
 import seedu.duke.item.Item;
 
@@ -35,8 +34,8 @@ public class SortCommand extends Command implements Comparable<Item> {
     //}
     //};
 
-    public SortCommand(String fullCommand) {
-        super(fullCommand);
+    public SortCommand(String command) {
+        super(command);
     }
 
     public void run(ItemList itemList) {
