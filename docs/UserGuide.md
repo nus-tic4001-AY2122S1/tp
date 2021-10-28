@@ -19,7 +19,7 @@ Adds a new item to the list of booking items.
 Format: `add BOOKING_DESC /s DATE TIME /e DATE TIME`
 
 * The `BOOKING_DESC` can be in a natural language format.
-* The `DATE TIME` uses format "yyyy-M-d" "HH:mm"  
+* The `DATE TIME` uses format *yyyy-M-d* *HH:mm*  
 * Current version allows within same day booking only
 * User expected to input non-clashing same day timing ranges 
 
