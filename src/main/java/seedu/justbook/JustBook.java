@@ -188,7 +188,8 @@ public class JustBook {
         System.out.println();
 
         for (int i = 0; i < total; ) {
-            if (appointments.get(i).getStartDate().compareTo(startRangeDate) >= 0 && appointments.get(i).getStartDate().compareTo(endRangeDate) <= 0) {
+            if (appointments.get(i).getStartDate().compareTo(startRangeDate) >= 0 &&
+                    appointments.get(i).getStartDate().compareTo(endRangeDate) <= 0) {
                 LocalDate startDate = appointments.get(i).getStartDate();
                 String dateHeader = String.valueOf(startDate).replaceAll("-", "/");
                 System.out.printf("Date: %s%n", dateHeader);
@@ -200,8 +201,7 @@ public class JustBook {
                 // resets ListNum value to 1 for next date header
                 listNum = 1;
                 System.out.println();
-            }
-            else {
+            } else {
                 i++;
             }
         }
