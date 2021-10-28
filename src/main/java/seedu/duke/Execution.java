@@ -6,7 +6,7 @@ import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.ExitCommand;
 import seedu.duke.command.FindCommand;
 import seedu.duke.command.ListCommand;
-//import seedu.duke.command.SortCommand;
+import seedu.duke.command.SortCommand;
 
 import java.util.logging.Logger;
 
@@ -35,9 +35,9 @@ public class Execution {
         case "delete":
             new DeleteCommand(command).run(itemList);
             break;
-        //case "sort":
-            //new SortCommand(command).run(itemList);
-            //break;
+        case "sort":
+            new SortCommand(command).run(itemList);
+            break;
         case "find":
             new FindCommand(command).run(itemList);
             break;

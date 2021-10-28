@@ -12,11 +12,12 @@
 ## Product scope
 ### Target user profile
 
-{Describe the target user profile}
+* Users who have the difficulty to record and manage the incomes and expenses
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
+* Keep track of the income and expense item
+* analysis daily / monthly expense
 
 ## User Stories
 
@@ -29,6 +30,7 @@
 |v2.0|user|I need to know when I spend and record enter time|I can check whether miss out any spend item|
 |v2.0|user|I need to classify those spend item|I can know the spend category|
 |v2.0|user|I need to able to delete added expense|I can delete if I add wrongly
+|v2.0|user|I need to search items with keyword|I can view the specific item fast|
 
 ## Use Cases
 
@@ -36,12 +38,15 @@
 
 ####Use case: Add Expenses
 
-####Use case: Delete Expenses
+####Use case: Add Income
 
-####Use case: List Expenses
+####Use case: Delete Item
 
 ####User case: Add Income
 
+####Use case: List Item
+
+####Use case: Find Item
 
 ## Non-Functional Requirements
 
