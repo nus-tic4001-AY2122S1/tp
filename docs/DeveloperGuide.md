@@ -28,6 +28,7 @@
 |v2.0|user|I need to put in my income|I can know how much I can spend|
 |v2.0|user|I need to know when I spend and record enter time|I can check whether miss out any spend item|
 |v2.0|user|I need to classify those spend item|I can know the spend category|
+|v2.0|user|I need to search items with keyword|I can view the specific item fast|
 
 ## Use Cases
 
