@@ -3,34 +3,37 @@ package seedu.duke;
 public class InputErrorException extends Exception {
     String errorType;
 
-    InputErrorException(String errorType) {
+    public InputErrorException(String errorType) {
         this.errorType = errorType;
     }
 
-    static void toPrintDateFormatError() {
-        System.out.println("OOPS!!! The input date format wrong. Please try again.");
+    public String getErrorType() {
+        return errorType;
+    }
+
+    public static void toPrintDateFormatError() {
+        System.out.println("OOPS!!! The input date format wrong. Please try again.\n");
     }
 
     static void toPrintListFormatError() {
-        System.out.println("OOPS!!! The list input format wrong. Please try again. ");
-    }
-
-    static void toPrintInValidListTypeCode() {
-        System.out.println("OOPS!!! The list type code invalid. Please try again. ");
-    }
-
-    static void toPrintAddCommandFormatWrong() {
-        System.out.print("OOPS!!! The add command format wrong ");
-        System.out.print("(Add format: command description / dd-MMM-yyyy / SGDxxxx).");
-        System.out.println(" Please try again");
+        System.out.println("OOPS!!! The list input format wrong. Please try again.\n");
     }
 
     static void toPrintInvalidCommand() {
 
-        System.out.println("OOPS!!! Invalid command input. Please try again. ");
+        System.out.println("OOPS!!! Invalid command input. Please try again.\n");
     }
 
-    static void toPrintInvalidAddCommandFormat() {
-        System.out.println("OOPS!!! Invalid Add command format. Please try again. ");
+    public static void toPrintIndexNotInt() {
+        System.out.println("OOPS!!! The index you typed is not an integer. Please try again.\n");
+    }
+
+    public static void toPrintIndexOutOfRange() {
+
+        System.out.println("OOPS!!! The index out of range. Please try again.\n");
+    }
+
+    public static void toPrintAmountNotNumber() {
+        System.out.println("OOPS!!! The amount is not a number. Please try again.\n");
     }
 }

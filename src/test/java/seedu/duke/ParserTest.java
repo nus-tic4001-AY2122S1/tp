@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParserTest {
     @Test
-    void indexTest() {
+    void indexTest() throws InputErrorException {
         assertEquals(3, Parser.index("4"));
     }
 
@@ -24,7 +24,7 @@ public class ParserTest {
     }
 
     @Test
-    void amountTest() {
+    void amountTest() throws InputErrorException {
         assertEquals(12.50, Parser.amount("12.50"));
     }
 }

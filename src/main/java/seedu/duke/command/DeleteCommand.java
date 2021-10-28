@@ -1,5 +1,6 @@
 package seedu.duke.command;
 
+import seedu.duke.InputErrorException;
 import seedu.duke.ItemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
@@ -16,9 +17,9 @@ public class DeleteCommand extends Command {
         super(command);
     }
 
-    private static Logger logger = Logger.getLogger("YSG");
+    private static Logger logger = Logger.getLogger("DELETE");
 
-    public void run(ItemList itemList) {
+    public void run(ItemList itemList) throws InputErrorException {
         // log a message at INFO level
         FileHandler fh;
         try {
@@ -32,14 +33,34 @@ public class DeleteCommand extends Command {
             e.printStackTrace();
         }
 
-        System.out.println("Please key in the index:");
-        String inputIndex = UI.readCommand();
-        final int index = Parser.index(inputIndex);
-        assert (index >= 0) : "Index number cannot smaller than 0!";
-        assert (index < itemList.size - 1) : "Invalid index number!";
+        //If the user input is not correct, the system will ask user to try until the input is correct
+        boolean isCorrect = false;
+        while (!isCorrect) {
+            try {
+                System.out.println("Please key in the index:");
+                String inputIndex = UI.readCommand();
+                final int index = Parser.index(inputIndex);
 
-        Item deletedTask = itemList.items.get(index);
-        itemList.delete(index);
-        UI.deleteMessage(deletedTask, itemList.size);
+                if (index < 0 || index > itemList.size - 1) {
+                    throw new InputErrorException("IndexOutOfRange");
+                }
+
+                isCorrect = true;
+
+                Item deletedTask = itemList.items.get(index);
+                itemList.delete(index);
+                UI.deleteMessage(deletedTask, itemList.size);
+
+            } catch (InputErrorException e) {
+                String errorType = e.getErrorType();
+                if (errorType.equals("IndexOutOfRange")) {
+                    InputErrorException.toPrintIndexOutOfRange();
+                } else if (errorType.equals("IndexNotInt")) {
+                    InputErrorException.toPrintIndexNotInt();
+                } else {
+                    System.out.println("OOPS!!! SOMETHING WRONG! PLEASE TRY AGAIN.");
+                }
+            }
+        }
     }
 }
