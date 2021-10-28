@@ -23,7 +23,7 @@ public class ViewCommand extends Command {
             Module module = modData.getMod(moduleIndex);
             System.out.println(module.getPrettyPrint());
 
-        } catch (ModuleException e){
+        } catch (ModuleException e) {
             System.out.println("module can't find");
         }
 
