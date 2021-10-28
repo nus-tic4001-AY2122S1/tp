@@ -41,11 +41,9 @@ public class SortCommand extends Command implements Comparable<Item> {
 
     public void run(ItemList itemList) {
 
-//        String sortingIndex = Parser.sortingIndex(fullCommand);
-        String sortingCommand = UI.readCommand();
         System.out.println("Sorting by ascending/ descending please type : asc or desc");
         String sortingByAscDesc = UI.readCommand();
-        switch (sortingCommand) {
+        switch (sortingByAscDesc) {
         case "asc": {
             Collections.sort(itemList.items, expenseComparator);
             break;
