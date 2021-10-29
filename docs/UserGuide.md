@@ -30,7 +30,7 @@ Example of usage:
 `todo attend IT Exhibit Changi Expo Halls /s 2021-06-07 11:00 /e 2021-06-07 13:30`
 
 
-### Blocking date-range settings: `block <DATE> - <DATE>`
+### Blocking date-range setting: `block <DATE> - <DATE>`
 Blocks users from creating appointments during a specific date range.
 
 Format: `block DATE - DATE`
@@ -43,12 +43,12 @@ Example of usage:
 `block 2021-11-5 - 2021-11-30`
 
 
-### Deleting all bookings: `delete --all`
+### Deleting all bookings: `delete <--all>`
 Erase all records inside the online appointment database.
 
 Format: `delete --all`
 
-* An alternate variant: `delete all`.
+* An alternate version: `delete all`.
 
 Example of usage:
 
@@ -56,17 +56,17 @@ Example of usage:
 
 
 ### Editing a booking: `edit`
-Edits a chosen item's booking description (current v2.0).
+Edits the booking description of the chosen item (current v2.0).
 
 Format: `edit BOOKING_DESC /s DATE /o OPTION NO.`
 
 * The `BOOKING_DESC` can be in a natural language format.
 * The `DATE` uses format *yyyy-M-d*.
 * Current version allows editing the booking text-description only.
-* `OPTION NO.` = to the serial no. of the booking item of a booking list display. 
+* `OPTION NO.` = the serial no. of an item under a booking list display. 
 * Before using `edit`, user is expected to open up first either
   - a specific date entries listing _(e.g. via `show <date>`)_ or 
-  - the entire database listing _(e.g. via `show --all`)_.
+  - the entire database listing _(e.g. via `show <--all>`)_.
 
 Example of usage:
 
@@ -87,7 +87,7 @@ Example of usage:
 `exit` or `bye`
 
 
-### Showing a specific date's bookings: `show --all`
+### Showing all bookings: `show <--all>`
 Displays all database records, headed by distinct dates header, in chronological order.
 
 Format: `show -all`
@@ -99,7 +99,7 @@ Example of usage:
 `show --all` or `show all`
 
 
-### Showing a specific date's bookings: `show <DATE>`
+### Showing a specific date's list of bookings: `show <DATE>`
 Displays all records chronologically, under a specific date header.
 
 Format: `show DATE`
@@ -111,8 +111,8 @@ Example of usage:
 `show 2021-11-8`
 
 
-### Showing a specific date's bookings: `show <WEEKENDS>`
-Displays all records chronologically, under specific weekend headers, for the current month.
+### Showing all weekends bookings (current month): `show <WEEKENDS>`
+Displays all weekend records chronologically, under specific weekend headers, for the current month.
 
 Format: `show WEEKENDS`
 
@@ -123,7 +123,7 @@ Example of usage:
 `show weekends`
 
 
-### Unlocking date-range settings: `unblock <DATE> - <DATE>`
+### Unlocking date-range setting: `unblock <DATE> - <DATE>`
 Releases blocked dates during the range period as specified by users.
 
 Format: `unblock DATE - DATE`
@@ -151,9 +151,17 @@ Example of usage:
 
 
 ## Command Summary
-['Cheat sheet' of commands]
+[ 'Cheat sheet' of **CLI COMMANDS** - _case-sensitive_ ]
 
-* Add booking `add BOOKING_DESC /s DATE TIME /e DATE TIME`
-* Show all bookings within two date `show /b DATE DATE`
-* Delete all bookings within two date `del /b DATE DATE`
-* Save booking `save`
+* Add booking: `add <BOOKING_DESC> /s <DATE> <TIME> /e <DATE> <TIME>`
+* Block date range: `block <DATE> - <DATE>`
+* Delete all bookings: `delete --all` or `delete all`
+* Delete all bookings within two dates: `del /b <DATE> <DATE>`
+* Edit a booking description: `edit <BOOKING_DESC> /s <DATE> /o <OPTION NO.>`
+* Exit the Program: `exit` or `bye`
+* Save bookings to file: `save`
+* Show all bookings: `show -all` or `show all`
+* Show a specific date's list of bookings: `show <DATE>`
+* Show all bookings within two dates: `show /b <DATE> <DATE>`
+* Show all weekends bookings (for current month): `show <weekends>`
+* Unlock a blocked date range: `unblock <DATE> - <DATE>`
