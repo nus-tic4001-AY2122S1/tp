@@ -11,11 +11,13 @@ import seedu.duke.command.SortCommand;
 import java.util.logging.Logger;
 
 public class Execution {
+    protected String fullCommand;
     protected String command;
     protected boolean isExit;
 
-    public Execution(String command) {
-        this.command = command;
+    public Execution(String fullCommand) {
+        this.fullCommand = fullCommand;
+        this.command = Parser.command(fullCommand);
         this.isExit = false;
     }
 
@@ -24,25 +26,25 @@ public class Execution {
 
         switch (command) {
         case "list":
-            new ListCommand(command).run(itemList);
+            new ListCommand(fullCommand).run(itemList);
             break;
         case "expense":
-            new AddExpenseCommand(command).run(itemList);
+            new AddExpenseCommand(fullCommand).run(itemList);
             break;
         case "income":
-            new AddIncomeCommand(command).run(itemList);
+            new AddIncomeCommand(fullCommand).run(itemList);
             break;
         case "delete":
-            new DeleteCommand(command).run(itemList);
+            new DeleteCommand(fullCommand).run(itemList);
             break;
         case "sort":
-            new SortCommand(command).run(itemList);
+            new SortCommand(fullCommand).run(itemList);
             break;
         case "find":
-            new FindCommand(command).run(itemList);
+            new FindCommand(fullCommand).run(itemList);
             break;
         case "exit":
-            new ExitCommand(command).run(itemList);
+            new ExitCommand(fullCommand).run(itemList);
             isExit = true;
             break;
         default:

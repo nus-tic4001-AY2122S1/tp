@@ -11,8 +11,8 @@ import java.util.logging.SimpleFormatter;
 
 
 public class ListCommand extends Command {
-    public ListCommand(String command) {
-        super(command);
+    public ListCommand(String fullCommand) {
+        super(fullCommand);
     }
 
     private static Logger logger = Logger.getLogger("LIST");

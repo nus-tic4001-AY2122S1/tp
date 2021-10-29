@@ -33,34 +33,9 @@ public class DeleteCommand extends Command {
             e.printStackTrace();
         }
 
-        //If the user input is not correct, the system will ask user to try until the input is correct
-        boolean isCorrect = false;
-        while (!isCorrect) {
-            try {
-                System.out.println("Please key in the index:");
-                String inputIndex = UI.readCommand();
-                final int index = Parser.index(inputIndex);
-
-                if (index < 0 || index > itemList.size - 1) {
-                    throw new InputErrorException("IndexOutOfRange");
-                }
-
-                isCorrect = true;
-
-                Item deletedTask = itemList.items.get(index);
-                itemList.delete(index);
-                UI.deleteMessage(deletedTask, itemList.size);
-
-            } catch (InputErrorException e) {
-                String errorType = e.getErrorType();
-                if (errorType.equals("IndexOutOfRange")) {
-                    InputErrorException.toPrintIndexOutOfRange();
-                } else if (errorType.equals("IndexNotInt")) {
-                    InputErrorException.toPrintIndexNotInt();
-                } else {
-                    System.out.println("OOPS!!! SOMETHING WRONG! PLEASE TRY AGAIN.");
-                }
-            }
-        }
+        int index = Parser.index(fullCommand);
+        Item deletedTask = itemList.items.get(index);
+        itemList.delete(index);
+        UI.deleteMessage(deletedTask, itemList.size);
     }
 }

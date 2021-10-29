@@ -37,8 +37,8 @@ public class Duke {
         while (!isExit) {
             try {
                 logger.log(Level.INFO, "New input to execute");
-                String command = UI.readCommand();
-                Execution execution = new Execution(command);
+                String fullCommand = UI.readCommand();
+                Execution execution = new Execution(fullCommand);
                 execution.execute(itemList);
                 isExit = execution.isExit;
             } catch (InputErrorException d) {
