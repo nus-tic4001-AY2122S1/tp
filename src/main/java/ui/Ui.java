@@ -86,7 +86,8 @@ public class Ui {
      * Displays the response when a category is added.
      */
     public void printTaggedCategory(int taskIndex, String category, int num) {
-        System.out.println("   Noted. I've tagged task number "  + (taskIndex + 1) + " with the specified category:\n   " + category);
+        System.out.println("   Noted. I've tagged task number "
+                + (taskIndex + 1) + " with the specified category:\n   " + category);
     }
 
     public void printUpdatedTask(String task, int num) {
