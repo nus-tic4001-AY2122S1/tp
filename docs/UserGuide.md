@@ -23,7 +23,7 @@ Adds a new item to the list of booking items.
 * Current version allows within same day booking only.
 * User expected to input non-clashing same day timing ranges.
 
-**_Example of usage_**: 
+**_<ins>Example of usage<ins>_**: 
 
 `add meet@Sports Hall One lvl 3 /s 2021-6-7 09:00 /e 2021-6-7 10:30`
 
@@ -38,7 +38,7 @@ Blocks users from creating appointments during a specific date range.
 * `DATE` uses format *yyyy-M-d*.
 * Users may release blocked dates at their discretion _(e.g. via `unblock <date> - <date>`)_.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `block 2021-11-5 - 2021-11-30`
 
@@ -50,7 +50,7 @@ Erase all records inside the online appointment database.
 
 * An alternate version: `delete all`.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `delete --all` or `delete all`
 
@@ -68,7 +68,7 @@ Edits the booking description of the chosen item (current v2.0).
   - a specific date entries listing _(e.g. via `show <date>`)_ or 
   - the entire database listing _(e.g. via `show <--all>`)_.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `edit meet@Sports Hall One lvl 3 /s 2021-6-7 /o 3`
 
@@ -82,7 +82,7 @@ Exits the JustBook App Program.
 
 * An alternate variant: `bye`.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `exit` or `bye`
 
@@ -94,7 +94,7 @@ Displays all database records, headed by distinct dates header, in chronological
 
 * An alternate version: `show all`.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `show --all` or `show all`
 
@@ -106,7 +106,7 @@ Displays all records chronologically, under a specific date header.
 
 * `DATE` uses format *yyyy-M-d*.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `show 2021-11-8`
 
@@ -118,7 +118,7 @@ Displays all weekend records chronologically, under specific weekend headers, fo
 
 * `WEEKENDS` can be in a natural language format.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `show weekends`
 
@@ -130,7 +130,7 @@ Releases blocked dates during the range period as specified by users.
 
 * `DATE` uses format *yyyy-M-d*.
 
-**_Example of usage_**:
+**_<ins>Example of usage<ins>_**:
 
 `unblock 2021-11-5 - 2021-11-30`
 
@@ -151,7 +151,7 @@ Releases blocked dates during the range period as specified by users.
 
 
 ## Command Summary
-[ 'Cheat sheet' of **CLI COMMANDS** - _case-sensitive_ ]
+[ 'Cheat sheet' of **<ins>CLI COMMANDS<ins>** - _case-sensitive_ ]
 
 * Add booking: `add <BOOKING_DESC> /s <DATE> <TIME> /e <DATE> <TIME>`
 * Block date range: `block <DATE> - <DATE>`
