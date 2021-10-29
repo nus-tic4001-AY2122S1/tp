@@ -1,4 +1,3 @@
-/*
 package seedu.duke.command;
 
 import org.junit.jupiter.api.Test;
@@ -6,49 +5,34 @@ import seedu.duke.InputErrorException;
 import seedu.duke.ItemList;
 import seedu.duke.item.Item;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.sql.Timestamp;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DeleteCommandTest {
 
     @Test
-    public void deleteExpense() throws ParseException, InputErrorException, InputErrorException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+    public void delete() throws InputErrorException {
 
-        String d1s = "11-Dec-2021";
-        String d2s = "12-Dec-2021";
-        Date d1 = formatter.parse(d1s);
-        Date d2 = formatter.parse(d2s);
+        Date recordDate = new Date();
+        long time = recordDate.getTime();
+        Timestamp timestamp = new Timestamp(time);
 
-        Item testerExpense1 = new Item("taxi", "Daily", 22, d1);
-        Item testerExpense2 = new Item("dinner", "Dinner", 33, d2);
+        Item tester = new Item("lunch", "F&B", 33, timestamp);
 
-        ArrayList<Item> arrayListExpLst = new ArrayList<>();
-        ArrayList<Item> expectedArrayLst = new ArrayList<>();
+        ArrayList<Item> arrayListTester = new ArrayList<>();
 
-        arrayListExpLst.add(testerExpense1);
-        arrayListExpLst.add(testerExpense2);
+        arrayListTester.add(tester);
+        ItemList newExpLst = new ItemList(arrayListTester);
 
-        expectedArrayLst.add(testerExpense2);
+        DeleteCommand delete = new DeleteCommand("delete 1");
+        delete.run(newExpLst);
 
-        ItemList newExpLst = new ItemList(arrayListExpLst);
-        ItemList expect = new ItemList(expectedArrayLst);
-
-        DeleteCommand newDC = new DeleteCommand("Delete");
-
-        String input = "1";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-        newDC.run(newExpLst);
-
-        assertEquals(expect.items, newExpLst.items);
+        List<String> expected = List.of("");
+        assertEquals(expected.toString(), newExpLst.items.toString());
     }
+
 }
-*/
