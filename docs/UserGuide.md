@@ -23,7 +23,7 @@ Adds a new item to the list of booking items.
 * Current version allows within same day booking only.
 * User expected to input non-clashing same day timing ranges.
 
-**_<ins>Example of usage<ins>_**: 
+<ins>**_Example of usage_**<ins> 
 
 `add meet@Sports Hall One lvl 3 /s 2021-6-7 09:00 /e 2021-6-7 10:30`
 
@@ -38,7 +38,7 @@ Blocks users from creating appointments during a specific date range.
 * `DATE` uses format *yyyy-M-d*.
 * Users may release blocked dates at their discretion _(e.g. via `unblock <date> - <date>`)_.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `block 2021-11-5 - 2021-11-30`
 
@@ -50,7 +50,7 @@ Erase all records inside the online appointment database.
 
 * An alternate version: `delete all`.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `delete --all` or `delete all`
 
@@ -68,7 +68,7 @@ Edits the booking description of the chosen item (current v2.0).
   - a specific date entries listing _(e.g. via `show <date>`)_ or 
   - the entire database listing _(e.g. via `show <--all>`)_.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `edit meet@Sports Hall One lvl 3 /s 2021-6-7 /o 3`
 
@@ -82,7 +82,7 @@ Exits the JustBook App Program.
 
 * An alternate variant: `bye`.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `exit` or `bye`
 
@@ -94,7 +94,7 @@ Displays all database records, headed by distinct dates header, in chronological
 
 * An alternate version: `show all`.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `show --all` or `show all`
 
@@ -106,7 +106,7 @@ Displays all records chronologically, under a specific date header.
 
 * `DATE` uses format *yyyy-M-d*.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `show 2021-11-8`
 
@@ -118,7 +118,7 @@ Displays all weekend records chronologically, under specific weekend headers, fo
 
 * `WEEKENDS` can be in a natural language format.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `show weekends`
 
@@ -130,7 +130,7 @@ Releases blocked dates during the range period as specified by users.
 
 * `DATE` uses format *yyyy-M-d*.
 
-**_<ins>Example of usage<ins>_**:
+<ins>**_Example of usage_**<ins>
 
 `unblock 2021-11-5 - 2021-11-30`
 
