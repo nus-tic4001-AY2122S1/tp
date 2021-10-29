@@ -3,10 +3,11 @@ package parser;
 import command.Command;
 import command.ViewCommand;
 import command.TodoCommand;
+import command.DeleteCommand;
 import command.LocationCommand;
 import command.ByeCommand;
-import command.DeleteCommand;
 import command.AppointmentCommand;
+import command.DeleteCommand;
 import command.AppointmentTimeCommand;
 
 import constant.CommandKeyWords;
