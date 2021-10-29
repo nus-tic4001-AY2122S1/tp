@@ -23,7 +23,7 @@ Adds a new item to the list of booking items.
 * Current version allows within same day booking only.
 * User expected to input non-clashing same day timing ranges.
 
-<ins>**_Example of usage_**<ins>: 
+**_<ins>Example of usage<ins>_**: 
 
 `add meet@Sports Hall One lvl 3 /s 2021-6-7 09:00 /e 2021-6-7 10:30`
 
