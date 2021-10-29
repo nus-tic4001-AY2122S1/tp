@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
-    private static final ArrayList<Task> todoList = TaskList.getInstance().getList();
     private final Ui ui;
     private final Storage storage;
     private final TaskList tasklist;
