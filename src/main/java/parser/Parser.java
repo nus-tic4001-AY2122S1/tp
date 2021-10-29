@@ -2,11 +2,13 @@ package parser;
 
 import command.Command;
 import command.ViewCommand;
+import command.DoneCommand;
 import command.TodoCommand;
+import command.DeleteCommand;
 import command.LocationCommand;
 import command.ByeCommand;
-import command.DeleteCommand;
 import command.AppointmentCommand;
+import command.DeleteCommand;
 import command.AppointmentTimeCommand;
 
 import constant.CommandKeyWords;
@@ -24,7 +26,13 @@ public class Parser {
 
         switch (commandWord) {
         case VIEW:
-            return new ViewCommand();
+            return new ViewCommand(result);
+        case DONE:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+            this.taskNo = result[1].trim();
+            return new DoneCommand(this.taskNo);
         case TODO:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_TODO);

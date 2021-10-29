@@ -3,6 +3,7 @@ package command;
 import constant.ErrorMessage;
 import constant.Utils;
 import exception.ErrorHandler;
+import helpers.DateConverter;
 import storage.Storage;
 import tasklist.TaskList;
 import ui.Ui;
@@ -36,11 +37,19 @@ public abstract class Command {
         }
     }
 
-    protected Date parseDateTime(String time) throws ErrorHandler {
+    protected Date parseDateTime(String dateTime) throws ErrorHandler {
+        String[] dayTime = dateTime.split(" ", 2);
+        if (dayTime.length < 2) {
+            throw new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
+        }
+
+        String time = dayTime[1];
+        String day = DateConverter.convert(dayTime[0]).trim();
+
         SimpleDateFormat formatter = new SimpleDateFormat(Utils.DATE_TIME_FORMAT);
 
         try {
-            return formatter.parse(time);
+            return formatter.parse(day + " " + time);
         } catch (ParseException e) {
             throw new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
         }

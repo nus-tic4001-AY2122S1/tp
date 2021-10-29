@@ -5,7 +5,6 @@ import storage.Storage;
 import task.Appointment;
 import tasklist.TaskList;
 import ui.Ui;
-
 import java.util.Date;
 
 public class AppointmentCommand extends Command {

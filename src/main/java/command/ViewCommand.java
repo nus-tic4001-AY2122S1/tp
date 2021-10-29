@@ -9,6 +9,15 @@ import tasklist.TaskList;
  */
 public class ViewCommand extends Command {
     protected static Ui ui = new Ui();
+    private boolean isViewAll;
+
+    public ViewCommand(String[] input) {
+        if (input.length > 1 && input[1].equals("-a")) {
+            this.isViewAll = true;
+        } else {
+            this.isViewAll = false;
+        }
+    }
 
     /**
      * Executes the command.
@@ -21,8 +30,11 @@ public class ViewCommand extends Command {
     public void execute(TaskList list, Ui ui, Storage storage) {
         if (list.sizeOfTask() == 0) {
             ui.print("The list is empty.");
-        } else {
+        } 
+        if (isViewAll) {
             ui.printTaskList(list);
+        } else {
+            ui.printPendingTaskList(list);
         }
     }
 }
