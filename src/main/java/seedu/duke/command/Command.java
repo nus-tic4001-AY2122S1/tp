@@ -6,10 +6,10 @@ import seedu.duke.InputErrorException;
 import java.text.ParseException;
 
 public abstract class Command {
-    protected String command;
+    protected String fullCommand;
 
-    public Command(String command) {
-        this.command = command;
+    public Command(String fullCommand) {
+        this.fullCommand = fullCommand;
     }
 
     public abstract void run(ItemList itemList) throws ParseException, InputErrorException;

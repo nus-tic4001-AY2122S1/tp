@@ -8,44 +8,15 @@ import seedu.duke.UI;
 import java.util.Date;
 
 public class AddExpenseCommand extends Command {
-    public AddExpenseCommand(String command) {
-        super(command);
+    public AddExpenseCommand(String fullCommand) {
+        super(fullCommand);
     }
 
     public void run(ItemList itemList) throws InputErrorException {
-        System.out.println("Please key in the expense description:");
-        final String description = UI.readCommand();
-        System.out.println("Please key in the category:");
-        final String category = UI.readCommand();
-
-        Date date = new Date();
-        double amount = 0;
-        boolean isCorrect = false;
-
-        while (!isCorrect) {
-            try {
-                System.out.println("Please key in the amount:");
-                String inputAmount = UI.readCommand();
-                amount = Parser.amount(inputAmount);
-
-                isCorrect = true;
-            } catch (InputErrorException e) {
-                InputErrorException.toPrintAmountNotNumber();
-            }
-        }
-
-        isCorrect = false;
-        while (!isCorrect) {
-            try {
-                System.out.println("Please key in the date:");
-                String inputDate = UI.readCommand();
-                date = Parser.date(inputDate);
-
-                isCorrect = true;
-            } catch (InputErrorException e) {
-                InputErrorException.toPrintDateFormatError();
-            }
-        }
+        String description = Parser.description(fullCommand);
+        String category = Parser.category(fullCommand);
+        double amount = Parser.amount(fullCommand);
+        Date date = Parser.date(fullCommand);
 
         itemList.addExpense(description, category, amount, date);
         int size = itemList.size;
