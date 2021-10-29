@@ -8,8 +8,12 @@ import command.DeleteCommand;
 import command.LocationCommand;
 import command.ByeCommand;
 import command.AppointmentCommand;
+import command.DeleteCommand;
+import command.AppointmentTimeCommand;
+
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
+
 import exception.ErrorHandler;
 
 public class Parser {
@@ -62,6 +66,12 @@ public class Parser {
             this.content = inputContent[1];
 
             return new LocationCommand(this.taskNo, this.content);
+        case SET_TIME:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+
+            return this.handleSetTime(result[1]);
         case BYE:
         default:
             return new ByeCommand();
@@ -85,5 +95,17 @@ public class Parser {
         String location = timeContent[1].trim();
 
         return new AppointmentCommand(this.content, at, location);
+    }
+
+    private Command handleSetTime(String input) throws ErrorHandler {
+        String[] inputContent = input.split(" ", 2);
+
+        if (inputContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_TIME_DESCRIPTION);
+        }
+        this.taskNo = inputContent[0];
+        this.content = inputContent[1];
+
+        return new AppointmentTimeCommand(this.taskNo, this.content);
     }
 }

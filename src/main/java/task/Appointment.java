@@ -1,11 +1,16 @@
 package task;
 
+import constant.Utils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Appointment extends Task {
     private final String type;
-    private final String at;
+    private Date at;
     private String location;
 
-    public Appointment(String description, String at, String location) {
+    public Appointment(String description, Date at, String location) {
         super(description);
         type = "A";
         this.location = location;
@@ -13,9 +18,11 @@ public class Appointment extends Task {
     }
 
     public String taskToStringFormat() {
+        SimpleDateFormat formatter = new SimpleDateFormat(Utils.DATE_TIME_FORMAT);
+
         return "[" + this.getType() + "]" + "[" + super.getStatusIcon() + "] "
-                + super.getDescription() + "," + " at " + this.at + ". "
-                + "Location: " + this.location;
+            + super.getDescription() + "," + " at " + formatter.format(this.at) + ". "
+            + "Location: " + this.location;
     }
 
     public String getType() {
@@ -28,5 +35,9 @@ public class Appointment extends Task {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setTime(Date time) {
+        this.at = time;
     }
 }
