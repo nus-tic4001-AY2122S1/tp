@@ -7,14 +7,15 @@ import task.Appointment;
 import task.Task;
 import tasklist.TaskList;
 import ui.Ui;
+import java.util.Date;
 
-public class LocationCommand extends Command {
+public class AppointmentTimeCommand extends Command {
     private final int taskIndex;
-    private final String location;
+    private final Date time;
 
-    public LocationCommand(String taskNumber, String location) throws ErrorHandler {
+    public AppointmentTimeCommand(String taskNumber, String time) throws ErrorHandler {
         this.taskIndex = this.parseTaskNumberToIndex(taskNumber);
-        this.location = location;
+        this.time = this.parseDateTime(time);
     }
 
     public void execute(TaskList list, Ui ui, Storage storage) throws ErrorHandler {
@@ -22,7 +23,7 @@ public class LocationCommand extends Command {
         Task task = list.returnTask(this.taskIndex);
 
         if (task instanceof Appointment) {
-            ((Appointment) task).setLocation(this.location);
+            ((Appointment) task).setTime(this.time);
             ui.printUpdatedTask(task.taskToStringFormat(), list.sizeOfTask());
         } else {
             ui.print(ErrorMessage.INVALID_APPOINTMENT_TASK);

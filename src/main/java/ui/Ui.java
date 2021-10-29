@@ -89,7 +89,9 @@ public class Ui {
         System.out.println("   Noted. I've tagged task number "  + (taskIndex + 1) + " with the specified category:\n   " + category);
     }
 
-
+    public void printUpdatedTask(String task, int num) {
+        System.out.println("   Noted. I've updated this task:\n   " + task + "\n");
+    }
 
     public void bye() {
         print("Bye. Hope to see you again soon!");
