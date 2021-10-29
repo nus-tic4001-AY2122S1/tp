@@ -5,6 +5,7 @@ import parser.Parser;
 import storage.Storage;
 import task.Task;
 import tasklist.TaskList;
+import category.Category;
 import ui.Ui;
 
 import java.util.ArrayList;
@@ -14,11 +15,13 @@ public class Duke {
     private final Ui ui;
     private final Storage storage;
     private final TaskList tasklist;
+    private final Category category;
 
     public Duke() {
         this.ui = new Ui();
         this.storage = new Storage("file_path");
         this.tasklist = new TaskList();
+        this.category = new Category();
     }
 
     /**
