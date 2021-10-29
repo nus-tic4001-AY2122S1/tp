@@ -12,5 +12,5 @@ Hello! I'm Daffy
    [T][ ] buy milk
    Now you have 1 tasks in the list.
 Error: OOPS!!! I'm sorry, you have provided a invalid task number.
-Error: OOPS!!! I'm sorry, but I don't know what that means. Please starts your command with SET_LOCATION, BYE, TODO, DELETE, VIEW, DONE, APPOINTMENT, SET_TIME. (case insensitive)
+Error: OOPS!!! I'm sorry, but I don't know what that means. Please starts your command with SET_LOCATION, BYE, TODO, DELETE, VIEW, DONE, APPOINTMENT, SET_TIME, CATEGORY. (case insensitive)
 Bye. Hope to see you again soon!
