@@ -22,5 +22,6 @@ public class AddCategory extends Command {
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) {
         category.addCategory(this.categoryName);
+        ui.printAddedCategory(this.categoryName, category.size());
     }
 }

@@ -8,6 +8,7 @@ import command.TodoCommand;
 import command.ViewCommand;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
+import command.category.TagCategory;
 import command.category.ViewCategory;
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
@@ -48,7 +49,7 @@ public class Parser {
                 return new ViewCategory();
             case "add":
                 if (categoryOption.length < 2) {
-                    throw new ErrorHandler(ErrorMessage.EMPTY_CATEGORY_NAME);
+                    throw new ErrorHandler(ErrorMessage.EMPTY_CATEGORY_NUMBER);
                 }
                 return new AddCategory(categoryOption[1].trim());
             case "delete":
@@ -56,6 +57,15 @@ public class Parser {
                     throw new ErrorHandler(ErrorMessage.EMPTY_CATEGORY_NUMBER);
                 }
                 return new DeleteCategory(categoryOption[1].trim());
+            case "tag":
+                if (categoryOption.length < 2) {
+                    throw new ErrorHandler(ErrorMessage.EMPTY_CATEGORY_NUMBER);
+                }
+                String[] tagOption = categoryOption[1].split(" ", 2);
+                if (tagOption.length < 2) {
+                    throw new ErrorHandler(ErrorMessage.INVALID_CATEGORY_TAG);
+                }
+                return new TagCategory(tagOption[0].trim(), tagOption[1].trim());
             default:
                 throw new ErrorHandler(ErrorMessage.INVALID_CATEGORY_COMMAND);
             }

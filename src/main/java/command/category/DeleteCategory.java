@@ -40,6 +40,14 @@ public class DeleteCategory extends Command {
             throw new ErrorHandler(ErrorMessage.INVALID_CATEGORY_NUMBER);
         }
 
+        String tagCategory = category.getCategory(this.categoryIndex);
+        for (String searchCategory : this.category.getList()) {
+            if (searchCategory.contains(tagCategory)) {
+                throw new ErrorHandler(ErrorMessage.CATEGORY_STILL_IN_USE);
+            }
+        }
+
         category.deleteCategory(this.categoryIndex);
+        ui.printDeleteCategory(tagCategory, category.size());
     }
 }

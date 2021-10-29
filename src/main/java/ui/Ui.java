@@ -66,6 +66,31 @@ public class Ui {
             + " tasks in the list.");
     }
 
+    /**
+     * Displays the response when a category is added.
+     */
+    public void printAddedCategory(String category, int num) {
+        System.out.println("   Noted. I've added this category:\n   " + category + "\n   Now you have " + num
+                + " categories in the list.");
+    }
+
+    /**
+     * Displays the response when a category is deleted.
+     */
+    public void printDeleteCategory(String category, int num) {
+        System.out.println("   Noted. I've removed this category:\n   " + category + "\n   Now you have " + num
+                + " categories in the list.");
+    }
+
+    /**
+     * Displays the response when a category is added.
+     */
+    public void printTaggedCategory(int taskIndex, String category, int num) {
+        System.out.println("   Noted. I've tagged task number "  + (taskIndex + 1) + " with the specified category:\n   " + category);
+    }
+
+
+
     public void bye() {
         print("Bye. Hope to see you again soon!");
     }

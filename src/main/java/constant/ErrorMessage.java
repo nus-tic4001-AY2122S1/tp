@@ -13,4 +13,7 @@ public class ErrorMessage {
     public static final String INVALID_CATEGORY_NUMBER = "OOPS!!! Please specify a valid category number.";
     public static final String EMPTY_CATEGORY_NAME = "OOPS!!! Please specify a category name.";
     public static final String EMPTY_CATEGORY_NUMBER = "OOPS!!! Please specify a category number.";
+    public static final String CATEGORY_STILL_IN_USE = "OOPS!!! The category is still being tagged to some task.";
+    public static final String CATEGORY_DOES_NOT_EXIST = "OOPS!!! The category you specified does not exist.";
+    public static final String INVALID_CATEGORY_TAG = "OOPS!!! Please specify a task number and a category name. e.g. category tag 1 homework";
 }
