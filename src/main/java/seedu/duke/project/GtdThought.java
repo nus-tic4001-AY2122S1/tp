@@ -176,6 +176,10 @@ public class GtdThought {
         return children.size() == 0 ? false : true;
     }
 
+    public ArrayList<GtdThought> getChildren() {
+        return children;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
