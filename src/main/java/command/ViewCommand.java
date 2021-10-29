@@ -1,6 +1,5 @@
 package command;
 
-import exception.ErrorHandler;
 import ui.Ui;
 import storage.Storage;
 import tasklist.TaskList;
@@ -28,15 +27,14 @@ public class ViewCommand extends Command {
      * @param storage The storage to allow reading and storing of tasks from and to a txt file.
      */
     @Override
-    public void execute(TaskList list, Ui ui, Storage storage) throws ErrorHandler {
+    public void execute(TaskList list, Ui ui, Storage storage) {
         if (list.sizeOfTask() == 0) {
-            throw new ErrorHandler("The list is empty.");
-        }
+            ui.print("The list is empty.");
+        } 
         if (isViewAll) {
             ui.printTaskList(list);
         } else {
             ui.printPendingTaskList(list);
         }
     }
-
 }
