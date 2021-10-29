@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class AddExpenseCommandTest {
 
     @Test
-    public void AddExpense() throws InputErrorException {
+    public void addExpense() throws InputErrorException {
 
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
         ItemList newExpLst = new ItemList(arrayListExpLst);
