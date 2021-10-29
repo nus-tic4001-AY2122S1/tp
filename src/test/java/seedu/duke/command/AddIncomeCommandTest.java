@@ -15,8 +15,8 @@ class AddIncomeCommandTest {
     @Test
     public void addIncome() throws InputErrorException {
 
-        ArrayList<Item> arrayListExpLst = new ArrayList<>();
-        ItemList newIncomeLst = new ItemList(arrayListExpLst);
+        ArrayList<Item> arrayListIncomeLst = new ArrayList<>();
+        ItemList newIncomeLst = new ItemList(arrayListIncomeLst);
 
         AddIncomeCommand addIncome = new AddIncomeCommand("income OctSalary /salary /3000 /15-10-2021");
         addIncome.run(newIncomeLst);
