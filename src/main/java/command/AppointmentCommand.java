@@ -1,19 +1,20 @@
 package command;
 
+import exception.ErrorHandler;
 import storage.Storage;
 import task.Appointment;
-import task.Todo;
 import tasklist.TaskList;
 import ui.Ui;
+import java.util.Date;
 
 public class AppointmentCommand extends Command {
     private final String taskDescription;
-    private final String at;
+    private final Date at;
     private final String location;
 
-    public AppointmentCommand(String description, String at, String location) {
+    public AppointmentCommand(String description, String at, String location) throws ErrorHandler {
         this.taskDescription = description;
-        this.at = at;
+        this.at = this.parseDateTime(at);
         this.location = location;
     }
 
