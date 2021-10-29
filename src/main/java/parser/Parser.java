@@ -1,12 +1,13 @@
 package parser;
 
 import category.Category;
-import command.Command;
-import command.ViewCommand;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
 import command.category.ViewCategory;
+import command.Command;
+import command.ViewCommand;
+import command.DoneCommand;
 import command.TodoCommand;
 import command.DeleteCommand;
 import command.LocationCommand;
@@ -31,7 +32,13 @@ public class Parser {
 
         switch (commandWord) {
         case VIEW:
-            return new ViewCommand();
+            return new ViewCommand(result);
+        case DONE:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+            this.taskNo = result[1].trim();
+            return new DoneCommand(this.taskNo);
         case TODO:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_TODO);

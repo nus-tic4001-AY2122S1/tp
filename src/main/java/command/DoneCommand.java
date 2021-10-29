@@ -1,22 +1,23 @@
 package command;
 
 import exception.ErrorHandler;
+import ui.Ui;
 import storage.Storage;
 import tasklist.TaskList;
-import ui.Ui;
+import task.Task;
+
 
 /**
- * Deletes a task identified using it's index from the task list.
+ * Marks a task identified using it's index as done.
  */
-
-public class DeleteCommand extends Command {
+public class DoneCommand extends Command {
     protected static Ui ui = new Ui();
     private final int taskIndex;
 
-    public DeleteCommand(String taskNumber) throws ErrorHandler {
+    public DoneCommand(String taskNumber) throws ErrorHandler {
         this.taskIndex = this.parseTaskNumberToIndex(taskNumber);
     }
-
+    
     /**
      * Executes the command.
      *
@@ -28,9 +29,11 @@ public class DeleteCommand extends Command {
     public void execute(TaskList list, Ui ui, Storage storage) throws ErrorHandler {
         this.checkTaskNumberOutOfRange(this.taskIndex, list);
 
-        String deletedItem = list.returnTask(this.taskIndex).taskToStringFormat();
+        Task doneTask = list.returnTask(this.taskIndex);
 
-        list.deleteTask(this.taskIndex);
-        ui.printDeleteCommand(deletedItem, list.sizeOfTask());
+        doneTask.setStatus(true);
+
+        ui.printDoneCommand(doneTask.taskToStringFormat());
     }
+
 }
