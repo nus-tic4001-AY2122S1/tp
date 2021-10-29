@@ -16,14 +16,14 @@ Program designed for someone adept with the keyboard, for Single User use.
 ### Adding a booking: `add`
 Adds a new item to the list of booking items.
 
-Format: `add BOOKING_DESC /s DATE TIME /e DATE TIME`
+**Format**: `add BOOKING_DESC /s DATE TIME /e DATE TIME`
 
 * The `BOOKING_DESC` can be in a natural language format.
 * The `DATE TIME` uses format *yyyy-M-d* *HH:mm*.  
 * Current version allows within same day booking only.
 * User expected to input non-clashing same day timing ranges.
 
-Example of usage: 
+**_Example of usage_**: 
 
 `add meet@Sports Hall One lvl 3 /s 2021-6-7 09:00 /e 2021-6-7 10:30`
 
@@ -33,12 +33,12 @@ Example of usage:
 ### Blocking date-range setting: `block <DATE> - <DATE>`
 Blocks users from creating appointments during a specific date range.
 
-Format: `block DATE - DATE`
+**Format**: `block DATE - DATE`
 
 * `DATE` uses format *yyyy-M-d*.
 * Users may release blocked dates at their discretion _(e.g. via `unblock <date> - <date>`)_.
 
-Example of usage:
+**_Example of usage_**:
 
 `block 2021-11-5 - 2021-11-30`
 
@@ -46,11 +46,11 @@ Example of usage:
 ### Deleting all bookings: `delete <--all>`
 Erase all records inside the online appointment database.
 
-Format: `delete --all`
+**Format**: `delete --all`
 
 * An alternate version: `delete all`.
 
-Example of usage:
+**_Example of usage_**:
 
 `delete --all` or `delete all`
 
@@ -58,7 +58,7 @@ Example of usage:
 ### Editing a booking: `edit`
 Edits the booking description of the chosen item (current v2.0).
 
-Format: `edit BOOKING_DESC /s DATE /o OPTION NO.`
+**Format**: `edit BOOKING_DESC /s DATE /o OPTION NO.`
 
 * The `BOOKING_DESC` can be in a natural language format.
 * The `DATE` uses format *yyyy-M-d*.
@@ -68,7 +68,7 @@ Format: `edit BOOKING_DESC /s DATE /o OPTION NO.`
   - a specific date entries listing _(e.g. via `show <date>`)_ or 
   - the entire database listing _(e.g. via `show <--all>`)_.
 
-Example of usage:
+**_Example of usage_**:
 
 `edit meet@Sports Hall One lvl 3 /s 2021-6-7 /o 3`
 
@@ -78,11 +78,11 @@ Example of usage:
 ### Exiting Program: `exit`
 Exits the JustBook App Program.
 
-Format: `exit`
+**Format**: `exit`
 
 * An alternate variant: `bye`.
 
-Example of usage:
+**_Example of usage_**:
 
 `exit` or `bye`
 
@@ -90,11 +90,11 @@ Example of usage:
 ### Showing all bookings: `show <--all>`
 Displays all database records, headed by distinct dates header, in chronological order.
 
-Format: `show -all`
+**Format**: `show -all`
 
 * An alternate version: `show all`.
 
-Example of usage:
+**_Example of usage_**:
 
 `show --all` or `show all`
 
@@ -102,11 +102,11 @@ Example of usage:
 ### Showing a specific date's list of bookings: `show <DATE>`
 Displays all records chronologically, under a specific date header.
 
-Format: `show DATE`
+**Format**: `show DATE`
 
 * `DATE` uses format *yyyy-M-d*.
 
-Example of usage:
+**_Example of usage_**:
 
 `show 2021-11-8`
 
@@ -114,11 +114,11 @@ Example of usage:
 ### Showing all weekends bookings (current month): `show <WEEKENDS>`
 Displays all weekend records chronologically, under specific weekend headers, for the current month.
 
-Format: `show WEEKENDS`
+**Format**: `show WEEKENDS`
 
 * `WEEKENDS` can be in a natural language format.
 
-Example of usage:
+**_Example of usage_**:
 
 `show weekends`
 
@@ -126,11 +126,11 @@ Example of usage:
 ### Unlocking date-range setting: `unblock <DATE> - <DATE>`
 Releases blocked dates during the range period as specified by users.
 
-Format: `unblock DATE - DATE`
+**Format**: `unblock DATE - DATE`
 
 * `DATE` uses format *yyyy-M-d*.
 
-Example of usage:
+**_Example of usage_**:
 
 `unblock 2021-11-5 - 2021-11-30`
 
