@@ -1,15 +1,9 @@
 package seedu.duke.command;
 
-import seedu.duke.InputErrorException;
 import seedu.duke.ItemList;
 import seedu.duke.UI;
-import seedu.duke.item.Expense;
-import seedu.duke.item.Item;
 
-import java.text.ParseException;
-import java.time.Duration;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class SummaryCommand extends Command {
@@ -26,16 +20,16 @@ public class SummaryCommand extends Command {
         Date latestDate = itemList.getLatestDate();
         Date currentDate =  java.sql.Date.valueOf(LocalDate.now());
 
-        long intervalDays = latestDate.getTime() - earliestDate.getTime();
+        long intervalDays = (latestDate.getTime() - earliestDate.getTime()) / 1000 / 60 / 60 / 24;
 
         if (itemList.size <= 0) {
             UI.printEmptyListMessage();
             return;
         }
 
-        double mean = overallExpenseAmount / intervalDays;
+        double mean = Math.round(overallExpenseAmount / intervalDays * 1000.0) / 1000.0;
         double remaining = overallIncomeAmount - overallExpenseAmount;
-        long useDays = currentDate.getTime() - earliestDate.getTime();
+        long useDays = (currentDate.getTime() - earliestDate.getTime()) / 1000 / 60 / 60 / 24;
 
         UI.printSummaryMessage(mean, remaining,overallIncomeAmount, overallExpenseAmount, useDays, earliestDate);
     }
