@@ -42,9 +42,24 @@ public class Duke {
                 execution.execute(itemList);
                 isExit = execution.isExit;
             } catch (InputErrorException d) {
-                switch (d.errorType) {
+                switch (d.getErrorType()) {
                 case "InvalidCommand":
                     InputErrorException.toPrintInvalidCommand();
+                    break;
+                case "AmountNotNumber":
+                    InputErrorException.toPrintAmountNotNumber();
+                    break;
+                case "DateFormatError":
+                    InputErrorException.toPrintDateFormatError();
+                    break;
+                case "InputInfoShortage":
+                    InputErrorException.toPrintInputInfoShortage();
+                    break;
+                case "IndexOutOfRange":
+                    InputErrorException.toPrintIndexOutOfRange();
+                    break;
+                case "IndexNotInt":
+                    InputErrorException.toPrintIndexNotInt();
                     break;
                 default:
                     System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");

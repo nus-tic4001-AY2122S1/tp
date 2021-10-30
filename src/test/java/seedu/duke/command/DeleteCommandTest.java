@@ -5,9 +5,6 @@ import seedu.duke.InputErrorException;
 import seedu.duke.ItemList;
 import seedu.duke.item.Item;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,8 +23,8 @@ class DeleteCommandTest {
         Date d1 = formatter.parse(d1s);
         Date d2 = formatter.parse(d2s);
 
-        Item testerExpense1 = new Item("taxi", "Daily", 22, d1);
-        Item testerExpense2 = new Item("dinner", "Dinner", 33, d2);
+        Item testerExpense1 = new Item("taxi", "Daily", 22, d1, "income");
+        Item testerExpense2 = new Item("dinner", "Dinner", 33, d2, "expense");
 
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
         ArrayList<Item> expectedArrayLst = new ArrayList<>();
@@ -40,11 +37,8 @@ class DeleteCommandTest {
         ItemList newExpLst = new ItemList(arrayListExpLst);
         ItemList expect = new ItemList(expectedArrayLst);
 
-        DeleteCommand newDC = new DeleteCommand("Delete");
+        DeleteCommand newDC = new DeleteCommand("Delete 1");
 
-        String input = "1";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
         newDC.run(newExpLst);
 
         assertEquals(expect.items, newExpLst.items);

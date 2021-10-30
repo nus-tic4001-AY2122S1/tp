@@ -3,6 +3,7 @@ package seedu.duke;
 import seedu.duke.item.Item;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class UI {
@@ -46,7 +47,26 @@ public class UI {
         }
     }
 
+    public static void printEmptyListMessage() {
+        System.out.println("\nOops!!! There is no record in the system. Please add something first.\n");
+    }
+
     public static void byeMessage() {
         System.out.println("Bye. Hope to see you again soon!");
+    }
+
+    public static void printSummaryMessage(double mean,
+                                           double remaining,
+                                           double totalIncome,
+                                           double totalExpense,
+                                           long days,
+                                           Date firstDay) {
+
+        System.out.println("\n   Your Summary:");
+        System.out.println("      From " + firstDay + " until now, you have use this system " + days + " days");
+        System.out.println("      TotalIncome: " + totalIncome);
+        System.out.println("      TotalExpense: " + totalExpense);
+        System.out.println("      Average Daily Expense (first item to last item): " + mean);
+        System.out.println("      Available Remaining: " + remaining);
     }
 }

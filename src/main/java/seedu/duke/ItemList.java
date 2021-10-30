@@ -10,6 +10,11 @@ import java.util.Date;
 public class ItemList {
     public ArrayList<Item> items;
     public int size;
+    private double incomeAmount = 0.0;
+    private double expenseAmount = 0.0;
+    private Date earliestDate = null;
+    private Date latestDate = null;
+
 
     public ItemList(ArrayList<Item> items) {
         this.items = items;
@@ -20,13 +25,34 @@ public class ItemList {
         Expense expense = new Expense(description, category, amount, date, "expense");
         items.add(expense);
         size++;
+        expenseAmount += amount;
+        addEarliestDate(date);
+        addLatestDate(date);
     }
-
 
     public void addIncome(String description, String category, double amount, Date date) {
         Income income = new Income(description, category, amount, date, "income");
         items.add(income);
         size++;
+        incomeAmount += amount;
+        addEarliestDate(date);
+        addLatestDate(date);
+    }
+
+    private void addEarliestDate(Date addedDate) {
+        if(earliestDate == null) {
+            earliestDate = addedDate;
+        } else if (earliestDate.after(addedDate)) {
+            earliestDate = addedDate;
+        }
+    }
+
+    private void addLatestDate(Date addedDate) {
+        if (latestDate == null) {
+            latestDate = addedDate;
+        } else if (latestDate.before(addedDate)) {
+            latestDate = addedDate;
+        }
     }
 
     public void find(String keyword, ArrayList<Integer> findResult) {
@@ -40,5 +66,21 @@ public class ItemList {
     public void delete(int index) {
         items.remove(index);
         size--;
+    }
+
+    public double getIncomeAmount() {
+        return incomeAmount;
+    }
+
+    public double getExpenseAmount() {
+        return expenseAmount;
+    }
+
+    public Date getEarliestDate() {
+        return earliestDate;
+    }
+
+    public Date getLatestDate() {
+        return latestDate;
     }
 }

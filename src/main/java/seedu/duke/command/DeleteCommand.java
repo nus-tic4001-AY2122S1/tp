@@ -34,6 +34,12 @@ public class DeleteCommand extends Command {
         }
 
         int index = Parser.index(fullCommand);
+        int size = itemList.size;
+
+        if (index < 0 || index >= size) {
+            throw new InputErrorException("IndexOutOfRange");
+        }
+
         Item deletedTask = itemList.items.get(index);
         itemList.delete(index);
         UI.deleteMessage(deletedTask, itemList.size);

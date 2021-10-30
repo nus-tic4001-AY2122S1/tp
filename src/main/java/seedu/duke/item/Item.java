@@ -8,16 +8,34 @@ public class Item {
     private String description;
     private double amount;
     private String category;
+    private String type;
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public Item(String description, String category, double amount, Date date) {
+    public Item(String description, String category, double amount, Date date, String type) {
         this.description = description;
         this.category = category;
         this.amount = amount;
         this.date = date;
+        this.type = type;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public double getAmount() {
+        return this.amount;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public Date getDate() {
+        return this.date;
+    }
+
+    public String getCategory() {
+        return this.category;
     }
 
     public String toString() {
