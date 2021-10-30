@@ -27,7 +27,7 @@ public class SummaryCommand extends Command {
             return;
         }
 
-        double mean = Math.round(overallExpenseAmount / intervalDays * 1000.0) / 1000.0;
+        double mean = Math.round(overallExpenseAmount / intervalDays * 100.0) / 100.0;
         double remaining = overallIncomeAmount - overallExpenseAmount;
         long useDays = (currentDate.getTime() - earliestDate.getTime()) / 1000 / 60 / 60 / 24;
 
