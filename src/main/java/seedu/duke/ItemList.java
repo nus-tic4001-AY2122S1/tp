@@ -40,7 +40,7 @@ public class ItemList {
     }
 
     private void addEarliestDate(Date addedDate) {
-        if(earliestDate == null) {
+        if (earliestDate == null) {
             earliestDate = addedDate;
         } else if (earliestDate.after(addedDate)) {
             earliestDate = addedDate;
