@@ -69,6 +69,7 @@ public class UI {
         System.out.println("      From '" + firstDayInfo + "' until now, you have use this system " + days + " days");
         System.out.println("      TotalIncome: " + totalIncome);
         System.out.println("      TotalExpense: " + totalExpense);
+        System.out.println("      Balance Amount: " + (totalIncome - totalExpense));
         System.out.println("      Average Daily Expense (first item to last item): " + mean);
         System.out.println("      Available Remaining: " + remaining);
     }
