@@ -79,7 +79,17 @@ Format:
 * Step I: key in `delete`
 * Step II: key in `expense index` in integer type
 
+Example of usage:
 
+`Hi, I am Duke!`
+
+`What can I help you?`
+
+`delete`
+
+`Please key in the index:`
+
+`1`
 
 ### List an expense: `list`
 
@@ -107,17 +117,7 @@ Here are the items in your list: <br/>
 Wourld you like sorting by expenses by amount
 (Please key in sorting command: sort)
 
-Example of usage:
 
-`Hi, I am Duke!`
-
-`What can I help you?`
-
-`delete`
-
-`Please key in the index:`
-
-`1`
 
 
 
