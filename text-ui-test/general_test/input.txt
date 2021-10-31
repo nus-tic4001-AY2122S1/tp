@@ -1,11 +1,11 @@
 James Gosling
-add doctor /s 2020-8-8 10:10 /e 2020-8-8 11:11
-add meeting /s 2020-9-9 11:11 /e 2020-9-9 12:12
-add shopping /s 2020-10-10 10:10 /e 2020-10-10 20:20
-add exercise /s 2020-8-8 15:15 /e 2020-8-8 16:16
+add doctor /s 2021-8-8 10:10 /e 2021-8-8 11:11
+add meeting /s 2021-9-9 11:11 /e 2021-9-9 12:12
+add shopping /s 2021-10-10 10:10 /e 2021-10-10 20:20
+add exercise /s 2021-8-8 15:15 /e 2021-8-8 16:16
 show all
-del 2020-8-8 /o 2
+del 2021-8-8 /o 2
 show all
-edit resting /s 2020-10-10 /o 1
+edit resting /s 2021-10-10 /o 1
 show all
 exit

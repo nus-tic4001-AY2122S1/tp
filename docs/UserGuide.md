@@ -19,7 +19,7 @@ Adds a new item to the list of booking items.
 **Format**: `add BOOKING_DESC /s DATE TIME /e DATE TIME`
 
 * The `BOOKING_DESC` can be in a natural language format.
-* The `DATE TIME` uses format *yyyy-M-d* *HH:mm*.  
+* The `DATE TIME` uses format *yyyy-M-d* *HH:mm*.
 * Current version allows within same day booking only.
 * User expected to input non-clashing same day timing ranges.
 
@@ -30,29 +30,29 @@ Adds a new item to the list of booking items.
 `todo attend IT Exhibit Changi Expo Halls /s 2021-06-07 11:00 /e 2021-06-07 13:30`
 
 
-### Blocking date-range setting: `block <DATE> - <DATE>`
+### Blocking date-range setting: `block <DATE> <DATE>`
 Blocks users from creating appointments during a specific date range.
 
-**Format**: `block DATE - DATE`
+**Format**: `block DATE DATE`
 
 * `DATE` uses format *yyyy-M-d*.
-* Users may release blocked dates at their discretion _(e.g. via `unblock <date> - <date>`)_.
+* Users may release blocked dates at their discretion _(e.g. via `unblock <date> <date>`)_.
 
 <ins>**_Example of usage_**<ins>
 
-`block 2021-11-5 - 2021-11-30`
+`block 2021-11-5 2021-11-30`
 
 
-### Deleting all bookings: `delete <--all>`
+### Deleting all bookings: `del <--all>`
 Erase all records inside the online appointment database.
 
-**Format**: `delete --all`
+**Format**: `del --all` 
 
-* An alternate version: `delete all`.
+* Alternate versions: `del a` or `del all`.
 
 <ins>**_Example of usage_**<ins>
 
-`delete --all` or `delete all`
+`del a`
 
 
 ### Editing a booking: `edit`
@@ -80,7 +80,7 @@ Exits the JustBook App Program.
 
 **Format**: `exit`
 
-* An alternate variant: `bye`.
+* An alternate version: `bye`.
 
 <ins>**_Example of usage_**<ins>
 
@@ -92,11 +92,11 @@ Displays all database records, headed by distinct dates header, in chronological
 
 **Format**: `show -all`
 
-* An alternate version: `show all`.
+* Alternate versions: `show a` or `show all`.
 
 <ins>**_Example of usage_**<ins>
 
-`show --all` or `show all`
+`show a`
 
 
 ### Showing a specific date's list of bookings: `show <DATE>`
@@ -117,22 +117,23 @@ Displays all weekend records chronologically, under specific weekend headers, fo
 **Format**: `show WEEKENDS`
 
 * `WEEKENDS` can be in a natural language format.
+* An alternate version: `show we`.
 
 <ins>**_Example of usage_**<ins>
 
-`show weekends`
+`show we`
 
 
-### Unlocking date-range setting: `unblock <DATE> - <DATE>`
+### Unlocking date-range setting: `unblock <DATE> <DATE>`
 Releases blocked dates during the range period as specified by users.
 
-**Format**: `unblock DATE - DATE`
+**Format**: `unblock DATE DATE`
 
 * `DATE` uses format *yyyy-M-d*.
 
 <ins>**_Example of usage_**<ins>
 
-`unblock 2021-11-5 - 2021-11-30`
+`unblock 2021-11-5 2021-11-30`
 
 
 ## FAQ
@@ -151,17 +152,17 @@ Releases blocked dates during the range period as specified by users.
 
 
 ## Command Summary
-[ 'Cheat sheet' of **<ins>CLI COMMANDS<ins>** - _case-sensitive_ ]
+[ 'Cheat Sheet' of **CLI COMMANDS** - _case-sensitive_ ]
 
 * Add booking: `add <BOOKING_DESC> /s <DATE> <TIME> /e <DATE> <TIME>`
-* Block date range: `block <DATE> - <DATE>`
-* Delete all bookings: `delete --all` or `delete all`
+* Block date range: `block <DATE> <DATE>`
+* Delete all bookings: `del --all` or `del all` or `del a`
 * Delete all bookings within two dates: `del /b <DATE> <DATE>`
 * Edit a booking description: `edit <BOOKING_DESC> /s <DATE> /o <OPTION NO.>`
 * Exit the Program: `exit` or `bye`
 * Save bookings to file: `save`
-* Show all bookings: `show -all` or `show all`
+* Show all bookings: `show -all` or `show all` or `show a`
 * Show a specific date's list of bookings: `show <DATE>`
 * Show all bookings within two dates: `show /b <DATE> <DATE>`
-* Show all weekends bookings (for current month): `show <weekends>`
-* Unlock a blocked date range: `unblock <DATE> - <DATE>`
+* Show all weekends bookings (for current month): `show <weekends>` or `show we`
+* Unlock a blocked date range: `unblock <DATE> <DATE>`
