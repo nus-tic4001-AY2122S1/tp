@@ -25,7 +25,13 @@ public class Parser {
         return s2[0].replace(s1[0] + " ", "");
     }
 
-    public static String category(String fullCommand) {
+    public static String category(String fullCommand) throws InputErrorException {
+        String[] str = fullCommand.split(" /");
+
+        if (str.length != 4) {
+            throw new InputErrorException("InputInfoShortage");
+        }
+
         return fullCommand.split(" /")[1];
     }
 

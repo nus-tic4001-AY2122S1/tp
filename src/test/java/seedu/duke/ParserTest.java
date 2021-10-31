@@ -25,7 +25,7 @@ public class ParserTest {
     }
 
     @Test
-    void categoryTest() {
+    void categoryTest() throws InputErrorException {
         assertEquals("food", Parser.category("expense lunch /food /12 /12-12-2021"));
     }
 

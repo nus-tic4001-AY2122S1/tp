@@ -5,6 +5,8 @@ import seedu.duke.InputErrorException;
 import seedu.duke.ItemList;
 import seedu.duke.item.Item;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.sql.Timestamp;
@@ -21,7 +23,7 @@ class DeleteCommandTest {
         long time = recordDate.getTime();
         Timestamp timestamp = new Timestamp(time);
 
-        Item tester = new Item("lunch", "F&B", 33, timestamp);
+        Item tester = new Item("lunch", "F&B", 33, timestamp, "expense");
 
         ArrayList<Item> arrayListTester = new ArrayList<>();
 

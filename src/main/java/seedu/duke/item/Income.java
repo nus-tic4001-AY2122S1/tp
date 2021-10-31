@@ -6,8 +6,12 @@ public class Income extends Item {
     private String type;
 
     public Income(String description, String category, double amount, Date date, String type) {
-        super(description, category, amount, date);
+        super(description, category, amount, date, type);
         this.type = type;
+    }
+
+    public String getType() {
+        return this.type;
     }
 
     @Override
