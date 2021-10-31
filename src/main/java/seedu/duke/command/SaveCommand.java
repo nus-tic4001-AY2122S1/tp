@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SaveCommand extends Command{
+public class SaveCommand extends Command {
 
     public SaveCommand(String fullCommand) {
         super(fullCommand);
