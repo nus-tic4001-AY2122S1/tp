@@ -136,6 +136,18 @@ Releases blocked dates during the range period as specified by users.
 `unblock 2021-11-5 2021-11-30`
 
 
+### Undeleting a previous online database delete action: `undel <--all>`
+Erase all records inside the online appointment database.
+
+**Format**: `undel --all`
+
+* Alternate versions: `undel a` or `undel all`.
+
+<ins>**_Example of usage_**<ins>
+
+`undel a`
+
+
 ## FAQ
 
 **Q**: How do I show all the bookings done for a range of days? 
@@ -166,3 +178,4 @@ Releases blocked dates during the range period as specified by users.
 * Show all bookings within two dates: `show /b <DATE> <DATE>`
 * Show all weekends bookings (for current month): `show <weekends>` or `show we`
 * Unlock a blocked date range: `unblock <DATE> <DATE>`
+* Undelete a previous online database delete action: `undel a`
