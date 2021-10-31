@@ -12,7 +12,7 @@ public class AddCommand {
     public AddCommand(String bookDesc, String begin, String end) throws DateTimeParseException {
         // ensures correct Phase 2 resolution of parsed text fields
         DateTimeFormatter format = DateTimeFormatter
-                .ofPattern("yyyy-M-d HH:mm")
+                .ofPattern("uuuu-M-d HH:mm")
                 .withResolverStyle(ResolverStyle.STRICT);
         // adds assertions to check for null objects
         assert begin != null : "begin cannot be null for parse method";

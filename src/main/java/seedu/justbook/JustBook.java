@@ -381,7 +381,7 @@ public class JustBook {
         }
 
         DateTimeFormatter formatStyle = DateTimeFormatter
-                .ofPattern("dd/MM/yyyy")
+                .ofPattern("dd/MM/uuuu")
                 .withResolverStyle(ResolverStyle.STRICT);
 
         String begin = commence.format(formatStyle);
