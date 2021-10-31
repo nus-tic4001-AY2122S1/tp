@@ -119,7 +119,7 @@ public class JustBook {
             case "edit":
                 String[] segments = inputContent.split(" /o ", 2);
                 String[] subSeg = segments[0].split(" /s ", 2);
-                int optionNum = 0;
+                int optionNum;
 
                 try {
                     optionNum = Integer.parseInt(segments[1]);
@@ -137,6 +137,7 @@ public class JustBook {
                 onSave();
                 break;
             case "del":
+
                 if (inputContent.equals("a") || inputContent.contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records");
@@ -185,6 +186,19 @@ public class JustBook {
             case "help":
                 HelpCommand help = new HelpCommand();
                 help.execute();
+                break;
+            case "undel":
+
+                if (inputContent.contains("a")) {
+
+                    try {
+                        onLoad();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                System.out.println("Online database status: Fully restored.");
                 break;
             default:
                 System.out.println("You have entered an unknown or invalid command, please try again!");

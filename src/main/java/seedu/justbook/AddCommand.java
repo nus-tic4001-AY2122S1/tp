@@ -1,5 +1,8 @@
 package seedu.justbook;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -24,13 +27,22 @@ public class AddCommand {
     public void execute() {
         LocalDateTime begin = record.getStartDateTime();
         LocalDateTime end = record.getEndDateTime();
+        String description = record.getBookDesc();
         // checks that 'start' time is before the 'end' time
         if (begin.isBefore(end)) {
             JustBook.appointments.add(record);
             System.out.printf("Successfully added \"%s\" from %s to %s%n",
-                    record.getBookDesc(), begin, end);
+                    description, begin, end);
+            // appends the new booking entry to the database file
+            try (BufferedWriter fAdd = new BufferedWriter(new FileWriter("data/justbook.txt", true))) {
+                fAdd.write(description + " | " + begin + " | " + end);
+                fAdd.newLine();
+                fAdd.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else {
-            System.out.println("Invalid entry: 'start' time is after the 'end' time? Retry again?");
+            System.out.println("Invalid entry: 'start' time is after the 'end' time? Try again?");
         }
     }
 }
