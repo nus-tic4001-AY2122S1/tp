@@ -174,7 +174,7 @@ public class JustBook {
                     //displays user's selected date list of bookings in the database
                     displayDateBookings(inputContent, listNum);
                 } else if (inputContent.equals("we") || inputContent.equals("weekends")) {
-                    //displays user's current month list of weekend bookings in the database
+                    //displays user's current month list of weekend bookings in the database, if any
                     listWeekends();
                 } else {
                     System.out.println("You have entered an unknown or invalid date, please try again!");
@@ -335,7 +335,7 @@ public class JustBook {
                 .forEach(JustBook::weekendListings);
     }
 
-    private static void onLoad() throws IOException {
+    protected static void onLoad() throws IOException {
         File directory = new File("data");
 
         if (!directory.exists()) {
@@ -446,19 +446,24 @@ public class JustBook {
         String dateHeader = String.valueOf(date).replaceAll("-", "/");
         String weekendName = date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH).toUpperCase();
         System.out.printf("%nDate: %s (%s)%n", dateHeader, weekendName);
-        // flag to reduce unneeded loop searches
+        // flag to reduce unneeded extra loop searches
         boolean isWkEnd = false;
-        // uses sorted appointments database here for the display
+        // uses already sorted 'appointments' database here
         for (Bookings entry : appointments) {
 
             if (date.equals(entry.getStartDate())) {
                 System.out.printf("%d. %s%n", serialNo++, entry);
+                isWkEnd = true;
                 continue;
             }
 
             if (isWkEnd) {
                 break;
             }
+        }
+
+        if (!isWkEnd) {
+            System.out.println("Status: no bookings yet.");
         }
     }
 }
