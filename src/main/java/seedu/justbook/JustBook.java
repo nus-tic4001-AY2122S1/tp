@@ -380,7 +380,7 @@ public class JustBook {
         }
     }
 
-    private static void setBlockRules(String command, String inputContent) {
+    protected static void setBlockRules(String command, String inputContent) {
         String[] parts = inputContent.split(" ", 2);
         LocalDate commence = formLocalDate(parts[0]);
         LocalDate terminate = formLocalDate(parts[1]);
