@@ -1,16 +1,21 @@
 package command;
 
 import constant.ErrorMessage;
+import constant.Utils;
 import exception.ErrorHandler;
+import helpers.DateConverter;
 import storage.Storage;
 import tasklist.TaskList;
 import ui.Ui;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Represents an executable command.
  */
 public abstract class Command {
-    protected static Ui ui = new Ui();
     protected boolean isExit = false;
 
     public boolean isExiting() {
@@ -29,6 +34,24 @@ public abstract class Command {
     protected void checkTaskNumberOutOfRange(int taskNumber, TaskList taskList) throws ErrorHandler {
         if (taskNumber < 0 || taskNumber >= taskList.sizeOfTask()) {
             throw new ErrorHandler(ErrorMessage.INVALID_TASK_NUMBER);
+        }
+    }
+
+    protected Date parseDateTime(String dateTime) throws ErrorHandler {
+        String[] dayTime = dateTime.split(" ", 2);
+        if (dayTime.length < 2) {
+            throw new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
+        }
+
+        String time = dayTime[1];
+        String day = DateConverter.convert(dayTime[0]).trim();
+
+        SimpleDateFormat formatter = new SimpleDateFormat(Utils.DATE_TIME_FORMAT);
+
+        try {
+            return formatter.parse(day + " " + time);
+        } catch (ParseException e) {
+            throw new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
         }
     }
 

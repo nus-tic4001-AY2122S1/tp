@@ -58,5 +58,13 @@ public class TaskList {
     public void addItem(Task task) {
         list.add(task);
     }
+
+    /**
+     * Add a task to the list.
+     * @param task is a type of task, could be Event, Deadline.
+     */
+    public void tagItem(Task task, String tagCategory) {
+        task.setCategory(tagCategory);
+    }
 }
 

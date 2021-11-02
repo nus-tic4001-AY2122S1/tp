@@ -2,10 +2,12 @@ package task;
 
 public abstract class Task {
     private String description;
+    private String category;
     private boolean isDone;
 
     public Task(String description) {
         this.description = description;
+        this.category = "";
         this.isDone = false;
     }
 
@@ -19,6 +21,10 @@ public abstract class Task {
 
     public void setStatus(Boolean status) {
         isDone = status;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Boolean getStatus() {

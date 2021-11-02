@@ -1,6 +1,5 @@
 package command;
 
-import exception.ErrorHandler;
 import ui.Ui;
 import storage.Storage;
 import tasklist.TaskList;
@@ -10,6 +9,15 @@ import tasklist.TaskList;
  */
 public class ViewCommand extends Command {
     protected static Ui ui = new Ui();
+    private boolean isViewAll;
+
+    public ViewCommand(String[] input) {
+        if (input.length > 1 && input[1].equals("-a")) {
+            this.isViewAll = true;
+        } else {
+            this.isViewAll = false;
+        }
+    }
 
     /**
      * Executes the command.
@@ -19,11 +27,14 @@ public class ViewCommand extends Command {
      * @param storage The storage to allow reading and storing of tasks from and to a txt file.
      */
     @Override
-    public void execute(TaskList list, Ui ui, Storage storage) throws ErrorHandler {
+    public void execute(TaskList list, Ui ui, Storage storage) {
         if (list.sizeOfTask() == 0) {
-            throw new ErrorHandler("The list is empty.");
+            ui.print("The list is empty.");
+        } 
+        if (isViewAll) {
+            ui.printTaskList(list);
+        } else {
+            ui.printPendingTaskList(list);
         }
-        ui.printTaskList(list);
     }
-
 }

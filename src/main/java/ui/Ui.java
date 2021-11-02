@@ -1,6 +1,7 @@
 package ui;
 
 import task.Task;
+import category.Category;
 import tasklist.TaskList;
 
 /**
@@ -8,7 +9,7 @@ import tasklist.TaskList;
  */
 public class Ui {
     public void welcome() {
-        print("Hello! I'm Dafy\n");
+        print("Hello! I'm Daffy\n");
     }
 
     public void print(String message) {
@@ -38,12 +39,47 @@ public class Ui {
     }
 
     /**
+     * Displays the response when a task is marked as done.
+    */
+    public void printDoneCommand(String task) {
+        System.out.println("   Nice! I've marked this task as done:\n   " + task);
+    }
+
+    /**
      * Shows a list of tasks to the user, formatted as an indexed list.
      */
     public void printTaskList(TaskList list) {
         for (int i = 1; i <= list.sizeOfTask(); i++) {
-            System.out.print("   " + i + ".");
+            System.out.print("   " + i + ". ");
             System.out.println(list.returnTask(i - 1).taskToStringFormat());
+        }
+    }
+
+    /**
+     * Shows a list of tasks to the user, formatted as an indexed list.
+     */
+    public void printCategoryList(Category list) {
+        for (int i = 1; i <= list.size(); i++) {
+            System.out.print("   " + i + ". ");
+            System.out.println(list.getCategory(i - 1));
+        }
+    }
+      
+    /**
+     * Shows a list of pending tasks to the user, formatted as an indexed list.
+     */
+    public void printPendingTaskList(TaskList list) {
+        int count = 0;
+        for (int i = 1; i <= list.sizeOfTask(); i++) {
+            Task task = list.returnTask(i - 1);
+            if (!task.getStatus()) { // pending task
+                count++; 
+                System.out.print("   " + i + ".");
+                System.out.println(list.returnTask(i - 1).taskToStringFormat());
+            }
+        }
+        if (count == 0) { // no pending task
+            System.out.print("   No pending tasks. Try command `view -a` to see all tasks.");
         }
     }
 
@@ -53,6 +89,34 @@ public class Ui {
     public void printAddedTask(String task, int num) {
         System.out.println("   Noted. I've added this task:\n   " + task + "\n   Now you have " + num
             + " tasks in the list.");
+    }
+
+    /**
+     * Displays the response when a category is added.
+     */
+    public void printAddedCategory(String category, int num) {
+        System.out.println("   Noted. I've added this category:\n   " + category + "\n   Now you have " + num
+                + " categories in the list.");
+    }
+
+    /**
+     * Displays the response when a category is deleted.
+     */
+    public void printDeleteCategory(String category, int num) {
+        System.out.println("   Noted. I've removed this category:\n   " + category + "\n   Now you have " + num
+                + " categories in the list.");
+    }
+
+    /**
+     * Displays the response when a category is added.
+     */
+    public void printTaggedCategory(int taskIndex, String category, int num) {
+        System.out.println("   Noted. I've tagged task number "
+                + (taskIndex + 1) + " with the specified category:\n   " + category);
+    }
+
+    public void printUpdatedTask(String task, int num) {
+        System.out.println("   Noted. I've updated this task:\n   " + task + "\n");
     }
 
     public void bye() {

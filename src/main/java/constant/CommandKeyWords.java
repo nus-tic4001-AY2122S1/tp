@@ -3,7 +3,8 @@ package constant;
 import exception.ErrorHandler;
 
 public enum CommandKeyWords {
-    LOCATION("LOCATION"), BYE("BYE"), TODO("TODO"), DELETE("DELETE"), VIEW("VIEW");
+    SET_LOCATION("SET_LOCATION"), BYE("BYE"), TODO("TODO"), DELETE("DELETE"), VIEW("VIEW"), DONE("DONE"),
+    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY");
     private final String value;
 
     CommandKeyWords(String value) {
@@ -42,8 +43,8 @@ public enum CommandKeyWords {
         }
 
         throw new ErrorHandler(ErrorMessage.INVALID_COMMAND + " Please starts your command with "
-            + getSerializedString()
-            + " (case insensitive)");
+                + getSerializedString()
+                + " (case insensitive)");
     }
 
     /**
