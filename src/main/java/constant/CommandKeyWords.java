@@ -40,12 +40,20 @@ public enum CommandKeyWords {
             if (v.getValue().equalsIgnoreCase(value)) {
                 return v;
             }
+            else {
+                CommandKeyWords w = autoCorrect(value, v);
+                if (w != null) {
+                    return w;
+                }
+            }
         }
 
         throw new ErrorHandler(ErrorMessage.INVALID_COMMAND + " Please starts your command with "
                 + getSerializedString()
                 + " (case insensitive)");
+
     }
+
 
     /**
      * Get value.
@@ -59,6 +67,38 @@ public enum CommandKeyWords {
     @Override
     public String toString() {
         return this.getValue();
+    }
+
+    /**
+     * Correct user's input Command in case of typo/misspelling.
+     *
+     * @param input is the user's input
+     * @param v is an enum
+     */
+    private static CommandKeyWords autoCorrect(String input, CommandKeyWords v) {
+        double similarity;
+        int iter;
+        double comparison;
+        boolean isSkip;
+
+        String comp = v.getValue();
+        similarity = 0;
+        iter = 0;
+        for (int i = 0; i < comp.length(); i++) {
+            isSkip = false;
+            for (int j = iter; j < input.length() && !isSkip; j++) {
+                if (input.charAt(j) ==  comp.charAt(i)) {
+                    similarity++;
+                    iter++;
+                    isSkip = true;
+                }
+                comparison = similarity/comp.length();
+                if (comparison>0.5) {
+                    return v;
+                }
+            }
+        }
+        return null;
     }
 }
 
