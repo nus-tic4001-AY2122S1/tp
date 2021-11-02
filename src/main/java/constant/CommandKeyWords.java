@@ -93,9 +93,6 @@ public enum CommandKeyWords {
                     isSkip = true;
                 }
                 comparison = similarity/comp.length();
-
-                System.out.println(v.getValue() + "/" + input.charAt(j) + "/" + comp.charAt(i));
-
                 if (comparison>0.5) {
                     return v;
                 }
