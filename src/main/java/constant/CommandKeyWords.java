@@ -3,8 +3,8 @@ package constant;
 import exception.ErrorHandler;
 
 public enum CommandKeyWords {
-    SET_LOCATION("SET_LOCATION"), BYE("BYE"), TODO("TODO"), DELETE("DELETE"), VIEW("VIEW"), DONE("DONE"),
-    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY");
+    SET_LOCATION("SET_LOCATION"), DELETE("DELETE"),
+    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"), BYE("BYE");
     private final String value;
 
     CommandKeyWords(String value) {
@@ -93,6 +93,9 @@ public enum CommandKeyWords {
                     isSkip = true;
                 }
                 comparison = similarity/comp.length();
+
+                System.out.println(v.getValue() + "/" + input.charAt(j) + "/" + comp.charAt(i));
+
                 if (comparison>0.5) {
                     return v;
                 }
