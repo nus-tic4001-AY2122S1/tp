@@ -93,7 +93,7 @@ public enum CommandKeyWords {
                     isSkip = true;
                 }
                 comparison = similarity/comp.length();
-                if (comparison>0.5) {
+                if (comparison>0.7) {
                     return v;
                 }
             }
