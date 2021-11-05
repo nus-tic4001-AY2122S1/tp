@@ -42,8 +42,8 @@ public class ReadCommand extends Command {
 
                     String descCatAmoundAndDate = category + " " + description + " " + amount + " " + date;
 
-                    final String regex = "(\\w+)\\s\\[(\\w+)\\]\\s\\" +
-                            "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
+                    final String regex = "(\\w+)\\s\\[(\\w+)\\]\\s\\"
+                            + "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
 
                     final Pattern pattern = Pattern.compile(regex);
                     final Matcher matcher = pattern.matcher(descCatAmoundAndDate);
