@@ -1,0 +1,5 @@
+Here are the items in your list:
+1.[E] [[dinner]] [[expense]] ($10.0) (2022-Feb-01)
+2.[E] [[lunch]] [[expense]] ($10.0) (2022-Feb-04)
+3.[E] [[meal]] [[expense]] ($10.0) (2022-Feb-02)
+4.[E] [[salary]] [[income]] ($10.0) (2022-Feb-02)

@@ -8,7 +8,8 @@ import seedu.duke.command.ExitCommand;
 import seedu.duke.command.ListCommand;
 import seedu.duke.command.FindCommand;
 import seedu.duke.command.SortCommand;
-
+import seedu.duke.command.SaveCommand;
+import seedu.duke.command.ReadCommand;
 import java.util.logging.Logger;
 
 public class Execution {
@@ -43,6 +44,12 @@ public class Execution {
             break;
         case "find":
             new FindCommand(fullCommand).run(itemList);
+            break;
+        case "save":
+            new SaveCommand(fullCommand).run(itemList);
+            break;
+        case "read":
+            new ReadCommand(fullCommand).run(itemList);
             break;
         case "exit":
             new ExitCommand(fullCommand).run(itemList);
