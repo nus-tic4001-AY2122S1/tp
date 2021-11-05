@@ -46,10 +46,20 @@ an offline backup file. The user interacts with it using a CLI. It is written in
       (Pull request [#45](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/45)) 
 
 - Documentation:
-    - User Guide
-    - Developer Guide 
+    - User Guide:
+      - Added documentation for the features `show we` and `undel a`
+      - Done the main format, overall template look and lines coding ([#32](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/32),
+        [#33](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/33), [#34](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/34))
+    - Developer Guide:
+      - Added implementation details of the `show we` feature
 
 - Community:
+  - Kicked start the Project with the 1st. skeletal code framework the Team use for subsequent codings
+  - Contributed to [forum discussions](https://github.com/nus-tic4001-AY2122S1/forum/issues?page=1&q=is%3Aissue+is%3Aclosed)
+  - Overall admin duties enacted for the Team Repo setup, maintenance, operations and team encouragement
+  - PRs reviewed ([#7](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/7),
+    [#13](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/13), 
+    [#25](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/25)) 
 
 - Tools:
     - Integrated third party libraries 

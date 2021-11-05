@@ -10,13 +10,13 @@
 
 ## Design & implementation
 
-**JustBook Command Line App** leverages on the help of a total five Java classes, viz. **JustBook, Bookings, AddCommand, DeleteCommand and HelpCommand** created by the team. It takes advantage of an optimal use of Java Stream and latest java.time APIs, e.g. LocalDateTime and LocalDate, among others, together with a judicious choice of data structures, to allow a single user good at the keyboard to make and register bookings / appointments online fast. 
+**JustBook Command Line App** leverages on the help of a total five Java classes, viz. **JustBook, Bookings, AddCommand, DeleteCommand and HelpCommand** created by the Team. It makes optimal use of Java Stream and the latest java.time APIs, e.g. LocalDateTime and LocalDate, among others, together with a judicious choice of data structures, to allow a single user good at the keyboard to make and register bookings / appointments online fast: 
 
-- Each user booking entry is stored in an `Arraylist<Bookings>` data structure (sorted before each displaym, allowing for editing or deleting functions onscreen). 
+- Each user booking entry is stored in an `Arraylist<Bookings>` data structure (sorted before each listing display -> allowing for editing or deleting functions onscreen). 
   
 - The **Bookings** class will capture the user booking description, the scheduled start localDateTime and end localDateTime data of a specific booking. 
   
-- Another data structure, `HashMap<LocalDate, LocalDate>`, is used to store, for efficient search/retrieval, a blocklist consisting of blocking periods where the user will not be able to make any bookings.  
+- Another data structure, `HashMap<LocalDate, LocalDate>`, chosen for efficient search/retrieval, is used to store a blocklist consisting of blocking periods where the user will not be able to make any bookings.  
 
 
 ## Product scope
@@ -40,13 +40,13 @@ Our target user is a Student that is currently schooling. As an active student, 
 ### Value proposition
 
 
-JustBook provides, throughout the app use, a consistent user-friendly and error-free interface, helpful message feedback or alerts. The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
+JustBook provides a user-friendly, consistent and error-free interface, as well as helpful message feedback or alerts to users, throughout the app use. The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc.). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
 
-Users are able to make, check, delete, view, change, and source in real-time for available slots for appointments using this application. This application will display a range of time slots available for users to choose from, may also list available dates and unavailable dates when the User is trying to schedule an appointment. The User can also choose to work on a 6-calendar-months view/basis (an up and coming feature), or per month, per week, down to a day’s view/basis.  
+Users are able to make, check, delete, view, change, and source in real-time for available slots for appointments using this application. This application will display a range of time slots available for users to choose from, may also list available dates and unavailable dates when the User is trying to schedule an appointment. The User can also choose to work on a 6-calendar-months view / basis (coming feature), or per month, per week, down to a day’s view / basis.  
 
 Possible enhancements include appointment data printout, a file backup in the background to act as a redundancy measure for unforeseen disruption, alerts for the User if so scheduled, etc. 
 
-Our Value Proposition is that our scheduler provides, throughout the app use, a consistent user-friendly and error-free interface, helpful message feedback or alerts and capability to suggest time slots to the user in addition to the time slots available (an up and coming feature). The scheduler can be customized into working on the basis of various time durations (6 months, monthly, weekly etc). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
+Our Value Proposition is that our scheduler provides, throughout the app use, a consistent, user-friendly and error-free interface, assisting message feedback or alerts and a capability to suggest time slots to the user, in addition to the time slots available (coming feature). The scheduler can be customized to work on the basis of various time durations (monthly, weekly, daily etc.). Using the CLI-type interface, the user will be able to edit multiple appointments easily with minimal commands / single commands.
 
 
 ## User Stories
@@ -79,12 +79,12 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 
 ## Glossary
 
-* *Mainstream OS* - Windows, Linux, Unix, OS-X
-* *JustBook App*  - A single-user command line app for making and storing student bookings online 
-* *CLI*           - Command Line Interface
-* *booking*       - A typed entry consisting of booking text description, a start Date-Time and end Date-Time 
-* *ISO(time)*     - For Java time Standards, it follows this format: "yyyy-MM-dd HH:mm"
-* "Date-Time*     - Java LocalDateTime implemented with format as "yyy-M-d HH:mm", using a 24 hr format
+* **Mainstream OS** - Windows, Linux, Unix, OS-X
+* **JustBook App**  - A single-user command line app for making and storing student bookings online 
+* **CLI**           - Command Line Interface
+* **booking**       - A typed entry consisting of booking text description, a start Date-Time and end Date-Time 
+* **ISO (time)**    - For Java time Standards, it follows this format: "yyyy-MM-dd HH:mm"
+* **"DateTime**     - Java LocalDateTime implemented with format as "yyy-M-d HH:mm", using a 24 hr format
 
 ## Instructions for manual testing
 
@@ -93,7 +93,7 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 - Obtain a sample test file, eg. justbook.txt with saved entries (correctly formatted)
 - Copy the sample test file to a local folder named data
 - start up the app, eg.` java -jar justbook.jar` via a windows cmd or compatible terminal
-- Type in a user name of your choice
+- Type in a username of your choice
 - Type `show --all` or `show all` to check the display list tallies with those saved in the justbook.txt file
 - Sample instruction:
 
@@ -105,11 +105,3 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 3. The CMD window or shell output will display if the comparison between the expected output and actual output are the same
 4. If there are any differences, they will be displayed at the CMD or shell window as well.
 5. The regression test would have passed if no differences are found.
-=======
--Users are able to run the application with Java11 installed
-
--The application has been designed to handle up to 100’s of user appointments optimally without affecting its performance.
-
--The application should preferably be executable on Windows OS or compatible software-emulated terminal.
-
-
