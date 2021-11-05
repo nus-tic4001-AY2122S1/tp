@@ -61,6 +61,12 @@ public class Duke {
                 case "IndexNotInt":
                     InputErrorException.toPrintIndexNotInt();
                     break;
+                case "SortFormatError":
+                    InputErrorException.toPrintSortFormatError();
+                    break;
+                case "SortByEmptyFileList":
+                    InputErrorException.toPrintEmpytFileError();
+                    break;
                 default:
                     System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
