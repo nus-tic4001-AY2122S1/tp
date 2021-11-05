@@ -17,16 +17,16 @@ public class SortCommand extends Command implements Comparable<Item> {
 
     public static Comparator<Item> expenseAscComparator = new Comparator<Item>() {
         public int compare(Item e1, Item e2) {
-            int expense1 = (int) e1.getAmount();
-            int expense2 = (int) e2.getAmount();
+            int expense1 = (int)e1.getAmount();
+            int expense2 = (int)e2.getAmount();
             return expense1 - expense2;
         }
     };
 
     public static Comparator<Item> expenseDescComparator = new Comparator<Item>() {
         public int compare(Item e1, Item e2) {
-            int expense1 = (int) e1.getAmount();
-            int expense2 = (int) e2.getAmount();
+            int expense1 = (int)e1.getAmount();
+            int expense2 = (int)e2.getAmount();
             return expense2 - expense1;
         }
     };
@@ -82,8 +82,7 @@ public class SortCommand extends Command implements Comparable<Item> {
                 Collections.sort(sortingItemList.items, expenseDescComparator);
             } else if (sortingByCategory.equals("date")) {
                 Collections.sort(sortingItemList.items, expenseDateDescComparator);
-            }
-            else {
+            } else {
                 System.out.println("Please key in valid sorting command!");
             }
             break;

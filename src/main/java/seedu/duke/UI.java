@@ -26,7 +26,7 @@ public class UI {
 
     public static void listMessage(ArrayList<Item> items) {
 
-        if(items.size() != 0){
+        if (items.size() != 0) {
             System.out.println("Here are the items in your list:");
         } else {
             System.out.println("The expense/salary's list is empty.\n");

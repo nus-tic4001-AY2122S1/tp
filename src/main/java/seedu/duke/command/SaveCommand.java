@@ -18,7 +18,7 @@ public class SaveCommand extends Command {
         try {
             FileWriter fw = new FileWriter("./file/expenses.txt");
 
-            if(itemList.size != 0){
+            if (itemList.size != 0) {
                 fw.write("Here are the items in your list:" + "\n");
             }
 
