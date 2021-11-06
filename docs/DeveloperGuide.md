@@ -31,6 +31,8 @@
 |v2.0|user|I need to classify those spend item|I can know the spend category|
 |v2.0|user|I need to able to delete added expense|I can delete if I add wrongly
 |v2.0|user|I need to search items with keyword|I can view the specific item fast|
+|v2.0|user|I need to save and read file|I can load the expenses/ salary data|
+
 
 ## Use Cases
 
