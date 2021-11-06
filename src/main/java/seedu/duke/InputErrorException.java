@@ -24,7 +24,7 @@ public class InputErrorException extends Exception {
         System.out.println("[Help] Command: sort /asc /amount\n");
     }
 
-    static void toPrintEmpytFileError() {
+    static void toPrintEmptyFileError() {
         System.out.println("OOPS!!! The list is empty. Please read the file or add expenses.\n");
     }
 

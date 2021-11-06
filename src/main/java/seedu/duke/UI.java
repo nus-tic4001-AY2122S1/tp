@@ -49,6 +49,12 @@ public class UI {
         System.out.println("Now you have " + size + " items in the list.");
     }
 
+    public static void editMessage(int index, ArrayList<Item> items, Item oldItem) {
+        System.out.println("Noted. I've edited this item: ");
+        System.out.println("Old: " + (index + 1) + "." + oldItem.toString());
+        System.out.println("New: " + (index + 1) + "." + items.get(index).toString());
+    }
+
     public static void findMessage(ArrayList<Item> items, ArrayList<Integer> findResult) {
         if (findResult.size() == 0) {
             System.out.println("Oops!!! None of item can be found");
