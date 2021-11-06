@@ -64,9 +64,9 @@ public class SortCommand extends Command implements Comparable<Item> {
         String[] sortDescription = Parser.sortDesc(fullCommand);
 
         String sortingByDescription = sortDescription[1];
-        assert sortingByDescription != " ": "Sorting by Description should not be empty";
+        assert sortingByDescription != " " : "Sorting by Description should not be empty";
         String sortingByCategory = sortDescription[2];
-        assert sortingByCategory != " ": "Sorting by Category should not be empty";
+        assert sortingByCategory != " " : "Sorting by Category should not be empty";
 
 
         switch (sortingByDescription) {
