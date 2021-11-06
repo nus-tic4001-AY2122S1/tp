@@ -23,7 +23,6 @@ public class DeleteCommand extends Command {
     public void run(ItemList itemList) throws InputErrorException {
 
         Storage storage = new Storage();
-
         // log a message at INFO level
         FileHandler fh;
         try {
