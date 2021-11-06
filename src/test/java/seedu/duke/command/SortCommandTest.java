@@ -38,9 +38,7 @@ public class SortCommandTest {
     public void sortByDateAsc() throws InputErrorException {
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
         ItemList actualList = new ItemList(arrayListExpLst);
-        ItemList actualListDesc = new ItemList(arrayListExpLst);
 
-        actualList.items.clear();;
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /3-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /2-12-2021");
         AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-12-2021");
@@ -63,21 +61,19 @@ public class SortCommandTest {
     @Test
     public void sortByDateDesc() throws InputErrorException {
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
-        ItemList actualList = new ItemList(arrayListExpLst);
         ItemList actualListDesc = new ItemList(arrayListExpLst);
 
-        actualList.items.clear();;
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /3-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /2-12-2021");
         AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-12-2021");
 
-        addFirstExpense.run(actualList);
-        addSecondExpense.run(actualList);
-        addFirstIncome.run(actualList);
+        addFirstExpense.run(actualListDesc);
+        addSecondExpense.run(actualListDesc);
+        addFirstIncome.run(actualListDesc);
 
         SortCommand sortByDesc = new SortCommand("sort /desc /date");
 
-        sortByDesc.run(actualList);
+        sortByDesc.run(actualListDesc);
 
         List<String> expectedSortByDesc = List.of("[E] [Meal] lunch ($40.0) (2021-Dec-03), "
                                             + "[E] [Meal] lunch ($20.0) (2021-Dec-02), "
