@@ -5,6 +5,7 @@ import seedu.duke.ItemList;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SaveCommand extends Command {
 
@@ -17,7 +18,10 @@ public class SaveCommand extends Command {
         try {
             FileWriter fw = new FileWriter("./file/expenses.txt");
 
-            fw.write("Here are the items in your list:" + "\n");
+            if (itemList.size != 0) {
+                fw.write("Here are the items in your list:" + "\n");
+            }
+
             for (int i = 0; i < itemList.items.size(); i++) {
                 fw.write(i + 1 + "." + itemList.items.get(i).toString() + "\n");
             }

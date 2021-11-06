@@ -52,4 +52,15 @@ public class Parser {
             throw new InputErrorException("DateFormatError");
         }
     }
+
+    public static String[] sortDesc(String fullCommand) throws InputErrorException {
+
+        String[] str = fullCommand.split(" /");
+
+        if (str.length < 3) {
+            throw new InputErrorException("SortFormatError");
+        }
+        return fullCommand.split(" /");
+    }
+
 }

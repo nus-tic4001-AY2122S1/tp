@@ -19,6 +19,15 @@ public class InputErrorException extends Exception {
         System.out.println("OOPS!!! The list input format wrong. Please try again.\n");
     }
 
+    static void toPrintSortFormatError() {
+        System.out.println("OOPS!!! The sort input format wrong. Please try again.\n");
+        System.out.println("[Help] Command: sort /asc /amount\n");
+    }
+
+    static void toPrintEmpytFileError() {
+        System.out.println("OOPS!!! The list is empty. Please read the file or add expenses.\n");
+    }
+
     static void toPrintInvalidCommand() {
 
         System.out.println("OOPS!!! Invalid command input. Please try again.\n");

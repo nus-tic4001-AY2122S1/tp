@@ -25,7 +25,19 @@ public class UI {
     }
 
     public static void listMessage(ArrayList<Item> items) {
-        System.out.println("Here are the items in your list:");
+
+        if (items.size() != 0) {
+            System.out.println("Here are the items in your list:");
+        } else {
+            System.out.println("The expense/salary's list is empty.\n");
+        }
+
+        for (int i = 0; i < items.size(); i++) {
+            System.out.println(i + 1 + "." + items.get(i).toString());
+        }
+    }
+
+    public static void listSortingResult(ArrayList<Item> items) {
         for (int i = 0; i < items.size(); i++) {
             System.out.println(i + 1 + "." + items.get(i).toString());
         }

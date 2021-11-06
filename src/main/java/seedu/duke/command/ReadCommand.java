@@ -20,7 +20,10 @@ public class ReadCommand extends Command {
 
     @Override
     public void run(ItemList itemList) {
+
         itemList.items.clear();
+        ItemList saveItemList = itemList;
+
         try {
             FileReader fileReader = new FileReader("./file/expenses.txt");
 
@@ -34,41 +37,24 @@ public class ReadCommand extends Command {
                 for (int i = 0; i < splitString.length; i++) {
                     String description = splitString[i].split(" ")[1];
                     String category = splitString[i].split(" ")[2];
-                    //String amount = splitString[i].split(" ")[3];
-                    //String date = splitString[i].split(" ")[4];
-                    String amoundAndDate = splitString[i].split(" ")[3] + " " + splitString[i].split(" ")[4];
-                    System.out.println(description);
-                    System.out.println(category);
+                    String amount = splitString[i].split(" ")[3];
+                    String date = splitString[i].split(" ")[4];
 
-                    final String regexDescription = "\\[(\\w+)";
-                    final String regexCategory = "\\[(\\w+)";
+                    String descCatAmoundAndDate = category + " " + description + " " + amount + " " + date;
 
-                    //final String regexAmount = "\\(\\$(\\d+\\.\\d+)";
-                    //final String regexDate = "[\\d+]{4}-[\\w+]{3}-[\\d+]{2}";
-                    final String regex = "\\(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
-
-                    //final Pattern patternAmount = Pattern.compile(regexAmount);
-                    //final Pattern patternDate = Pattern.compile(regexDate);
-
-                    //final Matcher matcherAmount = patternAmount.matcher(amount);
-                    //final Matcher matcherDate = patternDate.matcher(date);
-
-                    final Pattern patternDescription = Pattern.compile(regexDescription);
-                    final Matcher matcherDescription = patternDescription.matcher(description);
-
-                    final Pattern patternCategory = Pattern.compile(regexCategory);
-                    final Matcher matcherCategory = patternCategory.matcher(category);
+                    final String regex = "(\\w+)\\s\\[(\\w+)\\]\\s\\"
+                                         + "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
 
                     final Pattern pattern = Pattern.compile(regex);
-                    final Matcher matcher = pattern.matcher(amoundAndDate);
+                    final Matcher matcher = pattern.matcher(descCatAmoundAndDate);
 
                     while (matcher.find()) {
-                        //String descriptionParser = matcherDescription.group(1);
-                        //String categoryParser = matcherCategory.group(1);
-                        Double amountParseDouble = Double.parseDouble(matcher.group(2));
-                        Date dateParser = dateFormatter.parse(matcher.group(3));
+                        String descriptionParser = matcher.group(1);
+                        String categoryParser = matcher.group(2);
+                        Double amountParseDouble = Double.parseDouble(matcher.group(3));
+                        Date dateParser = dateFormatter.parse(matcher.group(5));
 
-                        itemList.addExpense(description, category, amountParseDouble, dateParser);
+                        saveItemList.addExpense(categoryParser, descriptionParser, amountParseDouble, dateParser);
                     }
                 }
             }
@@ -77,6 +63,6 @@ public class ReadCommand extends Command {
         }
 
         System.out.println("Expenses file read successfully from file/expenses.txt.\n");
-        UI.listMessage(itemList.items);
+        UI.listMessage(saveItemList.items);
     }
 }
