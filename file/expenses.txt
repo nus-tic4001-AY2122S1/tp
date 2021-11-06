@@ -1,5 +1,6 @@
 Here are the items in your list:
-1.[E] [[dinner]] [[expense]] ($10.0) (2022-Feb-01)
-2.[E] [[lunch]] [[expense]] ($10.0) (2022-Feb-04)
-3.[E] [[meal]] [[expense]] ($10.0) (2022-Feb-02)
-4.[E] [[salary]] [[income]] ($10.0) (2022-Feb-02)
+1.[E] [Meal] lunch ($40.0) (2021-Dec-03)
+2.[E] [Meal] lunch ($42.0) (2021-Dec-02)
+3.[E] [DecIncome] salary ($4000.0) (2021-Dec-01)
+4.[E] [Meal] dinner ($100.0) (2021-Dec-25)
+5.[I] [salary] income ($3000.0) (2021-Dec-30)
