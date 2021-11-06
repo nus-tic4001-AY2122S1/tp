@@ -5,3 +5,5 @@ Here are the items in your list:
 4.[E] [Meal] dinner ($100.0) (2021-Dec-25)
 5.[I] [salary] income ($3000.0) (2021-Dec-30)
 6.[I] [bonus] income ($3000.0) (2022-Oct-01)
+7.[E] [food] lunch ($12.0) (2021-Dec-12)
+8.[E] [food] lunch ($12.0) (2021-Dec-12)
