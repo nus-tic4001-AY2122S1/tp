@@ -56,11 +56,15 @@ public class ReadCommand extends Command {
                         Double amountParseDouble = Double.parseDouble(matcher.group(4));
                         Date dateParser = dateFormatter.parse(matcher.group(6));
 
-                        if (itemParser.equals("E")){
+                        switch (itemParser) {
+                        case ("E"):
                             saveItemList.addExpense(descriptionParser, categoryParser, amountParseDouble, dateParser);
-                        }
-                        else if (itemParser.equals("I")){
+                            break;
+                        case ("I"):
                             saveItemList.addIncome(descriptionParser, categoryParser, amountParseDouble, dateParser);
+                            break;
+                        default:
+                            System.out.println("Please key in valid command!");
                         }
                     }
                 }
