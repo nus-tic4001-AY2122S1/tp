@@ -8,9 +8,9 @@
 - Team members: **Wan Yin, Hanna, Yeu Chai and Sze Chun**  
 
 
-## Design & implementation
+## Design
 
-**JustBook Command Line App** leverages on the help of a total five Java classes, viz. **JustBook, Bookings, AddCommand, DeleteCommand and HelpCommand** created by the Team. It makes optimal use of Java Stream and the latest java.time APIs, e.g. LocalDateTime and LocalDate, among others, together with a judicious choice of data structures, to allow a single user good at the keyboard to make and register bookings / appointments online fast: 
+**JustBook Command Line App** leverages on the help of a total five Java classes, viz. **JustBook, Bookings, AddCommand, DeleteCommand and HelpCommand** created by the Team. It makes optimal use of Java Stream and the latest java time APIs, e.g. LocalDateTime and LocalDate, among others, together with a judicious choice of data structures, to allow a single user good at the keyboard to make and register bookings / appointments online fast: 
 
 - Each user booking entry is stored in an `Arraylist<Bookings>` data structure (sorted before each listing display -> allowing for editing or deleting functions onscreen). 
   
@@ -19,7 +19,54 @@
 - Another data structure, `HashMap<LocalDate, LocalDate>`, chosen for efficient search/retrieval, is used to store a blocklist consisting of blocking periods where the user will not be able to make any bookings.  
 
 
+## Implementation
+
+### Show weekends / we feature
+
+####Highlights:
+
+![JustBook Class Diag.](WEClass%20Diagram.png) 
+
+Fig 1. - JustBook Class Diagram Sample<br/><br/>
+
+![JustBook Seq Diag.](JustBookSeqDiag.png)
+
+Fig 2. - Sequence Diagram Illustration<br/><br/>
+
+The `show weekends` or `show we` mechanism is facilitated by two JustBook Class-level helper methods, namely, 
+**listWeekends()** and **weekendListings()**. 
+
+The plan of this feature is to display quickly all the weekends and their booking listings of the current month, if any,
+to the console, arranged in chronological order - starting from the weekend nearest to the point of date of entry of the
+user, when he or she enters the CLI command.
+
+The first method **listWeekends()** will accomplish the bulk of the above work while working in synchronicity with the
+second helper method **weekendListings()**, which mainly formats the display to group all weekend bookings by their 
+respective weekend headers, and searches the online appointment database to extract out only the weekend entries to
+display for the month.<br><br>
+
+####Design considerations:
+Considerations in the design of both methods have been specially given for the optimization of both operations in terms
+of time and space complexity, 
+- in terms of unnecessary non-weekend database searches skipped 
+  - once a valid weekend date has been processed proper - until the next valid weekend processing begins, 
+- and the deployment of an **EnumSet** (with the two DayOfWeek weekends values) 
+  - to afford quick comparison operations during the sifting out of the weekend
+  dates, from the generated stream of dates, bracketed by the current day date to the end of the month.
+
+
 ## Product scope
+**Target user profile:**
+
+- has a need to manage a number of fast bookings
+- prefer desktop apps vs other types
+- can type fast
+- prefers using the keyboard over mouse interactions
+- is reasonably comfortable using CLI apps
+
+**Value proposition:** manage contacts faster than a typical mouse/GUI driven app
+
+
 ### Target user profile
 
 Target User: John
@@ -32,7 +79,7 @@ Education: Currently in Poly or JC
 
 Commitments: CCAs, recreational activities, Studies
 
-Traits: Is technologically literate, active in activities, comfortable with typing commands
+Traits: Is technologically literate, active in activities, comfortable typing commands
 
 Our target user is a Student that is currently schooling. As an active student, the Target User has multiple activities that may be hard to keep track of. With the scheduler, John will be able to plan and organize multiple appointments at the same time.
 
@@ -84,13 +131,13 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 * **CLI**           - Command Line Interface
 * **booking**       - A typed entry consisting of booking text description, a start Date-Time and end Date-Time 
 * **ISO (time)**    - For Java time Standards, it follows this format: "yyyy-MM-dd HH:mm"
-* **"DateTime**     - Java LocalDateTime implemented with format as "yyy-M-d HH:mm", using a 24 hr format
+* **DateTime**     - Java LocalDateTime implemented with format as "yyy-M-d HH:mm", using a 24 hr format
 
 ## Instructions for manual testing
 
 - Ensure Java jdk 11 is installed
 - Download the justbook.jar file from Release v2.0
-- Obtain a sample test file, eg. justbook.txt with saved entries (correctly formatted)
+- Obtain a sample test file, e.g. justbook.txt with saved entries (correctly formatted)
 - Copy the sample test file to a local folder named data
 - start up the app, eg.` java -jar justbook.jar` via a windows cmd or compatible terminal
 - Type in a username of your choice
@@ -101,7 +148,7 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 
 ## Instructions for Regression testing
 1. Navigate to text-ui-test folder
-2. Depending on your (User's) OS, if windows, run runtest.bat, if Linux or MacOS, run runtest.sh
+2. Depending on your (User's) OS, if Windows, run runtest.bat, if Linux or macOS, run runtest.sh
 3. The CMD window or shell output will display if the comparison between the expected output and actual output are the same
 4. If there are any differences, they will be displayed at the CMD or shell window as well.
 5. The regression test would have passed if no differences are found.
