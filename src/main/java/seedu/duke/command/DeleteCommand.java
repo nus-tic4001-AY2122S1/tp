@@ -24,7 +24,6 @@ public class DeleteCommand extends Command {
 
         // log a message at INFO level
         FileHandler fh;
-        Storage storage = new Storage();
         try {
             fh = new FileHandler("./log/DeleteLogFile.log");
             logger.addHandler(fh);
@@ -42,6 +41,7 @@ public class DeleteCommand extends Command {
         if (index < 0 || index >= size) {
             throw new InputErrorException("IndexOutOfRange");
         }
+        Storage storage = new Storage();
 
         Item deletedTask = itemList.items.get(index);
         itemList.delete(index);
