@@ -63,10 +63,13 @@ public class SortCommand extends Command implements Comparable<Item> {
 
         String[] sortDescription = Parser.sortDesc(fullCommand);
 
-        String sortingBy = sortDescription[1];
+        String sortingByDescription = sortDescription[1];
+        assert sortingByDescription != " ": "Sorting by Description should not be empty";
         String sortingByCategory = sortDescription[2];
+        assert sortingByCategory != " ": "Sorting by Category should not be empty";
 
-        switch (sortingBy) {
+
+        switch (sortingByDescription) {
         case "asc": {
             if (sortingByCategory.equals("amount")) {
                 Collections.sort(sortingItemList.items, expenseAscComparator);
