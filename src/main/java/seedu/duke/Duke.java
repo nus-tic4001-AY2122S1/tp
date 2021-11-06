@@ -65,7 +65,7 @@ public class Duke {
                     InputErrorException.toPrintSortFormatError();
                     break;
                 case "SortByEmptyFileList":
-                    InputErrorException.toPrintEmpytFileError();
+                    InputErrorException.toPrintEmptyFileError();
                     break;
                 default:
                     System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(");

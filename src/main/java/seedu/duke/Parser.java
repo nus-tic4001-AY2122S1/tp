@@ -54,7 +54,6 @@ public class Parser {
     }
 
     public static String[] sortDesc(String fullCommand) throws InputErrorException {
-
         String[] str = fullCommand.split(" /");
 
         if (str.length < 3) {
@@ -63,4 +62,10 @@ public class Parser {
         return fullCommand.split(" /");
     }
 
+    // edit 1 /expense lunch /food /date /amount
+    public static String editItem(String fullCommand) {
+        String[] str = fullCommand.split(" /");
+
+        return fullCommand.replace(str[0] + " /", "");
+    }
 }

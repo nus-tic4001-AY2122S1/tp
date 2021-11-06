@@ -1,15 +1,17 @@
 package seedu.duke;
 
-import seedu.duke.command.SummaryCommand;
 import seedu.duke.command.AddExpenseCommand;
-import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.AddIncomeCommand;
-import seedu.duke.command.ExitCommand;
+import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.ListCommand;
-import seedu.duke.command.FindCommand;
+import seedu.duke.command.EditCommand;
 import seedu.duke.command.SortCommand;
+import seedu.duke.command.FindCommand;
 import seedu.duke.command.SaveCommand;
 import seedu.duke.command.ReadCommand;
+import seedu.duke.command.ExitCommand;
+import seedu.duke.command.SummaryCommand;
+
 import java.util.logging.Logger;
 
 public class Execution {
@@ -38,6 +40,9 @@ public class Execution {
             break;
         case "delete":
             new DeleteCommand(fullCommand).run(itemList);
+            break;
+        case "edit":
+            new EditCommand(fullCommand).run(itemList);
             break;
         case "sort":
             new SortCommand(fullCommand).run(itemList);

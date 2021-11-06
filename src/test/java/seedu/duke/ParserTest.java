@@ -21,7 +21,8 @@ public class ParserTest {
 
     @Test
     void descriptionTest() {
-        assertEquals("lunch", Parser.description("expense lunch /food /12 /12-12-2021"));
+        assertEquals("lunch",
+                Parser.description("expense lunch /food /12 /12-12-2021"));
     }
 
     @Test
@@ -40,5 +41,11 @@ public class ParserTest {
         Date d1 = formatter.parse("12-12-2021");
         Date d2 = Parser.date("expense lunch /food /12 /12-12-2021");
         assertEquals(d1, d2);
+    }
+
+    @Test
+    void editItemTest() {
+        assertEquals("expense lunch /food /12 /12-12-2021",
+                Parser.editItem("edit 4 /expense lunch /food /12 /12-12-2021"));
     }
 }

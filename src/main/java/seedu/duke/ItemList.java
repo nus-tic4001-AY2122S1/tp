@@ -68,6 +68,10 @@ public class ItemList {
         size--;
     }
 
+    public void edit(int index, Item newItem) {
+        items.set(index, newItem);
+    }
+
     public double getIncomeAmount() {
         return incomeAmount;
     }
