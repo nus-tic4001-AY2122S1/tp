@@ -1,4 +1,3 @@
-/*
 package seedu.duke.command;
 
 import org.junit.jupiter.api.Test;
@@ -20,8 +19,8 @@ public class ListCommandTest {
         long time = recordDate.getTime();
         Timestamp timestamp = new Timestamp(time);
 
-        Item testerIncome = new Item("salary", "monthly income", 30, timestamp);
-        Item testerExpense = new Item("lunch", "F&B", 33, timestamp);
+        Item testerIncome = new Item("lunch", "F&B", 30, timestamp, "expense");
+        Item testerExpense = new Item("dinner", "F&B", 33, timestamp, "expense");
 
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
         ArrayList<Item> expectedArrayLst = new ArrayList<>();
@@ -34,12 +33,9 @@ public class ListCommandTest {
 
         ItemList newExpLst = new ItemList(arrayListExpLst);
         ItemList expect = new ItemList(expectedArrayLst);
-
         ListCommand listCommand = new ListCommand("list");
-
         listCommand.run(newExpLst);
-
         assertEquals(expect.items, newExpLst.items);
     }
 }
-*/
+

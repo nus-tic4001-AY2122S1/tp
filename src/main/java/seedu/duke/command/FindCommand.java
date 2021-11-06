@@ -18,3 +18,4 @@ public class FindCommand extends Command {
         UI.findMessage(itemList.items, findResult);
     }
 }
+
