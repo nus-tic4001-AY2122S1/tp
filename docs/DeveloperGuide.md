@@ -23,7 +23,7 @@
 
 ### Show weekends / we feature
 
-####Highlights:
+#### Highlights:
 
 ![JustBook Class Diag.](WEClass%20Diagram.png) 
 
@@ -45,7 +45,8 @@ second helper method **weekendListings()**, which mainly formats the display to 
 respective weekend headers, and searches the online appointment database to extract out only the weekend entries to
 display for the month.<br><br>
 
-####Design considerations:
+
+#### Design considerations:
 Considerations in the design of both methods have been specially given for the optimization of both operations in terms
 of time and space complexity, 
 - in terms of unnecessary non-weekend database searches skipped 
