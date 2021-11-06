@@ -22,9 +22,9 @@ public class DeleteCommand extends Command {
 
     public void run(ItemList itemList) throws InputErrorException {
 
-        Storage storage = new Storage();
         // log a message at INFO level
         FileHandler fh;
+        Storage storage = new Storage();
         try {
             fh = new FileHandler("./log/DeleteLogFile.log");
             logger.addHandler(fh);
