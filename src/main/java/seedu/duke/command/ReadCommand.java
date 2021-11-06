@@ -35,26 +35,33 @@ public class ReadCommand extends Command {
                 String[] splitString = lineData.split("\\s\\r?\\n");
 
                 for (int i = 0; i < splitString.length; i++) {
+                    String item = splitString[i].split(" ")[0];
                     String description = splitString[i].split(" ")[1];
                     String category = splitString[i].split(" ")[2];
                     String amount = splitString[i].split(" ")[3];
                     String date = splitString[i].split(" ")[4];
 
-                    String descCatAmoundAndDate = category + " " + description + " " + amount + " " + date;
+                    String descCatAmountAndDate = item + " " + category + " " + description + " " + amount + " " + date;
 
-                    final String regex = "(\\w+)\\s\\[(\\w+)\\]\\s\\"
+                    final String regex = "\\[(\\w+)\\]\\s(\\w+)\\s\\[(\\w+)\\]\\s\\"
                                          + "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
 
                     final Pattern pattern = Pattern.compile(regex);
-                    final Matcher matcher = pattern.matcher(descCatAmoundAndDate);
+                    final Matcher matcher = pattern.matcher(descCatAmountAndDate);
 
                     while (matcher.find()) {
-                        String descriptionParser = matcher.group(1);
-                        String categoryParser = matcher.group(2);
-                        Double amountParseDouble = Double.parseDouble(matcher.group(3));
-                        Date dateParser = dateFormatter.parse(matcher.group(5));
+                        String itemParser = matcher.group(1);
+                        String descriptionParser = matcher.group(2);
+                        String categoryParser = matcher.group(3);
+                        Double amountParseDouble = Double.parseDouble(matcher.group(4));
+                        Date dateParser = dateFormatter.parse(matcher.group(6));
 
-                        saveItemList.addExpense(categoryParser, descriptionParser, amountParseDouble, dateParser);
+                        if (itemParser.equals("E")){
+                            saveItemList.addExpense(descriptionParser, categoryParser, amountParseDouble, dateParser);
+                        }
+                        else if (itemParser.equals("I")){
+                            saveItemList.addIncome(descriptionParser, categoryParser, amountParseDouble, dateParser);
+                        }
                     }
                 }
             }
