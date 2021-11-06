@@ -8,7 +8,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
-
+import java.util.ArrayList;
 
 public class ListCommand extends Command {
     public ListCommand(String fullCommand) {
@@ -19,6 +19,9 @@ public class ListCommand extends Command {
 
     public void run(ItemList itemList) {
         // log a message at INFO level
+        ArrayList<String> messages = new ArrayList<>();
+        messages.add("Here are the tasks in your list:");
+        UI.listMessage(itemList.items);
         FileHandler fh;
 
         try {
@@ -31,7 +34,5 @@ public class ListCommand extends Command {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        UI.listMessage(itemList.items);
     }
 }

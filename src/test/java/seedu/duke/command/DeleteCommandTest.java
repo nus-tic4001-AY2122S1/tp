@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 import seedu.duke.InputErrorException;
 import seedu.duke.ItemList;
 import seedu.duke.item.Item;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.sql.Timestamp;
