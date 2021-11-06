@@ -5,6 +5,7 @@ import seedu.duke.ItemList;
 import seedu.duke.Parser;
 import seedu.duke.UI;
 import seedu.duke.item.Item;
+import seedu.duke.Storage;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -20,6 +21,7 @@ public class DeleteCommand extends Command {
     private static Logger logger = Logger.getLogger("DELETE");
 
     public void run(ItemList itemList) throws InputErrorException {
+
         // log a message at INFO level
         FileHandler fh;
         try {
@@ -39,9 +41,11 @@ public class DeleteCommand extends Command {
         if (index < 0 || index >= size) {
             throw new InputErrorException("IndexOutOfRange");
         }
+        Storage storage = new Storage();
 
         Item deletedTask = itemList.items.get(index);
         itemList.delete(index);
         UI.deleteMessage(deletedTask, itemList.size);
+        storage.saveToStorage(itemList);
     }
 }

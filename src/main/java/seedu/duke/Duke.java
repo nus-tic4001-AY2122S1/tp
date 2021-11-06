@@ -19,7 +19,11 @@ public class Duke {
     }
 
     private void run() {
+        Storage fileStorage = new Storage();
+        fileStorage.loadFromStorage(this.itemList);
+
         UI.welcome();
+
         // log a message at INFO level
         FileHandler fh;
         try {
