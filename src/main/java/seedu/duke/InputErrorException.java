@@ -21,7 +21,8 @@ public class InputErrorException extends Exception {
 
     static void toPrintSortFormatError() {
         System.out.println("OOPS!!! The sort input format wrong. Please try again.\n");
-        System.out.println("[Help] Command: sort /asc /amount\n");
+        System.out.println("[Help] Command: \n sort /asc /amount \n"
+                            + " sort /desc /amount \n");
     }
 
     static void toPrintEmptyFileError() {
