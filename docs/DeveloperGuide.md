@@ -43,7 +43,7 @@ user, when he or she enters the CLI command.
 The first method **listWeekends()** will accomplish the bulk of the above work while working in synchronicity with the
 second helper method **weekendListings()**, which mainly formats the display to group all weekend bookings by their 
 respective weekend headers, and searches the online appointment database to extract out only the weekend entries to
-display for the month.<br><br>
+display for the month.
 
 
 #### Design considerations:
