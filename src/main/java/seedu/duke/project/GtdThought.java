@@ -65,6 +65,10 @@ public class GtdThought {
         return title;
     }
 
+    public String getDueString() {
+        return (due == null) ? "0000-00-00" : due.toString();
+    }
+
     public int getlevel() {
         return this.level;
     }
