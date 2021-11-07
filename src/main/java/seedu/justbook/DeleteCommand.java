@@ -15,23 +15,22 @@ public class DeleteCommand {
         this.startDate = LocalDate.parse(date, format);
         this.optionNumber = Integer.parseInt(option);
     }
-
     public DeleteCommand(LocalDate startDate, LocalDate endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
 
-    public void execute(List<Bookings> bookings) {
+    public void execute(List<Bookings> appointments) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
         LocalDate temp;
-        for (Bookings booking : bookings) {
+        for (Bookings booking : appointments) {
             temp = LocalDate.parse(booking.getStartDate().format(formatter), formatter);
             if (temp.equals(startDate)) {
                 optionNumber = optionNumber - 1;
             }
             if (optionNumber == 0) {
-                bookings.remove(booking);
+                appointments.remove(booking);
                 System.out.println("Successfully removed Appointment at " + booking.getStartDateString());
                 return;
             }
@@ -44,11 +43,11 @@ public class DeleteCommand {
         return "del [Appointment_Start_Date] /o [Option_Number]";
     }
 
-    public void deleteRange(List<Bookings> bookings) {
+    public void deleteRange(List<Bookings> appointments) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
         LocalDate temp;
 
-        for (Iterator<Bookings> i = bookings.iterator(); i.hasNext();) {
+        for (Iterator<Bookings> i = appointments.iterator(); i.hasNext();) {
             Bookings b = i.next();
             temp = LocalDate.parse(b.getStartDate().format(formatter), formatter);
             if (temp.compareTo(startDate) >= 0 && temp.compareTo(endDate) <= 0) {

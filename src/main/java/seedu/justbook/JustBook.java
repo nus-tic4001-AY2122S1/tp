@@ -40,9 +40,9 @@ public class JustBook {
     private static final Logger logger = Logger.getLogger(JustBook.class.getName());
 
     public static void main(String[] args) {
-
         try {
-            onLoad();
+            LoadCommand firstLoad = new LoadCommand("data/justbook.txt");
+            firstLoad.execute(appointments);
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage());
         } catch (IOException e) {
@@ -61,7 +61,6 @@ public class JustBook {
         String userName = in.nextLine();
 
         System.out.printf("Hello %s,%n", userName);
-        // write your code here
         System.out.printf("Welcome back!%n");
         System.out.printf("You can now proceed to do your booking :)%n");
 
@@ -84,20 +83,21 @@ public class JustBook {
 
                 logger.log(Level.INFO, "end of processing");
                 // does a backup save before program exits
-                onSave();
+                SaveCommand backupSave = new SaveCommand("data/justbook.txt");
+                backupSave.execute(appointments);
                 in.close();
                 exit(0);
             }
 
             String[] tokens = input.split(" ", 2);
-            String command = tokens[0];
+            String commandWord = tokens[0];
             String inputContent = "";
 
             if (tokens.length >= 2) {
                 inputContent = tokens[1];
             }
 
-            switch (command) {
+            switch (commandWord) {
             case "add":
                 String[] arguments = inputContent.split(" /[s,e] ");
                 String booking = arguments[0];
@@ -131,13 +131,14 @@ public class JustBook {
                 String bookDesc = subSeg[0];
                 String chosenDate = subSeg[1];
 
-                edit(bookDesc, chosenDate, optionNum);
+                EditCommand edit = new EditCommand(bookDesc, formLocalDate(chosenDate), optionNum);
+                edit.execute(appointments);
                 break;
             case "save":
-                onSave();
+                SaveCommand save = new SaveCommand("data/justbook.txt");
+                save.execute(appointments);
                 break;
             case "del":
-
                 if (inputContent.equals("a") || inputContent.contains("all")) {
                     appointments.clear();
                     System.out.println("Successfully deleted all appointment records");
@@ -145,6 +146,7 @@ public class JustBook {
                     String[] dateRange = inputContent.split(" ",3);
                     LocalDate startDate = LocalDate.parse(dateRange[1], DateTimeFormatter.ofPattern("yyyy-M-d"));
                     LocalDate endDate = LocalDate.parse(dateRange[2], DateTimeFormatter.ofPattern("yyyy-M-d"));
+
                     DeleteCommand delRange = new DeleteCommand(startDate, endDate);
                     delRange.deleteRange(appointments);
                 } else {
@@ -158,7 +160,6 @@ public class JustBook {
             case "show":
                 // sorts the database in ascending order
                 appointments.sort(comparing(Bookings::getStartDateTime));
-
                 int listNum = 1;
                 int totalRecords = appointments.size();
 
@@ -181,23 +182,21 @@ public class JustBook {
                 }
                 break;
             case "block": case "unblock":
-                setBlockRules(command, inputContent);
+                setBlockRules(commandWord, inputContent);
                 break;
             case "help":
                 HelpCommand help = new HelpCommand();
                 help.execute();
                 break;
             case "undel":
-
                 if (inputContent.contains("a")) {
-
                     try {
-                        onLoad();
+                        LoadCommand undel = new LoadCommand("data/justbook.txt");
+                        undel.execute(appointments);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-
                 System.out.println("Online database status: Fully restored.");
                 break;
             default:
@@ -206,18 +205,18 @@ public class JustBook {
         }
     }
 
-    private static void displayDateBookings(String inputContent, int listNum) {
-        LocalDate localDate = LocalDate.parse(inputContent, DateTimeFormatter.ofPattern("yyyy-M-d"));
+    private static void displayDateBookings(String inputDate, int listNum) {
+        LocalDate localDate = LocalDate.parse(inputDate, DateTimeFormatter.ofPattern("yyyy-M-d"));
         String putDate = String.valueOf(localDate).replaceAll("-", "/");
 
         //displays the specified date booking(s) of user
         LocalDate dateIso;
         System.out.printf("%nDate: %s%n", putDate);
 
-        if (inputContent.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
-            dateIso = LocalDate.parse(inputContent);
+        if (inputDate.matches("^((2[0-9])[0-9]{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$")) {
+            dateIso = LocalDate.parse(inputDate);
         } else {
-            dateIso = formLocalDate(inputContent);
+            dateIso = formLocalDate(inputDate);
         }
 
         for (Bookings item : appointments) {
@@ -250,31 +249,6 @@ public class JustBook {
             listNum = 1;
             System.out.println();
         }
-    }
-
-    public static void edit(String amendDesc, String startDate, int optionNumber) {
-        int bookNum = optionNumber;
-        LocalDate testDate = formLocalDate(startDate);
-        LocalDate temp;
-
-        for (Bookings booking : appointments) {
-            temp = booking.getStartDate();
-
-            if (temp.equals(testDate)) {
-                --optionNumber;
-            }
-
-            if (optionNumber == 0) {
-                String bookingDesc = booking.getBookDesc();
-                booking.setBookDesc(amendDesc);
-
-                System.out.printf("Successfully changed \"%s\" on %s : book #%d%n", bookingDesc,
-                        startDate.replaceAll("-", "/"), bookNum);
-                System.out.printf("To \"%s\" on %s : book #%d%n", amendDesc, testDate, bookNum);
-                return;
-            }
-        }
-        System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
     }
 
     private static LocalDate formLocalDate(String date) {
@@ -335,50 +309,6 @@ public class JustBook {
                 .forEach(JustBook::weekendListings);
     }
 
-    protected static void onLoad() throws IOException {
-        File directory = new File("data");
-
-        if (!directory.exists()) {
-            directory.mkdir();
-        }
-
-        File f = new File("data/justbook.txt");
-
-        if (!f.exists()) {
-            f.createNewFile();
-        }
-
-        Scanner sc = new Scanner(f);
-
-        while (sc.hasNextLine()) {
-            //read all lines
-            String input = sc.nextLine();
-            String[] readData = input.split(" \\| ");
-            LocalDateTime start = parse(readData[1]);
-            LocalDateTime end = parse(readData[2]);
-            appointments.add(new Bookings(readData[0], start, end));
-        }
-
-    }
-
-    private static void onSave() {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("data/justbook.txt"));
-            //writes all tasks into file
-            for (Bookings item : appointments) {
-                String description = item.getBookDesc();
-                LocalDateTime startDate = item.getStartDateTime();
-                LocalDateTime endDate = item.getEndDateTime();
-                writer.write(description + " | " + startDate + " | " + endDate);
-                writer.newLine();
-            }
-
-            writer.close();
-        } catch (IOException e) {
-            //prints exception message.
-            System.out.println(e.getMessage());
-        }
-    }
 
     protected static void setBlockRules(String command, String inputContent) {
         String[] parts = inputContent.split(" ", 2);
@@ -456,12 +386,10 @@ public class JustBook {
                 isWkEnd = true;
                 continue;
             }
-
             if (isWkEnd) {
                 break;
             }
         }
-
         if (!isWkEnd) {
             System.out.println("Status: no bookings yet.");
         }
