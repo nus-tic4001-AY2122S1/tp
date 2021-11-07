@@ -209,6 +209,10 @@ public class GtdThought implements Comparable<GtdThought> {
         this.note = note;
     }
 
+    public void setDue(LocalDate due) {
+        this.due = due;
+    }
+
     @Override
     public String toString() {
         String dueOutput = (due == null) ? "" : " [DUE:" + due.toString() + "]";
