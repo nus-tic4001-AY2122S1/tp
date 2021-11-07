@@ -116,8 +116,12 @@ public class GtdList implements Iterable<GtdThought> {
 
 
     public void print() {
+        print(false);
+    }
+
+    public void print(boolean excludeChildren) {
         for (int i = 0; i < list.size(); i++) {
-            String text = list.get(i).getTextRec();
+            String text = list.get(i).getTextRec(excludeChildren);
             String line = addNum(text, i);
             System.out.print(line);
         }

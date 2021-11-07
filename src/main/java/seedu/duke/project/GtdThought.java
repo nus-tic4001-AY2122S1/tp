@@ -125,18 +125,22 @@ public class GtdThought {
     }
 
     public String getTextRec() {
-        return auxgetTextRec("");
+        return getTextRec(false);
     }
 
-    private String auxgetTextRec(String text) { // this + children
+    public String getTextRec(boolean excludeChildren) {
+        return auxgetTextRec("", excludeChildren);
+    }
+
+    private String auxgetTextRec(String text, boolean excludeChildren) { // this + children
         String indentation = INDEN.repeat(level);
 
-        if (children.isEmpty()) {
+        if (children.isEmpty() || excludeChildren) {
             return indentation + this + System.lineSeparator();
         }
 
         for (GtdThought sub : children) {
-            text += sub.auxgetTextRec(""); // MAGIC!
+            text += sub.auxgetTextRec("", false); // MAGIC!
         }
 
         return indentation + this + System.lineSeparator() + text;
@@ -160,6 +164,17 @@ public class GtdThought {
             children.stream()
                     .forEach(t -> t.auxgetRec(stat, filtered));
         }
+    }
+
+    public ArrayList<GtdThought> getDueList(ArrayList<GtdThought> dueList) {
+        if (due != null) {
+            dueList.add(this);
+        }
+        if (!this.children.isEmpty()) {
+            children.stream()
+                    .forEach(t -> t.getDueList(dueList));
+        }
+        return dueList;
     }
 
     public Stat getStatus() {
@@ -196,11 +211,12 @@ public class GtdThought {
 
     @Override
     public String toString() {
+        String dueOutput = (due == null) ? "" : " [DUE:" + due.toString() + "]";
         switch (status) {
         case NONE:
-            return this.title;
+            return this.title + dueOutput;
         default:
-            return "[" + this.status + "] " + title;
+            return "[" + this.status + "] " + title + dueOutput;
         }
     }
 }

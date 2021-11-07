@@ -35,7 +35,7 @@ public class Parser {
             );
 
     public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some",
-                                                     "current", "master", "all", "done"};
+                                                     "current", "master", "all", "done", "due"};
 
     /**
      * Parses user input into command for execution.
