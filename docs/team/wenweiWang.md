@@ -6,7 +6,7 @@ EXPENSES MANAGEMENT SYSTEM (EMS) is a desktop app for managing expenses, optimiz
 Interface (CLI)
 
 ### Summary of Contributions
-####Given below are my contributions to the project.
+#### Given below are my contributions to the project.
 
 * **Enhancements implemented:**
 
