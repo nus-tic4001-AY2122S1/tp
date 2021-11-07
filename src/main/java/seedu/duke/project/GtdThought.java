@@ -1,5 +1,6 @@
 package seedu.duke.project;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -15,7 +16,7 @@ public class GtdThought {
     private Optional<GtdThought> parent = Optional.empty();
     private ArrayList<GtdThought> children = new ArrayList<>();
     private LocalDateTime creation;
-    private LocalDateTime due;
+    private LocalDate due;
     private LocalDateTime done;
 
     private int id;
