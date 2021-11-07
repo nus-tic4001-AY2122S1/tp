@@ -1,14 +1,11 @@
 package seedu.justbook;
 
-import java.io.BufferedWriter;
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.FileWriter;
 import java.time.DateTimeException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -28,7 +25,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.IntStream;
 import static java.lang.System.exit;
-import static java.time.LocalDateTime.parse;
 import static java.util.Comparator.comparing;
 
 public class JustBook {
@@ -140,20 +136,21 @@ public class JustBook {
                 break;
             case "del":
                 if (inputContent.equals("a") || inputContent.contains("all")) {
-                    appointments.clear();
-                    System.out.println("Successfully deleted all appointment records");
+                    DeleteCommand delAll = new DeleteCommand("all");
+                    delAll.execute(appointments);
+
                 } else if (inputContent.contains("/b")) {
                     String[] dateRange = inputContent.split(" ",3);
                     LocalDate startDate = LocalDate.parse(dateRange[1], DateTimeFormatter.ofPattern("yyyy-M-d"));
                     LocalDate endDate = LocalDate.parse(dateRange[2], DateTimeFormatter.ofPattern("yyyy-M-d"));
 
-                    DeleteCommand delRange = new DeleteCommand(startDate, endDate);
-                    delRange.deleteRange(appointments);
+                    DeleteCommand delRange = new DeleteCommand(startDate, endDate, "range");
+                    delRange.execute(appointments);
                 } else {
                     int index = inputContent.indexOf("/o");
                     String inputDate = inputContent.substring(0, index).trim();
                     String optionNumber = inputContent.substring(index).replace("/o", "").trim();
-                    DeleteCommand del = new DeleteCommand(inputDate, optionNumber);
+                    DeleteCommand del = new DeleteCommand(inputDate, optionNumber, "single");
                     del.execute(appointments);
                 }
                 break;

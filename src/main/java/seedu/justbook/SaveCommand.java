@@ -8,11 +8,12 @@ import java.util.List;
 
 public class SaveCommand {
     String filepath;
-    public SaveCommand (String filepath){
+
+    public SaveCommand(String filepath) {
         this.filepath = filepath;
     }
 
-    public void execute(List<Bookings> appointments){
+    public void execute(List<Bookings> appointments) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("data/justbook.txt"));
             //writes all tasks into file

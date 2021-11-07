@@ -1,4 +1,5 @@
 package seedu.justbook;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -7,12 +8,13 @@ public class EditCommand {
     LocalDate startDate;
     int optionNumber;
 
-    public EditCommand(String bookDesc, LocalDate chosenDate, int optionNum){
+    public EditCommand(String bookDesc, LocalDate chosenDate, int optionNum) {
         this.amendDesc = bookDesc;
         this.startDate = chosenDate;
         this.optionNumber = optionNum;
     }
-    public void execute(List<Bookings> appointments){
+
+    public void execute(List<Bookings> appointments) {
         int bookNum = optionNumber;
         LocalDate testDate = startDate;
         LocalDate temp;

@@ -10,7 +10,8 @@ import static java.time.LocalDateTime.parse;
 
 public class LoadCommand {
     String filepath;
-    public LoadCommand(String filepath){
+
+    public LoadCommand(String filepath) {
         this.filepath = filepath;
     }
 

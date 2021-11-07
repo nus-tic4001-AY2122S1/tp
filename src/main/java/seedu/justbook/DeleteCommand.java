@@ -9,19 +9,46 @@ public class DeleteCommand {
     LocalDate startDate;
     LocalDate endDate;
     int optionNumber;
+    String type;
 
-    public DeleteCommand(String date, String option) {
+    public DeleteCommand(String date, String option, String type) {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-M-d");
         this.startDate = LocalDate.parse(date, format);
         this.optionNumber = Integer.parseInt(option);
+        this.type = type;
     }
-    public DeleteCommand(LocalDate startDate, LocalDate endDate) {
+
+    public DeleteCommand(LocalDate startDate, LocalDate endDate, String type) {
         this.startDate = startDate;
         this.endDate = endDate;
+        this.type = type;
     }
 
+    public DeleteCommand(String type) {
+        this.type = type;
+    }
 
     public void execute(List<Bookings> appointments) {
+        switch (type) {
+        case "single":
+            deleteSingle(appointments);
+            break;
+
+        case "range":
+            deleteRange(appointments);
+            break;
+
+        case "all":
+            deleteAll(appointments);
+            break;
+
+        default:
+            System.out.println("Incorrect Delete type. Please Input again");
+
+        }
+    }
+
+    public void deleteSingle(List<Bookings> appointments) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
         LocalDate temp;
         for (Bookings booking : appointments) {
@@ -55,6 +82,11 @@ public class DeleteCommand {
             }
         }
         System.out.println("Successfully removed all appointments between " + startDate + " to " + endDate + ".");
+    }
+
+    public void deleteAll(List<Bookings> appointments) {
+        appointments.clear();
+        System.out.println("Successfully deleted all appointment records");
     }
 
 }
