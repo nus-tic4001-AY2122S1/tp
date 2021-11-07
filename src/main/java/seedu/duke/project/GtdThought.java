@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class GtdThought {
+public class GtdThought implements Comparable<GtdThought> {
     private static final String INDEN = "  ";
 
     private Stat status = Stat.NONE;
@@ -218,5 +218,10 @@ public class GtdThought {
         default:
             return "[" + this.status + "] " + title + dueOutput;
         }
+    }
+
+    @Override
+    public int compareTo(GtdThought e) {
+        return this.due.compareTo(e.due);
     }
 }

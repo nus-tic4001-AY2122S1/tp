@@ -79,6 +79,7 @@ public class ListCommand extends Command {
                     .forEach(lv0 -> {
                         current.add(lv0.getDueList(new ArrayList<>()));
                     });
+            current.sortDue();
         } else {
             master.stream()
                     .forEach(lv0 -> {

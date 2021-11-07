@@ -16,6 +16,7 @@ import java.util.function.Supplier;
 
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+import java.util.Collections;
 
 
 public class GtdList implements Iterable<GtdThought> {
@@ -181,6 +182,10 @@ public class GtdList implements Iterable<GtdThought> {
 
     public void clear() {
         list.clear();
+    }
+
+    public void sortDue() {
+        Collections.sort(list);
     }
 
     @Override
