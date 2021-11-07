@@ -18,7 +18,9 @@ import java.time.DateTimeException;
 public class GtdListDecoder {
 
     public static final Pattern GTD_THOUGHT_TXT_FILE_FORMAT = Pattern.compile(
-            "(?<id>\\d+)[|](?<status>.*)[|](?<title>.*)[|](?<dueYear>\\d{4})-(?<dueMonth>\\d{2})-(?<dueDay>\\d{2})[|][|][|](?<parents>[|\\d]*)"
+            "(?<id>\\d+)[|](?<status>.*)[|](?<title>.*)[|]" +
+                    "(?<dueYear>\\d{4})-(?<dueMonth>\\d{2})-(?<dueDay>\\d{2})" +
+                    "[|][|][|](?<parents>[|\\d]*)"
     );
 
     /**
@@ -93,7 +95,8 @@ public class GtdListDecoder {
             int dueYear = Integer.parseInt(matcher.group("dueYear"));
             int dueMonth = Integer.parseInt(matcher.group("dueMonth"));
             int dueDay = Integer.parseInt(matcher.group("dueDay"));
-            LocalDate due = (dueYear == 0 && dueMonth == 0 && dueDay == 0) ? null : LocalDate.of(dueYear, dueMonth, dueDay);
+            LocalDate due = (dueYear == 0 && dueMonth == 0 && dueDay == 0)
+                    ? null : LocalDate.of(dueYear, dueMonth, dueDay);
 
             elements.put("id", id);
             elements.put("status", status);

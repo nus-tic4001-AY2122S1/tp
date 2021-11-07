@@ -37,7 +37,8 @@ public class Parser {
                     Pattern.CASE_INSENSITIVE
             );
 
-    public static final Pattern DUE_CMD_FORMAT = Pattern.compile("(?<targetIndex>.*)\\s(?<dueYear>\\d{4})-(?<dueMonth>\\d{2})-(?<dueDay>\\d{2})");
+    public static final Pattern DUE_CMD_FORMAT =
+            Pattern.compile("(?<targetIndex>.*)\\s(?<dueYear>\\d{4})-(?<dueMonth>\\d{2})-(?<dueDay>\\d{2})");
 
     public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some",
                                                      "current", "master", "all", "done", "due"};
@@ -124,7 +125,8 @@ public class Parser {
                 int dueYear = Integer.parseInt(matcher.group("dueYear"));
                 int dueMonth = Integer.parseInt(matcher.group("dueMonth"));
                 int dueDay = Integer.parseInt(matcher.group("dueDay"));
-                LocalDate due = (dueYear == 0 && dueMonth == 0 && dueDay == 0) ? null : LocalDate.of(dueYear, dueMonth, dueDay);
+                LocalDate due = (dueYear == 0 && dueMonth == 0 && dueDay == 0)
+                        ? null : LocalDate.of(dueYear, dueMonth, dueDay);
                 return new DueCommand(targetIndex, due);
             } else {
                 return new IncorrectCommand("This is a incorrect due command format, "
