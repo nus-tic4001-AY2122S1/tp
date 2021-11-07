@@ -4,6 +4,8 @@ import task.Task;
 import category.Category;
 import tasklist.TaskList;
 
+import java.util.ArrayList;
+
 /**
  * Ui class is only for printing message.
  */
@@ -125,5 +127,18 @@ public class Ui {
 
     public void printProgress(int noOfCompleted, int totalTasks, String percentage) {
         print(noOfCompleted + " out of " + totalTasks + " tasks are completed. " + "(" + percentage + ")");
+    }
+
+    public void printTasks(ArrayList<String> tasks) {
+        if (tasks.size() < 1) {
+            print("   No matching result.");
+        } else {
+            print("Matched results are: ");
+            int index = 1;
+            for (String task : tasks) {
+                print("   " + index + ". " + task);
+                index += 1;
+            }
+        }
     }
 }

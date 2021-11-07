@@ -5,7 +5,7 @@ import exception.ErrorHandler;
 public enum CommandKeyWords {
     SET_LOCATION("SET_LOCATION"), DELETE("DELETE"),
     APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"),
-    BYE("BYE"), PROGRESS("PROGRESS");
+    BYE("BYE"), PROGRESS("PROGRESS"), SEARCH("SEARCH");
     private final String value;
 
     CommandKeyWords(String value) {

@@ -1,6 +1,7 @@
 package parser;
 
 import category.Category;
+import command.SearchByDateCommand;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
@@ -108,6 +109,12 @@ public class Parser {
             }
 
             return this.handleSetTime(result[1]);
+        case SEARCH:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_SEARCH_CATEGORY);
+            }
+
+            return this.handleSearch(result[1]);
         case PROGRESS:
             return new TaskProgressCommand();
         case BYE:
@@ -146,4 +153,21 @@ public class Parser {
 
         return new AppointmentTimeCommand(this.taskNo, this.content);
     }
+
+    private Command handleSearch(String input) throws ErrorHandler {
+        String[] result = input.split(" ", 2);
+
+        if (result.length < 2) {
+            throw new ErrorHandler(ErrorMessage.MISSING_SEARCHING_DESCRIPTION);
+        }
+
+        String searchCategory = result[0].trim();
+
+        if (searchCategory.equals("--date")) {
+            return new SearchByDateCommand(result[1]);
+        } else {
+            throw new ErrorHandler(ErrorMessage.INVALID_SEARCH_CATEGORY);
+        }
+    }
+
 }
