@@ -4,7 +4,8 @@ import exception.ErrorHandler;
 
 public enum CommandKeyWords {
     SET_LOCATION("SET_LOCATION"), DELETE("DELETE"),
-    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"), BYE("BYE");
+    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"),
+    BYE("BYE"), PROGRESS("PROGRESS");
     private final String value;
 
     CommandKeyWords(String value) {
@@ -39,8 +40,7 @@ public enum CommandKeyWords {
         for (CommandKeyWords v : values()) {
             if (v.getValue().equalsIgnoreCase(value)) {
                 return v;
-            }
-            else {
+            } else {
                 CommandKeyWords w = autoCorrect(value, v);
                 if (w != null) {
                     return w;
@@ -49,31 +49,16 @@ public enum CommandKeyWords {
         }
 
         throw new ErrorHandler(ErrorMessage.INVALID_COMMAND + " Please starts your command with "
-                + getSerializedString()
-                + " (case insensitive)");
+            + getSerializedString()
+            + " (case insensitive)");
 
-    }
-
-
-    /**
-     * Get value.
-     *
-     * @return enum value.
-     */
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return this.getValue();
     }
 
     /**
      * Correct user's input Command in case of typo/misspelling.
      *
      * @param input is the user's input
-     * @param v is an enum
+     * @param v     is an enum
      */
     private static CommandKeyWords autoCorrect(String input, CommandKeyWords v) {
         double similarity;
@@ -87,18 +72,32 @@ public enum CommandKeyWords {
         for (int i = 0; i < comp.length(); i++) {
             isSkip = false;
             for (int j = iter; j < input.length() && !isSkip; j++) {
-                if (input.charAt(j) ==  comp.charAt(i)) {
+                if (input.charAt(j) == comp.charAt(i)) {
                     similarity++;
                     iter++;
                     isSkip = true;
                 }
-                comparison = similarity/comp.length();
-                if (comparison>0.7) {
+                comparison = similarity / comp.length();
+                if (comparison > 0.7) {
                     return v;
                 }
             }
         }
         return null;
+    }
+
+    /**
+     * Get value.
+     *
+     * @return enum value.
+     */
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return this.getValue();
     }
 }
 
