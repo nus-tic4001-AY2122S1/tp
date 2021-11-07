@@ -38,10 +38,11 @@ public class GtdThought {
         this.parent = Optional.of(parent);
     }
 
-    public GtdThought(int id, Stat status, String title) {
+    public GtdThought(int id, Stat status, String title, LocalDate due) {
         this.id = id;
         this.status = status;
         this.title = title;
+        this.due = due;
         maxID = Math.max(maxID, id);
     }
 

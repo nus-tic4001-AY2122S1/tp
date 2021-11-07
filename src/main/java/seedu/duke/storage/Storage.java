@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.time.DateTimeException;
 
 import seedu.duke.exception.IllegalValueException;
 
@@ -71,6 +72,8 @@ public class Storage {
             throw new StorageOperationException("Loading went wrong");
         } catch (IllegalValueException ive) {
             throw new StorageOperationException("File contains incorrect format.");
+        } catch (DateTimeException dte) {
+            throw new StorageOperationException("File contains incorrect due date format.");
         }
 
     }
