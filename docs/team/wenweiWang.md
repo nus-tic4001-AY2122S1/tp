@@ -18,8 +18,8 @@ Interface (CLI)
   <br> 3. Add Income Command Test - Pull Request [#90](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/90)
   <br> 4. Add Expense Command Test - Pull Request [#89](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/89)
   <br> 5. List Command Test - Pull Request [#74](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/74)
-
-  <br> ```Milestone v2.0```
+  <br>
+  <br> ```Milestone v2.0``` 
   <br> 1. Timing - Pull Request [#65](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/65)
   <br> 2. Add Income Command - Pull Request [#62](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/62)
 
