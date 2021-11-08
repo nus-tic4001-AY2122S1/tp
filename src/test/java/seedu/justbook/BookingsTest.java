@@ -29,8 +29,4 @@ class BookingsTest {
         assertEquals(expected, testModel.getBookDesc());
     }
 
-
-
-
-
 }

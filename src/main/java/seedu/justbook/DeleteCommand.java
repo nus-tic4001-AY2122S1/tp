@@ -31,7 +31,12 @@ public class DeleteCommand {
     public void execute(List<Bookings> appointments) {
         switch (type) {
         case "single":
-            deleteSingle(appointments);
+            try{
+                deleteSingle(appointments);
+            }catch(IndexOutOfBoundsException e){
+                System.out.println("Index out of bounds exception. Please input the delete command again.");
+            }
+
             break;
 
         case "range":
@@ -51,6 +56,7 @@ public class DeleteCommand {
     public void deleteSingle(List<Bookings> appointments) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
         LocalDate temp;
+
         for (Bookings booking : appointments) {
             temp = LocalDate.parse(booking.getStartDate().format(formatter), formatter);
             if (temp.equals(startDate)) {

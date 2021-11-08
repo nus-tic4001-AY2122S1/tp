@@ -107,7 +107,7 @@ public class JustBook {
 
                 try {
                     AddCommand add = new AddCommand(booking, start, end);
-                    add.execute();
+                    add.execute(appointments);
                 } catch (DateTimeParseException err) {
                     System.out.println("Input date is invalid! Retry again?");
                 }
