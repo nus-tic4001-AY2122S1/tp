@@ -11,7 +11,7 @@ import java.util.List;
 
 import static java.time.LocalDateTime.parse;
 
-public class AddCommand {
+public class AddCommand extends Command {
     Bookings record;
 
     public AddCommand(String bookDesc, String begin, String end) throws DateTimeParseException {
@@ -46,5 +46,10 @@ public class AddCommand {
         } else {
             System.out.println("Invalid entry: 'start' time is after the 'end' time? Try again?");
         }
+    }
+
+
+    public static String getHelp() {
+        return "Adding an appointment: add [Appointment_Description] /s [Start_Time] /e [End_Time]";
     }
 }
