@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import java.util.List;
+
 import static java.time.LocalDateTime.parse;
 
 public class AddCommand {
@@ -24,13 +26,13 @@ public class AddCommand {
         record = new Bookings(bookDesc, parse(begin, format), parse(end, format));
     }
 
-    public void execute() {
+    public void execute(List<Bookings> appointments) {
         LocalDateTime begin = record.getStartDateTime();
         LocalDateTime end = record.getEndDateTime();
         String description = record.getBookDesc();
         // checks that 'start' time is before the 'end' time
         if (begin.isBefore(end)) {
-            JustBook.appointments.add(record);
+            appointments.add(record);
             System.out.printf("Successfully added \"%s\" from %s to %s%n",
                     description, begin, end);
             // appends the new booking entry to the database file

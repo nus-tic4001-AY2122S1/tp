@@ -29,7 +29,7 @@
 
 Fig 1. - JustBook Class Diagram Sample<br/><br/>
 
-![JustBook Seq Diag.](JustBookSeqDiag.png)
+![JustBook Seq Diag.](JustBook_Seq_Diag.png)
 
 Fig 2. - Sequence Diagram Illustration<br/><br/>
 
