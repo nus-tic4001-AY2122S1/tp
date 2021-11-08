@@ -31,9 +31,9 @@ public class DeleteCommand {
     public void execute(List<Bookings> appointments) {
         switch (type) {
         case "single":
-            try{
+            try {
                 deleteSingle(appointments);
-            }catch(IndexOutOfBoundsException e){
+            } catch (IndexOutOfBoundsException e) {
                 System.out.println("Index out of bounds exception. Please input the delete command again.");
             }
 

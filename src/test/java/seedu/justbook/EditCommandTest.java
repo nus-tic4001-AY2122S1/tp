@@ -22,7 +22,7 @@ class EditCommandTest {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("uuuu-M-d");
         LocalDate selectedDate = LocalDate.parse("2021-6-7", format);
 
-        EditCommand edit = new EditCommand("reading books", selectedDate, 1 );
+        EditCommand edit = new EditCommand("reading books", selectedDate, 1);
         edit.execute(appointments);
 
         assertEquals("reading books", appointments.get(0).getBookDesc());

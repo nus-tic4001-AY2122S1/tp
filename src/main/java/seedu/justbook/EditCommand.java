@@ -13,6 +13,7 @@ public class EditCommand {
         this.startDate = chosenDate;
         this.optionNumber = optionNum;
     }
+
     public void execute(List<Bookings> appointments) {
         int bookNum = optionNumber;
         LocalDate testDate = startDate;

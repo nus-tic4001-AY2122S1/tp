@@ -35,7 +35,7 @@ class DeleteCommandTest {
         AddCommand add = new AddCommand("meet@Sports Hall One lvl 3","2021-6-7 09:00", "2021-6-7 10:30");
         add.execute(appointments);
 
-        DeleteCommand delete = new DeleteCommand("2021-6-7", "1" , "single");
+        DeleteCommand delete = new DeleteCommand("2021-6-7", "1", "single");
         delete.execute(appointments);
 
         assertEquals(0,appointments.size());
@@ -58,10 +58,10 @@ class DeleteCommandTest {
         LocalDate start = LocalDate.parse("2021-6-7", format);
         LocalDate end = LocalDate.parse("2021-6-8", format);
 
-        DeleteCommand delete = new DeleteCommand(start, end , "range");
+        DeleteCommand delete = new DeleteCommand(start, end, "range");
         delete.execute(appointments);
 
         assertEquals(1,appointments.size());
-        assertEquals("meet@Sports Hall One lvl 5",appointments.get(1).getBookDesc());
+        assertEquals("meet@Sports Hall One lvl 5",appointments.get(0).getBookDesc());
     }
 }
