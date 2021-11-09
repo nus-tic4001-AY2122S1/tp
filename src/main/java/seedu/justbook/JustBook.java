@@ -183,7 +183,7 @@ public class JustBook {
                 break;
             case "help":
                 HelpCommand help = new HelpCommand();
-                help.execute();
+                help.execute(appointments);
                 break;
             case "undel":
                 if (inputContent.contains("a")) {

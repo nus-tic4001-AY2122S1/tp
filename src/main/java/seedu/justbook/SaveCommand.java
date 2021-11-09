@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class SaveCommand {
+public class SaveCommand extends Command {
     String filepath;
 
     public SaveCommand(String filepath) {
@@ -30,5 +30,9 @@ public class SaveCommand {
             //prints exception message.
             System.out.println(e.getMessage());
         }
+    }
+
+    public static String getHelp() {
+        return "The appointments will be saved when the application closes";
     }
 }
