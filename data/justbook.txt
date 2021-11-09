@@ -1,16 +1,1 @@
-<<<<<<< HEAD
 
-=======
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 4 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 3 | 2021-06-07T09:00 | 2021-06-07T10:30
-meet@Sports Hall One lvl 4 | 2021-06-08T09:00 | 2021-06-08T10:30
-meet@Sports Hall One lvl 5 | 2021-06-09T09:00 | 2021-06-09T10:30
-test we | 2021-11-13T09:00 | 2021-11-13T10:00
->>>>>>> 47eabba9f48a30bab20588d8f31b12bbe10a9f5c
