@@ -14,12 +14,23 @@ import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
 public class DeleteCommand extends Command {
+    /**
+     * The function to initialize a DeleteCommand variable.
+     *
+     * @param command The father class
+     */
     public DeleteCommand(String command) {
         super(command);
     }
 
     private static Logger logger = Logger.getLogger("DELETE");
 
+    /**
+     * Execution function - to delete specific item in the recorded list.
+     *
+     * @param itemList the list contain all the items recorded by user
+     * @throws InputErrorException to throw an error to upper layer when the index user key-in is out of range
+     */
     public void run(ItemList itemList) throws InputErrorException {
 
         // log a message at INFO level
