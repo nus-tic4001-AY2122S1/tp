@@ -73,7 +73,7 @@ public class ItemList {
     }
 
     /**
-     * The function to get overall income amount
+     * The function to get overall income amount.
      * @return double type, overall income amount
      */
     public double getIncomeAmount() {
@@ -81,7 +81,7 @@ public class ItemList {
     }
 
     /**
-     * The function to return total expense amount
+     * The function to return total expense amount.
      * @return double type, total expense amount
      */
     public double getExpenseAmount() {
@@ -89,7 +89,7 @@ public class ItemList {
     }
 
     /**
-     * The function to return the first date to use this system
+     * The function to return the first date to use this system.
      * @return Date type first date
      */
     public Date getEarliestDate() {
@@ -97,7 +97,7 @@ public class ItemList {
     }
 
     /**
-     * The function to return the date of adding last item
+     * The function to return the date of adding last item.
      * @return Date type, the date of adding last item
      */
     public Date getLatestDate() {
