@@ -45,7 +45,7 @@ public class UI {
 
     /**
      * The function to print out the delete message.
-     * In the delete message, the message be deleted details and the remaining item amount will be printed
+     * In the delete message, the message be deleted details and the remaining item amount will be printed.
      *
      * @param item the item be deleted
      * @param size the remaining size of the list
@@ -82,7 +82,7 @@ public class UI {
     }
 
     /**
-     * The function to print user using summary
+     * The function to print user using summary.
      * Things to be printed:
      *                         - First day
      *                         - Total income
