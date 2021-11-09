@@ -15,7 +15,7 @@ import java.util.logging.SimpleFormatter;
 
 public class DeleteCommand extends Command {
     /**
-     * The function to initialize a DeleteCommand variable
+     * The function to initialize a DeleteCommand variable.
      *
      * @param command The father class
      */
