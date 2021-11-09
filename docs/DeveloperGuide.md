@@ -30,7 +30,7 @@
 * Delete Command
 * Add Command
 
-## Documentation, logging, testing, (configuration, dev-ops)
+## Documentation, logging, testing (configuration, dev-ops)
 * **Testing Guide**
 * **Logging Guide**
 
@@ -84,6 +84,8 @@
 * **Glossary**
 
   **Mainstream OS**:  Windows, Linux, Unix, OS-X
+
+## Appendix:  Instructions for manual testing
 
 * **Instructions for manual testing**
 
