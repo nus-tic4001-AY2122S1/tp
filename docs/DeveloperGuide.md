@@ -16,11 +16,11 @@
 * *Common classes* (ItemList)
 
 1. Class diagram (refer to the image below).<br/>
-   <img src="Diagram/class_diagram.jpg">
+   <img src="Diagram/class_diagram.jpg" with="600" height=auto>
 2. Object diagram.<br/>
-   ![Object Diagram](./Diagram/object_diagram.jpg)
+   <img src="Diagram/object_diagram.jpg" width="300">
 3. Sequence diagram.<br/>
-   ![Sequence Diagram](./Diagram/sequence_diagram.jpg)
+   <img src="Diagram/sequence_diagram.jpg" width="300">
    
 
 ## Implementation (Sequence Diagram)
