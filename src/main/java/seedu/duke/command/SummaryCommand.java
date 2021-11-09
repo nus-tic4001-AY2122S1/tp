@@ -7,11 +7,26 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class SummaryCommand extends Command {
-
+    /**
+     * The function to initialize a SummaryCommand type variable
+     */
     public SummaryCommand() {
         super("summary");
     }
 
+    /**
+     * The function to execute an summary command
+     * In this function, summary of the usage will be printed
+     * Printed summary:
+     *                  - First day
+     *                  - Total income
+     *                  - Total expense
+     *                  - Balance amount
+     *                  - Average Daily Expense (first item to last item)
+     *                  - Available remaining
+     *
+     * @param itemList
+     */
     @Override
     public void run(ItemList itemList) {
         double overallExpenseAmount = itemList.getExpenseAmount();

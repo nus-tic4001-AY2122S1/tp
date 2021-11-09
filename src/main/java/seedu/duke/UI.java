@@ -43,6 +43,13 @@ public class UI {
         }
     }
 
+    /**
+     * The function to print out the delete message.
+     * In the delete message, the message be deleted details and the remaining item amount will be printed
+     *
+     * @param item the item be deleted
+     * @param size the remaining size of the list
+     */
     public static void deleteMessage(Item item, int size) {
         System.out.println("Noted. I've removed this item: ");
         System.out.println("  " + item);
@@ -74,6 +81,22 @@ public class UI {
         System.out.println("Bye. Hope to see you again soon!");
     }
 
+    /**
+     * The function to print user using summary
+     * Things to be printed:
+     *                         - First day
+     *                         - Total income
+     *                         - Total expense
+     *                         - Balance amount
+     *                         - Average Daily Expense (first item to last item)
+     *                         - Available remaining
+     * @param mean all expense average
+     * @param remaining remaining amount ( Total income - total expense )
+     * @param totalIncome total income from the first day
+     * @param totalExpense total expense from the first day
+     * @param days total days using this software
+     * @param firstDay the first day to use this software
+     */
     public static void printSummaryMessage(double mean,
                                            double remaining,
                                            double totalIncome,

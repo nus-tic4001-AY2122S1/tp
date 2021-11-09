@@ -72,18 +72,34 @@ public class ItemList {
         items.set(index, newItem);
     }
 
+    /**
+     * The function to get overall income amount
+     * @return double type, overall income amount
+     */
     public double getIncomeAmount() {
         return incomeAmount;
     }
 
+    /**
+     * The function to return total expense amount
+     * @return double type, total expense amount
+     */
     public double getExpenseAmount() {
         return expenseAmount;
     }
 
+    /**
+     * The function to return the first date to use this system
+     * @return Date type first date
+     */
     public Date getEarliestDate() {
         return earliestDate;
     }
 
+    /**
+     * The function to return the date of adding last item
+     * @return Date type, the date of adding last item
+     */
     public Date getLatestDate() {
         return latestDate;
     }
