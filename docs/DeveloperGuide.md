@@ -30,12 +30,12 @@
  * *Product scope*
   #### Target user profile
 
-* Users who have the difficulty to record and manage the incomes and expenses
+  * Users who have the difficulty to record and manage the incomes and expenses
 
- * *Value proposition*
+  ####Value proposition*
 
-* Keep track of the income and expense item
-* analysis daily / monthly expense
+   * Keep track of the income and expense item
+   * analysis daily / monthly expense
 
 * *User Stories*
 
@@ -68,14 +68,14 @@
 
 ####Use case: Find Item
 
-## Non-Functional Requirements
+* Non-Functional Requirements
 
-* Should work on any mainstream OS as long as it has Java 11 or above installed.
+  Should work on any mainstream OS as long as it has Java 11 or above installed.
 
-## Glossary
+* Glossary
 
 * **Mainstream OS**:  Windows, Linux, Unix, OS-X
 
-## Instructions for manual testing
+* Instructions for manual testing
 
 {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
