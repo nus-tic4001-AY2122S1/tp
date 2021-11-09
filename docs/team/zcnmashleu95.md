@@ -32,7 +32,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
       - Added documentation for the features "help and "deleting a single appointment"
     - Developer Guide:
       - Edited Target User Profle, Design Section and the testing section
-    - Added Class and Sequential Diagrams
+    - Added Class and Sequential Diagram 2
 - Community:
   - PRs reviewed : 
   1) https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/8 
