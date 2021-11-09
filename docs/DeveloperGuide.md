@@ -16,8 +16,7 @@
 * *Common classes* (ItemList)
 
 1. Class diagram (refer to the image below).<br/>
-   <img src="diagram/class_diagram.jpg">
-   ![Class Diagram](./diagram/class_diagram.jpg)
+   <img src="Diagram/class_diagram.jpg">
 2. Object diagram.<br/>
    ![Object Diagram](./diagram/object_diagram.jpg)
    
