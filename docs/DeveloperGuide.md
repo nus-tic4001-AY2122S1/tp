@@ -27,17 +27,17 @@
 
 ## Appendix: Requirements
 
-## *Product scope*
-### Target user profile
+ * *Product scope*
+  #### Target user profile
 
 * Users who have the difficulty to record and manage the incomes and expenses
 
-### Value proposition
+ * *Value proposition*
 
 * Keep track of the income and expense item
 * analysis daily / monthly expense
 
-## User Stories
+* *User Stories*
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
@@ -52,7 +52,7 @@
 |v2.0|user|I need to save and read file|I can load the expenses/ salary data|
 
 
-## Use Cases
+* *Use Cases*
 
 (For all use cases below, the System is the Expenses Tracking App and the Actor is the user, unless specified otherwise)
 
