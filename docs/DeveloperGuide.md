@@ -4,7 +4,14 @@
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
-## Design & implementation
+## Design 
+
+* *Architecture*
+* *UI component*  
+* *Logic component*
+* *Model component*
+* *Storage component*
+* *Common classes*
 
 1. Class diagram (refer to the image below).<br/>
    ![Class Diagram](./diagram/class_diagram.jpg)
@@ -12,9 +19,15 @@
    ![Object Diagram](./diagram/object_diagram.jpg)
 1. Sequence diagram.<br/>
    ![Sequence Diagram](./diagram/sequence_diagram.jpg)
+   
+ 
+## Implementation
 
+## Documentation, logging, testing, configuration, dev-ops
 
-## Product scope
+## Appendix: Requirements
+
+## *Product scope*
 ### Target user profile
 
 * Users who have the difficulty to record and manage the incomes and expenses
