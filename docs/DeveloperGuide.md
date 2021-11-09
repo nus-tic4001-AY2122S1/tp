@@ -7,11 +7,11 @@
 ## Design & implementation
 
 1. Class diagram (refer to the image below).<br/>
-   ![Class Diagram](class_diagram.jpg)
+   ![Class Diagram](./diagram/class_diagram.jpg)
 1. Object diagram.<br/>
-   ![Object Diagram](object_diagram.jpg)
+   ![Object Diagram](./diagram/object_diagram.jpg)
 1. Sequence diagram.<br/>
-   ![Sequence Diagram](sequence_diagram.jpg)
+   ![Sequence Diagram](./diagram/sequence_diagram.jpg)
 
 
 ## Product scope
