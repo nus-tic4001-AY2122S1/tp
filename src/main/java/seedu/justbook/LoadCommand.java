@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import static java.time.LocalDateTime.parse;
 
-public class LoadCommand {
+public class LoadCommand extends Command {
     String filepath;
 
     public LoadCommand(String filepath) {
@@ -33,5 +33,9 @@ public class LoadCommand {
             LocalDateTime end = parse(readData[2]);
             appointments.add(new Bookings(readData[0], start, end));
         }
+    }
+
+    public static String getHelp() {
+        return "The application loads the appointments from the JustBook text file.";
     }
 }

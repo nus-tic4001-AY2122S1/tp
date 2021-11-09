@@ -1,18 +1,39 @@
 package seedu.justbook;
 
-public class HelpCommand {
-    public void execute() {
-        String instructions = "For each command, their inputs will be in the square brackets[]. "
-                + "The format will follow Command [Input]"
+import java.util.List;
+
+public class HelpCommand extends Command {
+    public void execute(List<Bookings> appointments) {
+        String instructions = "Currently, you have " + appointments.size() + "appointments."
+                + "\n"
+                + "Here is the help section. For each command, their inputs will be in the square brackets[]. "
+                + "The format will follow Command [Input]. "
+                + "Dates follow the format [yyyy-M-d] eg. 2020-10-10 for the 10th of October 2020."
                 + "\n"
                 + "Commands: "
                 + "\n"
-                + "Adding an appointment: add [Appointment_Description] /s [Start_Time] /e [End_Time]"
+                +  AddCommand.getHelp()
                 + "\n"
-                + "Deleting an appointment: " + DeleteCommand.getHelp()
+                +  DeleteCommand.getHelp()
                 + "\n"
-                + "Editing an appointment: edit [description] /s [Appointment_Start_Date] /o [Option_Number]";
+                +  EditCommand.getHelp()
+                + "To Undelete a previously deleted appointment: undel all"
+                + "\n"
+                + "To block a range of dates: block [Appointment_Start_Date] [Appointment_End_Date]"
+                + "\n"
+                + "To unblock a range of dates: unblock [Appointment_Start_Date] [Appointment_End_Date]"
+                + "\n"
+                + "Showing a specific date's list of bookings: show [Appointment_Start_Date]"
+                + "\n"
+                + "Showing all weekends bookings (current month): show we"
+                + "\n"
+                + "To exit the application: exit";
+
 
         System.out.println(instructions);
+    }
+
+    public static String getHelp() {
+        return "The help command guides and provides help instructions for the user.";
     }
 }

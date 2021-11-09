@@ -3,7 +3,7 @@ package seedu.justbook;
 import java.time.LocalDate;
 import java.util.List;
 
-public class EditCommand {
+public class EditCommand extends Command {
     private String amendDesc;
     LocalDate startDate;
     int optionNumber;
@@ -36,5 +36,9 @@ public class EditCommand {
             }
         }
         System.out.println("Your appointment is not stored in our calendar. Pl check the start date.");
+    }
+
+    public static String getHelp() {
+        return "Editing an appointment: edit [description] /s [Appointment_Start_Date] /o [Option_Number]";
     }
 }

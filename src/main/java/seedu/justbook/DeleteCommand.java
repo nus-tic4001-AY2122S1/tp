@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 
-public class DeleteCommand {
+public class DeleteCommand extends Command {
     LocalDate startDate;
     LocalDate endDate;
     int optionNumber;
@@ -72,8 +72,13 @@ public class DeleteCommand {
         System.out.println("Your appointment is not stored in our calendar. Please input a new command");
     }
 
+
     public static String getHelp() {
-        return "del [Appointment_Start_Date] /o [Option_Number]";
+        return "Deleting an appointment: del [Appointment_Start_Date] /o [Option_Number]"
+                + "\n"
+                + "Deleting a range of appointments: del [Appointment_Start_Date] [Appointment_End_Date]"
+                + "\n"
+                + "Deleting all appointments: del all";
     }
 
     public void deleteRange(List<Bookings> appointments) {
