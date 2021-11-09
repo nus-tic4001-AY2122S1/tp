@@ -18,10 +18,9 @@
 1. Class diagram (refer to the image below).<br/>
    <img src="Diagram/class_diagram.jpg">
 2. Object diagram.<br/>
-   ![Object Diagram](./diagram/object_diagram.jpg)
-   
+   ![Object Diagram](./Diagram/object_diagram.jpg)
 3. Sequence diagram.<br/>
-   ![Sequence Diagram](./diagram/sequence_diagram.jpg)
+   ![Sequence Diagram](./Diagram/sequence_diagram.jpg)
    
 
 ## Implementation (Sequence Diagram)
