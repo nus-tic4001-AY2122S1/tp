@@ -8,15 +8,15 @@ import java.util.Date;
 
 public class SummaryCommand extends Command {
     /**
-     * The function to initialize a SummaryCommand type variable
+     * The function to initialize a SummaryCommand type variable.
      */
     public SummaryCommand() {
         super("summary");
     }
 
     /**
-     * The function to execute an summary command
-     * In this function, summary of the usage will be printed
+     * The function to execute an summary command.
+     * In this function, summary of the usage will be printed.
      * Printed summary:
      *                  - First day
      *                  - Total income
@@ -25,7 +25,7 @@ public class SummaryCommand extends Command {
      *                  - Average Daily Expense (first item to last item)
      *                  - Available remaining
      *
-     * @param itemList
+     * @param itemList the list stored all items in system
      */
     @Override
     public void run(ItemList itemList) {
