@@ -1,5 +1,7 @@
 # Developer Guide
 
+## Setting up, getting started
+
 ## Acknowledgements
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
@@ -37,7 +39,7 @@
 
   * Users who have the difficulty to record and manage the incomes and expenses
 
-  ####Value proposition
+  #### Value proposition
 
    * Keep track of the income and expense item
    * analysis daily / monthly expense
@@ -61,17 +63,17 @@
 
 (For all use cases below, the System is the Expenses Tracking App and the Actor is the user, unless specified otherwise)
 
-####Use case: Add Expenses
+#### Use case: Add Expenses
 
-####Use case: Add Income
+#### Use case: Add Income
 
-####Use case: Delete Item
+#### Use case: Delete Item
 
-####User case: Add Income
+#### User case: Add Income
 
-####Use case: List Item
+#### Use case: List Item
 
-####Use case: Find Item
+#### Use case: Find Item
 
 * Non-Functional Requirements
 
