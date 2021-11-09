@@ -22,6 +22,7 @@
         <img src="Diagram/object_diagram.jpg" width="500">
 3. ```Sequence diagram```<br/>
         <img src="Diagram/sequence_diagram.jpg" width="400" height="600">
+
    
 
 ## Implementation (Sequence Diagram)
