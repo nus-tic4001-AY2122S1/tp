@@ -14,7 +14,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
     - This feature is implemented in the HelpCommand Class. This feature prints out instructions about how the command works. This is useful for the user
     if the user has forgotten what are the available commands.
 
-- Code contributed: [Team04_zcnmashleu95]()
+- Code contributed: [Team04_zcnmashleu95](https://tinyurl.com/e2ksmuvb)
 
 - Project management:
     - Helped to assist teammates in their enquiries
@@ -39,5 +39,3 @@ an offline backup file. The user interacts with it using a CLI. It is written in
   2) https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/10
   3) https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/29
 
-- Tools:
-    - Gradle
