@@ -6,7 +6,12 @@
 
 ## Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+1. Class diagram (refer to the image below).<br/>
+   ![Class Diagram](./diagram/class_diagram.jpg)
+1. Object diagram.<br/>
+   ![Object Diagram](./diagram/object_diagram.jpg)
+1. Sequence diagram.<br/>
+   ![Sequence Diagram](./diagram/sequence_diagram.jpg)
 
 
 ## Product scope

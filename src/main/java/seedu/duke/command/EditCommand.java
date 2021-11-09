@@ -8,6 +8,7 @@ import seedu.duke.UI;
 import seedu.duke.item.Expense;
 import seedu.duke.item.Income;
 import seedu.duke.item.Item;
+import seedu.duke.Storage;
 
 import java.util.Date;
 
@@ -44,5 +45,6 @@ public class EditCommand extends Command {
         }
 
         UI.editMessage(index, itemList.items, temp);
+        Storage storage = new Storage();
     }
 }

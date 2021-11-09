@@ -8,118 +8,120 @@ Interface (CLI).
 ## Quick Start
 
 1. Ensure you have java 11 or above installed in your computer.
-1. Download the latest RMS.jar from [here](https://github.com/AY2122S1-TIC4001-F18-2/tp/releases).
-1. Copy the file to the folder you want to use as a home folder for your Expenses Management System.
-1. Double-click the file to start the app.
-1. Type the command in the command box and press Enter to execute. e.g typing “list” and pressing Enter will show the
+2. Download the latest RMS.jar from [here](https://github.com/AY2122S1-TIC4001-F18-2/tp/releases).
+3. Copy the file to the folder you want to use as a home folder for your Expenses Management System.
+4. Double-click the file to start the app.
+5. Type the command in the command box and press Enter to execute. e.g typing “list” and pressing Enter will show the
    list of expenses. <br/>
    Some example commands you can try:
-
-* ```list ```: list all expenses.
-* ```exit ```: exits the app.
+* Add an expense: `expense lunch /food /12 /12-10-2021`
+* Add an income: `income Company A /salary /2000 /01-10-2021`
+* List all items: `list`
+* Delete an item: `delete 1`
+* Search for item: `find salary`
+* Edit an item: `edit 1 /income Company B /salary /3000 /01-10-2021`
+* Sort all items: `sort`
+* Summarize all items: `summary`
+* Exit the program: `exit`
+6. Refer to the **Features** below for details of each command.
 
 ## Features
 
-* Adding an expense: expense
-* Adding an income: income
-* Listing all expense: list
-* Delete an expense: delete
-* Search for expense: find
-* Exit the program: exit
+**Words in UPPER_CASE are the parameters to be supplied by the user.**
 
-### Adding an expense: `expense`
+### Add an expense: `expense`
 
-Adds a new expense item to the list of items.
+Adds a new expense item to the list.
 
-Format: `expense`
+Format: `expense DESCRIPTION /CATEGORY /AMOUNT /DATE`
+* `DESCRIPTION`: name of expense
+* `CATEGORY`: category type of expense
+* `AMOUNT`: amount of expense
+* `DATE`: date of expense incurred
 
-* `description, category, amount, date`
+Example: `expense lunch /food /12 /12-10-2021`
 
-Example of usage: <br/>
-`expense` <br/>
-Please key in the expense description:<br/>
-`lunch` <br/>
-Please key in the category: <br/>
-`F&B` <br/>
-Please key in the amount: <br/>
-`15` <br/>
-Please key in the date: <br/>
-`2021-10-28` <br/>
-Got it. I've added this item: <br/>
-[E] [F&B] lunch ($15.0) (0034-Apr-13) <br/>
-Now you have 1 items in the list. <br/>
+### Add an expense: `income`
 
-### Adding an expense: `income`
+Adds a new income item to the list.
 
-Adds a new income item to the list of items.
+Format: `income DESCRIPTION /CATEGORY /AMOUNT /DATE`
+* `DESCRIPTION`: name of income
+* `CATEGORY`: category type of income
+* `AMOUNT`: amount of income
+* `DATE`: date of income received
 
-Format: `income`
+Example: `income Company A /salary /2000 /01-10-2021`
 
-* `description, category, amount, date`
+### List all items: `list`
 
-Example of usage: <br/>
-`income` <br/>
-Please key in the expense description:<br/>
-`Company A` <br/>
-Please key in the category: <br/>
-`salary` <br/>
-Please key in the amount: <br/>
-`3000` <br/>
-Please key in the date: <br/>
-`2021-10-28` <br/>
-Got it. I've added this item: <br/>
-[I] [salary] Company A ($3000.0) (0034-Apr-13) <br/>
-Now you have 1 items in the list. <br/>
+list all items.
 
-###Deleting a Expense: `delete`
+Format: `list`
 
-Delete existing expense record from the list of expense items.
+Example: `list`
 
-Format: 
-* Step I: key in `delete`
-* Step II: key in `expense index` in integer type
+### Delete a Expense: `delete`
 
-Example of usage:
+Delete existing an item in the list.
 
-`Hi, I am Duke!`
+Format: `delete INDEX`
+* `INDEX`: index number of the item in the list
 
-`What can I help you?`
+Example: `delete 1`
 
-`delete`
+### Search items: `find`
 
-`Please key in the index:`
+Search the task with the keyword.
 
-`1`
+Format: `find KEYWORD`
+* `KEYWORD`: the keyword to search
 
-### List an expense: `list`
+Example: `find salary`
 
-list expenses items
+### Edit item: `edit`
 
-Format: `income`
+Edit the item in the list.
 
-Here are the items in your list: <br/>
-1.[E] [F&B] lunch ($15.0) (0034-Apr-13) <br/>
-2.[E] [meal] dinner ($10.0) (0021-Nov-26)
-Wourld you like sorting by expenses by amount
-(Please key in sorting command: sort)
+Format: `edit INDEX /TYPE DESCRIPTION /CATEGORY /AMOUNT /DATE`
+* `INDEX`: index number of the item in the list
+* `TYPE`: expense or income
+* `DESCRIPTION`: name of new item
+* `CATEGORY`: category type of new item
+* `AMOUNT`: amount of new item
+* `DATE`: date of new item
 
-### Sort an expense: `sort`
+Example: `edit 1 /income Company B /salary /3000 /01-10-2021`
 
-sorting expenses by amount after `list` to display all expenses items
+### Sort items: `sort`
 
-Format: `sort`
+Sort items in the list.
 
-Sorting by ascending/ descending please type : asc or desc <br/>
-`asc` <br/>
-Here are the items in your list: <br/>
-1.[E] [meal] dinner ($10.0) (26-Nov-2021)<br/>
-2.[E] [F&B] lunch ($15.0) (03-Apr-20)<br/>
-Wourld you like sorting by expenses by amount
-(Please key in sorting command: sort)
+Format: `sort /ORDER /TYPE`
+* `ORDER`: asc or desc
+* `TYPE`: amount or date
 
+Example: `sort /asc /date`
 
+### Summarize all items: `summary`
 
+Generate summary information of the list.
 
+Format: `summary`
+
+Example: `summary`
+
+### Exit the program: `exit`
+
+Exit the program.
+
+Format: `exit`
+
+Example: `exit`
+
+### Save the data
+
+ProDuke data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ## FAQ
 
@@ -132,10 +134,12 @@ empty data file it creates with the file that contains the data of your previous
 
 **Action** | **Format, Examples**
 ------------ | -------------
-**Expense** | ```expense```, ```description, category, amount, date``` e.g.,```expense, lunch, F&B, 15, 2021-10-28 ```
-**Income** | ```income```, ```description, category, amount, date``` e.g.,```income, Oct salary, Salary, 3000, 2021-10-28 ```
-**List** | ```list ``` e.g., ```list ```
-**Delete** | ```delete INDEX ``` e.g., ```delete 2 ```
-**Find** | ```find KEYWORD ``` e.g., ```find lunch ```
-**Exit** | ```exit ``` e.g., ```exit ```
-**Sort** | ```sort``` e.g., asc or desc
+**Expense** | ```expense DESCRIPTION /CATEGORY /AMOUNT /DATE``` e.g.,```expense lunch /food /12 /12-10-2021```
+**Income** | ```income DESCRIPTION /CATEGORY /AMOUNT /DATE``` e.g.,```income Company A /salary /2000 /01-10-2021```
+**List** | ```list``` e.g., ```list```
+**Delete** | ```delete INDEX ``` e.g., ```delete 1```
+**Find** | ```find KEYWORD``` e.g., ```find salary```
+**Edit** | ```edit INDEX /TYPE DESCRIPTION /CATEGORY /AMOUNT /DATE``` e.g., ```edit 1 /income Company B /salary /3000 /01-10-2021```
+**Sort** | ```sort /ORDER /TYPE``` e.g., ```sort /asc /date```
+**Summary** | ```summary``` e.g., ```summary```
+**Exit** | ```exit``` e.g., ```exit```

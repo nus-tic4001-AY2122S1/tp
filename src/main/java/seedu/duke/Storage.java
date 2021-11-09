@@ -1,28 +1,20 @@
-package seedu.duke.command;
-
-import seedu.duke.ItemList;
-import seedu.duke.UI;
+package seedu.duke;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.FileReader;
 
-public class ReadCommand extends Command {
 
-    public ReadCommand(String fullCommand) {
-        super(fullCommand);
-    }
+public class Storage {
 
-    @Override
-    public void run(ItemList itemList) {
-
-        itemList.items.clear();
-        ItemList saveItemList = itemList;
+    public void loadFromStorage(ItemList saveItemList) {
 
         try {
             FileReader fileReader = new FileReader("./file/expenses.txt");
@@ -44,7 +36,7 @@ public class ReadCommand extends Command {
                     String descCatAmountAndDate = item + " " + category + " " + description + " " + amount + " " + date;
 
                     final String regex = "\\[(\\w+)\\]\\s(\\w+)\\s\\[(\\w+)\\]\\s\\"
-                                         + "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
+                            + "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
 
                     final Pattern pattern = Pattern.compile(regex);
                     final Matcher matcher = pattern.matcher(descCatAmountAndDate);
@@ -72,8 +64,27 @@ public class ReadCommand extends Command {
         } catch (FileNotFoundException | ParseException e) {
             e.printStackTrace();
         }
-
-        System.out.println("Expenses file read successfully from file/expenses.txt.\n");
-        UI.listMessage(saveItemList.items);
     }
+
+    public void saveToStorage(ItemList itemList) {
+        try {
+            FileWriter fw = new FileWriter("./file/expenses.txt");
+
+            if (itemList.size != 0) {
+                fw.write("Here are the items in your list:" + "\n");
+            }
+
+            for (int i = 0; i < itemList.items.size(); i++) {
+                fw.write(i + 1 + "." + itemList.items.get(i).toString() + "\n");
+            }
+            System.out.println("Expenses file save successfully to file/expenses.txt");
+            fw.close();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException e) {
+            System.out.println("Something went wrong" + e.getMessage());
+        }
+    }
+
 }

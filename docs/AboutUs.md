@@ -2,7 +2,7 @@
 
 Display | Name | Github Profile | Portfolio 
 --------|:----:|:--------------:|:---------:
-![](https://via.placeholder.com/100.png?text=Photo) | Yang Shuogeng | ![Github](./Member Photo/github logo.png) [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Wang Wenwei | ![Github](./Member Photo/github logo.png) [Github](https://github.com/)| [Portfolio](docs/team/johndoe.md)
-![developer](./Member Photo/mojito.jpg)| Lim Chun Yong  | ![Github](./Member Photo/github logo.png)[Github](https://github.com/jr-mojito/tp) | [Portfolio](docs/team/limchunyong.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Zhang Yun | ![Github](./Member Photo/github logo.png)|[Github](https://github.com/) [Portfolio](docs/team/johndoe.md)
+![](https://via.placeholder.com/100.png?text=Photo) | Yang Shuogeng | <a href="https://github.com/jr-mojito/tp"> <img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"> </a> | [Portfolio](docs/team/johndoe.md)
+<img src="Member%20Photo/WangWenwei.jpg" width="100" height="100">| Wang Wenwei | <a href="https://github.com/e0373972/tp"> <img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"> </a> | [Portfolio](https://github.com/AY2122S1-TIC4001-F18-2/tp/tree/master/docs/team/e0373972.md)
+<img src="Member%20Photo/mojito.jpg" width="100" height="100">| Lim Chun Yong  | <a href="https://github.com/jr-mojito/tp"> <img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"> </a> | [Portfolio](https://github.com/AY2122S1-TIC4001-F18-2/tp/tree/master/docs/team/jr-mojito.md)
+<img src="Member%20Photo/ZhangYun.jpg" width="100" height="100"> | Zhang Yun | <a href="https://github.com/zyjarvis/tp"> <img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"> </a> | [Portfolio](https://github.com/AY2122S1-TIC4001-F18-2/tp/tree/master/docs/team/zyjarvis.md)

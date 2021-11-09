@@ -19,7 +19,11 @@ public class Duke {
     }
 
     private void run() {
+        Storage fileStorage = new Storage();
+        fileStorage.loadFromStorage(this.itemList);
+
         UI.welcome();
+
         // log a message at INFO level
         FileHandler fh;
         try {
@@ -38,6 +42,7 @@ public class Duke {
             try {
                 logger.log(Level.INFO, "New input to execute");
                 String fullCommand = UI.readCommand();
+                assert !fullCommand.isEmpty() : "Empty input is not allowed";
                 Execution execution = new Execution(fullCommand);
                 execution.execute(itemList);
                 isExit = execution.isExit;
