@@ -20,8 +20,11 @@ Adds a new item to the list of booking items.
 
 * The `BOOKING_DESC` can be in a natural language format.
 * The `DATE TIME` uses format *yyyy-M-d* *HH:mm*.
-* Current version allows within same day booking only.
-* User expected to input non-clashing same day timing ranges.
+* Current version allows within-same-day booking only.
+* Will first check whether booking entry date is allowed or denied using the BLOCKLIST database. 
+* User expected to input reasonable non-clashing same-day timing ranges.
+* _Add bookings that span days (coming feature)._
+* _Will check whether there are clashing same-day timing ranges (coming feature)._ 
 
 <ins>**_Example of usage_**<ins> 
 
@@ -56,16 +59,17 @@ Erase all records inside the online appointment database.
 
 
 ### Editing a booking: `edit`
-Edits the booking description of the chosen item (current v2.0).
+Edits the booking description of the chosen item.
 
 **Format**: `edit BOOKING_DESC /s DATE /o OPTION NO.`
 
 * The `BOOKING_DESC` can be in a natural language format.
 * The `DATE` uses format *yyyy-M-d*.
 * Current version allows editing the booking text-description only.
+* _Edit the date and time slot, with possible scheduling conflict checking for user (coming feature)._
 * `OPTION NO.` = the serial no. of an item under a booking list display. 
 * Before using `edit`, user is expected to open up first either
-  - a specific date entries listing _(e.g. via `show <date>`)_ or 
+  - a specific date entries listing _(e.g. via `show <date>` or `show weekends`)_ or 
   - the entire database listing _(e.g. via `show <--all>`)_.
 
 <ins>**_Example of usage_**<ins>
