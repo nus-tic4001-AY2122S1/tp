@@ -1,6 +1,7 @@
 # Developer Guide
 
 ## Setting up, getting started
+**Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
 
 ## Acknowledgements
 
@@ -16,12 +17,11 @@
 * *Common classes* (ItemList)
 
 1. Class diagram (refer to the image below).<br/>
-   ![Class Diagram](./diagram/class_diagram.jpg)
-1. Object diagram.<br/>
-   ![Object Diagram](./diagram/object_diagram.jpg)
-   
-1. Sequence diagram.<br/>
-   ![Sequence Diagram](./diagram/sequence_diagram.jpg)
+        <img src="Diagram/class_diagram.jpg" with="2500" height=auto>
+2. Object diagram.<br/>
+        <img src="Diagram/object_diagram.jpg" width="500">
+3. Sequence diagram.<br/>
+        <img src="Diagram/sequence_diagram.jpg" width="400" height="600">
    
 
 ## Implementation (Sequence Diagram)
@@ -31,20 +31,22 @@
 * Add Command
 
 ## Documentation, logging, testing, (configuration, dev-ops)
+* **Testing Guide**
+* **Logging Guide**
 
 ## Appendix: Requirements
 
- * *Product scope*
-  #### Target user profile
+ * **Product scope** </br>
+   ```Target user profile```
 
-  * Users who have the difficulty to record and manage the incomes and expenses
+   Users who have the difficulty to record and manage the incomes and expenses
 
-  #### Value proposition
+   ```Value proposition```
 
    * Keep track of the income and expense item
    * analysis daily / monthly expense
 
-* *User Stories*
+* **User Stories**
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
@@ -59,30 +61,30 @@
 |v2.0|user|I need to save and read file|I can load the expenses/ salary data|
 
 
-* *Use Cases*
+* **Use Cases**
 
-(For all use cases below, the System is the Expenses Tracking App and the Actor is the user, unless specified otherwise)
+      (For all use cases below, the System is the Expenses Tracking App and the Actor is the user, unless specified otherwise)
 
-#### Use case: Add Expenses
+      Use case: Add Expenses
 
-#### Use case: Add Income
+      Use case: Add Income
 
-#### Use case: Delete Item
+      Use case: Delete Item
 
-#### User case: Add Income
+      User case: Add Income
 
-#### Use case: List Item
+      Use case: List Item
 
-#### Use case: Find Item
+      Use case: Find Item
 
-* Non-Functional Requirements
+* **Non-Functional Requirements**
 
   Should work on any mainstream OS as long as it has Java 11 or above installed.
 
-* Glossary
+* **Glossary**
 
-* **Mainstream OS**:  Windows, Linux, Unix, OS-X
+  **Mainstream OS**:  Windows, Linux, Unix, OS-X
 
-* Instructions for manual testing
+* **Instructions for manual testing**
 
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+   {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
