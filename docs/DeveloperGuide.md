@@ -7,23 +7,28 @@
 ## Design 
 
 * *Architecture*
-* *UI component*  
-* *Logic component*
-* *Model component*
-* *Storage component*
-* *Common classes*
+* *UI component* (CLI, Input/ Output)  
+* *Logic component* (Execution, Command, Parser)
+* *Model component* (Item, Expense, Income)
+* *Storage component* (Storage)
+* *Common classes* (ItemList)
 
 1. Class diagram (refer to the image below).<br/>
    ![Class Diagram](./diagram/class_diagram.jpg)
 1. Object diagram.<br/>
    ![Object Diagram](./diagram/object_diagram.jpg)
+   
 1. Sequence diagram.<br/>
    ![Sequence Diagram](./diagram/sequence_diagram.jpg)
    
- 
-## Implementation
 
-## Documentation, logging, testing, configuration, dev-ops
+## Implementation (Sequence Diagram)
+* Search Command
+* List Command
+* Delete Command
+* Add Command
+
+## Documentation, logging, testing, (configuration, dev-ops)
 
 ## Appendix: Requirements
 
@@ -32,7 +37,7 @@
 
   * Users who have the difficulty to record and manage the incomes and expenses
 
-  ####Value proposition*
+  ####Value proposition
 
    * Keep track of the income and expense item
    * analysis daily / monthly expense
