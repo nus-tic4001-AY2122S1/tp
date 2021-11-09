@@ -42,6 +42,7 @@ public class Duke {
             try {
                 logger.log(Level.INFO, "New input to execute");
                 String fullCommand = UI.readCommand();
+                assert !fullCommand.isEmpty() : "Empty input is not allowed";
                 Execution execution = new Execution(fullCommand);
                 execution.execute(itemList);
                 isExit = execution.isExit;

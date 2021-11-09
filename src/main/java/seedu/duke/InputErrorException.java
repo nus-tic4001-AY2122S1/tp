@@ -15,10 +15,6 @@ public class InputErrorException extends Exception {
         System.out.println("OOPS!!! The input date format wrong. Please try again.\n");
     }
 
-    static void toPrintListFormatError() {
-        System.out.println("OOPS!!! The list input format wrong. Please try again.\n");
-    }
-
     static void toPrintSortFormatError() {
         System.out.println("OOPS!!! The sort input format wrong. Please try again.\n");
         System.out.println("[Help] Command: \n sort /asc /amount \n"
