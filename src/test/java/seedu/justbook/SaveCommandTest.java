@@ -13,7 +13,7 @@ public class SaveCommandTest {
         File file = new File("data/justbook.txt");
         boolean expectedResult = true;
         boolean actualResult = false;
-        if (file.exists()){
+        if (file.exists()) {
             actualResult = true;
         }
         assertEquals(expectedResult, actualResult);
