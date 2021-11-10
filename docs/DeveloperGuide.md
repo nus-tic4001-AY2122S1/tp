@@ -33,7 +33,9 @@ Fig 1. - JustBook Class Diagram Sample<br/><br/>
 
 Fig 2. - Sequence Diagram Illustration<br/><br/>
 
+![JustBook Seq Diag.](JustBook_Seq_Diag3.png)
 
+Fig 3. - Sequence Diagram  Illustration<br/><br/>
 
 The `show weekends` or `show we` mechanism is facilitated by two JustBook Class-level helper methods, namely, 
 **listWeekends()** and **weekendListings()**. 
