@@ -46,7 +46,7 @@ Blocks users from creating appointments during a specific date range.
 `block 2021-11-5 2021-11-30`
 
 
-### Deleting all bookings: `del <--all>`
+### Deleting all bookings: `del --all>`
 Erase all records inside the online appointment database.
 
 **Format**: `del --all` 
@@ -56,6 +56,24 @@ Erase all records inside the online appointment database.
 <ins>**_Example of usage_**<ins>
 
 `del a`
+
+### Deleting a single booking: `del <DATE> <OPTION_NUM>`
+Erase all records inside the online appointment database.
+
+**Format**: `del DATE OPTION_NUM` 
+
+<ins>**_Example of usage_**<ins>
+This will delete the first appointment that starts on 10th Oct 2020.
+`del 2020-10-10 1`
+
+### Deleting a single booking: `help`
+Erase all records inside the online appointment database.
+
+**Format**: `help` 
+
+<ins>**_Example of usage_**<ins>
+By calling this command, the cheatsheet of commands will appear, allowing
+`help`
 
 
 ### Editing a booking: `edit`
@@ -174,6 +192,7 @@ Erase all records inside the online appointment database.
 * Block date range: `block <DATE> <DATE>`
 * Delete all bookings: `del --all` or `del all` or `del a`
 * Delete all bookings within two dates: `del /b <DATE> <DATE>`
+* Delete a single appointment: `del <DATE> <OPTION_NUM>`
 * Edit a booking description: `edit <BOOKING_DESC> /s <DATE> /o <OPTION NO.>`
 * Exit the Program: `exit` or `bye`
 * Save bookings to file: `save`
@@ -183,3 +202,4 @@ Erase all records inside the online appointment database.
 * Show all weekends bookings (for current month): `show <weekends>` or `show we`
 * Unlock a blocked date range: `unblock <DATE> <DATE>`
 * Undelete a previous online database delete action: `undel a`
+* Requiring help with commands: `help`
