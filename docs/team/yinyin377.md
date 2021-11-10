@@ -40,7 +40,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
   [60](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/60))
 
 
-### Documentation:
+- Documentation:
   - **User Guide**:
     - Added documentation for the features: `Load Application`, `show range`, `delete range` and `save`.
     - FAQ 
@@ -57,7 +57,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
     - [yinyin377](team/yinyin377.md)
 
 
-### Community:
+- Community:
   - Administrator for the Team Repo maintenance and operations
   - PRs reviewed ([#14](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/14),
     [#20](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/20),
