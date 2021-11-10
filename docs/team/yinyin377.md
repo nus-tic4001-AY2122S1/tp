@@ -26,7 +26,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
   - What it does: allows the user to delete all the bookings or appointment for indicated time period so that user can delete a list of appointments within specified time frame.
   - Justification: This feature is to help a efficient student user to delete list of appointments within specified time frame in one step.
 
-- Code contributed: [Team04_yinyin377](https://github.com/AY2122S1-TIC4001-F18-4/tp/docs/team/yinyin377.md)
+- Code contributed: [Team04_yinyin377](https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=yinyin377&breakdown=true&sort=groupTitle&sortWithin=title&since=2021-09-17&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
 - Project management:
   - Contributed to releases v1.0 - v3.0 (3 releases) on GitHub
@@ -36,10 +36,11 @@ an offline backup file. The user interacts with it using a CLI. It is written in
   - Implemented loading error for assert statements upon file processing
   - Implementation of all features above by reusing the standardized mechanism across team member's work, to
     work synchronicity and avoid unnecessary duplication of code in codebase.
-  - Implemented 2 JUnit tests ([59](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/59),[60](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/60)
+  - Implemented 2 JUnit tests ([59](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/59),
+  [60](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/60))
 
 
-- ##### Documentation:
+### Documentation:
   - **User Guide**:
     - Added documentation for the features: `Load Application`, `show range`, `delete range` and `save`.
     - FAQ 
@@ -56,7 +57,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
     - [yinyin377](https://github.com/AY2122S1-TIC4001-F18-4/tp/docs/team/yinyin377.md)
 
 
-- ##### Community:
+### Community:
   - Administrator for the Team Repo maintenance and operations
   - PRs reviewed ([#14](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/14),
     [#20](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/20),
