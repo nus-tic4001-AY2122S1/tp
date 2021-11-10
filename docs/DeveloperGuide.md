@@ -17,9 +17,9 @@
 * *Common classes* (ItemList)
 
 1. ```Class diagram (refer to the image below)```<br/>
-        <img src="Diagram/class_diagram.jpg" with="2500" height=auto>
+        <img src="Diagram/class_diagram_new.jpg" with="2500" height=auto>
 2. ```Object diagram```<br/>
-        <img src="Diagram/object_diagram.jpg" width="500">
+        <img src="Diagram/object_diagram_new.jpg" width="500">
 3. ```Sequence diagram```<br/>
         <img src="Diagram/sequence_diagram.jpg" width="400" height="600">
 
