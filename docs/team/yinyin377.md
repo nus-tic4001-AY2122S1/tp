@@ -54,7 +54,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
   - **About Us**:
     - Link all team member's PPP
   - **PPP Guide**:
-    - [yinyin377](https://github.com/AY2122S1-TIC4001-F18-4/tp/docs/team/yinyin377.md)
+    - [yinyin377](team/yinyin377.md)
 
 
 ### Community:
