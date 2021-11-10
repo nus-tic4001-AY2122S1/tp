@@ -13,6 +13,17 @@
 
 Program designed for someone adept with the keyboard, for Single User use. 
 
+### Load application: `java -jar JustBook.jar`
+Load application and all records from previous session (if any) inside the JustBook application.
+
+**Format**: `java -jar JustBook.jar`
+
+<ins>**_Example of usage_**<ins>
+
+`java -jar JustBook.jar`
+
+By calling this command, the JustBook application will load.
+
 ### Adding a booking: `add`
 Adds a new item to the list of booking items.
 
@@ -76,6 +87,28 @@ By calling this command, the cheatsheet of commands will appear, allowing
 `help`
 
 
+### Delete appointments within date-range: `del /b <DATE> <DATE>`
+Delete all records within specified date range.
+
+**Format**: `del /b STARTDATE ENDDATE`
+
+* `STARTDATE` and `ENDDATE` uses format *yyyy-mm-dd*.
+
+<ins>**_Example of usage_**<ins>
+
+`del /b 2021-11-5 2021-11-30`
+
+
+### Save all appointments details up to this point: `save`
+Save all records up to this point.
+
+**Format**: `save`
+
+<ins>**_Example of usage_**<ins>
+
+`save`
+
+
 ### Editing a booking: `edit`
 Edits the booking description of the chosen item.
 
@@ -119,6 +152,18 @@ Displays all database records, headed by distinct dates header, in chronological
 <ins>**_Example of usage_**<ins>
 
 `show a`
+
+
+### Show appointments within date-range: `show /b <DATE> <DATE>`
+Display all records within specified date range.
+
+**Format**: `show /b STARTDATE ENDDATE`
+
+* `STARTDATE` and `ENDDATE` uses format *yyyy-mm-dd*.
+
+<ins>**_Example of usage_**<ins>
+
+`show /b 2021-11-5 2021-11-30`
 
 
 ### Showing a specific date's list of bookings: `show <DATE>`

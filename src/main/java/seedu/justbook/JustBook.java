@@ -43,6 +43,8 @@ public class JustBook {
             System.out.println(ex.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (AssertionError ex) {
+            logger.log(Level.WARNING, "loading error", ex);
         }
 
         String logo = " ____        _        \n"
