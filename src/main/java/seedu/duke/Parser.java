@@ -27,7 +27,7 @@ public class Parser {
 
     public static String category(String fullCommand) throws InputErrorException {
         String[] str = fullCommand.split(" /");
-
+        assert str != null;
         if (str.length != 4) {
             throw new InputErrorException("InputInfoShortage");
         }
