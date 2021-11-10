@@ -2,6 +2,8 @@ package seedu.justbook;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -15,12 +17,13 @@ public class LoadCommand extends Command {
         this.filepath = filepath;
     }
 
-    public void execute(List<Bookings> appointments) throws IOException {
+    public void execute(List<Bookings> appointments) throws IOException,AssertionError {
         File directory = new File("data");
+        File f = new File(filepath);
+        assert !Files.isDirectory(Path.of(filepath));
         if (!directory.exists()) {
             directory.mkdir();
         }
-        File f = new File(filepath);
         if (!f.exists()) {
             f.createNewFile();
         }
