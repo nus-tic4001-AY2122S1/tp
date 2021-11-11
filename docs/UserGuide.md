@@ -7,20 +7,23 @@
 ## Quick Start
 
 1. Ensure that you have Java 11 or above installed.
-1. Down the latest version of `JustBook App` from [here](https://github.com/AY2122S1-TIC4001-F18-4/tp/releases/tag/v2.0).
+2. Download the latest version of `JustBook App` into your local folder from [here](https://github.com/AY2122S1-TIC4001-F18-4/tp/releases/tag/v3.0).
+3. Open up a command or terminal window, _e.g._ [*Windows Terminal (recommended)*](https://www.microsoft.com/en-sg/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab), 
+   from [inside the folder](https://www.lifewire.com/open-command-prompt-in-a-folder-5185505) or
+4. cd to your local folder in your terminal
 
 ## Features 
 
-Program designed for someone adept with the keyboard, for Single User use. 
+Program designed for someone who are avid keyboarders,  for Single User use. 
 
-### Load application: `java -jar JustBook.jar`
+### Load application: `java -jar justbook.jar`
 Load application and all records from previous session (if any) inside the JustBook application.
 
-**Format**: `java -jar JustBook.jar`
+**Format**: `java -jar justbook.jar`
 
 <ins>**_Example of usage_**<ins>
 
-`java -jar JustBook.jar`
+`java -jar justbook.jar`
 
 By calling this command, the JustBook application will load.
 
