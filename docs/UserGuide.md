@@ -2,7 +2,7 @@
 
 ## Introduction
 
-{Give a product intro}
+This User Guide will get GTD users started on the commands that achieve common GTD actions. 
 
 ## Quick Start
 
