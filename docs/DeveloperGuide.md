@@ -27,7 +27,12 @@
 
 ## Implementation (Sequence Diagram)
 * Search Command
-* List Command
+* List Command <br>
+The user execute `list` command to show all the items in the list.<br/>
+UI scanned `list` command from user, `Execution` create a new `ListCommand` and `run()` to get the items from Arraylist, itemList return the items to UI and show to user. <br/>
+
+<img src="Diagram/ListCommand_sequence_diagram.jpg" width="800" height=auto> <br/>
+
 * Delete Command
 <br> The user execute `delete 5` command to delete the 5th item in the item list.
 <br> The `Execution` type variable will be generated after user input scanned and in execution variable, the `Delete` command will be created and `run()` method in `Delete` class will be executed to remove the 5th item. After the item be removed, the delete information will be printed to show user which the deleted item's details and remaining item quantity in the item list.
