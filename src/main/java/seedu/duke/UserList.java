@@ -38,8 +38,8 @@ public class UserList {
     }
 
     public void addModule(Module[] moduleArray) {
-        for (Module mod : moduleArray) {
-            userList.add(mod);
+        for (Module module : moduleArray) {
+            userList.add(module);
         }
     }
 

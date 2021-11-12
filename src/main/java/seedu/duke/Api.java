@@ -3,18 +3,13 @@ package seedu.duke;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import netscape.javascript.JSObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.http.HttpClient;
-import java.util.List;
 
 public class Api {
 
@@ -38,8 +33,8 @@ public class Api {
         is.close();
         Gson gson = new Gson();
         String tmpStr = responseStrBuilder.toString();
-        Module[] myMods = gson.fromJson(tmpStr, Module[].class);
-        NusModList nusModList = NusModList.createInstance(myMods);
+        Module[] myModules = gson.fromJson(tmpStr, Module[].class);
+        NusModList nusModList = NusModList.createInstance(myModules);
         return nusModList;
     }
 
@@ -57,8 +52,8 @@ public class Api {
         is.close();
         Gson gson = new Gson();
         String tmpStr = responseStrBuilder.toString();
-        Module[] myMods = gson.fromJson(tmpStr, Module[].class);
-        NusModList nusModList = NusModList.createInstance(myMods);
+        Module[] myModules = gson.fromJson(tmpStr, Module[].class);
+        NusModList nusModList = NusModList.createInstance(myModules);
         return nusModList;
     }
 

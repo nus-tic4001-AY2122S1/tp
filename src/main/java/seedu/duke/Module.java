@@ -113,4 +113,10 @@ public class Module {
 
         return result;
     }
+
+    public String getBasicModuleDetails(){
+        return getModuleCode() + " | "
+                + getModuleTitle() + " | "
+                + getModuleSemester();
+    }
 }

@@ -1,5 +1,7 @@
 package seedu.duke.command;
 
+import seedu.duke.Ui;
+
 /**
  * Place holder for command only. Please implement a real class.
  */
@@ -11,6 +13,6 @@ public class PlaceholderCommand extends Command {
 
     @Override
     public void execute() {
-        System.out.println("Do " + userInstruction);
+        Ui.printMsg(userInstruction);
     }
 }

@@ -1,14 +1,16 @@
 package seedu.duke;
 
-import java.util.stream.IntStream;
-
 public class NusModList {
 
-    private static Module[] ModListForYear;
+    private static Module[] moduleListForYear;
     public static NusModList _Final;
 
     private NusModList(Module[] modules) {
-        ModListForYear = modules;
+        moduleListForYear = modules;
+    }
+
+    public Module[] getModListForYear() {
+        return moduleListForYear;
     }
 
     public static NusModList createInstance(Module[] modules) {
@@ -23,18 +25,18 @@ public class NusModList {
     }
 
     public int getSize() {
-        return ModListForYear.length;
+        return moduleListForYear.length;
     }
 
     public Module[] getAllModule() {
-        return ModListForYear;
+        return moduleListForYear;
     }
 
     public Module getMod(String moduleCode) {
         Module module = new Module();
         for (int i = 0; i < getSize(); i++) {
-            if (ModListForYear[i].getModuleCode() == moduleCode) {
-                module = ModListForYear[i];
+            if (moduleListForYear[i].getModuleCode() == moduleCode) {
+                module = moduleListForYear[i];
                 return module;
             }
         }
@@ -42,11 +44,11 @@ public class NusModList {
     }
 
     public Module getMod(int moduleIndex) {
-        return ModListForYear[moduleIndex];
+        return moduleListForYear[moduleIndex];
     }
 
     public boolean hasMod(String moduleCode) {
-        for (Module m : ModListForYear) {
+        for (Module m : moduleListForYear) {
             if (m.getModuleCode().equals(moduleCode)) {
                 return true;
             }
@@ -56,7 +58,7 @@ public class NusModList {
 
     public int getModuleIndex(String moduleCode) {
         for (int i = 0; i < this.getSize(); i++) {
-            if (ModListForYear[i].getModuleCode().equals(moduleCode)) {
+            if (moduleListForYear[i].getModuleCode().equals(moduleCode)) {
                 return i;
             }
         }

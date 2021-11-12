@@ -23,6 +23,10 @@ public class Ui {
         return line;
     }
 
+    public static void printMsg(String msg) {
+        System.out.println(msg);
+    }
+
     public static void exitMsg() {
         System.out.println("Good bye!");
     }
@@ -48,6 +52,10 @@ public class Ui {
         System.out.println("Got it. I've added this module:");
         printAddedModules(userList);
         printNumberOfModules(userList);
+    }
+
+    public static void printShortModuleInfo(Module module){
+        System.out.println(module.getBasicModuleDetails());
     }
 
     public static void printNumberFormatException() {
