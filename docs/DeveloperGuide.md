@@ -10,19 +10,22 @@
 
 ## Design
 
-**JustBook Command Line App** leverages on the help of a total five Java classes, viz. **JustBook, Bookings, AddCommand, 
-  DeleteCommand and HelpCommand** created by the Team. It makes optimal use of Java Stream and the latest java time APIs,
-  e.g. LocalDateTime and LocalDate, among others, together with a judicious choice of data structures, to allow a single 
-  user good at the keyboard to make and register bookings / appointments online fast: 
+**JustBook Command Line App** leverages on the help of a total nine Java classes, viz. **JustBook, Bookings, Command, 
+  AddCommand, EditCommand, DeleteCommand, LoadCommand, SaveCommand and HelpCommand** created by the Team. It makes 
+  optimal use of Java Stream and the latest java time APIs, e.g. LocalDateTime and LocalDate, among others, together 
+  with a judicious choice of data structures, to allow a single user good at the keyboard to make and register bookings
+  / appointments online fast: 
 
+- JustBook class is the main app controller class.
 - Each user booking entry is stored in an `Arraylist<Bookings>` data structure (which will be sorted before each `show` 
-  listing process - this is to  allow for editing or deleting direct using the onscreen listings). 
-  
+  listing processes - this is to  allow for editing or deleting direct using the onscreen listings).
 - The **Bookings** class will capture the user booking description, the scheduled start localDateTime and end 
-  localDateTime data belonging to a specific booking entry. 
-  
+  localDateTime data belonging to a specific booking entry.
 - Another data structure chosen for efficient search/retrieval - `HashMap<LocalDate, LocalDate>` - is used to store a 
-  blocklist consisting of blocking periods where the user will not be able to make any bookings.  
+  blocklist consisting of blocking periods where the user will not be able to make any bookings.
+- The rest of the classes are essentially helper classes containing the commands entrails and refactorings - to do the
+  additions (into the online database), backup file loading, writing and appending, as well as appointment modifications, 
+  deletions, saves and undeletes (undoings of all online modifications up to the current moment).
 
 
 ## Implementation
