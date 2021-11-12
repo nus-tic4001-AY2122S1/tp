@@ -32,7 +32,7 @@
             Here are the items in your list:</br>
             1.[E] [Meal] lunch ($40.0) (2021-Dec-01) </br>
             2.[I] [OctSalary] salary ($4000.0) (2021-Dec-01) 
-   <br> b. auto save when user execute edit, delete and add expense/ income command    
+    <br> b. auto save when user execute edit, delete and add expense/ income command    
 
 * *Common classes* (ItemList)
 
