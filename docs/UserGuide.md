@@ -10,8 +10,10 @@ Interface (CLI).
 1. Ensure you have java 11 or above installed in your computer.
 2. Download the latest EMS.jar from [here](https://github.com/AY2122S1-TIC4001-F18-2/tp/releases).
 3. Copy the file to the folder you want to use as a home folder for your Expenses Management System.
-4. Double-click the file to start the app.
-5. Type the command in the command box and press Enter to execute. e.g typing “list” and pressing Enter will show the
+4. Create an empty folder name ```file``` in the same folder.
+5. Create an empty text file name ```expenses.txt``` inside the data folder.
+6. Double-click the file to start the app.
+7. Type the command in the command box and press Enter to execute. e.g typing “list” and pressing Enter will show the
    list of expenses. <br/>
    Some example commands you can try:
 * Add an expense: `expense lunch /food /12 /12-10-2021`
