@@ -18,6 +18,8 @@ public class EditCommand extends Command {
     }
 
     public void run(ItemList itemList) throws InputErrorException {
+
+
         int index = Parser.index(fullCommand);
         if (index < 0 || index >= itemList.size) {
             throw new InputErrorException("IndexOutOfRange");
@@ -43,8 +45,8 @@ public class EditCommand extends Command {
         default:
             System.out.println("Please key in valid editing command!");
         }
-
-        UI.editMessage(index, itemList.items, temp);
         Storage storage = new Storage();
+        UI.editMessage(index, itemList.items, temp);
+        storage.saveToStorage(itemList);
     }
 }

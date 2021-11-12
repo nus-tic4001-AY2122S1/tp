@@ -1,11 +1,19 @@
 # Developer Guide
 
-## Setting up, getting started
-**Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#acknowledgements">Acknowledgements</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Setting up, getting started</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing (configuration, dev-ops)</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#use-cases">Use Cases</a>*
 
 ## Acknowledgements
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+
+## Setting up, getting started
+**Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
 
 ## Design 
 
@@ -59,10 +67,23 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 
 
 * Add Command
+<br> The user execute `expense lunch /food /12 /12-10-2021` command to add expense item to item list.
+<br> The user execute `income Company A /salary /2000 /01-10-2021` command to add income item to item list.
+<br> UI scanned `expense` or `income` command from user, `Execution` create a new `AddExpenseCommand` or new `AddIncomeCommand`. 
+<br> Execute `run()` and `addExpense` or `addIncome` items to item list and store the item list.
+<br> After file store successfully to file storage, return the items to UI and show to user. <br/>
+<img src="Diagram/AddCommand_sequence%20diagram.png" width="1200" height=auto>
 
 ## Documentation, logging, testing (configuration, dev-ops)
 * **Testing Guide**
 * **Logging Guide**
+
+     1. We are using java.util.logging package for logging.
+     2. The Logger class is used to manage the logging levels and logging destinations.
+     3. The Logger for a class can be obtained using Logger.getLogger(Class) which will log messages according to the specified logging level.
+     4. Log messages are output to a `/log/*.log` file by setting `logger.setUseParentHandlers = false` to disable showing on console output.
+        The logger collect `DeleteCommand`, `ListCommand` class and etc.
+     5. The output logging level by `Level.INFO`
 
 ## Appendix: Requirements
 

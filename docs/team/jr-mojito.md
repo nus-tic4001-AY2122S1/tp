@@ -26,14 +26,8 @@ Interface (CLI)
   <br> Maintaining the issue tracker (milestone v1.0 issue tracter setup)
   <br> Add Logging function and save to different system log folder
   <br> Assertion
-  <br> JUnit - Sort Command
-  <br> JUnit - Sort Command
-  <br> JUnit - Sort Command
-  <br> JUnit - Sort Command
-  <br> JUnit - Sort Command
 
-
-
+  
 * **Project Management:**
 
 **Documentation:**
