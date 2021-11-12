@@ -1,7 +1,8 @@
 # Li Shihao's Project Portfolio Page
 
 ## Project NEXT
-Project NEXT provides a quick command line tool for GTD enthusiasts and daily practitioners who prefer the speed of text input.
+Project NEXT provides a quick command line tool for GTD enthusiasts and daily practitioners who prefer the speed of text input,
+to input and organize their daily tasks in the GTD way.
 
 It provides commands to add tasks into Inbox, and set tasks as Next, Wait, Some(day), Proj(ect), Done. Project can have maximum of 2 layers of nesting. Users can easily put tasks from Inbox to be under any project. With above, GTD flow can be followed completely.
 
