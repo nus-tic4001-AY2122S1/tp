@@ -54,6 +54,9 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 * Add Command
 <br> The user execute `expense lunch /food /12 /12-10-2021` command to add expense item to item list.
 <br> The user execute `income Company A /salary /2000 /01-10-2021` command to add income item to item list.
+<br> UI scanned `expense` or `income` command from user, `Execution` create a new `AddExpenseCommand` or new `AddIncomeCommand`. 
+<br> Execute `run()` and `addExpense` or `addIncome` items to item list and store the item list.
+<br> After file store successfully to file storage, return the items to UI and show to user. <br/>
 <img src="Diagram/AddCommand_sequence%20diagram.png" width="800" height=auto>
 
 ## Documentation, logging, testing (configuration, dev-ops)
