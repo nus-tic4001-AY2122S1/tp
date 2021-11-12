@@ -36,7 +36,7 @@ public class DeleteCommand extends Command {
         // log a message at INFO level
         FileHandler fh;
         try {
-            fh = new FileHandler("./log/DeleteLogFile.log");
+            fh = new FileHandler("./src/log/DeleteLogFile.log");
             logger.addHandler(fh);
             logger.setUseParentHandlers(false);
             SimpleFormatter formatter = new SimpleFormatter();
