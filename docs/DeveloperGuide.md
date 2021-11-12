@@ -42,57 +42,104 @@
 
 ## Appendix: Requirements
 
- * **Product scope** </br>
-   ```Target user profile```
+### Product scope
 
-   Users who have the difficulty to record and manage the incomes and expenses
+**Target user profile**
 
-   ```Value proposition```
+* has a need to manage and track incomes and expenses
+* prefers desktop apps over other types
+* prefers typing to mouse interactions
+* is reasonably comfortable using CLI apps
 
-   * Keep track of the income and expense item
-   * analysis daily / monthly expense
+**Value proposition**
 
-* **User Stories**
+* keep record of income and expense items
+* track income and expense items easily
+* analyse daily / monthly expense
+
+### User Stories
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
-|v1.0|new user|||
-|v2.0|user|I need to do ascending or descending sorting by date|I can view the latest expenses|
-|v2.0|user|I need to do ascending or descending sorting by expenses|I can view the highest expenses|
-|v2.0|user|I need to put in my income|I can know how much I can spend|
-|v2.0|user|I need to know when I spend and record enter time|I can check whether miss out any spend item|
-|v2.0|user|I need to classify those spend item|I can know the spend category|
-|v2.0|user|I need to able to delete added expense|I can delete if I add wrongly
-|v2.0|user|I need to search items with keyword|I can view the specific item fast|
-|v2.0|user|I need to save and read file|I can load the expenses/ salary data|
+|v1.0|user|add expense item with description and amount|know how much I spent on the item|
+|v1.0|user|view all the expense items|know number of expense items|
+|v1.0|user|delete the expense item|remove the expense item with wrong information|
+|v1.0|user|have exit command|quit the system without using mouse|
+|v2.0|user|add income item with description and amount|know how much I earned on the item|
+|v2.0|user|sort the list in descending order of the amount|view the highest expenses quickly|
+|v2.0|user|record the date of items|know when the items incurred|
+|v2.0|user|classify items into categories|the distribution of my expenditure|
+|v2.0|user|search items with keyword|view the specific item quickly|
+|v3.0|user|sort the list in descending order of the date|know the most recent expenses quickly|
+|v3.0|user|edit the item without deleting it|rectify the item with wrong information quickly|
+|v3.0|user|get summary report of my existing item|know my total income and expense|
+|v3.0|user|save item list as file|print record into hard copy|
+|v3.0|user|read previous items from the file|continue to add items from the previous record|
 
+### Use Cases
 
-* **Use Cases**
+(For all use cases below, the **System** is ```EXPENSES MANAGEMENT SYSTEM (EMS)``` and the **Actor** is the ```user```, unless specified otherwise)
 
-      (For all use cases below, the System is the Expenses Tracking App and the Actor is the user, unless specified otherwise)
+**Use case: Add Expense**
+1. User keys in expense details
+2. EMS records the expense
+3. EMS shows the expense added successfully
+4. Data files updated automatically
 
-      Use case: Add Expenses
+**Use case: Add Income**
+1. User keys in income details
+2. EMS records the income
+3. EMS shows the income added successfully
+4. Data files updated automatically
 
-      Use case: Add Income
+**Use case: List Items**
+1. User requests to view items
+2. EMS shows the list of items
 
-      Use case: Delete Item
+**Use case: Delete Item**
+1. User requests to delete a specific item
+2. EMS deletes the item from the list
+3. EMS shows the item deleted successfully
+4. Data files updated automatically
 
-      User case: Add Income
+**Use case: Find Items**
+1. User keys in the keyword to search
+2. EMS performs searching
+3. EMS displays the result
 
-      Use case: List Item
+**Use case: Edit Item**
+1. User request to edit a specific item with new item details
+2. EMS updated the item in the list
+3. EMS shows the item updated successfully
+4. Data files updated automatically
 
-      Use case: Find Item
+**Use case: Sort Item List**
+1. User request to sort the item list with the specific order
+2. EMS sorts the list accordingly
+3. EMS shows the sorted list
 
-* **Non-Functional Requirements**
+**Use case: Summarize Items**
+1. User request for summary of the item list
+2. EMS summarizes the list
+3. EMS shows the summary report of the list
 
-  Should work on any mainstream OS as long as it has Java 11 or above installed.
+**Use case: Exit**
+1. User requests to exit the program
+2. EMS terminates safely
 
-* **Glossary**
+### Non-Functional Requirements
 
-  **Mainstream OS**:  Windows, Linux, Unix, OS-X
+* Should work on any mainstream OS as long as it has Java 11 or above installed.
+* Should be able to hold up to 1000 persons without a noticeable sluggishness in performance.
+* The command should be simple enough so that users are able to accomplish most of the tasks faster using typing than using the mouse.
+* Should be easy for new users to get used to usage fast.
+
+### Glossary
+
+**Mainstream OS**:  Windows, Linux, Unix, OS-X
 
 ## Appendix:  Instructions for manual testing
 
-* **Instructions for manual testing**
+### Instructions for manual testing
 
-   {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
