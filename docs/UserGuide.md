@@ -71,14 +71,14 @@ Erase all records inside the online appointment database.
 
 `del a`
 
-### Deleting a single booking: `del <DATE> <OPTION_NUM>`
+### Deleting a single booking: `del <DATE> /o <OPTION_NUM>`
 Erase all records inside the online appointment database.
 
-**Format**: `del DATE OPTION_NUM` 
+**Format**: `del DATE /o OPTION_NUM` 
 
 <ins>**_Example of usage_**<ins>
 This will delete the first appointment that starts on 10th Oct 2020.
-`del 2020-10-10 1`
+`del 2020-10-10 /o 1`
 
 ### Deleting a single booking: `help`
 Erase all records inside the online appointment database.
@@ -240,7 +240,7 @@ Erase all records inside the online appointment database.
 * Block date range: `block <DATE> <DATE>`
 * Delete all bookings: `del --all` or `del all` or `del a`
 * Delete all bookings within two dates: `del /b <DATE> <DATE>`
-* Delete a single appointment: `del <DATE> <OPTION_NUM>`
+* Delete a single appointment: `del <DATE> /o <OPTION_NUM>`
 * Edit a booking description: `edit <BOOKING_DESC> /s <DATE> /o <OPTION NO.>`
 * Exit the Program: `exit` or `bye`
 * Save bookings to file: `save`
