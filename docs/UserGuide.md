@@ -121,14 +121,18 @@ Example: `exit`
 
 ### Save the data
 
-ProDuke data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+EMS data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+### Edit the data file
+
+EMS data are saved as a txt file ```[project_root]/file/expenses.txt```. Advanced users are welcome to update data directly by editing that data file.
 
 ## FAQ
 
 **Q**: How do I transfer my data to another computer?
 
 **A**: To run and show the data in another computer, you need to install the app in the other computer and overwrite the
-empty data file it creates with the file that contains the data of your previous expenses folder.
+empty data file it creates with the file that contains the data of your previous expense folder.
 
 ## Command Summary
 
