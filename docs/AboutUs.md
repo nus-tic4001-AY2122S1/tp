@@ -2,8 +2,7 @@
 
 Display | Name | Github Profile | Portfolio 
 --------|:----:|:--------------:|:---------:
-![](https://via.placeholder.com/100.png?text=Photo) | John Doe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Don Joe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Ron John | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | John Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Don Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
+![](./pic/lsh_25KB.jpeg) | Li Shihao | [Github](https://github.com/l-shihao/) | [Portfolio](docs/team/l-shihao.md)
+![]() | Nie Ruiting | [Github](https://github.com/Ruiting1/) | [Portfolio](docs/team/ruiting1.md)
+![](https://via.placeholder.com/100.png?text=Photo) | Chia Chun | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
+![](https://via.placeholder.com/100.png?text=Photo) | Ivan | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
