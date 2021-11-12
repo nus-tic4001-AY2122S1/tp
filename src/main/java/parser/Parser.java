@@ -13,7 +13,7 @@ import command.DeleteCommand;
 import command.LocationCommand;
 import command.ByeCommand;
 import command.AppointmentCommand;
-import command.DeleteCommand;
+import command.TaskProgressCommand;
 import command.AppointmentTimeCommand;
 
 import constant.CommandKeyWords;
@@ -22,9 +22,9 @@ import constant.ErrorMessage;
 import exception.ErrorHandler;
 
 public class Parser {
+    private final Category category = new Category();
     private String content;
     private String taskNo;
-    private final Category category = new Category();
 
     public Command parse(String input) throws ErrorHandler {
         String[] result = input.split(" ", 2);
@@ -108,6 +108,8 @@ public class Parser {
             }
 
             return this.handleSetTime(result[1]);
+        case PROGRESS:
+            return new TaskProgressCommand();
         case BYE:
         default:
             return new ByeCommand();
