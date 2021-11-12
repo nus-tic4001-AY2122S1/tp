@@ -24,8 +24,10 @@
 - Another data structure chosen for efficient search/retrieval - `HashMap<LocalDate, LocalDate>` - is used to store a 
   blocklist consisting of blocking periods where the user will not be able to make any bookings.
 - The rest of the classes are essentially helper classes containing the commands entrails and refactorings - to do the
-  additions (into the online database), backup file loading, writing and appending, as well as appointment modifications, 
-  deletions, saves and undeletes (undoings of all online modifications up to the current moment).
+  additions (into the online database), backup file loading, writing and appending each new addition, as well as the 
+  displaying of scheduled listings on various basis (e.g. listing weekends, specific dates, entire database bookings).
+- The program will also handle appointment modifications, deletions, saves and undeletes (the undoings of all online 
+  modifications done up to the current moment).
 
 
 ## Implementation
