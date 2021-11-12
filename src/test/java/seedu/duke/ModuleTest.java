@@ -7,7 +7,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class ModTest {
+class ModuleTest {
     @Test
     public void testModule() {
         System.out.println("Module constructor should work with args, and getters return correct data");
@@ -30,9 +30,10 @@ class ModTest {
         Module module = new Module("TIC4001", "Software Eng", semesters, "A description",
                 4.0F, "Computing", "Faculty of Comp", "TIC2001",
                 "a", "b", semData);
-        String expected = "TIC4001 | Software Eng | Semesters: 1, 2 | A description | Module credit: 4.0 "
-                + "| Department: Computing | Faculty: Faculty of Comp | Prerequisites: TIC2001 | Corequisites: b "
-                + "| Detailed semester data:Semester:1 | Exam date:Wed Jan 20 09:30:00 UTC 2021 | Exam duration:100";
+        String expected = "TIC4001 | Software Eng | Semesters: Semester:1 | Exam date:Wed Jan 20 09:30:00 SGT 2021 "
+                + "| Exam duration:100" + "\n" + "A description" + "\n" + "Module credit: 4.0 "
+                + "| Department: Computing | Faculty: Faculty of Comp | Prerequisites: TIC2001 | Corequisites: b";
+
         assertEquals(module.getPrettyPrint(), expected);
     }
 }

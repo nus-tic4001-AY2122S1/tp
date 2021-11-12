@@ -19,16 +19,6 @@ class ApiTest {
         assertEquals(api.urlStringDetailed, hardcodeUrlStringDetailed);
     }
 
-    @Test
-    public void testModule2() {
-        Api api = new Api();
-        try {
-            JsonObject jsonObject = api.getModuleInfo("TIC4001");
-            System.out.println(jsonObject.toString());
-        } catch (IOException e){
-            System.out.println(e);
-        }
 
-    }
 
 }
