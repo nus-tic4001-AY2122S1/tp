@@ -37,7 +37,7 @@ To "birthday breakfast" on 2021-08-08 : book #1
 James Gosling: Successfully changed "exercise" on 2021/08/08 : book #2
 To "birthday brunch" on 2021-08-08 : book #2
 
-James Gosling:
+James Gosling: 
 Date: 2021/08/08
 1. birthday breakfast 10:10 - 11:11
 2. birthday brunch 15:15 - 16:16

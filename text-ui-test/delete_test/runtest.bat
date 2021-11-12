@@ -16,6 +16,6 @@ java -jar %jarloc% < ..\..\text-ui-test\delete_test\input.txt > ..\..\text-ui-te
 
 ECHO Delete Test:
 
-FC ..\..\text-ui-test\delete_test\ACTUAL.TXT ..\..\text-ui-test\delete_test\EXPECTED.TXT >NUL && ECHO Test passed! || Echo Test failed!
+FC ..\..\text-ui-test\delete_test\ACTUAL.TXT ..\..\text-ui-test\delete_test\EXPECTED.TXT && ECHO Test passed! || Echo Test failed!
 
 cd ..\..\text-ui-test

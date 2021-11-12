@@ -16,6 +16,6 @@ java -jar %jarloc% < ..\..\text-ui-test\edit_test\input.txt > ..\..\text-ui-test
 
 ECHO Edit Test:
 
-FC ..\..\text-ui-test\edit_test\ACTUAL.TXT ..\..\text-ui-test\edit_test\EXPECTED.TXT >NUL && ECHO Test passed! || Echo Test failed!
+FC ..\..\text-ui-test\edit_test\ACTUAL.TXT ..\..\text-ui-test\edit_test\EXPECTED.TXT && ECHO Test passed! || Echo Test failed!
 
 cd ..\..\text-ui-test

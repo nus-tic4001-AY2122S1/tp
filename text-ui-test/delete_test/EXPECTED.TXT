@@ -56,7 +56,7 @@ Date: 2021/12/10
 
 James Gosling: Your appointment is not stored in our calendar. Please input a new command.
 
-James Gosling:
+James Gosling: 
 Date: 2021/10/10
 1. shopping 10:10 - 20:20
 
