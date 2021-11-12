@@ -52,6 +52,9 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 <img src="Diagram/Delete Command Sequence Diagram.png" width="800" height=auto>
 
 * Add Command
+<br> The user execute `expense lunch /food /12 /12-10-2021` command to add expense item to item list.
+<br> The user execute `income Company A /salary /2000 /01-10-2021` command to add income item to item list.
+<img src="Diagram/AddCommand_sequence%20diagram.png" width="800" height=auto>
 
 ## Documentation, logging, testing (configuration, dev-ops)
 * **Testing Guide**
