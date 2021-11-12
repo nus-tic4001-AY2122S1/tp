@@ -27,7 +27,7 @@ public class Duke {
         // log a message at INFO level
         FileHandler fh;
         try {
-            fh = new FileHandler("./log/ExpensesTrackerLogFile.log");
+            fh = new FileHandler("./src/log/ExpensesTrackerLogFile.log");
             logger.addHandler(fh);
             logger.setUseParentHandlers(false);
             SimpleFormatter formatter = new SimpleFormatter();
