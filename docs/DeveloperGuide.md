@@ -1,7 +1,7 @@
 # Developer Guide
 
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#acknowledgements">Acknowledgements</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Setting up, getting started</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#setting-up-getting-started">Setting up, getting started</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing (configuration, dev-ops)</a>*
