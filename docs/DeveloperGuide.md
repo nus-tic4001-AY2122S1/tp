@@ -4,13 +4,13 @@
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#setting-up-getting-started">Setting up, getting started</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing (configuration, dev-ops)</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#use-cases">Use Cases</a>*
 
 ## Acknowledgements
 
-* Thanks to Prof Damith C.Rajapakse and Boyd Anderson.
+* Thanks to Prof Damith C.Rajapakse and Boyd Anderson provide consulation for our tem.
 * Thanks to the project team AY2122S1-TIC4001-F18-2.
 
 ## Setting up, getting started
@@ -75,8 +75,16 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 <br> After file store successfully to file storage, return the items to UI and show to user. <br/>
 <img src="Diagram/AddCommand_sequence%20diagram.png" width="1200" height=auto>
 
-## Documentation, logging, testing (configuration, dev-ops)
+## Documentation, logging, testing
 * **Testing Guide**
+* There are two ways to run tests.
+
+    1. Using IntelliJ JUnit test runner. Run all tests, right-click on the `src/test/java` folder </br>
+        a. choose `Run` 'All Tests' </br>
+        b. Run a subset of tests, you can right-click on a test package, test class and select `Run` 'ParserTest' </br>
+    2. Using Gradle
+        Open a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)
+        
 * **Logging Guide**
 
      1. We are using java.util.logging package for logging.
