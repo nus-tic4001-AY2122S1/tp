@@ -33,6 +33,10 @@ Fig 1. - JustBook Class Diagram Sample<br/><br/>
 
 Fig 2. - Sequence Diagram Illustration<br/><br/>
 
+![JustBook Seq Diag.](JustBook_Seq_Diag3.png)
+
+Fig 3. - Sequence Diagram  Illustration<br/><br/>
+
 The `show weekends` or `show we` mechanism is facilitated by two JustBook Class-level helper methods, namely, 
 **listWeekends()** and **weekendListings()**. 
 
@@ -45,6 +49,9 @@ second helper method **weekendListings()**, which mainly formats the display to 
 respective weekend headers, and searches the online appointment database to extract out only the weekend entries to
 display for the month.
 
+![JustBook Seq Diag.](JustBook_Seq_Diag2.png)
+
+Fig 3. - Sequence Diagram for User Input <br/><br/>
 
 #### Design considerations:
 Considerations in the design of both methods have been specially given for the optimization of both operations in terms
@@ -55,6 +62,18 @@ of time and space complexity,
   - to afford quick comparison operations during the sifting out of the weekend
   dates, from the generated stream of dates, bracketed by the current day date to the end of the month.
 
+We tried to adhere to a Command design pattern as much as possible. The design pattern was implemented at the later stages of
+the sprints, since we aimed to develop a MVP as fast as possible (Scalability was less of a concern), which did not have optimal design at the start. Afterwards, in the later sprints,
+more features were refactored into the Command design pattern.
+
+In terms of design principles, for the refactored Command classes, they have adhered to Single Responsibility Principle rather well. This allows strong cohesion with minimal coupling for those
+classes. However, certain principles such as Open-Closed Principle was not adhered as much at the start, due the priority of developing an MVP product first.
+Thus, certain sections may not be closed for modifications, such as one of the identified areas (the JustBook class) but are seen in the refactored sections.
+We have attempted to keep the code KISS as much as possible, whereby the program flow is rather simplistic. Furthermore, variable names and functions method names are also rather intuitive, 
+improving the readability for the code reader.
+
+In a nutshell, the design patterns and principles were not the strongest focus at the start, but as the product became more developed, it began to be more object oriented in its design.
+With this approach, the earlier sprints allowed more features to be developing while keeping in check the complexity (such as coupling) of the application through refactoring.
 
 ## Product scope
 **Target user profile:**
@@ -124,14 +143,26 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 4. User-friendly features incorporated in helpful messages feedback and diagnostic prompts (more to come) 
 
 
+## JustBook's Process Workflow
+
+![workflow](JustBook_process_diag.png)
+
+Fig 4. - JustBook App Activity Diagram<br/><br/>
+The diagram illustrates the possible branches leading to various outcomes based on the user's decisions.
+
+The model illustrates a regular process flow of a user starting up the JustBook application. The user launches the 
+application and is prompted to log in. If the user does not have an account within the application, the user will be 
+prompted to create an account and redirected to log in again. Following that, the user is presented with options on 
+utilising the application as illustrated in the diagram. 
+
 
 ## Glossary
 
 * **Mainstream OS** - Windows, Linux, Unix, OS-X
 * **JustBook App**  - A single-user command line app for making and storing student bookings online 
 * **CLI**           - Command Line Interface
-* **booking**       - A typed entry consisting of booking text description, a start Date-Time and end Date-Time 
-* **ISO (time)**    - For Java time Standards, it follows this format: "yyyy-MM-dd HH:mm"
+* **booking**       - A typed entry consisting of booking text description, a start DateTime and end DateTime 
+* **ISO (time standard)** - For Java time Standards, it follows this format: "yyyy-MM-dd HH:mm"
 * **DateTime**     - Java LocalDateTime implemented with format as "yyy-M-d HH:mm", using a 24 hr format
 
 ## Instructions for manual testing
@@ -147,9 +178,9 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 
 <img width="552" alt="Screenshot 2021-10-22 at 12 40 41 PM" src="https://user-images.githubusercontent.com/88772711/138399952-42c4ebfa-ac1a-4a35-922b-c9979d7b1402.png">
 
-## Instructions for Regression testing
+## Instructions for IO/Regression testing
 1. Navigate to text-ui-test folder
-2. Depending on your (User's) OS, if Windows, run runtest.bat, if Linux or macOS, run runtest.sh
+2. Depending on your (User's) OS, if Windows, run runtestmain.bat, if Linux or macOS, navigate to the test folders and run runtest.sh
 3. The CMD window or shell output will display if the comparison between the expected output and actual output are the same
 4. If there are any differences, they will be displayed at the CMD or shell window as well.
 5. The regression test would have passed if no differences are found.

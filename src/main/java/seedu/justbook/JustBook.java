@@ -43,13 +43,16 @@ public class JustBook {
             System.out.println(ex.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (AssertionError ex) {
+            logger.log(Level.WARNING, "loading error", ex);
         }
 
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
+        String logo = "     ____.               __ __________               __\n"
+                + "    |    |__ __  _______/  |\\______   \\ ____   ____ |  | __\n"
+                + "    |    |  |  \\/  ___/\\   __\\    | / /  _ \\ /  _ \\|  |/  /\n"
+                + "/\\__|    |  |  /\\___ \\  |  | |    |   (  <_> |  <_> )    <\n"
+                + "\\________|____//____  > |__| |______  /\\____/ \\____/|__|_ \\\n"
+                + "                    \\/              \\/                   \\/\n";
         System.out.println("Hello from\n" + logo);
         System.out.println("What is your name?");
 
