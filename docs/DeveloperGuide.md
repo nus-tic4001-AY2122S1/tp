@@ -4,13 +4,14 @@
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#setting-up-getting-started">Setting up, getting started</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing (configuration, dev-ops)</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#use-cases">Use Cases</a>*
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* Thanks to Prof Damith C.Rajapakse and Boyd Anderson provide consulation for our tem.
+* Thanks to the project team AY2122S1-TIC4001-F18-2.
 
 ## Setting up, getting started
 **Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
@@ -52,9 +53,6 @@
 
 <img src="Diagram/exitCommand_sequence_diagram.jpg" width="800" height=auto>
 
-* List Command
-
-* Search Command
 * List Command <br>
 The user execute `list` command to show all the items in the list.<br/>
 UI scanned `list` command from user, `Execution` create a new `ListCommand` and `run()` to get the items from Arraylist, itemList return the items to UI and show to user. <br/>
@@ -66,7 +64,13 @@ UI scanned `list` command from user, `Execution` create a new `ListCommand` and 
 <br> The `Execution` type variable will be generated after user input scanned and in execution variable, 
 the `Delete` command will be created and `run()` method in `Delete` class will be executed to remove the 5th item. After the item be removed, the delete information will be printed to show user which the deleted item's details and remaining item quantity in the item list.
 
-<img src="Diagram/Delete Command Sequence Diagram.png" width="800" height=auto>
+<img src="Diagram/DeleteCommand Sequence Diagram.png" width="800" height=auto>
+
+* Summary Command
+<br> The user execute `summary` command to print the summary of usage.
+<br> UI scanned `summary` command from user input, `Execution` create a new `SummaryCommand` and `run()` to print summary informtion.
+
+<img src="Diagram/Summary Sequency Diagram.png" width="800" height=auto> 
 
 * Add Command
 <br> The user execute `expense lunch /food /12 /12-10-2021` command to add expense item to item list.
@@ -76,8 +80,16 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 <br> After file store successfully to file storage, return the items to UI and show to user. <br/>
 <img src="Diagram/AddCommand_sequence%20diagram.png" width="1200" height=auto>
 
-## Documentation, logging, testing (configuration, dev-ops)
-* **Testing Guide**
+## Documentation, logging, testing
+* **Testing Guide** 
+    <br> There are two ways to run tests:
+
+    1. Using **IntelliJ JUnit test runner**. Run all tests, right-click on the `src/test/java` folder </br>
+        a. choose `Run` 'All Tests' </br>
+        b. Run a subset of tests, you can right-click on a test package, test class and select `Run` 'ParserTest' </br>
+    2. Using **Gradle**
+        Open a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)
+        
 * **Logging Guide**
 
      1. We are using java.util.logging package for logging.

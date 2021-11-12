@@ -22,17 +22,27 @@ Interface (CLI)
   <br> 5. Assertion Enable - Pull Request [#30](https://github.com/AY2122S1-TIC4001-F18-2/tp/issues/30)
 
 
+
 * **Contributions to team-based tasks**
   <br> Maintaining the issue tracker (milestone v1.0 issue tracter setup)
   <br> Add Logging function and save to different system log folder
-  <br> Assertion
+  <br> Enabled Assertion Pull Request[#31] (https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/31)
 
-  
 * **Project Management:**
 
 **Documentation:**
   * Contributions to the UG: Which sections did you contribute to the UG?
   * Contributions to the DG: Which sections did you contribute to the DG? Which UML diagrams did you add/updated?
+
+* **Contributions to the UG**
+  <br> Maintaining the issue tracker (milestone v1.0 issue tracter setup)
+  <br> Add Logging function and save to different system log folder
+  <br> Enabled Assertion
+  
+* **Contributions to the DG**
+  <br> Maintaining the issue tracker (milestone v1.0 issue tracter setup)
+  <br> Add Logging function and save to different system log folder
+  <br> Enabled Assertion
 
 
 #####Review/mentoring contributions: 
