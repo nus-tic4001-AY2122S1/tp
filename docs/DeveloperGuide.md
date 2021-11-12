@@ -49,7 +49,7 @@ UI scanned `list` command from user, `Execution` create a new `ListCommand` and 
 <br> The `Execution` type variable will be generated after user input scanned and in execution variable, 
 the `Delete` command will be created and `run()` method in `Delete` class will be executed to remove the 5th item. After the item be removed, the delete information will be printed to show user which the deleted item's details and remaining item quantity in the item list.
 
-<img src="Diagram/Delete Command Sequence Diagram.png" width="800" height=auto>
+<img src="Diagram/DeleteCommand Sequence Diagram.png" width="800" height=auto>
 
 * Summary Command
 <br> The user execute `summary` command to print the summary of usage.
