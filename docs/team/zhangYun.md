@@ -22,13 +22,13 @@ Given below are my contributions to the project.
   4. added Junit - Parser class: unit test for the functions inside Parser class [#41](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/41)
 
 * ```Milestone v2.0```
-  5. implemented find command: users can search for the items with keyword [#66](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/66)
-  6. consolidated the code of whole team [#73](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/73)
+  1. implemented find command: users can search for the items with keyword [#66](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/66)
+  2. consolidated the code of whole team [#73](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/73)
 
 * ```Milestone v3.0```
-  7. rectified the code structure to single line command structure [#86](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/86)
-  8. implemented edit command: users can edit the wrong item without deleting it [#96](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/96)
-  9. added assertion [#115](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/115)
+  1. rectified the code structure to single line command structure [#86](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/86)
+  2. implemented edit command: users can edit the wrong item without deleting it [#96](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/96)
+  3. added assertion [#115](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/115)
 
 #### Contributions to the UG:
 
