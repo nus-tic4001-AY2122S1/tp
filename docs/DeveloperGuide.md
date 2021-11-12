@@ -198,9 +198,3 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 ### Glossary
 
 **Mainstream OS**:  Windows, Linux, Unix, OS-X
-
-## Appendix:  Instructions for manual testing
-
-### Instructions for manual testing
-
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
