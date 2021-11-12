@@ -1,0 +1,52 @@
+Hello from
+     ____.               __ __________               __
+    |    |__ __  _______/  |\______   \ ____   ____ |  | __
+    |    |  |  \/  ___/\   __\    | / /  _ \ /  _ \|  |/  /
+/\__|    |  |  /\___ \  |  | |    |   (  <_> |  <_> )    <
+\________|____//____  > |__| |______  /\____/ \____/|__|_ \
+                    \/              \/                   \/
+
+What is your name?
+Hello James Gosling,
+Welcome back!
+You can now proceed to do your booking :)
+
+James Gosling: Successfully added "doctor" from 2021-08-08T10:10 to 2021-08-08T11:11
+
+James Gosling: Successfully added "meeting" from 2021-09-09T11:11 to 2021-09-09T12:12
+
+James Gosling: Successfully added "shopping" from 2021-10-10T10:10 to 2021-10-10T20:20
+
+James Gosling: Successfully added "exercise" from 2021-08-08T15:15 to 2021-08-08T16:16
+
+James Gosling: 
+Date: 2021/08/08
+1. doctor 10:10 - 11:11
+2. exercise 15:15 - 16:16
+
+Date: 2021/09/09
+1. meeting 11:11 - 12:12
+
+Date: 2021/10/10
+1. shopping 10:10 - 20:20
+
+
+James Gosling: Successfully changed "doctor" on 2021/08/08 : book #1
+To "birthday breakfast" on 2021-08-08 : book #1
+
+James Gosling: Successfully changed "exercise" on 2021/08/08 : book #2
+To "birthday brunch" on 2021-08-08 : book #2
+
+James Gosling: 
+Date: 2021/08/08
+1. birthday breakfast 10:10 - 11:11
+2. birthday brunch 15:15 - 16:16
+
+Date: 2021/09/09
+1. meeting 11:11 - 12:12
+
+Date: 2021/10/10
+1. shopping 10:10 - 20:20
+
+
+James Gosling: Bye! See you again!

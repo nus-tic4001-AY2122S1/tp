@@ -25,6 +25,7 @@ an offline backup file. The user interacts with it using a CLI. It is written in
     - Refactored the delete, edit and add features into Command classes for better testability and cohesion.
     - Wrote the JUnit tests for AddCommand, DeleteCommand and EditCommand
     - Refactored the script for the IO/Regression test to be scalable. Additional test cases can be added more easily and executed via 1 script. 
+    - Tests under text-ui-test folder
     
 
 - Documentation:
