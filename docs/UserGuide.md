@@ -8,7 +8,7 @@ Interface (CLI).
 ## Quick Start
 
 1. Ensure you have java 11 or above installed in your computer.
-2. Download the latest RMS.jar from [here](https://github.com/AY2122S1-TIC4001-F18-2/tp/releases).
+2. Download the latest EMS.jar from [here](https://github.com/AY2122S1-TIC4001-F18-2/tp/releases).
 3. Copy the file to the folder you want to use as a home folder for your Expenses Management System.
 4. Double-click the file to start the app.
 5. Type the command in the command box and press Enter to execute. e.g typing “list” and pressing Enter will show the

@@ -18,7 +18,8 @@
 
 ## Design 
 
-* *Architecture*
+* *Architecture* <br/>
+  <img src="Diagram/Design_Architecture.png" width="800" height=auto> <br/>
 * *UI component* (CLI, Input/ Output)  
 * *Logic component* (Execution, Command, Parser)
 * *Model component* (Item, Expense, Income)
@@ -28,7 +29,7 @@
 1. ```Class diagram (refer to the image below)```<br/>
         <img src="Diagram/class_diagram.jpg" width="2500" height=auto>
 2. ```Object diagram```<br/>
-        <img src="Diagram/object_diagram.jpg" width="500">
+        <img src="Diagram/object_diagram.jpg" width="2500" height=auto>
 
 ## Implementation (Sequence Diagram)
 
