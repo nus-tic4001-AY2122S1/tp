@@ -5,7 +5,8 @@
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* Thanks to Prof Damith C.Rajapakse and Boyd Anderson.
+* Thanks to the project team AY2122S1-TIC4001-F18-2.
 
 ## Design 
 
