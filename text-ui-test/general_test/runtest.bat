@@ -14,6 +14,8 @@ for /f "tokens=*" %%a in (
 
 java -jar %jarloc% < ..\..\text-ui-test\general_test\input.txt > ..\..\text-ui-test\general_test\ACTUAL.TXT
 
+ECHO General Test:
+
 FC ..\..\text-ui-test\general_test\ACTUAL.TXT ..\..\text-ui-test\general_test\EXPECTED.TXT >NUL && ECHO Test passed! || Echo Test failed!
 
 cd ..\..\text-ui-test

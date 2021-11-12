@@ -1,0 +1,75 @@
+Hello from
+     ____.               __ __________               __
+    |    |__ __  _______/  |\______   \ ____   ____ |  | __
+    |    |  |  \/  ___/\   __\    | / /  _ \ /  _ \|  |/  /
+/\__|    |  |  /\___ \  |  | |    |   (  <_> |  <_> )    <
+\________|____//____  > |__| |______  /\____/ \____/|__|_ \
+                    \/              \/                   \/
+
+What is your name?
+Hello James Gosling,
+Welcome back!
+You can now proceed to do your booking :)
+
+James Gosling: Successfully added "doctor" from 2021-08-08T10:10 to 2021-08-08T11:11
+
+James Gosling: Successfully added "meeting" from 2021-09-09T11:11 to 2021-09-09T12:12
+
+James Gosling: Successfully added "shopping" from 2021-10-10T10:10 to 2021-10-10T20:20
+
+James Gosling: Successfully added "exercise" from 2021-08-08T15:15 to 2021-08-08T16:16
+
+James Gosling: Successfully removed Appointment at 2021-8-8
+
+James Gosling: 
+Date: 2021/08/08
+1. doctor 10:10 - 11:11
+
+Date: 2021/09/09
+1. meeting 11:11 - 12:12
+
+Date: 2021/10/10
+1. shopping 10:10 - 20:20
+
+
+James Gosling: Successfully removed all appointments between 2021-08-08 to 2021-09-09.
+
+James Gosling: 
+Date: 2021/10/10
+1. shopping 10:10 - 20:20
+
+
+James Gosling: Successfully added "jogging" from 2021-12-10T10:30 to 2021-12-10T12:00
+
+James Gosling: Successfully added "table tennis" from 2021-11-11T09:30 to 2021-11-11T10:30
+
+James Gosling: 
+Date: 2021/10/10
+1. shopping 10:10 - 20:20
+
+Date: 2021/11/11
+1. table tennis 09:30 - 10:30
+
+Date: 2021/12/10
+1. jogging 10:30 - 12:00
+
+
+James Gosling: Your appointment is not stored in our calendar. Please input a new command.
+
+James Gosling:
+Date: 2021/10/10
+1. shopping 10:10 - 20:20
+
+Date: 2021/11/11
+1. table tennis 09:30 - 10:30
+
+Date: 2021/12/10
+1. jogging 10:30 - 12:00
+
+
+James Gosling: Successfully deleted all appointment records
+
+James Gosling: Current appointments list is : empty
+
+
+James Gosling: Bye! See you again!

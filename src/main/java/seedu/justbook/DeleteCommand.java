@@ -57,8 +57,8 @@ public class DeleteCommand extends Command {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
         LocalDate temp;
 
-        if(optionNumber <= 0 || optionNumber > appointments.size()){
-            System.out.println("Your appointment is not stored in our calendar. Please input a new command");
+        if (optionNumber <= 0 || optionNumber > appointments.size()) {
+            System.out.println("Your appointment is not stored in our calendar. Please input a new command.");
             return;
         }
 
@@ -74,7 +74,7 @@ public class DeleteCommand extends Command {
             }
         }
 
-        System.out.println("Your appointment is not stored in our calendar. Please input a new command");
+        System.out.println("Your appointment is not stored in our calendar. Please input a new command.");
     }
 
 
