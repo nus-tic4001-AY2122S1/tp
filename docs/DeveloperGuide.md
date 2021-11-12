@@ -21,7 +21,16 @@
 * *UI component* (CLI, Input/ Output)  
 * *Logic component* (Execution, Command, Parser)
 * *Model component* (Item, Expense, Income)
-* *Storage component* (Storage)
+* *Storage component* 
+   API: <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/src/main/java/seedu/duke/Storage.java">Storage.java</a>   
+   The Storage component,
+   *can save expenses.txt file to `/file` folder and load the expenses.txt file back `/file` folder with corresponding format.
+   `File format` showing as below,
+    
+    Here are the items in your list:
+    1.[E] [Meal] lunch ($40.0) (2021-Dec-01)
+    2.[I] [OctSalary] salary ($4000.0) (2021-Dec-01)
+
 * *Common classes* (ItemList)
 
 1. ```Class diagram (refer to the image below)```<br/>
