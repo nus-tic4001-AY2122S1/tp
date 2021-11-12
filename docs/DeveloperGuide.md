@@ -22,6 +22,7 @@
         <img src="Diagram/object_diagram.jpg" width="500">
 
 ## Implementation (Sequence Diagram)
+
 * Find Command
 <br> The user execute `find KEYWORD` command to search items contain `KEYWORD` in the item list.
 <br> The working flow of the findCommand is shown in the sequence diagram below.
@@ -35,6 +36,14 @@
 <img src="Diagram/exitCommand_sequence_diagram.jpg" width="800" height=auto>
 
 * List Command
+
+* Search Command
+* List Command <br>
+The user execute `list` command to show all the items in the list.<br/>
+UI scanned `list` command from user, `Execution` create a new `ListCommand` and `run()` to get the items from Arraylist, itemList return the items to UI and show to user. <br/>
+
+<img src="Diagram/ListCommand_sequence_diagram.jpg" width="800" height=auto> <br/>
+
 * Delete Command
 <br> The user execute `delete 5` command to delete the 5th item in the item list.
 <br> The `Execution` type variable will be generated after user input scanned and in execution variable, 
