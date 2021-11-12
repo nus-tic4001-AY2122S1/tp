@@ -74,6 +74,9 @@ public class Module {
 
     public String getModuleSemester() {
         String semesterDataString = "";
+        if (semesterData.length == 0) {
+            return "Semester: Information unavailable";
+        }
         for (int i = 0; i < semesterData.length; i++) {
             semesterDataString += semesterData[i].getPrettyString();
             if (i < semesterData.length - 1) {
@@ -87,7 +90,7 @@ public class Module {
         String semesterString = "";
         if (semesters != null) {
             for (int i = 0; i < semesters.length; i++) {
-                semesterString += Integer.toString(semesters[i]);
+                semesterString += semesters[i].toString();
                 if (i < semesters.length - 1) {
                     semesterString += ", ";
                 }
@@ -102,19 +105,18 @@ public class Module {
         String result = "";
         result += moduleCode + " | ";
         result += title + " | ";
-        result += "Semesters: " + semesterString + " | ";
-        result += description + " | ";
+        result += "Semesters: " + semesterDataString + "\n";
+        result += description + "\n";
         result += "Module credit: " + moduleCredit + " | ";
         result += "Department: " + department + " | ";
         result += "Faculty: " + faculty + " | ";
         result += "Prerequisites: " + prerequisite + " | ";
-        result += "Corequisites: " + corequisite + " | ";
-        result += "Detailed semester data:" + semesterDataString;
+        result += "Corequisites: " + corequisite;
 
         return result;
     }
 
-    public String getBasicModuleDetails(){
+    public String getBasicModuleDetails() {
         return getModuleCode() + " | "
                 + getModuleTitle() + " | "
                 + getModuleSemester();

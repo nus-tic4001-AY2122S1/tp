@@ -17,6 +17,10 @@ public class Ui {
                 +          "What can I do for you?\n");
     }
 
+    public static void lineBreak() {
+        System.out.println("\n-----------------------------------------");
+    }
+
     public static String readCommand() {
         System.out.print("Type something: ");
         String line = in.nextLine();
@@ -54,8 +58,12 @@ public class Ui {
         printNumberOfModules(userList);
     }
 
-    public static void printShortModuleInfo(Module module){
+    public static void printShortModuleInfo(Module module) {
         System.out.println(module.getBasicModuleDetails());
+    }
+
+    public static void printError(String e) {
+        System.out.println(e);
     }
 
     public static void printNumberFormatException() {

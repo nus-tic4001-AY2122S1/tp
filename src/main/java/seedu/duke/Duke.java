@@ -34,6 +34,7 @@ public class Duke {
             String userInstruction = ui.readCommand();
             command = new Parser().parse(userInstruction);
             command.execute();
+            ui.lineBreak();
         } while (!ExitCommand.isExit(command));
     }
 
