@@ -63,6 +63,13 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 * **Testing Guide**
 * **Logging Guide**
 
+ 1. We are using java.util.logging package for logging.
+ 2. The Logger class is used to manage the logging levels and logging destinations.
+ 3. The Logger for a class can be obtained using Logger.getLogger(Class) which will log messages according to the specified logging level.
+ 4. Log messages are output to a `/log/*.log` file by setting `logger.setUseParentHandlers = false` to disable showing on console output.
+    The logger collect `DeleteCommand`, `ListCommand` class and etc.
+ 5. The output logging level by `Level.INFO`
+
 ## Appendix: Requirements
 
 ### Product scope
