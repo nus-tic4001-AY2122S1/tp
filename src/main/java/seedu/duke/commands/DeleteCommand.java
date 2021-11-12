@@ -41,13 +41,17 @@ public class DeleteCommand extends Command {
                         .filter(t -> t.hasChildren())
                         .collect(Collectors.toList());
 
-        List<GtdThought> projl1 = projl0.stream()
-                .filter(t -> t.hasChildren())
-                .collect(Collectors.toList());
+        List<GtdThought> projl1 = new ArrayList<>();
+        projl0.stream()
+                .forEach(t -> t.getChildren().stream()
+                        .filter(p -> p.hasChildren())
+                        .forEach(p -> projl1.add(p)));
 
         master.removeAll(toRemove);
-        projl0.removeAll(toRemove);
-        projl1.removeAll(toRemove);
+
+        for (var sub : toRemove) {
+            projl0.stream().forEach(t -> t.removeSub(sub));
+        }
 
         for (var sub : toRemove) {
             projl1.stream().forEach(t -> t.removeSub(sub));
