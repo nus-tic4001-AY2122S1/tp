@@ -26,7 +26,11 @@ Interface (CLI).
 * Code Contributed: [RepoSense Link](https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2021-09-17&tabOpen=true&tabType=authorship&tabAuthor=zyjarvis&tabRepo=AY2122S1-TIC4001-F18-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false)
 
 Documentation:
-* Contributions to the UG:
+* Contributions to the UG: 
+  <br> Update User stories
+  <br> Update Command implementations
 * Contributions to the DG:
+  <br> Wrote delete command implementation with delete command sequency diagram
+  <br> Wrote summary command implementation with sequency diagram
 ##### Review/mentoring contributions:
-    Links to PRs reviewed, instances of helping team members in other ways.
+    Links to PRs reviewed, instances of helping team members in solve bugs.
