@@ -1,6 +1,8 @@
 package seedu.duke;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import netscape.javascript.JSObject;
 
 import java.io.BufferedReader;
@@ -58,5 +60,23 @@ public class Api {
         Module[] myMods = gson.fromJson(tmpStr, Module[].class);
         NusModList nusModList = NusModList.createInstance(myMods);
         return nusModList;
+    }
+
+    public JsonObject getModuleInfo(String moduleCode) throws IOException {
+        String moduleUrlString = "https://api.nusmods.com/v2/2020-2021/modules/" + moduleCode + ".json";
+        URL url = new URL(moduleUrlString);
+        URLConnection conn = url.openConnection();
+        InputStream is = conn.getInputStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line = "";
+
+        StringBuilder responseStrBuilder = new StringBuilder();
+        while ((line =  br.readLine()) != null) {
+            responseStrBuilder.append(line);
+        }
+        is.close();
+        String tmpStr = responseStrBuilder.toString();
+        JsonObject jsonObject = JsonParser.parseString(tmpStr).getAsJsonObject();
+        return jsonObject;
     }
 }

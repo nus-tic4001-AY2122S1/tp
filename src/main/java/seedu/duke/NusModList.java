@@ -54,7 +54,7 @@ public class NusModList {
         return false;
     }
 
-    public int moduleIndex(String moduleCode) {
+    public int getModuleIndex(String moduleCode) {
         for (int i = 0; i < this.getSize(); i++) {
             if (ModListForYear[i].getModuleCode().equals(moduleCode)) {
                 return i;

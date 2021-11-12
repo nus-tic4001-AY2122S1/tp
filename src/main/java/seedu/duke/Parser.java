@@ -9,6 +9,8 @@ import seedu.duke.command.DeleteCommand;
 import seedu.duke.command.PlaceholderCommand;
 import seedu.duke.command.SaveToStorageCommand;
 import seedu.duke.command.LoadFromStorageCommand;
+import seedu.duke.command.ViewCommand;
+import seedu.duke.command.CheckCommand;
 
 public class Parser {
     public static Command parse(String fullCommand) {
@@ -34,7 +36,7 @@ public class Parser {
             return new ListCommand(subCommand);
 
         case ("view"):
-            return new PlaceholderCommand("view");
+            return new ViewCommand(subCommand);
 
         case ("delete"):
             return new DeleteCommand(subCommand);
@@ -47,6 +49,9 @@ public class Parser {
 
         case ("load"):
             return new LoadFromStorageCommand("load");
+
+        case ("check"):
+            return new CheckCommand(subCommand);
 
         case ("exit"):
         case ("bye"):

@@ -27,7 +27,7 @@ public class UserList {
 
     public void addModule(String moduleCode) {
         NusModList allModules = NusModList.sharedInstance();
-        int index = allModules.moduleIndex(moduleCode);
+        int index = allModules.getModuleIndex(moduleCode);
         Module m = allModules.getMod(index);
         userList.add(m);
         Ui.printModule(userList);

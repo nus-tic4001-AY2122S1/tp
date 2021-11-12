@@ -1,5 +1,6 @@
 package seedu.duke;
 
+import com.google.gson.JsonObject;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -16,4 +17,7 @@ class ApiTest {
         assertEquals(api.urlString, hardcodeUrlString);
         assertEquals(api.urlStringDetailed, hardcodeUrlStringDetailed);
     }
+
+
+
 }
