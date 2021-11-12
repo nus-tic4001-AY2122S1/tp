@@ -72,8 +72,8 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 <img src="Diagram/AddCommand_sequence%20diagram.png" width="1200" height=auto>
 
 ## Documentation, logging, testing
-* **Testing Guide**
-    There are two ways to run tests:
+* **Testing Guide** 
+    <br> There are two ways to run tests:
 
     1. Using **IntelliJ JUnit test runner**. Run all tests, right-click on the `src/test/java` folder </br>
         a. choose `Run` 'All Tests' </br>
