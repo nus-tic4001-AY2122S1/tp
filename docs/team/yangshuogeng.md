@@ -8,8 +8,6 @@ EXPENSES MANAGEMENT SYSTEM (EMS) is a desktop app for managing expenses, optimiz
 Interface (CLI).
 
 ### Summary of Contributions
-####Given below are my contributions to the project.
-
 * **Enhancements implemented:**
   <br>
   <br> ```Milestone v3.0```
@@ -27,10 +25,14 @@ Interface (CLI).
 
 Documentation:
 * Contributions to the UG: 
-  <br> Update User stories
-  <br> Update Command implementations
+  <br> Update User stories, summary and delete command implementation [#80](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/80)
+  <br> Upload Java doc for Delete and Summary commands [#116](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/116)
 * Contributions to the DG:
-  <br> Wrote delete command implementation with delete command sequency diagram
-  <br> Wrote summary command implementation with sequency diagram
+  <br> Wrote delete command implementation with delete command sequency diagram [#119](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/119)
+  <br> Wrote summary command implementation with sequency diagram [#125](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/125])
 ##### Review/mentoring contributions:
-    Links to PRs reviewed, instances of helping team members in solve bugs.
+
+* PR reviewed [#25](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/25) 
+* PR reviewed [#45](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/45)
+* PR reviewed [#99](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/99)
+* PR reviewed [#121](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/121)
