@@ -207,10 +207,12 @@ Releases blocked dates during the range period as specified by users.
 
 
 ### Undeleting a previous online database delete action: `undel <--all>`
-Erase all records inside the online appointment database.
+Restore all records from offline appointment database up to current moment.
 
 **Format**: `undel --all`
 
+* Will restore all records from local archival file "/data/justbook.txt".
+* So long as `save` command is not executed, it undoes all deletes or modifications up to current moment.  
 * Alternate versions: `undel a` or `undel all`.
 
 <ins>**_Example of usage_**<ins>
@@ -228,7 +230,7 @@ Erase all records inside the online appointment database.
 
 **A**: you can refer to the _Delete all bookings within two date_ in the Command Summary.
 
-**Q**: How do I save all the bookings on the go?
+**Q**: How do I save _all the bookings' modifications (incl. deletes)_ to offline database backup file on the go?
 
 **A**: you can simply key in `save`.
 
