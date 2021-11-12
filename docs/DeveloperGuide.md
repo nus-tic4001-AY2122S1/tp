@@ -1,14 +1,19 @@
 # Developer Guide
 
-**Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
-
-
-## Setting up, getting started
-**Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#acknowledgements">Acknowledgements</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Setting up, getting started</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing (configuration, dev-ops)</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
+* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#use-cases">Use Cases</a>*
 
 ## Acknowledgements
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+
+## Setting up, getting started
+**Refer to the guide** <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/README.md">Setting up and getting started.</a>
 
 ## Design 
 
