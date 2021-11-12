@@ -73,12 +73,12 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 
 ## Documentation, logging, testing
 * **Testing Guide**
-* There are two ways to run tests.
+    There are two ways to run tests:
 
-    1. Using IntelliJ JUnit test runner. Run all tests, right-click on the `src/test/java` folder </br>
+    1. Using **IntelliJ JUnit test runner**. Run all tests, right-click on the `src/test/java` folder </br>
         a. choose `Run` 'All Tests' </br>
         b. Run a subset of tests, you can right-click on a test package, test class and select `Run` 'ParserTest' </br>
-    2. Using Gradle
+    2. Using **Gradle**
         Open a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)
         
 * **Logging Guide**
