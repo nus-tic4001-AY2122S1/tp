@@ -7,6 +7,7 @@ import seedu.duke.Module;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ListCommand extends Command {
@@ -22,26 +23,36 @@ public class ListCommand extends Command {
         // Get Data
         NusModList modData = NusModList.sharedInstance();
 
-        ArrayList<Module> filterList = new ArrayList<>(Arrays.asList(modData.getModListForYear()));
+        List<Module> filterList = new ArrayList<>();
 
         // Check user Instruction, to refactor
         if (userInstruction.equals("all")) {
-
+            filterList = new ArrayList<>(Arrays.asList(modData.getModListForYear()));
         } else if (userInstruction.contains("Semester")) {
-            // TODO: Make Search non-case sensitive.
-
+            List<Module> finalFilterList = filterList;
             IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
                     .getModuleSemester().contains(userInstruction))
-                    .forEach(index -> filterList.add(modData.getMod(index)));
+                    .forEach(index -> finalFilterList.add(modData.getMod(index)));
+            filterList = finalFilterList;
         } else {
+            List<Module> finalFilterList1 = filterList;
             IntStream.range(0, modData.getSize()).filter(index -> modData.getMod(index)
                     .getModuleCode().contains(userInstruction))
-                    .forEach(index -> filterList.add(modData.getMod(index)));
+                    .forEach(index -> {
+                        finalFilterList1.add(modData.getMod(index));});
+            filterList = finalFilterList1;
         }
 
         //List and Format Data - List 15 Modules tbc
         Ui.printMsg("Here are the list of available Modules (Limit to 10) : ");
-        for (int i = 0; i < 10; i++) {
+        int size = 10;
+        if(filterList.size() == 0){
+            Ui.printMsg("There are no matches");
+        } else if (filterList.size() < size){
+            size = filterList.size();
+        }
+
+        for (int i = 0; i < size; i++) {
             Module module = filterList.get(i);
             Ui.printShortModuleInfo(module);
         }
