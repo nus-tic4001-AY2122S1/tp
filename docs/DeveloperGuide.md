@@ -44,9 +44,6 @@
 
 <img src="Diagram/exitCommand_sequence_diagram.jpg" width="800" height=auto>
 
-* List Command
-
-* Search Command
 * List Command <br>
 The user execute `list` command to show all the items in the list.<br/>
 UI scanned `list` command from user, `Execution` create a new `ListCommand` and `run()` to get the items from Arraylist, itemList return the items to UI and show to user. <br/>
@@ -65,7 +62,6 @@ the `Delete` command will be created and `run()` method in `Delete` class will b
 <br> UI scanned `summary` command from user input, `Execution` create a new `SummaryCommand` and `run()` to print summary informtion.
 
 <img src="Diagram/Summary Sequency Diagram.png" width="800" height=auto> 
-
 
 * Add Command
 <br> The user execute `expense lunch /food /12 /12-10-2021` command to add expense item to item list.
