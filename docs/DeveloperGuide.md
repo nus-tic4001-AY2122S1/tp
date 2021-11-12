@@ -161,10 +161,11 @@ Our Value Proposition is that our scheduler provides, throughout the app use, a 
 Fig 4. - JustBook App Activity Diagram<br/><br/>
 The diagram illustrates the possible branches leading to various outcomes based on the user's decisions.
 
-The model illustrates a regular process flow of a user starting up the JustBook application. The user launches the 
-application and is prompted to log in. If the user does not have an account within the application, the user will be 
-prompted to create an account and redirected to log in again. Following that, the user is presented with options on 
-utilising the application as illustrated in the diagram. 
+The model illustrates a possible regular process flow of a user starting up the JustBook application with an upcoming feature.
+The user launches the application and is prompted to log in: if the user does not have an account within the application,
+the user will be prompted to create an account and redirected to log in again _(coming feature)_. Following that, the 
+user is presented with options on utilising the application as illustrated in the diagram. Current version has the user
+enter a chosen username instead.
 
 
 ## Glossary
