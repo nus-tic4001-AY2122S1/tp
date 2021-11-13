@@ -27,12 +27,12 @@
    API: <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/src/main/java/seedu/duke/Storage.java">Storage.java</a>   
    <br> The Storage component,
    <br> a. can save expenses.txt file to `/file` folder and load the expenses.txt file back `/file` folder with corresponding format.
+   <br> b. auto save when user execute edit, delete and add expense/ income command    
    <br>    `File format` showing as below, 
    
             Here are the items in your list:
             1.[E] [Meal] lunch ($40.0) (2021-Dec-01) 
             2.[I] [OctSalary] salary ($4000.0) (2021-Dec-01) 
-    <br> b. auto save when user execute edit, delete and add expense/ income command    
 
 * *Common classes* (ItemList)
 
