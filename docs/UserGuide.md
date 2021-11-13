@@ -156,6 +156,43 @@ Format: `categories tag {TASK_NUMBER} {CATEGORY_NAME}`
 Example of usage:
 `categories tag 1 fishes`
 
+### Search
+
+#### Search Tasks by Category Tag: search
+Filters and prints a task list that contains a specific `category tag`
+
+Format: `search {CATEGORY_TAG}`
+
+Example of usage: `search NUS Year 4 Sem 1`
+
+#### Search Tasks by Task Type: `search`
+Filters and prints a task list that contains a specific task type (i.e. appointment or todo)
+
+Format: `search appointment` or `search todo`
+
+#### Search Tasks by Date: `search`
+Filters and prints a task list of appointments with specified date
+
+Format: `search {date}`
+
+* Date format has to be "dd-MM-yyyy"
+
+Example of usage: `search 13-11-2021`
+
+
+#### Search Tasks by Description: `search`
+Filters and prints a task list that contains the specified keywords
+
+Format: `search {keywords}`
+
+* Order of `{keywords}` matters
+
+Example of usage: `search exams 2021`
+
+
+
+
+
 ## FAQ
 
 **Q**: How do I transfer my data to another computer?
