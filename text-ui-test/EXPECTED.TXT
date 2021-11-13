@@ -27,7 +27,6 @@ Hello! I'm Daffy
    [A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
 
    Noted. I've removed this task:
-
    [A][ ] regression4, at 13-11-2021 06:00:00 PM. Location: home
    Now you have 4 tasks in the list.
    Nice! I've marked this task as done:
@@ -72,7 +71,3 @@ Hello! I'm Daffy
    1.[A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
    2.[A][X] regression3, at 13-11-2021 05:00:00 PM. Location: home
 Bye. Hope to see you again soon!
-
-BUILD SUCCESSFUL in 1m 42s
-2 actionable tasks: 1 executed, 1 up-to-date
-7:23:25 PM: Task execution finished ':Duke.main()'.
