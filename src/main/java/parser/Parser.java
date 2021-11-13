@@ -1,22 +1,11 @@
 package parser;
 
 import category.Category;
-import command.SearchByDateCommand;
+import command.*;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
 import command.category.ViewCategory;
-import command.DeleteCommand;
-import command.LocationCommand;
-import command.ByeCommand;
-import command.AppointmentCommand;
-import command.AssignmentCommand;
-import command.TaskProgressCommand;
-import command.AppointmentTimeCommand;
-import command.ProgressionCommand;
-import command.DueDateCommand;
-import java.util.Date;
-
 
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
