@@ -18,6 +18,10 @@ https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=thisisdax&breakdown=
 - View Category command: View all existing categories in the category list
 - Tag Category command: Tags a task with an existing category
 
+### Contributions to the UG
+- Added Category components class diagram
+- Added Command components class diagram for `AddCategory`, `DeleteCategory`, `TagCategory` and `ViewCategory`.
+
 #### Review/mentoring contributions: 
 - https://github.com/AY2122S1-TIC4001-F18-6/tp/pull/4
 - https://github.com/AY2122S1-TIC4001-F18-6/tp/pull/6

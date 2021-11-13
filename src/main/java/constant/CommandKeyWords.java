@@ -4,9 +4,11 @@ import exception.ErrorHandler;
 
 public enum CommandKeyWords {
     SET_LOCATION("SET_LOCATION"), DELETE("DELETE"),
-    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"),
-    BYE("BYE"), HOMEWORK("HOMEWORK"), DIFFICULTY_LEVEL("DIFFICULTY_LEVEL"), PROGRESS("PROGRESS"), CHANGE("CHANGE"),
-    TIMEFRAME("TIMEFRAME"), SEARCH("SEARCH");
+    APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"),
+    CATEGORY("CATEGORY"), HOMEWORK("HOMEWORK"),
+    DIFFICULTY_LEVEL("DIFFICULTY_LEVEL"), PROGRESS("PROGRESS"), CHANGE("CHANGE"),
+    TIMEFRAME("TIMEFRAME"), SEARCH("SEARCH"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"),
+    BYE("BYE");
 
     private final String value;
 
@@ -58,18 +60,17 @@ public enum CommandKeyWords {
     /**
      * Correct user's input Command in case of typo/misspelling.
      *
-     * @param input is the user's input
-     * @param v     is an enum
+     * @param input User's input.
+     * @param v command
+     * @return an existing Command Keyword
      */
     private static CommandKeyWords autoCorrect(String input, CommandKeyWords v) {
-        double similarity;
-        int iter;
+        double similarity = 0;
+        int iter = 0;
         double comparison;
         boolean isSkip;
-
         String comp = v.getValue();
-        similarity = 0;
-        iter = 0;
+
         for (int i = 0; i < comp.length(); i++) {
             isSkip = false;
             for (int j = iter; j < input.length() && !isSkip; j++) {

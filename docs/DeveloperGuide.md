@@ -2,7 +2,7 @@
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+Thanks to NUS fundamental code for Duke as well as the idea and inspiration behind this project. Daffy is an extension beyond the original Duke project.
 
 ## Design & Implementation
 
@@ -102,6 +102,10 @@ TagCategory extends `Command` class. It tags an existing category to a task by t
 #### ViewCategory Command
 ViewCategory extends `Command` class. `Ui` will print all the tasks in `Category`.
 
+### Search Command
+Search Command extends `Command` class. It filters and prints the task list based on user's input. 
+<img src="images/SearchCommandSequenceDiagram.png" alt="search-command-uml"/>
+
 ## Product scope
 Daffy is a task tracker specifically built for computing students that are comfortable with the CLI. Working on improving and adding features to the existing Duke project and making it useful for students to manage their schedule and work. Natural language will be implemented to avoid exceptions due to typing errors. 
 
@@ -134,15 +138,20 @@ Daffy is CLI software that helps individuals track the tasks that were keyed in 
 | v2.0    | user     | be able to add category type                               | tag categories to a task              |
 | v2.0    | user     | be able to remove category type                            | the category list is not cluttered    |
 | v2.0    | user     | be able to view all category list                          | view which category are available     |
+| v2.0    | user     | be able to misspell my commands                            | still input my commands even with typo|
 | v3.0    | user     | assign category to task                                    | find related task to a category       |
 | v3.0    | user     | be able to rank upcoming assignment in difficulty level    | choose which task to work on first    |
 | v3.0    | user     | be able to see how much assignment marks                   | choose which task to work on first    |
 | v3.0    | user     | be able to track assignment due date and edit when needed  | complete assignment on time           |
 | v3.0    | user     | be able to mark my progress of my assignments              | decide on which assignment needs to get started |
+| v3.0    | user     | be able to view task list by task type                     | focus on specific task type when the list is too long |
+| v3.0    | user     | be able to view tasks with certain category tag            | focus on specific category tag when the list is too long |
+| v3.0    | user     | be able to view tasks with certain date                    | focus on upcoming appointments when the list is too long |
+| v3.0    | user     | be able to view tasks that contains certain keywords       | filter my task list when it is too long|
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+Usability - System should be able to autocorrect some of the low-level typos in user's command inputs.  
 
 ## Glossary
 
@@ -150,4 +159,7 @@ Daffy is CLI software that helps individuals track the tasks that were keyed in 
 
 ## Instructions for manual testing
 
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+1. Download the jar file from Release v3.0
+2. Run the application on your preferred terminal - `java -jar tp.jar`
+3. To add a task, enter `todo clean my fish tank`
+4. To view your task, enter `view`

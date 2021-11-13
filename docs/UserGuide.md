@@ -123,7 +123,7 @@ NOTE: the date format is same as the setting Appointment date format.
 #### Add Categories: `categories add`
 Adds a new item to the list of categories.
 
-Format: `categories add n/CATEGORY_NAME`
+Format: `categories add {CATEGORY_NAME}`
 
 Example of usage:
 `categories add fishes`
@@ -131,12 +131,12 @@ Example of usage:
 #### Remove Categories: `categories delete`
 Removes an existing item in the current list of categories.
 
-Format: `categories delete n/CATEGORY_NUMBER`
+Format: `categories delete {CATEGORY_NUMBER}`
 
 * The `CATEGORY_NUMBER` must be an integer within the category list and it cannot be 0.
 
 Example of usage:
-`categories remove 1`
+`categories delete 1`
 
 #### View Categories: `categories view`
 Prints the current list of existing categories.
@@ -149,13 +149,49 @@ Example of usage:
 #### Tag Categories: `categories tag`
 Tag an existing category to a task.
 
-Format: `categories tag n/CATEGORY_NUMBER n/TASK_NUMBER`
+Format: `categories tag {TASK_NUMBER} {CATEGORY_NAME}`
 
 * The `TASK_NUMBER` must be an integer within the category list and it cannot be 0.
-* The `CATEGORY_NUMBER` must be an integer within the task list and it cannot be 0.
 
 Example of usage:
-`categories tag 1 1`
+`categories tag 1 fishes`
+
+### Search
+
+#### Search Tasks by Category Tag: search
+Filters and prints a task list that contains a specific `category tag`
+
+Format: `search {CATEGORY_TAG}`
+
+Example of usage: `search NUS Year 4 Sem 1`
+
+#### Search Tasks by Task Type: `search`
+Filters and prints a task list that contains a specific task type (i.e. appointment or todo)
+
+Format: `search appointment` or `search todo`
+
+#### Search Tasks by Date: `search`
+Filters and prints a task list of appointments with specified date
+
+Format: `search {date}`
+
+* Date format has to be "dd-MM-yyyy"
+
+Example of usage: `search 13-11-2021`
+
+
+#### Search Tasks by Description: `search`
+Filters and prints a task list that contains the specified keywords
+
+Format: `search {keyword(s)}`
+
+* Order of `{keyword(s)}` matters
+
+Example of usage: `search exams 2021`
+
+
+
+
 
 ## FAQ
 
@@ -173,7 +209,11 @@ Example of usage:
 - Set Appointment location `set_location`
 - Check task progress `progress`
 - Search for tasks by date `search --date`
-- Add category `categories add n/CATEGORY_NAME`
-- Remove category `categories remove n/CATEGORY_NUMBER`
+- Add category `categories add {CATEGORY_NAME}`
+- Delete category `categories delete {CATEGORY_NUMBER}`
 - View category `categories view`
-- Tag category `categories tag n/CATEGORY_NUMBER n/TASK_NUMBER`
+- Tag category `categories tag {TASK_NUMBER} {CATEGORY_NAME}`
+- Search Tasks by Category Tag `search {CATEGORY_TAG}`
+- Search Tasks by Task Type `search appointment` or `search todo`
+- Search Tasks by Date `search {date}` where date format is "dd-MM-yyyy"
+- Search Tasks by Description `search {keyword(s)`

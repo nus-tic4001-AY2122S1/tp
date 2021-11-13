@@ -1,7 +1,7 @@
 package parser;
 
-import category.Category;
 import command.SearchByDateCommand;
+import command.SearchCommand;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
@@ -20,20 +20,17 @@ import command.AppointmentTimeCommand;
 import command.ProgressionCommand;
 import command.DueDateCommand;
 
-import java.util.Date;
-
-
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
 
 import exception.ErrorHandler;
 
 public class Parser {
-    private final Category category = new Category();
     private String content;
     private String taskNo;
 
     public Command parse(String input) throws ErrorHandler {
+        input = input.trim();
         String[] result = input.split(" ", 2);
         CommandKeyWords commandWord = CommandKeyWords.getEnum(result[0].toUpperCase());
 
@@ -118,9 +115,12 @@ public class Parser {
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_SEARCH_CATEGORY);
             }
+            if (result[1].contains("--date")) {
+                return this.handleSearch(result[1]);
+            } else {
+                return new SearchCommand(input);
+            }
 
-            return this.handleSearch(result[1]);
-            
         case HOMEWORK:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_DESCRIPTION);

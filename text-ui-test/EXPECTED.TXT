@@ -1,16 +1,73 @@
 Hello! I'm Daffy
 
    Noted. I've added this task:
-   [T][ ] buy milk
+   [A][ ] regression1, at 20-11-2021 01:23:43 PM. Location: home
    Now you have 1 tasks in the list.
    Noted. I've added this task:
-   [T][ ] read book
+   [A][ ] regression2, at 14-11-2021 01:23:43 PM. Location: home
    Now you have 2 tasks in the list.
-   1.[T][ ] buy milk
-   2.[T][ ] read book
+   Noted. I've added this task:
+   [A][ ] regression3, at 13-11-2021 05:00:00 PM. Location: home
+   Now you have 3 tasks in the list.
+   Noted. I've added this task:
+   [A][ ] regression4, at 13-11-2021 06:00:00 PM. Location: home
+   Now you have 4 tasks in the list.
+   Noted. I've added this task:
+   [T][ ] regression5
+   Now you have 5 tasks in the list.
+   0.[A][ ] regression1, at 20-11-2021 01:23:43 PM. Location: home
+   1.[A][ ] regression2, at 14-11-2021 01:23:43 PM. Location: home
+   2.[A][ ] regression3, at 13-11-2021 05:00:00 PM. Location: home
+   3.[A][ ] regression4, at 13-11-2021 06:00:00 PM. Location: home
+   4.[T][ ] regression5
+   Noted. I've updated this task:
+   [A][ ] regression1, at 20-11-2021 01:23:43 PM. Location: school
+
+   Noted. I've updated this task:
+   [A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
+
    Noted. I've removed this task:
-   [T][ ] buy milk
-   Now you have 1 tasks in the list.
-Error: OOPS!!! I'm sorry, you have provided a invalid task number.
-Error: OOPS!!! I'm sorry, but I don't know what that means. Please starts your command with SET_LOCATION, DELETE, APPOINTMENT, SET_TIME, CATEGORY, DONE, VIEW, TODO, BYE, HOMEWORK, DIFFICULTY_LEVEL, PROGRESS, CHANGE, TIMEFRAME, SEARCH. (case insensitive)
+   [A][ ] regression4, at 13-11-2021 06:00:00 PM. Location: home
+   Now you have 4 tasks in the list.
+   Nice! I've marked this task as done:
+   [A][X] regression3, at 13-11-2021 05:00:00 PM. Location: home
+   Noted. I've added this category:
+   category_test - add1
+   Now you have 1 categories in the list.
+   Noted. I've added this category:
+   category_test - add2
+   Now you have 2 categories in the list.
+   0. category_test - add1
+   1. category_test - add2
+   Noted. I've removed this category:
+   category_test - add2
+   Now you have 1 categories in the list.
+   Noted. I've tagged task number 1 with the specified category:
+   category_test - add1
+   Noted. I've tagged task number 2 with the specified category:
+   category_test - add1
+   Noted. I've added this task:
+   [T][ ] autocorrect - missing char
+   Now you have 5 tasks in the list.
+   Noted. I've added this task:
+   [T][ ] autocorrect - rearranged chars
+   Now you have 6 tasks in the list.
+   Noted. I've added this task:
+   [T][ ] autocorrect - additional chars
+   Now you have 7 tasks in the list.
+   Noted. I've added this task:
+   [T][ ] autocorrect - misspelling
+   Now you have 8 tasks in the list.
+   1.[A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
+   2.[A][ ] regression2, at 14-11-2021 01:23:43 PM. Location: home
+   3.[A][X] regression3, at 13-11-2021 05:00:00 PM. Location: home
+   No results found. Please try another parameter
+   1.[A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
+   2.[A][ ] regression2, at 14-11-2021 01:23:43 PM. Location: home
+   1.[A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
+   2.[A][ ] regression2, at 14-11-2021 01:23:43 PM. Location: home
+   3.[A][X] regression3, at 13-11-2021 05:00:00 PM. Location: home
+   4.[T][ ] regression5
+   1.[A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
+   2.[A][X] regression3, at 13-11-2021 05:00:00 PM. Location: home
 Bye. Hope to see you again soon!

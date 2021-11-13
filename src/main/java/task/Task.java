@@ -1,5 +1,7 @@
 package task;
 
+import java.util.Date;
+
 public abstract class Task {
     private String description;
     private String category;
@@ -35,7 +37,14 @@ public abstract class Task {
         return (isDone ? "X" : " "); // mark done task with X
     }
 
+    public String getCategory() {
+        return this.category;
+    }
+
     public abstract String taskToStringFormat();
 
     public abstract String getType();
+
+    public abstract Date getDate();
+
 }

@@ -59,5 +59,20 @@ public class Category {
     public int size() {
         return list.size();
     }
+
+    /**
+     * Checks if the input is an existing category.
+     *
+     * @param input The string to be checked against all existing categories.
+     * @return true if input is an existing category.
+     */
+    public static boolean isCategory(String input) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).toLowerCase().equals(input.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
