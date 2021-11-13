@@ -44,7 +44,7 @@ Various bugs fixing among different places.
 Documented sections:
 - Design & implementation
 - UML
-  - [SeqDiagram.puml](pic/SeqDiagram.puml)
+  - [SeqDiagram.puml](https://github.com/AY2122S1-TIC4001-F18-3/tp/blob/master/docs/pic/SeqDiagram.puml) or [SeqDiagram.png](https://github.com/AY2122S1-TIC4001-F18-3/tp/blob/master/docs/pic/SeqDiagram.png)
 - target user profile
 - product value proposition
 - user persona
