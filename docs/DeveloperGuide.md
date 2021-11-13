@@ -98,10 +98,10 @@ Working in a tech company, she sure is tech savvy. She is constantly looking for
 |--------|----------|---------------|------------------|
 |v1.0|GTD user|add task quickly|I could offload my mental burdens|
 |v1.0|GTD user|list down all incomplete tasks|I could review them and plan|
+|v1.0|experienced user|delete old tasks|the app does not get cluttered with unnecessary data|
 |v1.0|Todo app user|set a task as DONE at completion|I can see my progress on my task achievement|
 |v1.0|GTD user|set actionable tasks in my Inbox as NEXT|those tasks get removed from Inbox and allow me to refer to the Next list for action|
 |v1.0|GTD user|set the actionable tasks in my Inbox that cannot be performed by me until relevant resources from someone else as WAIT|review them again in one place once I obtain the deliverables from the person in charge|
-|v1.0|experienced user|delete old tasks|the app does not get cluttered with unnecessary data|
 |v2.0|GTD user|set the non-actionable tasks in my Inbox that cannot be done in one step as PROJ|later I could plan for each project and dismantle them into a sequence of actionable tasks|
 |v2.1|GTD user|move actionable tasks from Inbox to be under a specific project which it belongs to|I could clear my Inbox and have tasks grouped in a logical way|
 |v3.0|GTD user|set due date for a task|it get focused for attention at a later date|
@@ -117,14 +117,29 @@ Working in a tech company, she sure is tech savvy. She is constantly looking for
 + *GTD* - [Get Things Done](https://todoist.com/productivity-methods/getting-things-done#what-is-gtd-a-brief-overview)
 + *GtdThought* - the data structure of a task which has a Status, can have parent GtdThought which holds it or hold multiple GtdThought as children
 + *GtdList* - a list that holds 0 to multiple GtdThought
-+ *glossary item* - Definition
-+ *glossary item* - Definition
+
 
 ## Instructions for manual testing
 
+If run using the `jar` file, program starts clean with no pre-loaded data.
+
 If clone the whole project directory, sample data would be included.
 
-If run using the `jar` file, program starts clean with no pre-loaded data. 
+### install
+
+1. Ensure that you have Java 11 or above installed
+2. download the `.jar` file at [this link release V3.0](https://github.com/AY2122S1-TIC4001-F18-3/tp/releases/tag/v3.0)  put to desired directory
+3. `cd` to the directory contains the `.jar` file
+4. ```
+   java -jar tp.jar
+   ```
+
+Alternative way of installing the program:
+2. ```
+   git clone https://github.com/AY2122S1-TIC4001-F18-3/tp.git
+   ```
+3. This way you will get pre-loaded sample tasks when start the program
+4. You could open the folder as a project via IDE
 
 ### get started 
 ```
@@ -156,7 +171,7 @@ list inbox
 set 1 wait 
 ```
 ### move tasks from inbox to be under a project via `proj-mode`
-Suggest first do `set` to mark the project in the Inbox  
+Suggest do `set` to mark the top level projects (no indentation) from the Inbox first, prior to enter `proj-mode` for arrangement.
 ```
 proj-mode
 _________________________________________________
@@ -176,7 +191,7 @@ inbox: ..................... proj:
 q
 end proj-mode <<<
 ```
-(the Exception handling for `proj-mode` yet made it into V3.0)
+(the Exception handling for `proj-mode` yet made it into V3.0, incorrect arguments result in exiting `proj-mode` immediately)
 
 ### mark tasks done
 another way to complete tasks other than `set` command.

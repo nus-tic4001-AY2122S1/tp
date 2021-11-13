@@ -7,11 +7,18 @@ This User Guide will get GTD users started on the commands that achieve common G
 ## Quick Start
 
 1. Ensure that you have Java 11 or above installed
-2. download the `.jar` file at [this link release V3.0](https://github.com/AY2122S1-TIC4001-F18-3/tp/releases/tag/v2.1) <-- /need to change/  put to desired directory 
+2. download the `.jar` file at [this link release V3.0](https://github.com/AY2122S1-TIC4001-F18-3/tp/releases/tag/v3.0)  put to desired directory 
 3. `cd` to the directory contains the `.jar` file 
 4. ```
    java -jar tp.jar
    ```
+   
+Alternative way of installing the program: 
+2. ```
+   git clone https://github.com/AY2122S1-TIC4001-F18-3/tp.git
+   ```
+3. This way you will get pre-loaded sample tasks when start the program
+4. You could open the folder as a project via IDE
 
 ## Features 
 
@@ -69,7 +76,8 @@ Example of usage:
 
 ### Inbox items to Project Arrangement: `proj-mode`
 
-Remember to `set` PROJ from Inbox first
+Remember to `set` top level (no indentation) PROJ from Inbox first, 
+while subproject can be added in `proj-mode`.
 
 Format: 
 
@@ -87,6 +95,7 @@ proj-mode
 1 2 -> 1-2
 q
 ```
+(the Exception handling for `proj-mode` yet made it into V3.0, incorrect arguments result in exiting `proj-mode` immediately)
 
 ### Exiting the program: `bye`
 Exits the program
@@ -120,6 +129,5 @@ e.g.
  |  List items in Inbox | `list inbox` |
   | List items with Status  | `list STATUS` |
   |  Arrange items from Inbox to under a project | [suggest `set` items that supposed to be PROJ from Inbox first] <br /> `proj-mode` <br /> `INBOX_REF_NO -> PROJ_REF_NO`<br />to exit<br />`q` |
-  |   |  |
   |   |  |
   |   |  |
