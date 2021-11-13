@@ -3,12 +3,10 @@ package seedu.duke;
 import command.Command;
 import parser.Parser;
 import storage.Storage;
-import task.Task;
 import tasklist.TaskList;
 import category.Category;
 import ui.Ui;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {

@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CategoryTest {
-    private Category category = new Category();
+    private final Category category = new Category();
+
     @Test
     public void addCategory() throws ErrorHandler {
         category.addCategory("fishes");
