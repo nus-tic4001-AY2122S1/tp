@@ -45,5 +45,25 @@ Interface (CLI)
   <br> Enabled Assertion
 
 
-#####Review/mentoring contributions: 
-    Links to PRs reviewed, instances of helping team members in other ways.
+##### Review/mentoring contributions: 
+   Links to PRs reviewed: 
+   [#29](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/29)
+    [#41](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/41)
+    [#46](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/46)
+    [#56](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/56)
+    [#57](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/57)
+    [#62](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/62)
+    [#63](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/63)
+    [#67](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/67)
+    [#71](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/71)
+    [#72](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/72)
+    [#73](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/73)
+    [#83](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/83)
+    [#93](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/93)
+    [#96](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/96)
+    [#101](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/101)
+    [#122](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/122)
+    [#128](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/128)
+
+
+
