@@ -20,7 +20,7 @@ You can view all available modules for the year, as well as add modules you are 
 `Type something:` 
 
 4. You can now enter commands into the command prompt. 
-5. 
+
 ## Features 
 
 Here are a list of commands you can enter, and the explanations of what the commands do:
