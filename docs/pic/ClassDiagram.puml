@@ -42,6 +42,7 @@ class Parser {
     +{static} CHK_INDEX_FORMAT_STEP_2 : Pattern
     +{static} SET_CMD_FORMAT : Pattern
     +{static} SET_CMD_FORMAT_OPTIONAL : Pattern
+    +{static} DUE_CMD_FORMAT : Pattern
     +{static} LIST_FOLDER_TYPE : String[]
 
     +parse(inputCommand : String) : Command
@@ -50,6 +51,7 @@ class Parser {
     -prepareDone(args : String) : Command
     -prepareDelete(args : String) :Command
     -prepareSet(args : String) :Command
+    -prepareDue(args : String) :Command
     -parseArgsAsIndexParam(args : String) : List<String>
 }
 class Command {
@@ -95,9 +97,9 @@ class IncorrectCommand {
 }
 class ListCommand {
     +{static} COMMAND_WORD : String = list
-    -folderType : String
+    -target : String
 
-    +ListCommand(folderType : String)
+    +ListCommand(target : String)
     +execute() : void
 }
 class ProjModeCommand {
@@ -172,10 +174,12 @@ class GtdList {
     +remove(index : int) : void
     +removeAll(toRemove : ArrayList<GtdThought>) : void
     +print() : void
+    +print(excludeChildren : boolean) : void
     +getLines() : String
     +addNum(text : String, startNum : int) : String
     +countInden(str : String) : int
     +clear() : void
+    +sortDue() : void
     +iterator() : Iterator<GtdThought>
 }
 interface Iterable<GtdThought>
@@ -193,7 +197,7 @@ class GtdThought {
     -parent : Optional<GtdThought>
     -children : ArrayList<GtdThought>
     -creation : LocalDateTime
-    -due : LocalDateTime
+    -due : LocalDate
     -done : LocalDateTime
     -id : int
     -parentID : int
@@ -202,12 +206,13 @@ class GtdThought {
 
     +GtdThought(title : String)
     +GtdThought(title : String, parent : GtdThought)
-    +GtdThought(id : int, status : Stat, title : String)
+    +GtdThought(id : int, status : Stat, title : String, due : LocalDate)
     +getId() : int
     +getParentId() : int
     +getParent() : Optional<GtdThought>
     +getLevelNo() : int
     +getTitle() : String
+    +getDueString() : String
     +getlevel() : int
     +setlevel(n : int) : void
     +addSub(sub : GtdThought) : void
@@ -217,17 +222,21 @@ class GtdThought {
     +print() : void
     +printRec() : void
     +getTextRec() : String
-    -auxgetTextRec(text : String) : String
+    +getTextRec(excludeChildren : boolean) : String
+    -auxgetTextRec(text : String, excludeChildren : boolean) : String
     +setParent(thought : GtdThought) : void
     +getRec(stat : Stat) : ArrayList<GtdThought>
     +auxgetRec(stat : Stat, filtered : ArrayList<GtdThought> : void
+    +getDueList(dueList: ArrayList<GtdThought>) : ArrayList<GtdThought>
     +getStatus() : Stat
     +setStatus(status : Stat) : void
     +hasChildren() : boolean
     +getChildren() : ArrayList<GtdThought>
     +setTitle(title : String) : void
     +setNote(title : String) : void
+    +setDue(due : LocalDate) : void
     +toString() : String
+    +compareTo(e : GtdThought) : int
 }
 GtdThought --> GtdThought
 GtdThought --> "1" Stat
