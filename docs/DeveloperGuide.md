@@ -1,11 +1,11 @@
 # Developer Guide
 
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#acknowledgements">Acknowledgements</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#setting-up-getting-started">Setting up, getting started</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
+* *[Acknowledgements](DeveloperGuide.md#acknowledgements)*
+* *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
+* *[Design](DeveloperGuide.md#design)*
+* *[Implementation](implementation-sequence-diagram)*
+* *[Documentation, logging, testing](documentation-logging-testing-configuration-dev-ops)*
+* *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
 * *[Use Cases](DeveloperGuide.md#use-cases)*
 
 ## Acknowledgements
