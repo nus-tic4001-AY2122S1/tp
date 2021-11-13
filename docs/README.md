@@ -12,3 +12,7 @@ Please navigate via these links:
 [ABOUT US](AboutUs.md)
 
 [KHOR KEE YONG'S PPP](/team/KhorKeeYongPPP.md)
+
+[LOW YAN SHUANG'S PPP](/team/lowyanshuang.md)
+
+[JOSEPH'S PPP](/team/Joseph.md)
