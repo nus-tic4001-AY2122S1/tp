@@ -36,19 +36,26 @@ Here are a list of commands you can enter, and the explanations of what the comm
 | myList            | Views your personal list.                                                                                                                 |
 | view <ModuleCode> | Views a more detailed information of a more specific module. For example, use `view TIC1001` to view the module details.                  |
 
-### Adding a module: `add`
-Adds a new item to the list of todo items.
+### Listing available modules: `list all`
+View a list of available modules for the acadamic year. 
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+Format: `list all`
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
 
-Example of usage: 
+Example of Usage: `list all`
+* ![LST_ALL](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_ALL.png "Optional Title")
 
-`todo n/Write the rest of the User Guide d/next week`
+### Searching details for a Particular Module: `list <Module Code>`
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+Format: `List <Module Code>`
+
+* The `List <Module Code>' command can work on fuzzy search. 
+* You can search with a partial Module code it would return a list of results instead.  
+
+Example of usage: `list TIC`
+
+* ![LST_TIC](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_TIC.png "Optional Title")
+
 
 ## FAQ
 
