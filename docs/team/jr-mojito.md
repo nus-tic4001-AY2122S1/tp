@@ -10,6 +10,7 @@ Interface (CLI)
 
 * **Code Contributed:** [RepoSense Link](https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2021-09-17&tabOpen=true&tabType=authorship&zFR=false&tabAuthor=jr-mojito&tabRepo=AY2122S1-TIC4001-F18-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code~other&authorshipIsBinaryFileTypeChecked=false)
 
+
 * **Enhancements implemented:**
 
 * ```Milestone v1.0```
@@ -32,11 +33,13 @@ Interface (CLI)
     5. Add PPP draft - Pull Request [#111](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/111)
     6. Update DG - Pull Request [#124](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/124)
 
+
 * **Contributions to team-based tasks**
   * Maintaining the issue tracker (milestone v1.0 issue tracter setup)
   * Add Logging function and save to different system log folder
   * Enabled Assertion Pull Request[#31] (https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/31)
   * Edit AboutUs.md and maintained publish page issues.
+
 
 **Documentation:**
 
