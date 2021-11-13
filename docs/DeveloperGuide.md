@@ -21,11 +21,14 @@
 
 ## User Stories
 
-|Version| As a ... | I want to ... | So that I can ...|
+|Version| As a ... | I want to ... | So that ...|
 |--------|----------|---------------|------------------|
-|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
-|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
-|v2.0|user|store modules into my list|view the modules that I am planning to take|
+|v1.0|new user|see usage instructions|I can refer to them when I forget how to use the application|
+|v1.0|new user|download NMP for free from github|I will not incur any costs|
+|v2.0|user|view a specific module|I can view module information that is relevant to me|
+|v2.0|user|view my list of added modules|I can do a review of what modules I’ve been interested in|
+|v2.0|user|remove modules from my list of added modules|my list will only contain the modules that I wanted|
+|v2.0|user|view all modules offered for the term|so that I can bid for my modules|
 
 ## Non-Functional Requirements
 
