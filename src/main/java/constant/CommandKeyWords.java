@@ -5,7 +5,9 @@ import exception.ErrorHandler;
 public enum CommandKeyWords {
     SET_LOCATION("SET_LOCATION"), DELETE("DELETE"),
     APPOINTMENT("APPOINTMENT"), SET_TIME("SET_TIME"), CATEGORY("CATEGORY"), DONE("DONE"), VIEW("VIEW"), TODO("TODO"),
-    BYE("BYE"), PROGRESS("PROGRESS"), SEARCH("SEARCH");
+    BYE("BYE"), HOMEWORK("HOMEWORK"), DIFFICULTY_LEVEL("DIFFICULTY_LEVEL"), PROGRESS("PROGRESS"), CHANGE("CHANGE"),
+    TIMEFRAME("TIMEFRAME"), SEARCH("SEARCH");
+
     private final String value;
 
     CommandKeyWords(String value) {
@@ -51,7 +53,6 @@ public enum CommandKeyWords {
         throw new ErrorHandler(ErrorMessage.INVALID_COMMAND + " Please starts your command with "
             + getSerializedString()
             + " (case insensitive)");
-
     }
 
     /**
