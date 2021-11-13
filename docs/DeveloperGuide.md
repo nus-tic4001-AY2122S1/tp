@@ -2,22 +2,18 @@
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 * [NUSMods API V2](https://api.nusmods.com/v2/)
 
 ## Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
-
-
-Overview
+**Overview
 
 ![image](https://user-images.githubusercontent.com/43517460/141647688-eaeb4429-adce-4b07-8880-19a1ec8c8265.png)
 
-Command component
+**Command component
 ![image](https://user-images.githubusercontent.com/43517460/141647430-0364958b-006a-407a-aa2e-873ea0b65c1b.png)
 
-Module component
+**Module component
 ![image](https://user-images.githubusercontent.com/43517460/141647609-91b453de-9d9f-44f6-b72a-332efaa60474.png)
 
 
@@ -77,6 +73,3 @@ Module planning is a complex task which requires planning. Our app aims to let N
 
 
 
-## Instructions for manual testing
-
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
