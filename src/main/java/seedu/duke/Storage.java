@@ -1,15 +1,12 @@
 package seedu.duke;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.io.FileReader;
 
 
 public class Storage {
@@ -17,51 +14,30 @@ public class Storage {
     public void loadFromStorage(ItemList saveItemList) {
 
         try {
-            FileReader fileReader = new FileReader("./file/expenses.txt");
+            BufferedReader br = new BufferedReader(new FileReader("./file/expenses.txt"));
+            String s;
+            while ((s = br.readLine()) != null) {
+                String[] item = s.split("\\|", 0);
 
-            Scanner lineReader = new Scanner(fileReader);
-            SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MMM-dd");
+                String type = item[0].trim();
+                String description = item[2].trim();
+                String category = item[1].trim();
+                double amount = Double.parseDouble(item[3].trim());
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = formatter.parse(item[4].trim());
 
-            while (lineReader.hasNext()) {
-                String lineData = lineReader.nextLine();
-                String[] splitString = lineData.split("\\s\\r?\\n");
-
-                for (int i = 0; i < splitString.length; i++) {
-                    String item = splitString[i].split(" ")[0];
-                    String description = splitString[i].split(" ")[1];
-                    String category = splitString[i].split(" ")[2];
-                    String amount = splitString[i].split(" ")[3];
-                    String date = splitString[i].split(" ")[4];
-
-                    String descCatAmountAndDate = item + " " + category + " " + description + " " + amount + " " + date;
-
-                    final String regex = "\\[(\\w+)\\]\\s(\\w+)\\s\\[(\\w+)\\]\\s\\"
-                            + "(\\$((\\d+).\\d+)\\)\\s\\(([(\\d+]{4}-[\\w+]{3}-[\\d+]{2})";
-
-                    final Pattern pattern = Pattern.compile(regex);
-                    final Matcher matcher = pattern.matcher(descCatAmountAndDate);
-
-                    while (matcher.find()) {
-                        String itemParser = matcher.group(1);
-                        String descriptionParser = matcher.group(2);
-                        String categoryParser = matcher.group(3);
-                        Double amountParseDouble = Double.parseDouble(matcher.group(4));
-                        Date dateParser = dateFormatter.parse(matcher.group(6));
-
-                        switch (itemParser) {
-                        case ("E"):
-                            saveItemList.addExpense(descriptionParser, categoryParser, amountParseDouble, dateParser);
-                            break;
-                        case ("I"):
-                            saveItemList.addIncome(descriptionParser, categoryParser, amountParseDouble, dateParser);
-                            break;
-                        default:
-                            System.out.println("Please key in valid command!");
-                        }
-                    }
+                switch (type) {
+                case "I":
+                    saveItemList.addIncome(description, category, amount, date);
+                    break;
+                case "E":
+                    saveItemList.addExpense(description, category, amount, date);
+                    break;
+                default:
+                    System.out.println("Load item failed");
                 }
             }
-        } catch (FileNotFoundException | ParseException e) {
+        }  catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
@@ -71,13 +47,11 @@ public class Storage {
             FileWriter fw = new FileWriter("./file/expenses.txt");
 
             for (int i = 0; i < itemList.items.size(); i++) {
-                fw.write(i + 1 + "." + itemList.items.get(i).save_toString() + "\n");
+                fw.write(itemList.items.get(i).save_toString() + "\n");
             }
             fw.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
         } catch (IOException e) {
-            System.out.println("Something went wrong" + e.getMessage());
+            System.out.println("File not found");
         }
     }
 
