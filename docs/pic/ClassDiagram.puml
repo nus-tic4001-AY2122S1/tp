@@ -228,14 +228,14 @@ Next ..> Parser
 Command --> "2" GtdList
 
 AddCommand ..> "master" GtdList
-AddCommand ..> GtdThought
+'AddCommand ..> GtdThought
 
 DeleteCommand ..> "master" GtdList
 DeleteCommand ..> "current" GtdList
-DeleteCommand ..> GtdThought
+'DeleteCommand ..> GtdThought
 
 DoneCommand ..> "current" GtdList
-DoneCommand ..> GtdThought
+'DoneCommand ..> GtdThought
 DoneCommand ..> Stat
 
 ListCommand ..> Stat
@@ -246,13 +246,24 @@ ProjModeCommand --> "inbox" GtdList
 ProjModeCommand --> "proj" GtdList
 ProjModeCommand ..> "master" GtdList
 ProjModeCommand --> Ui
-ProjModeCommand ..> GtdThought
+'ProjModeCommand ..> GtdThought
 ProjModeCommand ..> Stat
 
 SetCommand ..> Stat
 SetCommand ..> "master" GtdList
 SetCommand ..> "current" GtdList
-SetCommand ..> GtdThought
+'SetCommand ..> GtdThought
+
+Parser ..> Command
+Parser ..> AddCommand
+Parser ..> DeleteCommand
+Parser ..> DoneCommand
+Parser ..> ListCommand
+Parser ..> ProjModeCommand
+Parser ..> ExitCommand
+Parser ..> IncorrectCommand
+
+
 
 Command <|-- AddCommand
 Command <|-- DeleteCommand
