@@ -43,7 +43,8 @@ Format: `list all`
 
 
 Example of Usage: `list all`
-* ![LST_ALL](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_ALL.png "Optional Title")
+
+![LIST_ALL.png](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_ALL.png "Optional Title")
 
 ### Searching details for a Particular Module: `list <Module Code>`
 
@@ -54,7 +55,7 @@ Format: `List <Module Code>`
 
 Example of usage: `list TIC`
 
-* ![LST_TIC](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_TIC.png "Optional Title")
+![LIST_TIC.png](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_TIC.png "Optional Title")
 
 
 ## FAQ
