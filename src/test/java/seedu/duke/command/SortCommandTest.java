@@ -28,8 +28,8 @@ public class SortCommandTest {
         SortCommand sort = new SortCommand("sort /asc /amount");
         sort.run(actualList);
 
-        List<String> expected = List.of("[E] [Meal] lunch ($20.0) (2021-Dec-02), "
-                                + "[E] [Meal] lunch ($40.0) (2021-Dec-03), "
+        List<String> expected = List.of("[E] [Meal] lunch ($20.0) (2021-Dec-03), "
+                                + "[E] [Meal] lunch ($40.0) (2021-Dec-02), "
                                 + "[I] [OctSalary] salary ($4000.0) (2021-Oct-01)");
         assertEquals(expected.toString(), actualList.items.toString());
     }
