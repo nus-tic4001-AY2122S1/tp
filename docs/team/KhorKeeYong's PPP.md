@@ -15,6 +15,7 @@ https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=kaydenkhor&breakdown
 - Merging of all pull request so as to ensure all function are integrated smoothly (Includes bugs fixing, code reviews and manual code merging)
 - Overall project code refactoring after each merge of PRs.
 - J-Unit testing
+- Proper branching and code tagging
 
 ### Bugs fixing for:
 -	Search function
