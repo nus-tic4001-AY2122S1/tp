@@ -37,14 +37,14 @@ Interface (CLI)
 * **Contributions to team-based tasks**
   * Maintaining the issue tracker (milestone v1.0 issue tracter setup)
   * Add Logging function and save to different system log folder
-  * Enabled Assertion Pull Request[#31] (https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/31)
+  * Enabled Assertion Pull Request[#31](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/31)
   * Edit AboutUs.md and maintained publish page issues.
 <br>
 
 **Documentation:**
 
 * **Contributions to the UG**
-  * Add Sort Command [#81](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/81 )
+  * Add Sort Command [#81](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/81)
   
 * **Contributions to the DG**
   * Add layout/ Content hyperlink for DG.
