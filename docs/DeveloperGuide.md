@@ -4,7 +4,7 @@
 * *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
 * *[Design](DeveloperGuide.md#design)*
 * *[Implementation](DeveloperGuide.md#implementation-sequence-diagram)*
-* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops)*
+* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing)*
 * *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
 * *[Use Cases](DeveloperGuide.md#use-cases)*
 
