@@ -183,9 +183,9 @@ Example of usage: `search 13-11-2021`
 #### Search Tasks by Description: `search`
 Filters and prints a task list that contains the specified keywords
 
-Format: `search {keywords}`
+Format: `search {keyword(s)}`
 
-* Order of `{keywords}` matters
+* Order of `{keyword(s)}` matters
 
 Example of usage: `search exams 2021`
 
@@ -213,3 +213,7 @@ Example of usage: `search exams 2021`
 - Delete category `categories delete {CATEGORY_NUMBER}`
 - View category `categories view`
 - Tag category `categories tag {TASK_NUMBER} {CATEGORY_NAME}`
+- Search Tasks by Category Tag `search {CATEGORY_TAG}`
+- Search Tasks by Task Type `search appointment` or `search todo`
+- Search Tasks by Date `search {date}` where date format is "dd-MM-yyyy"
+- Search Tasks by Description `search {keyword(s)`
