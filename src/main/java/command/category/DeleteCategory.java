@@ -44,7 +44,7 @@ public class DeleteCategory extends Command {
         for (int i = 0; i < list.sizeOfTask(); i++) {
             if (list.returnTask(i).getCategory().equals(tagCategory)) {
                 throw new ErrorHandler(ErrorMessage.CATEGORY_STILL_IN_USE);
-            };
+            }
         }
 
         category.deleteCategory(this.categoryIndex);
