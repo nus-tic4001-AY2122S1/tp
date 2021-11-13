@@ -12,15 +12,26 @@ Interface (CLI)
 
 * **Enhancements implemented:**
 
+* ```Milestone v1.0```
+    1. Add Expense Class - Pull Request [#18](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/18)
+    2. Assertion Enable - Pull Request [#34](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/34)
+    3. Add Logging - Pull Request [#38](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/38)
+    4. Add JUnit Case For Expense - Pull Request [#42](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/42)
+
 * ```Milestone v2.0```
-    1. Assertion Enable - Pull Request [#30](https://github.com/AY2122S1-TIC4001-F18-2/tp/issues/30)
-    2. Assertion Enable - Pull Request [#30](https://github.com/AY2122S1-TIC4001-F18-2/tp/issues/30)
+     1. Add Feature for Developer Guide - Pull Request [#60](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/60)
+     2. Add Sorting by Amount & Store log files in Background - Pull Request[#68](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/68)
+     3. Refactor sorting command - Pull Request[#78](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/78)
+     4. Add User Guide - Pull Request[#81](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/81)
 
 * ```Milestone v3.0```
-    1. Add Sort by Date - Pull Request [#69](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/95)
-    2. Store log files to log folder - Pull Request [#70](https://github.com/AY2122S1-TIC4001-F18-2/tp/issues/70)
-    3. Read & Save - Pull Request [#59](https://github.com/AY2122S1-TIC4001-F18-2/tp/issues/59)
-    4. Sorting by Amount - Pull Request [#58](https://github.com/AY2122S1-TIC4001-F18-2/tp/issues/58)
+    1. Add Read and Save Command  - Pulll Request [#94](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/94)
+    1. Refactor Sort Command & Add Sort by Date - Pull Request [#95](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/95)
+    2. Add Sort Command JUnit Test - Pull Request [#98](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/98)
+    3. Refactor Save and Read Command - Pull Request [#100](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/100)
+    4. Sorting by Amount - Pull Request [#102](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/102)
+    5. Add PPP draft - Pull Request [#111](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/111)
+    
 
 * **Contributions to team-based tasks**
   * Maintaining the issue tracker (milestone v1.0 issue tracter setup)
