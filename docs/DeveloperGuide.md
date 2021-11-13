@@ -4,7 +4,7 @@
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
 
-## Design & implementation
+## Design & Implementation
 
 ### Architecture
 
@@ -21,7 +21,7 @@ layer.
 
 This layer contains two main components, `Parser` and `Command`.
 
-- Parser will parse user input and return a `Commnad` object to the caller which is `Main` class
+- Parser will parse user input and return a `Command` object to the caller which is `Duke` class
 - The `Command` will execute the tasks which corresponds to the user input. It will update the list of `Model`
   information and use `UI` component to print out relevant message.
 
@@ -49,19 +49,31 @@ From the sequence diagram, we can see that a user input `View -a` to and`Duke` c
 
 The reason of doing this is to decouple the parsing logic and task execution logic which is the implementation follows `Single Responsibility Principle`.
 
-### Delete feature
+### Implementation
+
+The Main flow of the software is to get user input -> parser user input -> execute task -> provide feedback to user regarding the user action.
+
+#### Task execution for create appointment and edit time/location of appointment, checking the progress of the task, as well as exiting the program
+
+For `AppointmentCommand`, `AppointmentTimeCommand`, `ByeCommand`, `LocationCommand`, and `TaskProgressCommand`, they are all extends `Command` class. Please refer to below image for implementation details.
+
+<img src="images/CommandClassDiagram.png" alt="command-class-diagram" />
+
+`Command` class is an abstract class which serves as a based class contains some command methods like `parseDateTime` and `checkTaskNumberOutOfRange` for all subclass to use. It also has an abstract method `execute` which enforce each subclass to override the implementation to handle different user input. This follows the `Single Responsibility Principle` and `The Open Closed principle` to keep our code dry reduce the chances to modify the existing codebase thus reduce the regression error.
+
+#### Delete feature
 
 It extends `Command` class. It checks if the number input by user is out of range. If yes, error thrown. If no, the task will be deleted from the `TaskList`. `Ui` will print the response.
 
 <img src="https://user-images.githubusercontent.com/54061328/141602529-1b8bafe0-c4d5-4b3a-a37f-3cc05a76fe53.png" width="500">
 
-### View feature
+#### View feature
 
 It extends `Command` class. If user input `-a` together with the command, `Ui` will print all the tasks in the `TaskList` together with the done status. If no, `Ui` will print all the **pending** tasks in the `TaskList` together with the done status.
 
 <img src="https://user-images.githubusercontent.com/54061328/141602241-1b488747-bb15-4765-a166-92329cbb757e.png" width="500">
 
-### Mark as done feature
+#### Mark as done feature
 
 It extends `Command` class. It checks if the number input by user is out of range. If yes, error thrown. If no, change the status of the task to done [X].
 
