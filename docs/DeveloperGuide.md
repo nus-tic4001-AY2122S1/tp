@@ -48,6 +48,8 @@ The Sequence Diagram below shows how the components interact with each other for
 
 NUS students who take modules, and prefer CLI.
 
+`Lily is a part-time NUS student studying cyber security while working a full time job. She spent most of her time working during the weekdays and studying on the weekends. This causes her to not have enough time to spend with her family and friends during the school period. She also has a lot of friends from different groups and during the school holiday period, she spent lots of time catching up with her friends and family. During the second year of school, she spent quite a lot of time planning not just her next semester module, but her next year’s module as well to ensure she got the module she wanted. She also does not like to create an account online as she is a cyber security student, she practices avoiding using the same password twice and giving out unnecessary information. `
+
 ### Value proposition
 
 Module planning is a complex task which requires planning. Our app aims to let NUS students plan their upcoming modules more easily. 
