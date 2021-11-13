@@ -20,6 +20,8 @@ Kindly follow [this link](https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?s
 ### Contributions to the UG
 1. Add command
 2. List command
+3. Set command
+4. Due command
 
 ### Contributions to the DG
 1. Storage save feature, with Sequence Diagram
