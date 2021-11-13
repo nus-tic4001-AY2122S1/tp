@@ -17,8 +17,8 @@ public class SortCommandTest {
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
         ItemList actualList = new ItemList(arrayListExpLst);
 
-        AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /1-12-2021");
-        AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /1-12-2021");
+        AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /02-12-2021");
+        AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /03-12-2021");
         AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
 
         addFirstExpense.run(actualList);
