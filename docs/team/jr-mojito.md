@@ -26,6 +26,7 @@ Interface (CLI)
   * Maintaining the issue tracker (milestone v1.0 issue tracter setup)
   * Add Logging function and save to different system log folder
   * Enabled Assertion Pull Request[#31] (https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/31)
+  * Edit AboutUs.md and maintained publish page issues.
 
 
 **Documentation:**
@@ -39,7 +40,7 @@ Interface (CLI)
   * Add Storage component API to design part
 
 ##### Review/mentoring contributions: 
-   Links to PRs reviewed: 
+  * Links to PRs reviewed: 
    [#29](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/29)
     [#41](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/41)
     [#46](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/46)
