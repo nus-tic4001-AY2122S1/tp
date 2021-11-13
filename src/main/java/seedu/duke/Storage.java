@@ -14,13 +14,13 @@ public class Storage {
     public static FlightList flightList;
 
     public Storage(FlightList flightList) {
-        this.flightList = flightList;
+        Storage.flightList = flightList;
     }
 
     /**
      * Read all flight details from DB file and store them to fightList.
      */
-    public void readFile() throws FileNotFoundException, IOException {
+    public void readFile() throws Exception {
         BufferedReader fileRead = new BufferedReader(new FileReader("FlightDB.txt"));
         String line = fileRead.readLine();
         while (line != null) {
@@ -43,6 +43,14 @@ public class Storage {
         fileWriter.close();
         printWriter.close();
     }
+
+    public static void saveToDB() throws IOException {
+        FileWriter fileWriter = new FileWriter("FlightDB.txt", true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        fileWriter.close();
+        printWriter.close();
+    }
+
 
     /**
      * deleted flight details from flightDB file.

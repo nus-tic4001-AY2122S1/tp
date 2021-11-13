@@ -41,7 +41,9 @@ public class Parser {
         if (userInput.contains("search")) {
             command = "search";
         }
-
+        if (userInput.contains("sort")) {
+            command = "sort";
+        }
         if (userInput.contains("show upcoming") || userInput.contains("show Upcoming")) {
             command = "show upcoming";
         }

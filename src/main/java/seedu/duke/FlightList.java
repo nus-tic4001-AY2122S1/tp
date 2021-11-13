@@ -1,8 +1,8 @@
 package seedu.duke;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 
 public class FlightList {
 
@@ -70,6 +70,48 @@ public class FlightList {
         list.remove(index);
     }
 
+
+    /**
+     * Air Rec sorts the Flight list by price or dateTime, defined by user input.
+     */
+    public void sortFlight(String message) {
+        String code = message.substring(5).trim().toLowerCase();
+        if (!code.equals("price") && !code.equals("datetime")) {
+            System.out.println("You only can sort by price or datetime, please re-enter your input.");
+            return;
+        }
+        int n = list.size();
+        for (int j = 1; j < n; j++) {
+            if (code.equals("price")) {
+                int key = list.get(j).price;
+                Flight flightKey = list.get(j);
+                int i = j - 1;
+                while ((i > -1) && (list.get(i).price > key)) {
+                    list.set(i + 1, list.get(i));
+                    i--;
+                }
+                list.set(i + 1, flightKey);
+            }
+            if (code.equals("datetime")) {
+                LocalDateTime key = list.get(j).dateAndTime;
+                Flight flightKey = list.get(j);
+                int i = j - 1;
+                while ((i > -1) && (list.get(i).dateAndTime.isAfter(key))) {
+                    list.set(i + 1, list.get(i));
+                    i--;
+                }
+                list.set(i + 1, flightKey);
+
+            }
+        }
+        if (code.equals("price")) {
+            System.out.println("Your flight has been sorted by price in ascending order.");
+        } else {
+            System.out.println("Your flight has been sorted by date and time, earliest flight comes first.");
+        }
+    }
+
+
     /**
      * Air Rec search Flight.
      * version 2.0 will be search flight by keyword.
@@ -89,7 +131,6 @@ public class FlightList {
 
     /**
      * Air Rec edit Flight details.
-     * version 3.0 will be able to edit flight details by keyword.
     */
     public void editFlight(String message) {
         String from = "";
@@ -121,7 +162,7 @@ public class FlightList {
                         splitDate[1] = "02";
                         break;
                     case "Mar":
-                        splitDate[1] = "04";
+                        splitDate[1] = "03";
                         break;
                     case "Apr":
                         splitDate[1] = "04";
