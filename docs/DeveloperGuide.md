@@ -24,11 +24,11 @@ Module component
 ## Product scope
 ### Target user profile
 
-{Describe the target user profile}
+NUS students who take modules, and prefer CLI.
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
+Module planning is a complex task which requires planning. Our app aims to let NUS students plan their upcoming modules more easily. 
 
 ## User Stories
 
