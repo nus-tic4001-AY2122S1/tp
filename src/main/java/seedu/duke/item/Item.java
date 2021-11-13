@@ -45,7 +45,7 @@ public class Item {
     }
 
     public String save_toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String dateInfo = sdf.format(date);
         return category + " | " + description + " | " + amount + " | " + dateInfo;
     }
