@@ -43,7 +43,7 @@ List tasks in inbox.
 Format: `list inbox`
 
 ### List items with Status: `list`
-List tasks filtered by status.
+List tasks filtered by status (`NEXT`, `PROJ`, `WAIT`, `SOME`, `DONE`).
 
 Format: `list STATUS`
 
@@ -53,19 +53,23 @@ Example of usage:
 
 `list WAIT`
 
-### Delete a task: `delete`
-Delete a task from current/latest displayed list.
-(When doubt, always list the desired list first)
+## Set to Status
+Set tasks to a status (`NEXT`, `PROJ`, `WAIT`, `SOME`, `DONE`).
 
-Format: `delete TASK_REF_NO...`
+Format: `set TASK_REF_NO... STATUS`
 
-Example of usage: 
+Example of usage:
 
-`delete 3`
+`set 1 NEXT`
 
-`delete 1 2`
+### Set due date: `due`
+Set due date to a task or tasks.
 
-`delete 1-1-3 1-2`
+Format: `due TASK_REF_NO... YYYY-MM-DD`
+
+Example of usage:
+
+`due 1 2021-11-13`
 
 ### Inbox items to Project Arrangement: `proj-mode`
 
@@ -87,6 +91,20 @@ proj-mode
 1 2 -> 1-2
 q
 ```
+
+### Delete a task: `delete`
+Delete a task from current/latest displayed list.
+(When doubt, always list the desired list first)
+
+Format: `delete TASK_REF_NO...`
+
+Example of usage:
+
+`delete 3`
+
+`delete 1 2`
+
+`delete 1-1-3 1-2`
 
 ### Exiting the program: `bye`
 Exits the program
@@ -116,10 +134,10 @@ e.g.
   | Functions  | Commands |
   | ------------- | ------------- |
   | Add to Inbox  |   `add THOUGHT_TITLE` |
-  |  Set to Status  | [`list`first to get ref_no.] <br />`Set STATUS` (`NEXT`, `PROJ`, `WAIT`, `SOME`, `DONE`)|
  |  List items in Inbox | `list inbox` |
   | List items with Status  | `list STATUS` |
+  |  Set to Status  | `set TASK_REF_NO... STATUS`|
+  |  Set due date | `due TASK_REF_NO... YYYY-MM-DD` |
   |  Arrange items from Inbox to under a project | [suggest `set` items that supposed to be PROJ from Inbox first] <br /> `proj-mode` <br /> `INBOX_REF_NO -> PROJ_REF_NO`<br />to exit<br />`q` |
   | Delete a task  | `delete TASK_REF_NO...` |
-  |   |  |
-  |   |  |
+  | Exit program  | `bye` |
