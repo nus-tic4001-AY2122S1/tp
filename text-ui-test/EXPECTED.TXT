@@ -2,5 +2,9 @@ Welcome to NUS module tracker
 What can I do for you?
 
 Type something: Please key in valid command
+
+-----------------------------------------
 Type something: Do exit
+
+-----------------------------------------
 Good bye!
