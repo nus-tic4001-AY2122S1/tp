@@ -28,7 +28,7 @@ Helped on bug fixing during the progress of the project.
 #### Contributions to Developer Guide
 - UML
     - [ClassDiagram.png](https://github.com/AY2122S1-TIC4001-F18-3/tp/blob/master/docs/pic/ClassDiagram.png)
-
+    - [ClassDiagram.puml](https://github.com/AY2122S1-TIC4001-F18-3/tp/blob/master/docs/pic/ClassDiagram.puml) 
 #### Contributions to team-based tasks
 - Necessary general code enhancement
 - Contributed in the initial fix of the Java CI, mainly the `checkstyle` part with Shihao
