@@ -79,6 +79,11 @@ It extends `Command` class. It checks if the number input by user is out of rang
 
 <img src="https://user-images.githubusercontent.com/54061328/141602402-9c7d0e5f-db45-499c-b1d3-387546ff3179.png" width="500">
 
+#### Homework feature
+It extends `Command` class. It adds assignments to tasks list and assign marks/due dates/difficulty level and progress. It also allows changing of progress status and due dates.
+
+<img src="images/HomeworkDiagram.png" alt="Homework-diagram" />
+
 ### Category
 <img src="images/CategoryClass.png" alt="category-class-uml" />
 
@@ -130,7 +135,10 @@ Daffy is CLI software that helps individuals track the tasks that were keyed in 
 | v2.0    | user     | be able to remove category type                            | the category list is not cluttered    |
 | v2.0    | user     | be able to view all category list                          | view which category are available     |
 | v3.0    | user     | assign category to task                                    | find related task to a category       |
-
+| v3.0    | user     | be able to rank upcoming assignment in difficulty level    | choose which task to work on first    |
+| v3.0    | user     | be able to see how much assignment marks                   | choose which task to work on first    |
+| v3.0    | user     | be able to track assignment due date and edit when needed  | complete assignment on time           |
+| v3.0    | user     | be able to mark my progress of my assignments              | decide on which assignment needs to get started |
 
 ## Non-Functional Requirements
 
