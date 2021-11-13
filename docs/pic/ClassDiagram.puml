@@ -1,4 +1,5 @@
 @startuml
+
 class Next {
     ~ui : Ui
     ~storage : Storage
@@ -122,6 +123,14 @@ class SetCommand {
 
     +SetCommand(targetIndex : List<String>, folderType : String)
     +execute() : void
+}
+class DueCommand {
+     +{static} COMMAND_WORD : String = due
+     -targetIndex : List<String>
+     -due : LocalDate
+
+     +DueCommand(targetIndex : List<String>, due : LocalDate)
+     +execute() : void
 }
 
 class GtdListDecoder {
@@ -284,6 +293,8 @@ SetCommand ..> "master" GtdList
 SetCommand ..> "current" GtdList
 'SetCommand ..> GtdThought
 
+DueCommand ..> "current" GtdList
+
 Parser ..> Command
 Parser ..> AddCommand
 Parser ..> DeleteCommand
@@ -292,10 +303,7 @@ Parser ..> ListCommand
 Parser ..> ProjModeCommand
 Parser ..> ExitCommand
 Parser ..> IncorrectCommand
-
-
-
-
+Parser ..> DueCommand
 
 Command <|-- AddCommand
 Command <|-- DeleteCommand
@@ -305,6 +313,9 @@ Command <|-- ProjModeCommand
 Command <|-- SetCommand
 Command <|-- ExitCommand
 Command <|-- IncorrectCommand
+Command <|-- DueCommand
+
+
 
 
 

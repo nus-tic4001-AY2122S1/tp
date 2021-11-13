@@ -33,7 +33,7 @@ There are some rules to be followed to align with the spirit of GTD:
 - Those tasks sorted to `NEXT`, means they are actionable items (can be completed in one step), so they should not have any subtasks, in other words, they can't be a project.
 - There are maximum 2 layer of nesting, meaning the ref_no. of a tasks when `list proj` can be e.g. `1`, `1-1`, `1-1-1`, no further nesting is allowed
 
-### Add a task: `add`
+### Add to Inbox: `add`
 Add a task to inbox.
 
 Format: `add THOUGHT_TITLE`
@@ -44,13 +44,13 @@ Example of usage:
 
 `add get report from @Alain`
 
-### List tasks in inbox: `list`
+### List items in Inbox: `list`
 List tasks in inbox.
 
 Format: `list inbox`
 
-### List tasks by status: `list`
-List tasks filtered by status.
+### List items with Status: `list`
+List tasks filtered by status (`NEXT`, `PROJ`, `WAIT`, `SOME`, `DONE`).
 
 Format: `list STATUS`
 
@@ -60,19 +60,23 @@ Example of usage:
 
 `list WAIT`
 
-### delete a task: `delete`
-delete a task from current/latest displayed list
-(when doubt, always list the desired list first)
+## Set to Status
+Set tasks to a status (`NEXT`, `PROJ`, `WAIT`, `SOME`, `DONE`).
 
-Format: `delete TASK_REF_NO`
+Format: `set TASK_REF_NO... STATUS`
 
-Example of usage: 
+Example of usage:
 
-`delete 3`
+`set 1 NEXT`
 
-`delete 1 2`
+### Set due date: `due`
+Set due date to a task or tasks.
 
-`delete 1-1-3 1-2`
+Format: `due TASK_REF_NO... YYYY-MM-DD`
+
+Example of usage:
+
+`due 1 2021-11-13`
 
 ### Inbox items to Project Arrangement: `proj-mode`
 
@@ -96,6 +100,32 @@ proj-mode
 q
 ```
 (the Exception handling for `proj-mode` yet made it into V3.0, incorrect arguments result in exiting `proj-mode` immediately)
+
+### Delete a task: `delete`
+Delete a task from current/latest displayed list.
+(When doubt, always list the desired list first)
+
+Format: `delete TASK_REF_NO...`
+
+Example of usage:
+
+`delete 3`
+
+`delete 1 2`
+
+`delete 1-1-3 1-2`
+
+### Mark a task done: `done`
+Complete a task from current/latest displayed list.
+(When doubt, always list the desired list first)
+
+Format: `done TASK_REF_NO...`
+
+Example of usage:
+
+`done 1 2`
+
+`done 1-2-2`
 
 ### Exiting the program: `bye`
 Exits the program
@@ -125,9 +155,11 @@ e.g.
   | Functions  | Commands |
   | ------------- | ------------- |
   | Add to Inbox  |   `add THOUGHT_TITLE` |
-  |  Set to Status  | [`list`first to get ref_no.] <br />`Set STATUS` (`NEXT`, `PROJ`, `WAIT`, `SOME`, `DONE`)|
  |  List items in Inbox | `list inbox` |
   | List items with Status  | `list STATUS` |
+  |  Set to Status  | `set TASK_REF_NO... STATUS`|
+  |  Set due date | `due TASK_REF_NO... YYYY-MM-DD` |
   |  Arrange items from Inbox to under a project | [suggest `set` items that supposed to be PROJ from Inbox first] <br /> `proj-mode` <br /> `INBOX_REF_NO -> PROJ_REF_NO`<br />to exit<br />`q` |
-  |   |  |
-  |   |  |
+ |  Mark tasks done | `done TASK_REF_NO...` |
+  | Delete a task  | `delete TASK_REF_NO...` |
+  | Exit program  | `bye` |
