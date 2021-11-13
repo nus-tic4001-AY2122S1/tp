@@ -1,7 +1,26 @@
-todo buy milk
-todo read book
+appointment regression1 /at 20-11-2021 1:23:43 pm /l home
+appointment regression2 /at 14-11-2021 1:23:43 pm /l home
+appointment regression3 /at 13-11-2021 5:00:00 pm /l home
+appointment regression4 /at 13-11-2021 6:00:00 pm /l home
+todo regression5
 view
-delete 1
-delete 2
-a invalid command
+set_location 1 school
+set_time 1 13-11-2021 9:00:00 pm
+delete 4
+done 3
+category add category_test - add1
+category add category_test - add2
+category view
+category delete 2
+category tag 1 category_test - add1
+category tag 2 category_test - add1
+tdo autocorrect - missing char
+otdo autocorrect - rearranged chars
+taodo autocorrect - additional chars
+tudo autocorrect - misspelling
+search appointment
+search add1
+search category_test - add1
+search regression
+search 13-11-2021
 bye

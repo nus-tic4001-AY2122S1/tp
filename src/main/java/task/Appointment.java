@@ -33,6 +33,10 @@ public class Appointment extends Task {
         return this.location;
     }
 
+    public Date getDate() {
+        return this.at;
+    }
+
     public void setLocation(String location) {
         this.location = location;
     }

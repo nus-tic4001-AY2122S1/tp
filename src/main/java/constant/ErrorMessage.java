@@ -44,4 +44,5 @@ public class ErrorMessage {
     public static final String EMPTY_APPOINTMENT_TIME = "OOPS!!! The appointment time is missing, missing '/at'";
     public static final String EMPTY_APPOINTMENT_LOCATION = "OOPS!!! The appointment location is missing, missing "
         + "'/l'";
+    public static final String INVALID_INDEX = "Error: Index is greater than array size";
 }

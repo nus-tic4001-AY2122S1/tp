@@ -10,7 +10,6 @@ import ui.Ui;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Represents an executable command.
@@ -37,7 +36,7 @@ public abstract class Command {
         }
     }
 
-    protected Date parseDateTime(String dateTime) throws ErrorHandler {
+    protected java.util.Date parseDateTime(String dateTime) throws ErrorHandler {
         String[] dayTime = dateTime.split(" ", 2);
         if (dayTime.length < 2) {
             throw new ErrorHandler(ErrorMessage.INVALID_APPOINTMENT_TIME);
@@ -55,5 +54,5 @@ public abstract class Command {
         }
     }
 
-    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ErrorHandler;
+    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ErrorHandler, ParseException;
 }

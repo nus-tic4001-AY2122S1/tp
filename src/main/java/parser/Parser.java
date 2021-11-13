@@ -1,20 +1,12 @@
 package parser;
 
 import category.Category;
+import command.*;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
 import command.category.ViewCategory;
-import command.Command;
-import command.ViewCommand;
-import command.DoneCommand;
-import command.TodoCommand;
 import command.DeleteCommand;
-import command.LocationCommand;
-import command.ByeCommand;
-import command.AppointmentCommand;
-import command.DeleteCommand;
-import command.AppointmentTimeCommand;
 
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
@@ -27,6 +19,7 @@ public class Parser {
     private final Category category = new Category();
 
     public Command parse(String input) throws ErrorHandler {
+        input = input.trim();
         String[] result = input.split(" ", 2);
         CommandKeyWords commandWord = CommandKeyWords.getEnum(result[0].toUpperCase());
 
@@ -108,6 +101,8 @@ public class Parser {
             }
 
             return this.handleSetTime(result[1]);
+        case SEARCH:
+            return new SearchCommand(input);
         case BYE:
         default:
             return new ByeCommand();
