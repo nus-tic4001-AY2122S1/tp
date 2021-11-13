@@ -100,15 +100,7 @@ public class Parser {
 
             return this.handleSetTime(result[1]);
         case SEARCH:
-
             return new SearchCommand(input);
-
-            if (result.length < 2) {
-                throw new ErrorHandler(ErrorMessage.EMPTY_SEARCH_CATEGORY);
-            }
-
-            return this.handleSearch(result[1]);
-            
         case HOMEWORK:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_DESCRIPTION);
