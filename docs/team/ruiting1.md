@@ -35,7 +35,7 @@ Helped on bug fixing during the progress of the project.
 - Review teammates' PR and help merge when code is suitable and no merge conflict
 - Quick bug fixing and feature adding when teammates need to do their features based on my part first
 - Attend every team meeting
-- Release ......
+- Release version `v3.0`
 
 
 #### Review
