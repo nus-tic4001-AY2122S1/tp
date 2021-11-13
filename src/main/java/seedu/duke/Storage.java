@@ -44,6 +44,14 @@ public class Storage {
         printWriter.close();
     }
 
+    public static void saveToDB() throws IOException {
+        FileWriter fileWriter = new FileWriter("FlightDB.txt", true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        fileWriter.close();
+        printWriter.close();
+    }
+
+
     /**
      * deleted flight details from flightDB file.
      */

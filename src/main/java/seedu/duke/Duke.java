@@ -32,7 +32,7 @@ public class Duke {
             try {
                 storage.readFile();
             }            catch (FileNotFoundException a) {
-                Storage.saveToDB(" ");
+                Storage.saveToDB();
             }
             while (online) {
                 Scanner scan = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class Duke {
                 case "add":
                     try {
                         flightList.addFlight(userInput);
-                        Storage.saveToDB(userInput);
+                        Storage.saveToDB(userInput.trim());
                     } catch (StringIndexOutOfBoundsException e) {
                         System.out.println("Please enter the right format of add function.");
                         break;
