@@ -1,5 +1,6 @@
 package seedu.duke;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,14 +27,16 @@ public class Duke {
 
 
     public static void run() {
-
         try {
             FlightList flightList = new FlightList();
             String userInput;
             boolean online = true;
             Storage storage = new Storage(flightList);
-            storage.readFile();
-
+            try {
+                storage.readFile();
+            }            catch (FileNotFoundException a) {
+                Storage.saveToDB(" ");
+            }
             while (online) {
                 Scanner scan = new Scanner(System.in);
                 userInput = scan.nextLine().trim();
@@ -45,8 +48,13 @@ public class Duke {
                     online = false;
                     break;
                 case "add":
-                    flightList.addFlight(userInput);
-                    Storage.saveToDB(userInput);
+                    try {
+                        flightList.addFlight(userInput);
+                        Storage.saveToDB(userInput);
+                    } catch (StringIndexOutOfBoundsException e) {
+                        System.out.println("Please enter the right format of add function.");
+                        break;
+                    }
                     Message.getVal("ADDED_SUCCESSFULLY",Integer.toString(flightList.getSize()));
                     /* System.out.println("Your flight has been added.\n" + "You have " + flightList.getSize()
                             + " flights in your record");*/
@@ -55,6 +63,10 @@ public class Duke {
                     flightList.sortFlight(userInput);
                     break;
                 case "show all":
+                    if (flightList.isEmpty()) {
+                        System.out.println("There's nothing in your flight list.");
+                        break;
+                    }
                     for (int i = 0; i < flightList.getSize(); i++) {
                         System.out.println("Flight " + (i + 1) + ": "
                                 + flightList.getList().get(i).getFullFlightDetails());
@@ -99,6 +111,10 @@ public class Duke {
                     break;
 
                 case "show upcoming":
+                    if (flightList.isEmpty()) {
+                        System.out.println("There's nothing in your flight list.");
+                        break;
+                    }
                     if (!flightList.isEmpty()) {
                         Flight upComingFlight = new Parser().dateCompare(flightList);
                         System.out.println("Upcoming Flight: " + upComingFlight.getFullFlightDetails());

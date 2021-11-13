@@ -20,8 +20,11 @@ public class Storage {
     /**
      * Read all flight details from DB file and store them to fightList.
      */
-    public void readFile() throws FileNotFoundException, IOException {
+    public void readFile() throws FileNotFoundException, IOException , StringIndexOutOfBoundsException {
         BufferedReader fileRead = new BufferedReader(new FileReader("FlightDB.txt"));
+        if (fileRead.readLine() == null) {
+            return;
+        }
         String line = fileRead.readLine();
         while (line != null) {
             flightList.addFlight(line);
