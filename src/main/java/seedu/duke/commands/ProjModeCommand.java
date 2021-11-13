@@ -7,6 +7,11 @@ import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 
+/**
+ * proj-mode is a mode to display inbox and proj list side by side.
+ * so that user can put tasks from LHS -> RHS
+ * TODO: Exception Handling V4.0
+ */
 public class ProjModeCommand extends Command {
     public static final String COMMAND_WORD = "proj-mode";
     public static final String INDEN = " ".repeat(6);
@@ -50,10 +55,14 @@ public class ProjModeCommand extends Command {
                 System.out.println("end proj-mode <<<");
                 return;
             }
-            String[] parts = parse(input); // TODO: pass to @rt for integrad into parser
+            String[] parts = parse(input); // TODO: pass to @rt for integration into parser
+            if (parts == null) {
+                break;
+            }
             String projNo = parts[0];
             for (int i = 1; i < parts.length; i++) {
                 proj.get(projNo).addSub(inbox.get(parts[i]));
+
                 // temporary fix
                 for (int j = 0; j < master.size(); j++) {
                     if (master.get(j).getlevel() != 0) {
@@ -66,6 +75,12 @@ public class ProjModeCommand extends Command {
 
     }
 
+    /**
+     * this method is to print 2 lists Inbox and Pro in a 2-column text.
+     * on the left is inbox, rhs is proj list
+     * the lhs longest line add IDEN is the
+     * vertical line of rhs
+     */
     public void printSideBySide() {
         ArrayList<String> lines = new ArrayList<>();
 
@@ -112,20 +127,27 @@ public class ProjModeCommand extends Command {
 
     private String[] parse(String input) {
         String[] parts = input.split("->");
-        String projNo = parts[1].strip();
+        try {
+            String projNo = parts[1].strip();
 
-        ArrayList<String> al = new ArrayList<>();
-        al.add(projNo);
+            ArrayList<String> al = new ArrayList<>();
+            al.add(projNo);
 
-        String[] todos = parts[0].strip().split(" ");
-        for (String todo : todos) {
-            al.add(todo);
+            String[] todos = parts[0].strip().split(" ");
+            for (String todo : todos) {
+                al.add(todo);
+            }
+
+            String[] res = new String[al.size()];
+            res = al.toArray(res);
+
+            return res;
+
+        } catch (Exception e) {
+            System.out.println("Invalid Argument");
+            return null;
         }
 
-        String[] res = new String[al.size()];
-        res = al.toArray(res);
-
-        return res;
     }
 
     private int longestWidth(String[] left) {

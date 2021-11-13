@@ -1,0 +1,49 @@
+@startuml
+!include styleLsh.puml
+
+box Seq Diagram of \nListCommand printing items\n LOGIC_COLOR
+
+participant ":Parser" as Parser
+participant ":ListCommand" as ListCommand LOGIC_COLOR_G
+participant "current : GtdList" as current LOGIC_COLOR_G
+participant "master : GtdList" as master LOGIC_COLOR_G
+
+participant ":GtdThought" as GtdThought LOGIC_COLOR_G
+
+Parser -> ListCommand: new ListCommand
+ListCommand -> ListCommand: execute( )
+ListCommand -> current: clear( )
+
+
+alt stat == Stat.PROJ
+    loop
+        ListCommand -> master:                         \t\t\t\t.stream( )\n\t\t\t\t.filter( )\n\t\t\t\t.forEach( )
+        master -> current : add( )
+    end
+
+else else
+    loop
+        ListCommand -> master:                         \t\t\t\t.stream( )\n\t\t\t\t.forEach( )
+        master -> current : add( )
+     end
+
+end
+
+
+ListCommand -> current: print( )
+
+loop list.size()
+    current -> GtdThought: getTextRec( )
+    GtdThought -> GtdThought: auxgetTextRec(text)
+    GtdThought --> current: text with indentation
+
+    current -> current : addNum( )
+end
+
+
+end box
+
+
+
+@enduml
+
