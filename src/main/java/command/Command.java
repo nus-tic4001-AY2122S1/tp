@@ -10,6 +10,7 @@ import ui.Ui;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Represents an executable command.
@@ -66,7 +67,4 @@ public abstract class Command {
             throw new ErrorHandler(ErrorMessage.INVALID_DATE_FORMAT);
         }
     }
-
-    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ErrorHandler;
-
 }
