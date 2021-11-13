@@ -22,9 +22,6 @@ public class Storage {
      */
     public void readFile() throws Exception {
         BufferedReader fileRead = new BufferedReader(new FileReader("FlightDB.txt"));
-        if (fileRead.readLine() == null) {
-            return;
-        }
         String line = fileRead.readLine();
         while (line != null) {
             flightList.addFlight(line);
