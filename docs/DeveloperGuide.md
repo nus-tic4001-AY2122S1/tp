@@ -67,6 +67,15 @@ extends to parent `Command` class and must implement the `execute()` method.
 Multiple hierarchies of `GtdThought` are saved to storage via conversion into a flatten list.
 <img src="pic/SeqDiagram_StorageSave.png">
 
+## Testing guide
+### Running tests
+From IntelliJ, right click on the class/folder of interest and click Run Test
+
+### Types of tests
+This project mainly uses hybrids of unit and integration tests, checking multiple code units as well as how they are connected together
+e.g. `seedu.duke.parser.ParserTest`
+e.g. `seedu.duke.storage.GtdListEncoderTest`
+e.g. `seedu.duke.NextTest`
 
 ## Product scope
 ### Target user profile
