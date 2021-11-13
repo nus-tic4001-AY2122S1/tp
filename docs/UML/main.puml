@@ -5,8 +5,6 @@ skinparam arrowColor LOGIC_COLOR_T4
 skinparam classBackgroundColor LOGIC_COLOR
 
 
-Class XYZCommand
-
 package "Command classes"{
 Class "{abstract}\nCommand" as Command
 Class AddCommand
@@ -49,27 +47,40 @@ Class Ui
 Duke ..> Ui
 Duke ..> Api
 Duke ..> Parser
+Duke ..> Command
 Duke ..> NusModList
 
-AddressBookParser .down.> XYZCommandParser: creates >
+Api ..> NusModList
+Api ..> Module
+
+NusModList ..> Module
+NusModList ..> NusModList
+
+Module ..> Semesterdata
+
+Parser ..> Command
 
 AddCommand -up-|> Command
 DeleteCommand -up-|> Command
 ExitCommand -up-|> Command
 ListCommand -up-|> Command
-LoadFromStorageCommand -up-|> Command
 MyListCommand -up-|> Command
+LoadFromStorageCommand -up-|> Command
 SaveToStorageCommand -up-|> Command
 ViewCommand -up-|> Command
 
-XYZCommandParser ..> XYZCommand : creates >
-AddressBookParser ..> Command : returns >
+UserList ..> UserList
 
+Storage ..> UserList
 
-ArgumentTokenizer .left.> ArgumentMultimap
-XYZCommandParser ..> CliSyntax
+AddCommand ..> UserList
+ViewCommand ..> UserList
 
-ParserUtil .down.> Prefix
-ArgumentTokenizer .down.> Prefix
+ListCommand ..> NusModList
+ListCommand ..> Module
+
+SaveToStorageCommand ..> Storage
+LoadFromStorageCommand ..> Storage
+
 
 @enduml
