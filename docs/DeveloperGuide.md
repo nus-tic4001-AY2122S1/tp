@@ -1,12 +1,12 @@
 # Developer Guide
 
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#acknowledgements">Acknowledgements</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#setting-up-getting-started">Setting up, getting started</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#design">Design</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
-* *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#use-cases">Use Cases</a>*
+* *[Acknowledgements](DeveloperGuide.md#acknowledgements)*
+* *[Setting up, getting started](DeveloperGuide.md#setting-up-getting-started)*
+* *[Design](DeveloperGuide.md#design)*
+* *[Implementation](DeveloperGuide.md#implementation-sequence-diagram)*
+* *[Documentation, logging, testing](DeveloperGuide.md#documentation-logging-testing)*
+* *[Appendix: Requirements](DeveloperGuide.md#appendix-requirements)*
+* *[Use Cases](DeveloperGuide.md#use-cases)*
 
 ## Acknowledgements
 
@@ -27,12 +27,12 @@
    API: <a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/src/main/java/seedu/duke/Storage.java">Storage.java</a>   
    <br> The Storage component,
    <br> a. can save expenses.txt file to `/file` folder and load the expenses.txt file back `/file` folder with corresponding format.
+   <br> b. auto save when user execute edit, delete and add expense/ income command    
    <br>    `File format` showing as below, 
    
-            Here are the items in your list:</br>
-            1.[E] [Meal] lunch ($40.0) (2021-Dec-01) </br>
+            Here are the items in your list:
+            1.[E] [Meal] lunch ($40.0) (2021-Dec-01) 
             2.[I] [OctSalary] salary ($4000.0) (2021-Dec-01) 
-    <br> b. auto save when user execute edit, delete and add expense/ income command    
 
 * *Common classes* (ItemList)
 
