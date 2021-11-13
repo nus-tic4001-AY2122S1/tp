@@ -61,8 +61,23 @@ proj-mode
 q
 ```
 
+### Exiting the program: `bye`
+Exits the program
 
+Format: `bye`
 
+### Saving the data
+Project Next data are saved in the hard disk automatically after any command that changes the data, when the directory doesn't exist the program will automatically create the path, there is no need to proceed manually.
+
+### Stored data file
+Project Next used text file to store the data, if you are an advanced user, please free to update the data directly by editing the text file, but take note the format is
+```
+id|status|task title|due date|||parent id(s)
+```
+e.g.
+```
+25|NEXT|meeting deliverable 1|2021-11-06|||14|24|
+```
 ## FAQ
 
 **Q**: Where is the plain text data file stored 
