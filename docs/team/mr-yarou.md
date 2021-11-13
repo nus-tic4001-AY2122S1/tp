@@ -16,3 +16,6 @@ You can view all available modules for the year, as well as add modules you are 
 
 - Project management:
     - Helped to assist teammates in their enquiries
+  
+ - Documentations:
+    - User Guide
