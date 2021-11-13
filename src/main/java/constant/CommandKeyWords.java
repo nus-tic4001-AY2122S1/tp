@@ -55,7 +55,6 @@ public enum CommandKeyWords {
             + getSerializedString()
             + " (case insensitive)");
     }
-    }
 
     /**
      * Correct user's input Command in case of typo/misspelling.
