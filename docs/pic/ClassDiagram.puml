@@ -124,6 +124,15 @@ class SetCommand {
     +execute() : void
 }
 
+class DueCommand {
+    +{static} COMMAND_WORD : String = due
+    -targetIndex : List<String>
+    -due : LocalDate
+
+    +DueCommand(targetIndex : List<String>, due : LocalDate)
+    +execute() : void
+}
+
 class GtdListDecoder {
     +{static} GTD_THOUGHT_TXT_FILE_FORMAT : Pattern
 
@@ -284,10 +293,14 @@ SetCommand ..> "master" GtdList
 SetCommand ..> "current" GtdList
 'SetCommand ..> GtdThought
 
+DueCommand ..> "current" GtdList
+'DueCommand ..> GtdThought
+
 Parser ..> Command
 Parser ..> AddCommand
 Parser ..> DeleteCommand
 Parser ..> DoneCommand
+Parser ..> DueCommand
 Parser ..> ListCommand
 Parser ..> ProjModeCommand
 Parser ..> ExitCommand
@@ -303,6 +316,7 @@ Command <|-- DoneCommand
 Command <|-- ListCommand
 Command <|-- ProjModeCommand
 Command <|-- SetCommand
+Command <|-- DueCommand
 Command <|-- ExitCommand
 Command <|-- IncorrectCommand
 
