@@ -17,9 +17,9 @@ public class SortCommandTest {
         ArrayList<Item> arrayListExpLst = new ArrayList<>();
         ItemList actualList = new ItemList(arrayListExpLst);
 
-        AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /1-12-2021");
-        AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /1-12-2021");
-        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-12-2021");
+        AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /02-12-2021");
+        AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /03-12-2021");
+        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
 
         addFirstExpense.run(actualList);
         addSecondExpense.run(actualList);
@@ -28,9 +28,9 @@ public class SortCommandTest {
         SortCommand sort = new SortCommand("sort /asc /amount");
         sort.run(actualList);
 
-        List<String> expected = List.of("[E] [Meal] lunch ($20.0) (2021-Dec-01), "
-                                + "[E] [Meal] lunch ($40.0) (2021-Dec-01), "
-                                + "[I] [OctSalary] salary ($4000.0) (2021-Dec-01)");
+        List<String> expected = List.of("[E] [Meal] lunch ($20.0) (2021-Dec-03), "
+                                + "[E] [Meal] lunch ($40.0) (2021-Dec-02), "
+                                + "[I] [OctSalary] salary ($4000.0) (2021-Oct-01)");
         assertEquals(expected.toString(), actualList.items.toString());
     }
 
@@ -41,17 +41,20 @@ public class SortCommandTest {
 
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /3-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /2-12-2021");
-        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-12-2021");
+        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
 
         addFirstExpense.run(actualList);
         addSecondExpense.run(actualList);
         addFirstIncome.run(actualList);
+        AddIncomeCommand addSecondIncome = new AddIncomeCommand("income salary /NovSalary /4000 /1-11-2021");
+        addSecondIncome.run(actualList);
 
         SortCommand sortByAsc = new SortCommand("sort /asc /date");
 
         sortByAsc.run(actualList);
 
-        List<String> expectedSortByAsc = List.of("[I] [OctSalary] salary ($4000.0) (2021-Dec-01), "
+        List<String> expectedSortByAsc = List.of("[I] [OctSalary] salary ($4000.0) (2021-Oct-01), "
+                                        + "[I] [NovSalary] salary ($4000.0) (2021-Nov-01), "
                                         + "[E] [Meal] lunch ($20.0) (2021-Dec-02), "
                                         + "[E] [Meal] lunch ($40.0) (2021-Dec-03)");
 
@@ -65,11 +68,13 @@ public class SortCommandTest {
 
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /3-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /2-12-2021");
-        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-12-2021");
+        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
 
         addFirstExpense.run(actualListDesc);
         addSecondExpense.run(actualListDesc);
         addFirstIncome.run(actualListDesc);
+        AddIncomeCommand addSecondIncome = new AddIncomeCommand("income salary /NovSalary /4000 /1-11-2021");
+        addSecondIncome.run(actualListDesc);
 
         SortCommand sortByDesc = new SortCommand("sort /desc /date");
 
@@ -77,7 +82,8 @@ public class SortCommandTest {
 
         List<String> expectedSortByDesc = List.of("[E] [Meal] lunch ($40.0) (2021-Dec-03), "
                                             + "[E] [Meal] lunch ($20.0) (2021-Dec-02), "
-                                            + "[I] [OctSalary] salary ($4000.0) (2021-Dec-01)");
+                                            + "[I] [NovSalary] salary ($4000.0) (2021-Nov-01), "
+                                            + "[I] [OctSalary] salary ($4000.0) (2021-Oct-01)");
 
         assertEquals(expectedSortByDesc.toString(), actualListDesc.items.toString());
     }
