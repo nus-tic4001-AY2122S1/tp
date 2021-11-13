@@ -23,7 +23,6 @@ https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=&sort=groupTitle&sor
 
 - Add Architecture part of UG
 - Add Command components class diagram for `AppointmentCommand`, `AppointmentTimeCommand`, `ByeCommand`, `LocationCommand`, `TaskProgressCommand`, and `Command`
-- Add user profile
 
 ### Review/mentoring contributions:
 

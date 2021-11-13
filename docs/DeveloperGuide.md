@@ -71,21 +71,6 @@ It extends `Command` class. It checks if the number input by user is out of rang
 
 ### Target user profile
 
-Computing students is too broad and not specific enough. We have to narrow it down to make certain decisions easier, such as prioritising features.
-Example, users will be putting tasks into the application, so we have to identify what kind of task will be put into the application.
-
-#### Persona
-
-John - 35
-Male
-
-Part time student - working adult. Often coming to class late due to work commitment, he would like to be able to track school related tasks that are separated from other commitments outside of school. He finds it difficult to track his work deliverables and his school deliverables separately. So he would like to have a place to write down all the required things that he needs to attend to, so that he can focus on school and work separately. This is to improve his focus in school related submission work.
-
-As a working IT professional, he has a personal laptop with him all the time. And he prefers to use the CLI to track his task as that is what he interacts with the most throughout his day.
-
-User flow
-He powered up his laptop, and opened the software using Intellij.John sees a todo list, a list of unfinished tasks will be presented to him with the due date of each individual task. He started working on the task, upon finishing the tasks, he keyed in “done {{taskNumber}}” and that task is marked as done in the system. He keyed in “list todos” and saw the task he finished was marked as done.
-
 ### Value proposition
 
 {Describe the value proposition: what problem does it solve?}
