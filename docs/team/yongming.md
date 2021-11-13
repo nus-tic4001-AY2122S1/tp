@@ -19,10 +19,14 @@ https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=&sort=groupTitle&sor
 - Check task progress: to check how many task has been completed and show the progress in percentage
 - Search tasks by date: filter out the tasks that has the same date as the user input
 
-### Contributions to the UG
+### Contributions to the DG
 
 - Add Architecture part of UG
 - Add Command components class diagram for `AppointmentCommand`, `AppointmentTimeCommand`, `ByeCommand`, `LocationCommand`, `TaskProgressCommand`, and `Command`
+
+### Contributions to the UG
+
+- Add features for `Bye command`, `Appointment Command`, `Set Appointment Location`, `Check task progress`, and `Search tasks by date`.
 
 ### Review/mentoring contributions:
 
