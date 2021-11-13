@@ -7,6 +7,8 @@ import command.category.DeleteCategory;
 import command.category.TagCategory;
 import command.category.ViewCategory;
 
+import java.util.Date;
+
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
 
@@ -100,7 +102,16 @@ public class Parser {
 
             return this.handleSetTime(result[1]);
         case SEARCH:
-            return new SearchCommand(input);
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_SEARCH_CATEGORY);
+            }
+            if (result[1].contains("--date")) {
+                return this.handleSearch(result[1]);
+            }
+            else {
+                return new SearchCommand(input);
+            }
+
         case HOMEWORK:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_DESCRIPTION);
