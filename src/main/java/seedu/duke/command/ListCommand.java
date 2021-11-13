@@ -25,7 +25,7 @@ public class ListCommand extends Command {
         FileHandler fh;
 
         try {
-            fh = new FileHandler("./src/log/ListLogFile.log");
+            fh = new FileHandler("./log/ListLogFile.log");
             logger.addHandler(fh);
             logger.setUseParentHandlers(false);
             SimpleFormatter formatter = new SimpleFormatter();
