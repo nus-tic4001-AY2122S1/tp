@@ -1,19 +1,65 @@
-# Developer Guide - Draft V0.2
+# Developer Guide
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries 
--- include links to the original source as well}
+Didn't use any 3<sup>rd</sup> party libraries.
 
-To be update: 
-
-?[address book](https://github.com/se-edu/addressbook-level3)
+Project's GitHub repository is available [here](https://github.com/AY2122S1-TIC4001-F18-3/tp).
 
 ## Design & implementation
 
-### UML
+`GtdThought` is a basic task data structure, which contains various properties that make sense to GTD flow:
 
-### Code snippets
+
+```
+public class GtdThought {
+    private static final String INDEN = "  ";
+
+    private Stat status = Stat.NONE;
+    private final int[] lv = {0, 1, 2};
+    private int level = lv[0];
+    private String title;
+    private String note;
+    private Optional<GtdThought> parent = Optional.empty();
+    private ArrayList<GtdThought> children = new ArrayList<>();
+    private LocalDateTime creation;
+    private LocalDateTime due;
+    private LocalDateTime done;
+
+    private int id;
+    private int parentID = 0;
+    private int levelNo = 0;
+
+    public static int maxID = 0;
+```
+It has 3 levels from 0 - 2, which indicates its level of nesting. This is more clear when you print it out.
+
+e.g.
+```
+1 a task in the Inbox with no subtask #lv 0
+2 [PROJ] Project                      #lv 0
+  2-1 [PROJ] SubProject 1             #lv 1
+    2-1-1 [NEXT] actionable todo      #lv 2      
+```
+
+----
+
+`GtdList` is the container that contains `GtdThought`, which also provides useful functionalities such as:
+
++ `get()` which can input a String such "1", "1-1", "1-2-1" to refer to the correct `GtdThought` 
+
++ `print()` to print out the `GtdList` with ref_no. and indentation based on their nesting level.
+
+
++ it's made to be streamable, just call `.stream()` then developers can use the frequent tools like `filter`, `map`, `reduce`, `forEach`.
+
+----
+The program also adopts Command Pattern,which all Command 
+extends to parent `Command` class and must implement the `execute()` method.
+
+### UML
+<img src="pic/SeqDiagram.png">
+
 
 ## Product scope
 ### Target user profile
@@ -53,7 +99,8 @@ Working in a tech company, she sure is tech savvy. She is constantly looking for
 |v1.0|GTD user|set actionable tasks in my Inbox as NEXT|those tasks get removed from Inbox and allow me to refer to the Next list for action|
 |v1.0|GTD user|set the actionable tasks in my Inbox that cannot be performed by me until relevant resources from someone else as WAIT|review them again in one place once I obtain the deliverables from the person in charge|
 |v2.0|GTD user|set the non-actionable tasks in my Inbox that cannot be done in one step as PROJ|later I could plan for each project and dismantle them into a sequence of actionable tasks|
-|v2.0|GTD user|move actionable tasks from Inbox to be under a specific project which it belongs to|I could clear my Inbox and have tasks grouped in a logical way|
+|v2.1|GTD user|move actionable tasks from Inbox to be under a specific project which it belongs to|I could clear my Inbox and have tasks grouped in a logical way|
+
 
 ## Non-Functional Requirements
 + program shouldn't just crash because user keys wrong words
@@ -70,21 +117,41 @@ Working in a tech company, she sure is tech savvy. She is constantly looking for
 
 ## Instructions for manual testing
 
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+If clone the whole project directory, sample data would be included.
+
+If run using the `jar` file, program starts clean with no pre-loaded data. 
+
+### get started 
+```
+list all
+list inbox
+```
 
 ### add a task to inbox 
 ```
-add This is a Task with Title
+add this is a Task with Title
+add wait for SetCommand before testing
+add Use PlantUML for DG
+add brew install graphviz 
+add set up plugin in IDE
+add one sequence diagram for ListCommand
+add make UI for the app someday
 ```
-### list inbox, next, proj, wait, some
+### list [inbox, next, proj, wait, some, done]
 ```
-list proj
+list inbox
 ```
-### set task status
+### set task status [next, proj, wait, some, done]
+Actionable command following one `list` for ref_no.
 ```
+set 3 proj
+list inbox
 set 1 3 next
+list inbox
+set 1 wait 
 ```
-### move tasks from inbox to be under a proj via proj-mode
+### move tasks from inbox to be under a project via `proj-mode`
+Suggest first do `set` to mark the project in the Inbox  
 ```
 proj-mode
 _________________________________________________
@@ -99,7 +166,31 @@ inbox: ..................... proj:
 5 but cat food ............. 2 [PROJ] quarterly meeting
 
 1 -> 1-1
+2 3 -> 2
 
 q
 end proj-mode <<<
+```
+(the Exception handling for `proj-mode` yet made it into V3.0)
+
+### mark tasks done
+another way to complete tasks other than `set` command.
+Actionable command following one `list` for ref_no.
+
+```
+list proj
+done 1-1-1 1-1-2
+```
+### delete task
+Actionable command following one `list` for ref_no.
+
+```
+list proj
+delete 1-2-1
+```
+
+### exit the program 
+
+```
+bye
 ```
