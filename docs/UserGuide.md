@@ -183,7 +183,7 @@ bye
 
 Action | Format, Examples
 ------------ | -------------
-<b>add</b> | Format: [add] [/departing] [depart details] [/destination] [destination] [/date] [date & time of departure] [/price] [price of trip] Example: add /departing Australia /destination Singapore /date 10 Jan 2021 12:00 /price 500
+<b>add</b> | Format: [add] [/from] [depart details] [/to] [destination] [/date] [date & time of departure] [/price] [price of trip] Example: add /from Australia /to Singapore /date 10 Jan 2021 1200 /price 500
 <b>show all</b> | Format: [show] [all] Example: show all
 <b>show upcoming</b> | Format: [show] [upcoming] Example: show upcoming [to be implemented in v3.0]
 <b>search</b> | Format: [search] [keyword] Example: search Australia
