@@ -134,15 +134,20 @@ Daffy is CLI software that helps individuals track the tasks that were keyed in 
 | v2.0    | user     | be able to add category type                               | tag categories to a task              |
 | v2.0    | user     | be able to remove category type                            | the category list is not cluttered    |
 | v2.0    | user     | be able to view all category list                          | view which category are available     |
+| v2.0    | user     | be able to misspell my commands                            | still input my commands even with typo|
 | v3.0    | user     | assign category to task                                    | find related task to a category       |
 | v3.0    | user     | be able to rank upcoming assignment in difficulty level    | choose which task to work on first    |
 | v3.0    | user     | be able to see how much assignment marks                   | choose which task to work on first    |
 | v3.0    | user     | be able to track assignment due date and edit when needed  | complete assignment on time           |
 | v3.0    | user     | be able to mark my progress of my assignments              | decide on which assignment needs to get started |
+| v3.0    | user     | be able to view task list by task type                     | focus on specific task type when the list is too long |
+| v3.0    | user     | be able to view tasks with certain category tag            | focus on specific category tag when the list is too long |
+| v3.0    | user     | be able to view tasks with certain date                    | focus on upcoming appointments when the list is too long |
+| v3.0    | user     | be able to view tasks that contains certain keywords       | filter my task list when it is too long|
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+Usability - System should be able to autocorrect some of the low-level typos in user's command inputs.  
 
 ## Glossary
 
