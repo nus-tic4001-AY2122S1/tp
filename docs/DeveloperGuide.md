@@ -6,17 +6,25 @@ Thanks to NUS fundamental code of DUKE. We are creating AIRREC as a modification
 
 ## Design & implementation
 
-We will be using Duke as our main class to greet, run and exit the whole chat bot.
+We will be using Duke as our main class to greet, run and exit the whole chat bot. (Take note, we want to remain "Duke" as our main class just to give credits to the base code)
+
 The run() is a while loop which it is always waiting for user's input.
+
 Any exception caught will still be remained in the while loop until the user types "bye".
+
 When user inputs a string, AirRec will pass the string to Parser class to parse it into readable commands for AirRec.
+
 Air Rec will use a switch case to execute the different types of commands received.
+
 After which, any message or UI display will be handled by Message Class.
+
 In the whole run sequence, there will always be 1 Flight list only, another instant of Flight list act as a temporary list when we are doing date compare or storage.
 
 Here's the UML class diagram:
 ![UML CLASS DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Class%20Diagram.jpg)
 
+Here's the sequence diagram when someone runs Air Rec:
+![SEQUENCE DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Sequence%20Diagram%20with%20Duke_run.png)
 
 ## Product scope
 ### Target user profile
