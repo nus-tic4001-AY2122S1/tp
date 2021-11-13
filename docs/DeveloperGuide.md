@@ -6,14 +6,14 @@
 
 ## Design & implementation
 
-**Overview
+**Overview**
 
 ![image](https://user-images.githubusercontent.com/43517460/141647688-eaeb4429-adce-4b07-8880-19a1ec8c8265.png)
 
-**Command component
+**Command component**
 ![image](https://user-images.githubusercontent.com/43517460/141647430-0364958b-006a-407a-aa2e-873ea0b65c1b.png)
 
-**Module component
+**Module component**
 ![image](https://user-images.githubusercontent.com/43517460/141647609-91b453de-9d9f-44f6-b72a-332efaa60474.png)
 
 
@@ -22,7 +22,7 @@ The Diagrams above explains the high-level design of the App.
 
 Given below is a quick overview of main components and how they interact with each other.
 
-**Main components of the App
+**Main components of the App**
 
 `Duke` is responsible for,
 
