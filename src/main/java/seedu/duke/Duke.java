@@ -18,9 +18,6 @@ public class Duke {
                 + " /  |_|  \\  |  \\    \n"
                 + "/         \\ |   \\   \n";
         Message.getVal("GREETING",logo);
-        /*System.out.println("Hi I’m AIR REC\n" + logo);
-        System.out.println("I can help you save all the flight details!");
-        System.out.println("How can I assist you today?");*/
 
         run();
     }
