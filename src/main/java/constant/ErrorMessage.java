@@ -38,10 +38,18 @@ public class ErrorMessage {
         + "'NEXT-FRI 1:23:43 pm'\n"
         + "'NEXT-SAT 1:23:43 pm'\n"
         + "'NEXT-SUN 1:23:43 pm'\n";
+
+    public static final String INVALID_DATE_FORMAT = "OOPS!!! The date format is invalid, please use 'dd-MM-YYYY ";
     public static final String INVALID_APPOINTMENT_TASK = "OOPS!!! Set location fail, the task is not of Appointment "
         + "type.";
     public static final String EMPTY_APPOINTMENT_DESCRIPTION = "OOPS!!! The appointment description cannot be empty.";
     public static final String EMPTY_APPOINTMENT_TIME = "OOPS!!! The appointment time is missing, missing '/at'";
+    public static final String EMPTY_SEARCH_CATEGORY =
+        "OOPS!!! The searching category is missing, available categories are: '--date'";
+    public static final String INVALID_SEARCH_CATEGORY =
+        "OOPS!!! The searching category is missing, available categories are: '--date'";
+    public static final String MISSING_SEARCHING_DESCRIPTION = "OOPS!!! The searching description is missing";
+
     public static final String EMPTY_APPOINTMENT_LOCATION = "OOPS!!! The appointment location is missing, missing "
         + "'/l'";
     public static final String EMPTY_ASSIGNMENT_DESCRIPTION = "OOPS!!! The homework description cannot be empty.";
