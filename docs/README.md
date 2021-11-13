@@ -1,6 +1,6 @@
-# Duke
+# JustBook Command Line Java Program
 
-{Give product intro here}
+**JustBook: An easy-to-use Appointment CLI App**
 
 Useful links:
 * [User Guide](UserGuide.md)
