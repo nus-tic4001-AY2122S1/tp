@@ -3,7 +3,7 @@
 Air Rec is a desktop app for managing flight records, optimized for use via a Command Line Interface (CLI). User will not have to remember flight details and it can be found easily with commands.
 
 ## Code contributed:
-https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=kaydenkhor&breakdown=true&sort=groupTitle&sortWithin=title&since=2021-09-17&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other
+[Reposense Code Link for contributions](https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=kaydenkhor&breakdown=true&sort=groupTitle&sortWithin=title&since=2021-09-17&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
 - Created the base structure of the whole project code
 - Integrated Gradle into project.
@@ -45,10 +45,10 @@ o	Value Proposition
 -	Glossary
 
 Here's the UML class diagram:
-![UML CLASS DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Class%20Diagram.jpg)
+![UML CLASS DIAGRAM](https://raw.githubusercontent.com/AY2122S1-TIC4001-F18-5/tp/master/Diagrams/Overall%20Class%20Diagram.jpg)
 
 Here's the sequence diagram when someone runs Air Rec:
-![SEQUENCE DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Sequence%20Diagram%20with%20Duke_run.png)
+![SEQUENCE DIAGRAM](https://raw.githubusercontent.com/AY2122S1-TIC4001-F18-5/tp/master/Diagrams/Overall%20Sequence%20Diagram%20with%20Duke_run.png)
 
 
 ## Contributions to team-based tasks
