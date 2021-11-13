@@ -43,4 +43,10 @@ public class Item {
         String dateInfo = "(" + sdf.format(date) + ")";
         return "[" + category + "] " + description + " ($" + amount + ") " + dateInfo;
     }
+
+    public String save_toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String dateInfo = sdf.format(date);
+        return category + " | " + description + " | " + amount + " | " + dateInfo;
+    }
 }
