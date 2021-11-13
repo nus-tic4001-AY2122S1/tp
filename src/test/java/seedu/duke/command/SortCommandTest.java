@@ -30,7 +30,7 @@ public class SortCommandTest {
 
         List<String> expected = List.of("[E] [Meal] lunch ($20.0) (2021-Dec-02), "
                                 + "[E] [Meal] lunch ($40.0) (2021-Dec-03), "
-                                + "[I] [OctSalary] salary ($4000.0) (2021-Oct-01)";
+                                + "[I] [OctSalary] salary ($4000.0) (2021-Oct-01)");
         assertEquals(expected.toString(), actualList.items.toString());
     }
 
