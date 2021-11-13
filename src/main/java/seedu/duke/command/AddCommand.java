@@ -1,8 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.NusModList;
-import seedu.duke.Ui;
-import seedu.duke.UserList;
+import seedu.duke.module.UserList;
 
 
 public class AddCommand extends Command {

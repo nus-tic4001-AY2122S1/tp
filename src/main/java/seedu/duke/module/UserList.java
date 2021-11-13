@@ -1,5 +1,6 @@
-package seedu.duke;
+package seedu.duke.module;
 
+import seedu.duke.ui.Ui;
 import seedu.duke.exceptions.ListEmptyException;
 import seedu.duke.exceptions.IndexOutOfRangeException;
 
@@ -38,8 +39,8 @@ public class UserList {
     }
 
     public void addModule(Module[] moduleArray) {
-        for (Module mod : moduleArray) {
-            userList.add(mod);
+        for (Module module : moduleArray) {
+            userList.add(module);
         }
     }
 

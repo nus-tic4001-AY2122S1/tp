@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.duke.module;
 
 import java.util.Date;
 
@@ -15,9 +15,9 @@ public class Semesterdata {
 
     public String getPrettyString() {
         String result = "";
-        result += "Semester:" + semester + " | ";
-        result += "Exam date:" + examDate + " | ";
-        result +=  "Exam duration:" + examDuration;
+        result += "Semester:" + (semester == null ? "NA" : semester) + " | ";
+        result += "Exam date:" + (examDate == null ? "NA" : examDate) + " | ";
+        result +=  "Exam duration:" + (examDuration == null ? "NA" : examDuration);
 
         return result;
     }

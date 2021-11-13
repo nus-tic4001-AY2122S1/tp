@@ -1,8 +1,9 @@
 package seedu.duke.command;
 
-import seedu.duke.Module;
-import seedu.duke.NusModList;
-import seedu.duke.exceptions.ModuleException;
+import seedu.duke.module.Module;
+import seedu.duke.module.NusModList;
+import seedu.duke.ui.Ui;
+import seedu.duke.exceptions.NusModException;
 
 import java.io.IOException;
 
@@ -18,13 +19,13 @@ public class ViewCommand extends Command {
             NusModList modData = NusModList.sharedInstance();
             int moduleIndex = modData.getModuleIndex(userInstruction);
             if (moduleIndex == -1) {
-                throw new ModuleException();
+                throw new NusModException("Unknown module code");
             }
             Module module = modData.getMod(moduleIndex);
-            System.out.println(module.getPrettyPrint());
+            Ui.printMsg(module.getPrettyPrint());
 
-        } catch (ModuleException e) {
-            System.out.println("module can't find");
+        } catch (NusModException e) {
+            Ui.printError(e.getMessage());
         }
 
     }

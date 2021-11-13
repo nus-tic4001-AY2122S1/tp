@@ -1,6 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.UserList;
+import seedu.duke.module.UserList;
 
 public class MyListCommand extends Command {
 

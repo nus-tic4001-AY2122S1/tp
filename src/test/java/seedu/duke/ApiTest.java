@@ -3,6 +3,7 @@ package seedu.duke;
 import com.google.gson.JsonObject;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

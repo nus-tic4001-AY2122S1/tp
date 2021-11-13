@@ -1,6 +1,8 @@
 package seedu.duke;
 
 import org.junit.jupiter.api.Test;
+import seedu.duke.module.Module;
+import seedu.duke.module.NusModList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.duke.parser;
 
 import seedu.duke.command.Command;
 import seedu.duke.command.AddCommand;
@@ -59,7 +59,7 @@ public class Parser {
             System.out.println("Do exit");
             return new ExitCommand();
         default:
-            return new PlaceholderCommand("Try again"); //temp place holder
+            return new PlaceholderCommand("Please key in valid command");
         }
     }
 }

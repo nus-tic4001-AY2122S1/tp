@@ -2,6 +2,9 @@ package seedu.duke;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
+import seedu.duke.module.Module;
+import seedu.duke.module.Semesterdata;
+import seedu.duke.storage.Storage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,20 +19,20 @@ class StorageTest {
         Semesterdata[] semData = new Semesterdata[1];
         Integer[] semesters = {1,2};
         semData[0] = new Semesterdata(1, new Date(120, 12, 20, 9, 30), 100);
-        Module mod = new Module("TIC4001", "Software Eng", semesters, "A description",
+        Module module = new Module("TIC4001", "Software Eng", semesters, "A description",
                 4.0F, "Computing", "Faculty of Comp", "TIC2001",
                 "a", "b", semData);
-        return mod;
+        return module;
     }
 
     public Module getSampleModule(String moduleCode) {
         Semesterdata[] semData = new Semesterdata[1];
         Integer[] semesters = {1,2};
         semData[0] = new Semesterdata(1, new Date(120, 12, 20, 9, 30), 100);
-        Module mod = new Module(moduleCode, "Software Eng", semesters, "A description",
+        Module module = new Module(moduleCode, "Software Eng", semesters, "A description",
                 4.0F, "Computing", "Faculty of Comp", "TIC2001",
                 "a", "b", semData);
-        return mod;
+        return module;
     }
 
     public String getSampleModuleArrayJson() {
@@ -47,11 +50,11 @@ class StorageTest {
     @Test
     public void getJsonStringFromUserList() throws IOException {
         Storage storage = new Storage();
-        Module mod = getSampleModule();
-        Module anotherMod = getSampleModule("TIC1234");
+        Module module = getSampleModule();
+        Module anotherModule = getSampleModule("TIC1234");
         ArrayList<Module> modules = new ArrayList<Module>();
-        modules.add(anotherMod);
-        modules.add(mod);
+        modules.add(anotherModule);
+        modules.add(module);
         String expected = getSampleModuleArrayJson();
         Gson gson = new Gson();
         String result = gson.toJson(modules);

@@ -1,15 +1,14 @@
-package seedu.duke;
+package seedu.duke.storage;
 
 import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
+import seedu.duke.module.Module;
+import seedu.duke.module.UserList;
 
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Scanner;
 
 
 public class Storage {

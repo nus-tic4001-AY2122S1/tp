@@ -1,4 +1,6 @@
-package seedu.duke;
+package seedu.duke.ui;
+
+import seedu.duke.module.Module;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,10 +19,18 @@ public class Ui {
                 +          "What can I do for you?\n");
     }
 
+    public static void lineBreak() {
+        System.out.println("\n-----------------------------------------");
+    }
+
     public static String readCommand() {
         System.out.print("Type something: ");
         String line = in.nextLine();
         return line;
+    }
+
+    public static void printMsg(String msg) {
+        System.out.println(msg);
     }
 
     public static void exitMsg() {
@@ -28,7 +38,7 @@ public class Ui {
     }
 
     public static void printListEmpty() {
-        System.out.print("List is empty!");
+        System.out.println("List is empty!");
     }
 
     public static void printRemoveModule() {
@@ -50,12 +60,20 @@ public class Ui {
         printNumberOfModules(userList);
     }
 
+    public static void printShortModuleInfo(Module module) {
+        System.out.println(module.getBasicModuleDetails());
+    }
+
+    public static void printError(String e) {
+        System.out.println(e);
+    }
+
     public static void printNumberFormatException() {
-        System.out.print("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
+        System.out.println("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
     }
 
     public static void printIndexOutOfRangeException() {
-        System.out.print("%s☹ OOPS!!! Out of Range!");
+        System.out.println("%s☹ OOPS!!! Out of Range!");
     }
 
 }
