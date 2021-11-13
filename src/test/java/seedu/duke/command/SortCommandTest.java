@@ -19,7 +19,7 @@ public class SortCommandTest {
 
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /1-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /1-12-2021");
-        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-12-2021");
+        AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
 
         addFirstExpense.run(actualList);
         addSecondExpense.run(actualList);
@@ -42,11 +42,11 @@ public class SortCommandTest {
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /3-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /2-12-2021");
         AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
-        AddIncomeCommand addSecondIncome = new AddIncomeCommand("income salary /NovSalary /4000 /1-11-2021");
 
         addFirstExpense.run(actualList);
         addSecondExpense.run(actualList);
         addFirstIncome.run(actualList);
+        AddIncomeCommand addSecondIncome = new AddIncomeCommand("income salary /NovSalary /4000 /1-11-2021");
         addSecondIncome.run(actualList);
 
         SortCommand sortByAsc = new SortCommand("sort /asc /date");
@@ -69,11 +69,11 @@ public class SortCommandTest {
         AddExpenseCommand addFirstExpense = new AddExpenseCommand("expense lunch /Meal /40 /3-12-2021");
         AddExpenseCommand addSecondExpense = new AddExpenseCommand("expense lunch /Meal /20 /2-12-2021");
         AddIncomeCommand addFirstIncome = new AddIncomeCommand("income salary /OctSalary /4000 /1-10-2021");
-        AddIncomeCommand addSecondIncome = new AddIncomeCommand("income salary /NovSalary /4000 /1-11-2021");
 
         addFirstExpense.run(actualListDesc);
         addSecondExpense.run(actualListDesc);
         addFirstIncome.run(actualListDesc);
+        AddIncomeCommand addSecondIncome = new AddIncomeCommand("income salary /NovSalary /4000 /1-11-2021");
         addSecondIncome.run(actualListDesc);
 
         SortCommand sortByDesc = new SortCommand("sort /desc /date");
