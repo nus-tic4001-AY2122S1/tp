@@ -35,8 +35,7 @@ public class SortCommand extends Command implements Comparable<Item> {
         public int compare(Item e1, Item e2) {
             Date expenseDate1 = e1.getDate();
             Date expenseDate2 = e2.getDate();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
-            return sdf.format(expenseDate1).compareTo(sdf.format(expenseDate2));
+            return expenseDate1.compareTo(expenseDate2);
         }
     };
 
@@ -44,8 +43,8 @@ public class SortCommand extends Command implements Comparable<Item> {
         public int compare(Item e1, Item e2) {
             Date expenseDate1 = e1.getDate();
             Date expenseDate2 = e2.getDate();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd");
-            return sdf.format(expenseDate2).compareTo(sdf.format(expenseDate1));
+            return expenseDate2.compareTo(expenseDate1);
+
         }
     };
 
