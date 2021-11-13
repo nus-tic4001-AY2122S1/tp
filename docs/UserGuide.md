@@ -21,7 +21,7 @@ You can view all available modules for the year, as well as add modules you are 
 
 4. You can now enter commands into the command prompt. 
 
-## Features 
+## Features / Command Summary
 
 Here are a list of commands you can enter, and the explanations of what the commands do:
 
@@ -39,7 +39,6 @@ Here are a list of commands you can enter, and the explanations of what the comm
 ### Listing available modules: `list all`
 
 Format: `list all`
-
 
 Example of Usage: 
 ```console
@@ -62,7 +61,7 @@ AC5013 | Practical Building Conservation Skills II |
 AC5014 | Internship | 
 * Data was retrieved using NUS MODS API. *
 ```
-### Searching details for a Particular Module: `list <Module Code>`
+### Searching for Modules: `list <Module Code>`
 
 Format: `List <Module Code>`
 
@@ -79,6 +78,16 @@ TIC4004 | Software Quality Control |
 TIC4005 | Parallel and Distributed Software Engineering | Semester:1 | Exam date:Wed Dec 02 01:00:00 UTC 2020 | Exam duration:120
 ```
 
+### Detailed information of a Modules: `view <Module Code>`
+
+Format: `view <Module Code>`
+
+Example of usage:
+```console
+Type something: view TIC4001
+TIC4001 | Software Engineering Practicum I | Semesters:  | This module is one of the two modules where students get to practice software engineering concepts learnt in a team environment to produce a well-designed, well-tested, large-scaled software system. This module focuses on software engineering practice of a greenfield project, where students will elicit the requirements, design the software architecture and interfaces, and implement the software from scratch. | Module credit: 4.0 | Department: SCALE Dean's Office | Faculty: Cont and Lifelong Education | Prerequisites: TIC3001 | Corequisites: null | Detailed semester data:Semester:1 | Exam date:null | Exam duration:null
+```
+
 ### Adding a module into your list: `add <Module Code>`
 
 Format: `add <Module Code>`
@@ -90,7 +99,60 @@ Example of usage:
 Type something: add TIC4001
 Got it. I've added this module:
 TIC4001 - Software Engineering Practicum I
-Now you have 2 modules in the list.
+Now you have 1 modules in the list.
+```
+
+### View your own List of modules: `mylist`
+
+Format: `mylist`
+
+* Displays list of modules that you have added.
+
+Example of usage:
+```console
+Type something: mylist
+Here are the modules in your list: 
+TIC4001 - Software Engineering Practicum I
+```
+### Delete a module from your list: `delete <Index>`
+
+Format: ` delete <Index>  `
+
+* Removes an added module in your list.
+* `<Index>` denotes the position of the module in your list. e.g `delete 1` deletes the first module in your list.
+
+Example of usage:
+```console
+Type something: delete 2
+Noted. I've removed this module:
+TIC4002 - Software Engineering Practicum II
+Now you have 1 modules in the list.
+```
+
+### Save or load current your lists: `save` / `load`
+
+Format: `save`
+
+* Saves the current state of your module list.
+* To be used in conjuction with `load`
+
+Format: `load`
+
+* loads the saved state to your user list.
+
+Example of usage:
+```console
+Type something: save
+Saved modules to user_modules.json
+
+Type something: load
+Loaded modules from user_modules.json
+
+Type something: mylist
+Here are the modules in your list: 
+TIC4001 - Software Engineering Practicum I
+TIC4002 - Software Engineering Practicum II
+TIC4003 - Software Project Management
 ```
 
 ## FAQ
@@ -98,9 +160,3 @@ Now you have 2 modules in the list.
 **Q**: How do I transfer my data to another computer?
 
 **A**: {your answer here}
-
-## Command Summary
-
-{Give a 'cheat sheet' of commands here}
-
-* Add todo `todo n/TODO_NAME d/DEADLINE`
