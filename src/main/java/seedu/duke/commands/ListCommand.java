@@ -38,6 +38,7 @@ public class ListCommand extends Command {
             stat = Stat.WAIT;
             break;
         case "someday":
+        case "some":
             stat = Stat.SOME;
             break;
         case "proj":
