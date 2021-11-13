@@ -165,7 +165,7 @@ public class FlightList {
                         splitDate[1] = "02";
                         break;
                     case "Mar":
-                        splitDate[1] = "04";
+                        splitDate[1] = "03";
                         break;
                     case "Apr":
                         splitDate[1] = "04";
