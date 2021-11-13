@@ -62,6 +62,12 @@ extends to parent `Command` class and must implement the `execute()` method.
 <img src="pic/SeqDiagram.png">
 
 
+## Implementation
+### Storage save feature
+Multiple hierarchies of `GtdThought` are saved to storage via conversion into a flatten list.
+<img src="pic/SeqDiagram_StorageSave.png">
+
+
 ## Product scope
 ### Target user profile
 Daily GTD users who are enthusiastic about organizing tasks digitally and being exceptionally productive. 
