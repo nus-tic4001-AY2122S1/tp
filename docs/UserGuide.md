@@ -154,9 +154,3 @@ TIC4001 - Software Engineering Practicum I
 TIC4002 - Software Engineering Practicum II
 TIC4003 - Software Project Management
 ```
-
-## FAQ
-
-**Q**: How do I transfer my data to another computer?
-
-**A**: {your answer here}
