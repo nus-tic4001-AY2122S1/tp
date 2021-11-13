@@ -159,7 +159,7 @@ e.g.
   | List items with Status  | `list STATUS` |
   |  Set to Status  | `set TASK_REF_NO... STATUS`|
   |  Set due date | `due TASK_REF_NO... YYYY-MM-DD` |
-  |  Arrange items from Inbox to under a project | [suggest `set` items that supposed to be PROJ from Inbox first] <br /> `proj-mode` <br /> `INBOX_REF_NO -> PROJ_REF_NO`<br />to exit<br />`q` |
+  |  Arrange items from Inbox to under a project | [suggest `set` items that supposed to be PROJ (top level with no indentation) from Inbox first] <br /> `proj-mode` <br /> `INBOX_REF_NO -> PROJ_REF_NO`<br />to exit<br />`q` |
  |  Mark tasks done | `done TASK_REF_NO...` |
   | Delete a task  | `delete TASK_REF_NO...` |
   | Exit program  | `bye` |
