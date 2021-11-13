@@ -6,7 +6,7 @@
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#implementation-sequence-diagram">Implementation</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#documentation-logging-testing-configuration-dev-ops">Documentation, logging, testing</a>*
 * *<a href="https://github.com/AY2122S1-TIC4001-F18-2/tp/blob/master/docs/DeveloperGuide.md#appendix-requirements">Appendix: Requirements</a>*
-* *<a href="/DeveloperGuide.md#use-cases">Use Cases</a>*
+* *<a href="DeveloperGuide.md#use-cases">Use Cases</a>*
 
 ## Acknowledgements
 
