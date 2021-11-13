@@ -2,7 +2,7 @@
 
 ## Overview
 
-Daffy is an extension of Duke project which allows user to keep track his/her todos.
+Daffy is an extension and improvement of Duke. It all
 
 ## Summary of Contributions
 
