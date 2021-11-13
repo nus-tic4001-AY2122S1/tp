@@ -49,6 +49,9 @@ From the sequence diagram, we can see that a user input `View -a` to and`Duke` c
 
 The reason of doing this is to decouple the parsing logic and task execution logic which is the implementation follows `Single Responsibility Principle`.
 
+### Commands
+
+
 ### Delete feature
 
 It extends `Command` class. It checks if the number input by user is out of range. If yes, error thrown. If no, the task will be deleted from the `TaskList`. `Ui` will print the response.
@@ -67,25 +70,58 @@ It extends `Command` class. It checks if the number input by user is out of rang
 
 <img src="https://user-images.githubusercontent.com/54061328/141602402-9c7d0e5f-db45-499c-b1d3-387546ff3179.png" width="500">
 
+### Category
+<img src="images/CategoryClass.png" alt="category-class-uml" />
+
+### Category Commands
+<img src="images/CategoryCommands.png" alt="category-commands-uml" />
+
+#### AddCategory Command
+AddCategory extends `Command` class. It adds a new category to the Category list.
+
+#### DeleteCategory Command
+DeleteCategory extends `Command` class. It removes an existing category in the Category list based on the given category number. If an existing category is tagged to a task, an error will throw to prevent deleting of category.
+
+#### TagCategory Command
+TagCategory extends `Command` class. It tags an existing category to a task by the provided category number. If the given category number does not exist and error will throw.
+
+#### ViewCategory Command
+ViewCategory extends `Command` class. `Ui` will print all the tasks in `Category`.
+
 ## Product scope
+Daffy is a task tracker specifically built for computing students that are comfortable with the CLI. Working on improving and adding features to the existing Duke project and making it useful for students to manage their schedule and work. Natural language will be implemented to avoid exceptions due to typing errors. 
 
 ### Target user profile
+John - 35
+Male
 
-{Describe the target user profile}
+Part time student - working adult. Often coming to class late due to work commitment, he would like to be able to track school related tasks that are separated from other commitments outside of school. He finds it difficult to track his work deliverables and his school deliverables separately. So he would like to have a place to write down all the required things that he needs to attend to, so that he can focus on school and work separately. This is to improve his focus in school related submission work.
+
+As a working IT professional, he has a personal laptop with him all the time. And he prefers to use the CLI to track his task as that is what he interacts with the most throughout his day.
+
+### User Flow
+He powered up his laptop, and opened the software using Intellij. John sees a todo list, a list of unfinished tasks will be presented to him with the due date of each individual task. He started working on the task, upon finishing the tasks, he keyed in “done {{taskNumber}}” and that task is marked as done in the system. He keyed in “list todos” and saw the task he finished was marked as done.
 
 ### Value proposition
 
-{Describe the value proposition: what problem does it solve?}
+Daffy is CLI software that helps individuals track the tasks that were keyed in by individual users. It allows users to add tasks, set due dates to a task, update tasks, and mark tasks as done. It also can list the tasks and let the user know how many tasks that user has finished and how many unfinished tasks, as well as the overdue tasks. 
 
 ## User Stories
 
 | Version | As a ... | I want to ...                                              | So that I can ...                     |
 | ------- | -------- | ---------------------------------------------------------- | ------------------------------------- |
+| v1.0    | user     | be able to add a task                                      | keep track which task is not done yet |
 | v1.0    | user     | be able to delete a task if that task is not valid anymore | the task list is not cluttered        |
 | v1.0    | user     | see the responses from Daffy after I enter commands        | know the commands are executed        |
 | v1.0    | user     | be able to see all tasks                                   | plan my time                          |
 | v2.0    | user     | be able to see unfinished tasks only                       | be more focus on the unfinished tasks |
 | v2.0    | user     | mark tasks as done                                         | track the progress                    |
+| v2.0    | user     | be able to have different task types                       | search them easily                    |
+| v2.0    | user     | be able to add category type                               | tag categories to a task              |
+| v2.0    | user     | be able to remove category type                            | the category list is not cluttered    |
+| v2.0    | user     | be able to view all category list                          | view which category are available     |
+| v3.0    | user     | assign category to task                                    | find related task to a category       |
+
 
 ## Non-Functional Requirements
 
