@@ -14,13 +14,13 @@ public class Storage {
     public static FlightList flightList;
 
     public Storage(FlightList flightList) {
-        this.flightList = flightList;
+        Storage.flightList = flightList;
     }
 
     /**
      * Read all flight details from DB file and store them to fightList.
      */
-    public void readFile() throws FileNotFoundException, IOException , StringIndexOutOfBoundsException {
+    public void readFile() throws Exception {
         BufferedReader fileRead = new BufferedReader(new FileReader("FlightDB.txt"));
         if (fileRead.readLine() == null) {
             return;

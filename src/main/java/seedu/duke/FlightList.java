@@ -1,8 +1,8 @@
 package seedu.duke;
 
 import java.time.LocalDateTime;
-import java.util.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class FlightList {
 
