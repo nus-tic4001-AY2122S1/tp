@@ -68,6 +68,13 @@ public class GtdList implements Iterable<GtdThought> {
         return list.get(index);
     }
 
+    /**
+     * get() take String number unlike the conventional int.
+     * it would be handy to call want to refer to to subtask
+     * such as "1-1" "1-1-1"*
+     * @param numbering : String
+     * @return
+     */
     public GtdThought get(String numbering) {
         String[] indexes = numbering.split("-");
         int index0;
@@ -115,7 +122,14 @@ public class GtdList implements Iterable<GtdThought> {
         list.removeAll(lv0);
     }
 
-
+    /**
+     * Print all GtdThought in the list with ref_no.
+     * with getTextRec() it's able to print the subtask of
+     * each GtdThought.
+     * with addNum() will add ref_no. in front of each line
+     * the number would be dynamically changing when the list changed.
+     * so user won't see ref_no. skips after task deletion.
+     */
     public void print() {
         print(false);
     }

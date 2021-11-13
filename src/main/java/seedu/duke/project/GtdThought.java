@@ -5,6 +5,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * GtdThoughts is the task in GTD flow. <br />
+ * Since task could be converted to project,
+ * The data struct could have subtasks (children) which is
+ * a list of GtdThoughts <br />
+ * It supports 2 more layers of nesting at most <br />
+ * It also have one status at a time denoted in enum `Stat`
+ */
 public class GtdThought implements Comparable<GtdThought> {
     private static final String INDEN = "  ";
 
@@ -124,6 +132,18 @@ public class GtdThought implements Comparable<GtdThought> {
         }
     }
 
+    /**
+     * getTextRec return String of text of the GtdThought, including children.
+     * This is an important and useful method
+     * to display a GtdThought
+     * It will indent the subtask based on their level
+     * e.g.
+     * [PROJ] Proj
+     *   [PROJ] Subtask A
+     *     A.1
+     *   Subtask B
+     * @return
+     */
     public String getTextRec() {
         return getTextRec(false);
     }
