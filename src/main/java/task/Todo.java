@@ -1,5 +1,7 @@
 package task;
 
+import java.util.Date;
+
 public class Todo extends Task {
     private String type;
 
@@ -16,5 +18,10 @@ public class Todo extends Task {
     @Override
     public String getType() {
         return type;
+    }
+
+    @Override
+    public Date getDate() {
+        return null;
     }
 }

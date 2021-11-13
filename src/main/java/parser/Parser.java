@@ -6,10 +6,6 @@ import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
 import command.category.ViewCategory;
-import command.Command;
-import command.ViewCommand;
-import command.DoneCommand;
-import command.TodoCommand;
 import command.DeleteCommand;
 import command.LocationCommand;
 import command.ByeCommand;
@@ -19,7 +15,6 @@ import command.TaskProgressCommand;
 import command.AppointmentTimeCommand;
 import command.ProgressionCommand;
 import command.DueDateCommand;
-
 import java.util.Date;
 
 
@@ -34,6 +29,7 @@ public class Parser {
     private String taskNo;
 
     public Command parse(String input) throws ErrorHandler {
+        input = input.trim();
         String[] result = input.split(" ", 2);
         CommandKeyWords commandWord = CommandKeyWords.getEnum(result[0].toUpperCase());
 
@@ -115,6 +111,9 @@ public class Parser {
 
             return this.handleSetTime(result[1]);
         case SEARCH:
+
+            return new SearchCommand(input);
+
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_SEARCH_CATEGORY);
             }

@@ -2,9 +2,13 @@ package helpers;
 
 import constant.Utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.Calendar;
 
 import static java.time.temporal.TemporalAdjusters.nextOrSame;
 import static java.time.temporal.TemporalAdjusters.previousOrSame;
@@ -14,7 +18,6 @@ public class DateConverter {
         switch (day.toUpperCase()) {
         case "TODAY":
             LocalDate today = getToday();
-            System.out.println(today.format(DateTimeFormatter.ofPattern(Utils.DATE_FORMAT)));
             return today.format(DateTimeFormatter.ofPattern(Utils.DATE_FORMAT));
         case "YESTERDAY":
             LocalDate yesterday = getToday().minusDays(1);
@@ -87,4 +90,49 @@ public class DateConverter {
         return getCurrentWeekDay(today, targetDate).plusDays(7);
     }
 
+    /**
+     * Checks if the string input is a valid date format.
+     *
+     * @param inDate Date that user has input as parameter.
+     * @return true boolean if input can be parsed as a date.
+     */
+    public static boolean isValidDate(String inDate) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            dateFormat.setLenient(false);
+            dateFormat.parse(inDate.trim());
+            return true;
+        } catch (ParseException pe) {
+            return false;
+        }
+    }
+
+    /**
+     * Converts string to date.
+     *
+     * @param inDate Date that user has input as parameter.
+     * @return Date in "dd-MM-yyyy" format.
+     */
+    public static Date convertStringToDate(String inDate) throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        dateFormat.setLenient(false);
+        return dateFormat.parse(inDate.trim());
+
+    }
+    /**
+     * Set time (hour, min, sec and millisec) to 0 .
+     * Mainly for comparison of input date and Appointment dates.
+     *
+     * @param date Date of an existing Appointment.
+     * @return Date with zeroed Time.
+     */
+    public static Date removeTime(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTime();
+    }
 }

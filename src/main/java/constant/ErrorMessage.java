@@ -52,6 +52,7 @@ public class ErrorMessage {
 
     public static final String EMPTY_APPOINTMENT_LOCATION = "OOPS!!! The appointment location is missing, missing "
         + "'/l'";
+    public static final String INVALID_INDEX = "Error: Index is greater than array size";
     public static final String EMPTY_ASSIGNMENT_DESCRIPTION = "OOPS!!! The homework description cannot be empty.";
     public static final String EMPTY_ASSIGNMENT_MARKS = "OOPS!!! The homework due date is missing, missing '/due_on'";
     public static final String EMPTY_ASSIGNMENT_DUE_DATE = "OOPS!!! The homework marks is missing, missing '/l'";
