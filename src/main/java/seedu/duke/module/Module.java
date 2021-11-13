@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.duke.module;
 
 import java.util.Arrays;
 

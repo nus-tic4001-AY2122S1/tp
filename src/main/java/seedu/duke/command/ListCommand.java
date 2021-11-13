@@ -1,15 +1,13 @@
 package seedu.duke.command;
 
-import seedu.duke.NusModList;
-import seedu.duke.Ui;
-import seedu.duke.Module;
+import seedu.duke.module.NusModList;
+import seedu.duke.ui.Ui;
+import seedu.duke.module.Module;
 import seedu.duke.exceptions.NusModException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ListCommand extends Command {

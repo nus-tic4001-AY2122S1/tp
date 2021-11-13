@@ -1,9 +1,8 @@
 package seedu.duke.command;
 
-import seedu.duke.Module;
-import seedu.duke.NusModList;
-import seedu.duke.Ui;
-import seedu.duke.exceptions.ModuleException;
+import seedu.duke.module.Module;
+import seedu.duke.module.NusModList;
+import seedu.duke.ui.Ui;
 import seedu.duke.exceptions.NusModException;
 
 import java.io.IOException;

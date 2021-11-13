@@ -1,5 +1,6 @@
-package seedu.duke;
+package seedu.duke.module;
 
+import seedu.duke.ui.Ui;
 import seedu.duke.exceptions.ListEmptyException;
 import seedu.duke.exceptions.IndexOutOfRangeException;
 

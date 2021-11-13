@@ -1,7 +1,7 @@
 package seedu.duke.command;
 
-import seedu.duke.Storage;
-import seedu.duke.UserList;
+import seedu.duke.storage.Storage;
+import seedu.duke.module.UserList;
 
 import java.io.IOException;
 

@@ -1,6 +1,8 @@
-package seedu.duke;
+package seedu.duke.storage;
 
 import com.google.gson.Gson;
+import seedu.duke.module.Module;
+import seedu.duke.module.UserList;
 
 
 import java.io.File;

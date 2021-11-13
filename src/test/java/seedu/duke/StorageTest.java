@@ -2,6 +2,9 @@ package seedu.duke;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
+import seedu.duke.module.Module;
+import seedu.duke.module.Semesterdata;
+import seedu.duke.storage.Storage;
 
 import java.io.IOException;
 import java.util.ArrayList;

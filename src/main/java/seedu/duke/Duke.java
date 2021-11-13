@@ -2,6 +2,9 @@ package seedu.duke;
 
 import seedu.duke.command.Command;
 import seedu.duke.command.ExitCommand;
+import seedu.duke.module.NusModList;
+import seedu.duke.parser.Parser;
+import seedu.duke.ui.Ui;
 
 
 import java.io.IOException;

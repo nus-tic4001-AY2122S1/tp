@@ -1,0 +1,75 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor LOGIC_COLOR_T4
+skinparam classBackgroundColor LOGIC_COLOR
+
+
+Class XYZCommand
+
+package "Command classes"{
+Class "{abstract}\nCommand" as Command
+Class AddCommand
+Class DeleteCommand
+Class ExitCommand
+Class ListCommand
+Class LoadFromStorageCommand
+Class MyListCommand
+Class SaveToStorageCommand
+Class ViewCommand
+}
+
+package Duke{
+Class Duke
+}
+
+package Api{
+Class Api
+}
+
+package Module{
+Class Module
+Class NusModList
+Class Semesterdata
+Class UserList
+}
+
+package Parser{
+Class Parser
+}
+
+package Storage{
+Class Storage
+}
+
+package Ui{
+Class Ui
+}
+
+Duke ..> Ui
+Duke ..> Api
+Duke ..> Parser
+Duke ..> NusModList
+
+AddressBookParser .down.> XYZCommandParser: creates >
+
+AddCommand -up-|> Command
+DeleteCommand -up-|> Command
+ExitCommand -up-|> Command
+ListCommand -up-|> Command
+LoadFromStorageCommand -up-|> Command
+MyListCommand -up-|> Command
+SaveToStorageCommand -up-|> Command
+ViewCommand -up-|> Command
+
+XYZCommandParser ..> XYZCommand : creates >
+AddressBookParser ..> Command : returns >
+
+
+ArgumentTokenizer .left.> ArgumentMultimap
+XYZCommandParser ..> CliSyntax
+
+ParserUtil .down.> Prefix
+ArgumentTokenizer .down.> Prefix
+
+@enduml

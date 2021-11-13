@@ -1,6 +1,6 @@
 package seedu.duke.command;
 
-import seedu.duke.Ui;
+import seedu.duke.ui.Ui;
 
 /**
  * Place holder for command only. Please implement a real class.

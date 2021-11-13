@@ -3,6 +3,8 @@ package seedu.duke;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import seedu.duke.module.Module;
+import seedu.duke.module.NusModList;
 
 import java.io.BufferedReader;
 import java.io.IOException;

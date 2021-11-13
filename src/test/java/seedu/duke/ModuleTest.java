@@ -1,6 +1,8 @@
 package seedu.duke;
 
 import org.junit.jupiter.api.Test;
+import seedu.duke.module.Module;
+import seedu.duke.module.Semesterdata;
 
 import java.util.Date;
 
