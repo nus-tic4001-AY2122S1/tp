@@ -29,16 +29,14 @@ Interface (CLI)
     1. Refactor Sort Command & Add Sort by Date - Pull Request [#95](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/95)
     2. Add Sort Command JUnit Test - Pull Request [#98](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/98)
     3. Refactor Save and Read Command - Pull Request [#100](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/100)
-    4. Sorting by Amount - Pull Request [#102](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/102)
     5. Add PPP draft - Pull Request [#111](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/111)
-    
+    6. Update DG - Pull Request [#124](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/124)
 
 * **Contributions to team-based tasks**
   * Maintaining the issue tracker (milestone v1.0 issue tracter setup)
   * Add Logging function and save to different system log folder
   * Enabled Assertion Pull Request[#31] (https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/31)
   * Edit AboutUs.md and maintained publish page issues.
-
 
 **Documentation:**
 
@@ -48,7 +46,7 @@ Interface (CLI)
 * **Contributions to the DG**
   * Add layout/ Content hyperlink for DG.
   * Add Sequence Diagram for Add Command to implementation part
-  * Add Storage component API to design part
+  * Add Storage component API to design part [#130](https://github.com/AY2122S1-TIC4001-F18-2/tp/pull/130)
 
 ##### Review/mentoring contributions: 
   * Links to PRs reviewed: 
