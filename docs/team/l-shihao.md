@@ -28,7 +28,7 @@ DeleteCommand which can delete `GtdThought` of any level. e.g. `delete 1-2-1`
 Various bugs fixing among different places.
 
 #### Contributions to User Guide
-- UG draft
+- UG Draft
   - Introduction
   - Quick Start
   - Features
@@ -49,9 +49,11 @@ Documented sections:
 - product value proposition
 - user persona
 - user stories
-- non-function requirements
+  - row 5 - 9
+- non-function requirements 
+  - 1 & 2
 - glossary
-- instructions for manual testing
+- instructions for manual testing 
 
 #### Contributions to team-based tasks
 + set up team organization 
@@ -66,7 +68,7 @@ Documented sections:
 
 
 #### Review
-
+e.g.
 + [3b2f935](https://github.com/AY2122S1-TIC4001-F18-3/tp/commit/3b2f93500a50e83b8836c605cfa727b85d980074)
 + [3e7d675](https://github.com/AY2122S1-TIC4001-F18-3/tp/commit/3e7d675ebdcdb402b72ba0c57c390b88ccf29332)
 + [51ae254](https://github.com/AY2122S1-TIC4001-F18-3/tp/commit/51ae254afcd481994e94170f6f744ccb3cac4dc6)

@@ -7,11 +7,18 @@ This User Guide will get GTD users started on the commands that achieve common G
 ## Quick Start
 
 1. Ensure that you have Java 11 or above installed
-2. download the `.jar` file at [this link release V3.0](https://github.com/AY2122S1-TIC4001-F18-3/tp/releases/tag/v2.1) <-- /need to change/  put to desired directory 
+2. download the `.jar` file at [this link release V3.0](https://github.com/AY2122S1-TIC4001-F18-3/tp/releases/tag/v3.0)  put to desired directory 
 3. `cd` to the directory contains the `.jar` file 
 4. ```
    java -jar tp.jar
    ```
+   
+Alternative way of installing the program: 
+2. ```
+   git clone https://github.com/AY2122S1-TIC4001-F18-3/tp.git
+   ```
+3. This way you will get pre-loaded sample tasks when start the program
+4. You could open the folder as a project via IDE
 
 ## Features 
 
@@ -73,7 +80,8 @@ Example of usage:
 
 ### Inbox items to Project Arrangement: `proj-mode`
 
-Remember to `set` PROJ from Inbox first
+Remember to `set` top level (no indentation) PROJ from Inbox first, 
+while subproject can be added in `proj-mode`.
 
 Format: 
 
@@ -91,6 +99,7 @@ proj-mode
 1 2 -> 1-2
 q
 ```
+(the Exception handling for `proj-mode` yet made it into V3.0, incorrect arguments result in exiting `proj-mode` immediately)
 
 ### Delete a task: `delete`
 Delete a task from current/latest displayed list.
@@ -105,6 +114,18 @@ Example of usage:
 `delete 1 2`
 
 `delete 1-1-3 1-2`
+
+### Mark a task done: `done`
+Complete a task from current/latest displayed list.
+(When doubt, always list the desired list first)
+
+Format: `done TASK_REF_NO...`
+
+Example of usage:
+
+`done 1 2`
+
+`done 1-2-2`
 
 ### Exiting the program: `bye`
 Exits the program
@@ -139,5 +160,6 @@ e.g.
   |  Set to Status  | `set TASK_REF_NO... STATUS`|
   |  Set due date | `due TASK_REF_NO... YYYY-MM-DD` |
   |  Arrange items from Inbox to under a project | [suggest `set` items that supposed to be PROJ from Inbox first] <br /> `proj-mode` <br /> `INBOX_REF_NO -> PROJ_REF_NO`<br />to exit<br />`q` |
+ |  Mark tasks done | `done TASK_REF_NO...` |
   | Delete a task  | `delete TASK_REF_NO...` |
   | Exit program  | `bye` |
