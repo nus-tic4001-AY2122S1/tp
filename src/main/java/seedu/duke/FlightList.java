@@ -95,7 +95,7 @@ public class FlightList {
                 }
                 list.set(i + 1, flightKey);
             }
-            if (code.equals("datetime")){
+            if (code.equals("datetime")) {
                 LocalDateTime key = list.get(j).dateAndTime;
                 Flight flightKey = list.get(j);
                 int i = j - 1;
@@ -107,8 +107,11 @@ public class FlightList {
 
             }
         }
-        if (code.equals("price")) System.out.println("Your flight has been sorted by price in ascending order.");
-        else System.out.println("Your flight has been sorted by date and time, earliest flight comes first.");
+        if (code.equals("price")) {
+            System.out.println("Your flight has been sorted by price in ascending order.");
+        } else {
+            System.out.println("Your flight has been sorted by date and time, earliest flight comes first.");
+        }
     }
 
 
