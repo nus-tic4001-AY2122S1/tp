@@ -1,64 +1,73 @@
-# Duke project template
+# Overview:
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+Air Rec is a desktop app for managing flight records, optimized for use via a Command Line Interface (CLI). User will not have to remember flight details and it can be found easily with commands.
 
-## Setting up in Intellij
+## Code contributed:
+https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=kaydenkhor&breakdown=true&sort=groupTitle&sortWithin=title&since=2021-09-17&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other
 
-Prerequisites: JDK 11 (use the exact version), update Intellij to the most recent version.
+- Created the base structure of the whole project code
+- Integrated Gradle into project.
+- Implemented Parser, FlightList, Flight class + enhancement to these classes.
+- Implemented Add function + Upgraded Add function to be able to read in date and time format
+- Enhanced Flight parameters 
+- Upgraded Show all flights function
+- Implemented Sort Function – To sort flight records by price and date time.
+- Merging of all pull request so as to ensure all function are integrated smoothly (Includes bugs fixing, code reviews and manual code merging)
+- Overall project code refactoring after each merge of PRs.
+- J-Unit testing
 
-1. **Ensure Intellij JDK 11 is defined as an SDK**, as described [here](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk) -- this step is not needed if you have used JDK 11 in a previous Intellij project.
-1. **Import the project _as a Gradle project_**, as described [here](https://se-education.org/guides/tutorials/intellijImportGradleProject.html).
-1. **Verify the set up**: After the importing is complete, locate the `src/main/java/seedu/duke/Duke.java` file, right-click it, and choose `Run Duke.main()`. If the setup is correct, you should see something like the below:
-   ```
-   > Task :compileJava
-   > Task :processResources NO-SOURCE
-   > Task :classes
-   
-   > Task :Duke.main()
-   Hello from
-    ____        _        
-   |  _ \ _   _| | _____ 
-   | | | | | | | |/ / _ \
-   | |_| | |_| |   <  __/
-   |____/ \__,_|_|\_\___|
-   
-   What is your name?
-   ```
-   Type some word and press enter to let the execution proceed to the end.
+### Bugs fixing for:
+-	Search function
+-	Show all function
+-	Show upcoming function
+-	Storage class and auto save function (Spent most time on this) 
+-	Delete function
+-	Sort function
 
-## Build automation using Gradle
 
-* This project uses Gradle for build automation and dependency management. It includes a basic build script as well (i.e. the `build.gradle` file).
-* If you are new to Gradle, refer to the [Gradle Tutorial at se-education.org/guides](https://se-education.org/guides/tutorials/gradle.html).
 
-## Testing
+## Contributions to the UG:
+Wrote all of the details of the user guide. From time to time, I have been updating the whole userguide.md file whenever I merge the PRs into the master repo. Although team mates have implemented function, but they didn’t update the UG or DG. Hence as I merge into the main repository, I update the UG from time to time. You can look at the amount of documents committed via my code contribution.
+I set up the website for our repo as well as linking up all the relevant documents to our website like developerguide.md, userguide.md, aboutus.md.
 
-### I/O redirection tests
+## Contribution to DG: 
+Drafted out the whole DG sections:
+-	Acknowledgement
+-	Design & Implementation
+o	Included overall code UML Class diagram
+-	Product scope (Update every version as our software develops…)
+o	Target user profile
+o	Value Proposition
+-	User Stories (Update every version)
+-	Non-functional Requirements
+-	Glossary
 
-* To run _I/O redirection_ tests (aka _Text UI tests_), navigate to the `text-ui-test` and run the `runtest(.bat/.sh)` script.
+Here's the UML class diagram:
+![UML CLASS DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Class%20Diagram.jpg)
 
-### JUnit tests
+Here's the sequence diagram when someone runs Air Rec:
+![SEQUENCE DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Sequence%20Diagram%20with%20Duke_run.png)
 
-* A skeleton JUnit test (`src/test/java/seedu/duke/DukeTest.java`) is provided with this project template. 
-* If you are new to JUnit, refer to the [JUnit Tutorial at se-education.org/guides](https://se-education.org/guides/tutorials/junit.html).
 
-## Checkstyle
+## Contributions to team-based tasks
+-	Setting up the GitHub team org/repo
+-	Necessary general code enhancements
+-	Setting up tools e.g., GitHub, Gradle
+-	Maintaining the issue tracker
+-	Release management
+-	Updating user/developer docs that are not specific to a feature e.g. documenting the target user profile
+-	Incorporating more checkstyle plugin.
+-	Setting & planning milestones
+-	Assigning task to team members as well as setting deadlines to hit milestones for v1.0, 2.0 and 3.0.
+-	Bug fixing for team:
+Storage class – dealing with the checkstyle, as well as the test-UI that caused the CI fail. Tested a few rounds to look out for more bugs and solve the bugs using exception handling as well as the way of implementation.
+-	Enhancement:
+Since I have enhanced the flight parameters to data parameters instead of strings especially the date time format, I have created extra methods to help team mates to grab data easily for their function implementation.
 
-* A sample CheckStyle rule configuration is provided in this project.
-* If you are new to Checkstyle, refer to the [Checkstyle Tutorial at se-education.org/guides](https://se-education.org/guides/tutorials/checkstyle.html).
+## Review/mentoring contributions:
+-	Guided team mates to use proper branching for function implementation
+-	Assigned team mates with issues and deadline
+-	Gave feedbacks and comments on PRs whenever there is an issue with the CI or I see if there’s a better way of code implementation.
 
-## CI using GitHub Actions
 
-The project uses [GitHub actions](https://github.com/features/actions) for CI. When you push a commit to this repo or PR against it, GitHub actions will run automatically to build and verify the code as updated by the commit/PR.
 
-## Documentation
-
-`/docs` folder contains a skeleton version of the project documentation.
-
-Steps for publishing documentation to the public: 
-1. If you are using this project template for an individual project, go your fork on GitHub.<br>
-   If you are using this project template for a team project, go to the team fork on GitHub.
-1. Click on the `settings` tab.
-1. Scroll down to the `GitHub Pages` section.
-1. Set the `source` as `master branch /docs folder`.
-1. Optionally, use the `choose a theme` button to choose a theme for your documentation.
