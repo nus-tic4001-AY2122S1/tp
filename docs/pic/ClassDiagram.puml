@@ -128,8 +128,24 @@ class GtdListDecoder {
     +{static} GTD_THOUGHT_TXT_FILE_FORMAT : Pattern
 
     +{static} decodeTaskList(encodedGtdList : List<String>) : GtdList
+    -{static} getParent_GtdList(gtdList : List<GtdThought>, parents : String) : GtdThought
+    -{static} getParent_GtdThought(gtdThought : GtdThought, parents : String) : GtdThought
+    -{static} decodeGtdThoughtFromString(encodedGtdThought : String) : HashMap<String, Object>
 }
-class GtdListEncoder
+class GtdListEncoder {
+    +{static} encodeGtdList(toSave : GtdList) : List<String>
+    -{static} encodeGtdThought(toSave : GtdThought) : List<String>
+    -{static} getParents(gtdThought : GtdThought) : String
+    -{static} encodeGtdThoughtToString(gtdThought : GtdThought) : String
+}
+
+GtdListDecoder ..> GtdList
+GtdListEncoder ..> GtdList
+GtdListDecoder ..> GtdThought
+GtdListEncoder ..> GtdThought
+Storage ..> GtdListEncoder
+Storage ..> GtdListDecoder
+Storage ..> GtdList
 
 class GtdList {
     -{static} INDEN : String
@@ -207,7 +223,21 @@ class GtdThought {
 GtdThought --> GtdThought
 GtdThought --> "1" Stat
 
-class GtdSpliterator
+class GtdSpliterator{
+    -listToSplit : ArrayList<GtdThought>
+    ~count : int
+
+    +GtdSpliterator(listToSplit : ArrayList<GtdThought>)
+    +tryAdvance(action: Consumer<? super GtdThought>) : boolean
+    +trySplit() : Spliterator<GtdThought>
+    +estimateSize() : long
+    +characteristics() : int
+}
+interface Spliterator<GtdThought>
+
+GtdSpliterator ..|> Spliterator
+GtdSpliterator --> GtdThought
+GtdList ..> GtdSpliterator
 enum Stat{
     NONE
     TODO
@@ -262,6 +292,8 @@ Parser ..> ListCommand
 Parser ..> ProjModeCommand
 Parser ..> ExitCommand
 Parser ..> IncorrectCommand
+
+
 
 
 
