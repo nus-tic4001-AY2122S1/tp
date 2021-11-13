@@ -27,7 +27,7 @@ public class Ui {
         this.out = out;
     }
 
-    public void showWelcome(){
+    public void showWelcome() {
         out.println("PROJECT\n" + PROJECT_NEXT_LOGO);
     }
 
