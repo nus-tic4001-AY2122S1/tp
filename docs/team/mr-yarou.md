@@ -4,9 +4,6 @@
 
 NUS Mods List is a program to help you choose and organize your NUS modules.
 
-You can view all available modules for the year, as well as add modules you are interested in to your personal list of modules. NUS Mods List also lets you save and load your list, so you can log off the program, log in another time, and still be able to keep the modules you have saved the last time.
-
-
 ### Summary of Contributions
 
 - New Feature developmet: List all, list <Module Code>, view
@@ -16,6 +13,8 @@ You can view all available modules for the year, as well as add modules you are 
 
 - Project management:
     - Helped to assist teammates in their enquiries
+    - Provided insignts on design and helped debugged errors
   
  - Documentations:
     - User Guide
+
