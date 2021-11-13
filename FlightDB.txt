@@ -1,2 +1,5 @@
-add /from Australia /to Singapore /date 2021-01-31 1400 /price 500
-add /from Japan /to Singapore /date 2021-10-31 1400 /price 800
+add /from japan /to Singapore /date 2021-01-31 1400 /price 1999
+add /from Japan /to malaysia /date 2021-10-31 1400 /price 800
+add /from singapore /to japan /date 2021-11-21 1400 /price 999
+add /from singapore /to malaysia /date 2021-11-21 1000 /price 400
+add /from taiwan /to johor /date 2022-01-10 0800 /price 550

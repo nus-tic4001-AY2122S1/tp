@@ -46,10 +46,13 @@ public class Duke {
                     break;
                 case "add":
                     flightList.addFlight(userInput);
-                    storage.saveToDB(userInput);
+                    Storage.saveToDB(userInput);
                     Message.getVal("ADDED_SUCCESSFULLY",Integer.toString(flightList.getSize()));
                     /* System.out.println("Your flight has been added.\n" + "You have " + flightList.getSize()
                             + " flights in your record");*/
+                    break;
+                case "sort":
+                    flightList.sortFlight(userInput);
                     break;
                 case "show all":
                     for (int i = 0; i < flightList.getSize(); i++) {
@@ -60,7 +63,7 @@ public class Duke {
 
                 case "delete":
                     flightList.deleteFlight(userInput);
-                    storage.deleteFromDB(userInput);
+                    Storage.deleteFromDB(userInput);
                     Message.getVal("DELETE_SUCCESSFULLY",Integer.toString(flightList.getSize()));
                     /*System.out.println("Your flight has been deleted.\n" + "You have " + flightList.getSize()
                             + " flights in your record");*/
@@ -72,7 +75,8 @@ public class Duke {
                     break;
                 case "edit" :
                     flightList.editFlight(userInput);
-                    storage.editFlightDB(userInput);
+                    Storage.editFlightDB(userInput);
+                    System.out.println("Your flight has been updated.");
                     break;
                 case "search":
                     if (userInput.equals("search")) {
@@ -97,10 +101,9 @@ public class Duke {
                 case "show upcoming":
                     if (!flightList.isEmpty()) {
                         Flight upComingFlight = new Parser().dateCompare(flightList);
-                        System.out.println("Flight : " + upComingFlight.getFullFlightDetails());
+                        System.out.println("Upcoming Flight: " + upComingFlight.getFullFlightDetails());
                     }
                     break;
-
 
                 default:
                     Message.getVal("ERROR_UNKNOWN");
