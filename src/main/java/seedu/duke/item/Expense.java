@@ -18,4 +18,9 @@ public class Expense extends Item {
     public String toString() {
         return "[E] " + super.toString();
     }
+
+    @Override
+    public String save_toString() {
+        return "E | " + super.save_toString();
+    }
 }

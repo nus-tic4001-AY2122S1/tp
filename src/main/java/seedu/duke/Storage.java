@@ -17,7 +17,7 @@ public class Storage {
     public void loadFromStorage(ItemList saveItemList) {
 
         try {
-            FileReader fileReader = new FileReader("./src/file/expenses.txt");
+            FileReader fileReader = new FileReader("./file/expenses.txt");
 
             Scanner lineReader = new Scanner(fileReader);
             SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MMM-dd");
@@ -68,10 +68,10 @@ public class Storage {
 
     public void saveToStorage(ItemList itemList) {
         try {
-            FileWriter fw = new FileWriter("./src/file/expenses.txt");
+            FileWriter fw = new FileWriter("./file/expenses.txt");
 
             for (int i = 0; i < itemList.items.size(); i++) {
-                fw.write(i + 1 + "." + itemList.items.get(i).toString() + "\n");
+                fw.write(i + 1 + "." + itemList.items.get(i).save_toString() + "\n");
             }
             fw.close();
         } catch (FileNotFoundException e) {

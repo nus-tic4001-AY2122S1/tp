@@ -18,4 +18,9 @@ public class Income extends Item {
     public String toString() {
         return "[I] " + super.toString();
     }
+
+    @Override
+    public String save_toString() {
+        return "I | " + super.save_toString();
+    }
 }
