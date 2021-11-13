@@ -18,7 +18,7 @@ public class StringUtils {
      */
     public static String convertArrayToString(String[] input) throws ErrorHandler {
         return concatenate(input, 0);
-    };
+    }
 
     /**
      * Converts a String array to a singular String.
@@ -33,9 +33,9 @@ public class StringUtils {
     public static String convertArrayToString(String[] input, boolean isIgnoreCommand) throws ErrorHandler {
         if (isIgnoreCommand) {
             return concatenate(input, 1);
-        };
+        }
         return concatenate(input, 0);
-    };
+    }
 
     /**
      * Concatenates the elements in a string array and adds a space between each element.
@@ -54,5 +54,5 @@ public class StringUtils {
             output += input[i] + " ";
         }
         return output.trim();
-    };
+    }
 }

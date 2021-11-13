@@ -119,6 +119,7 @@ public class DateConverter {
         return dateFormat.parse(inDate.trim());
 
     }
+
     /**
      * Set time (hour, min, sec and millisec) to 0 .
      * Mainly for comparison of input date and Appointment dates.

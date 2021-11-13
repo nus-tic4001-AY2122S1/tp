@@ -104,8 +104,7 @@ public class Ui {
 
         if (input.equals("TODO")) {
             type = "T";
-        }
-        else {
+        } else {
             type = "A";
         }
 
