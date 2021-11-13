@@ -52,6 +52,8 @@ an offline backup file. The user interacts with it using a CLI. It is written in
         [#33](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/33), [#34](https://github.com/AY2122S1-TIC4001-F18-4/tp/pull/34))
     - Developer Guide:
       - Added implementation details of the `show we` feature
+      - Contributed the entire Design section of the Guide 
+      - Ensure the overall grammar correctness and expressions used throughout
 
 - Community:
   - Kicked start the Project with the 1st. skeletal code framework the Team use for subsequent codings
