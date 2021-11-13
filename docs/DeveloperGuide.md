@@ -96,17 +96,21 @@ Working in a tech company, she sure is tech savvy. She is constantly looking for
 
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
+|v1.0|GTD user|add task quickly|I could offload my mental burdens|
+|v1.0|GTD user|list down all incomplete tasks|I could review them and plan|
 |v1.0|Todo app user|set a task as DONE at completion|I can see my progress on my task achievement|
 |v1.0|GTD user|set actionable tasks in my Inbox as NEXT|those tasks get removed from Inbox and allow me to refer to the Next list for action|
 |v1.0|GTD user|set the actionable tasks in my Inbox that cannot be performed by me until relevant resources from someone else as WAIT|review them again in one place once I obtain the deliverables from the person in charge|
+|v1.0|experienced user|delete old tasks|the app does not get cluttered with unnecessary data|
 |v2.0|GTD user|set the non-actionable tasks in my Inbox that cannot be done in one step as PROJ|later I could plan for each project and dismantle them into a sequence of actionable tasks|
 |v2.1|GTD user|move actionable tasks from Inbox to be under a specific project which it belongs to|I could clear my Inbox and have tasks grouped in a logical way|
+|v3.0|GTD user|set due date for a task|it get focused for attention at a later date|
 
 
 ## Non-Functional Requirements
 + program shouldn't just crash because user keys wrong words
 + program jar file should not rely on OS specific API, should run on OS with JDK 11 
-+ 
++ program should exit if the save file is corrupted
 
 
 ## Glossary
