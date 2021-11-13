@@ -13,8 +13,14 @@ import command.DeleteCommand;
 import command.LocationCommand;
 import command.ByeCommand;
 import command.AppointmentCommand;
+import command.AssignmentCommand;
 import command.TaskProgressCommand;
 import command.AppointmentTimeCommand;
+import command.ProgressionCommand;
+import command.DueDateCommand;
+
+import java.util.Date;
+
 
 import constant.CommandKeyWords;
 import constant.ErrorMessage;
@@ -87,7 +93,6 @@ public class Parser {
                 throw new ErrorHandler(ErrorMessage.EMPTY_APPOINTMENT_DESCRIPTION);
             }
             return this.handleNewAppointment(result[1].trim());
-
         case SET_LOCATION:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
@@ -108,8 +113,38 @@ public class Parser {
             }
 
             return this.handleSetTime(result[1]);
+            
+        case HOMEWORK:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_DESCRIPTION);
+            }
+            return this.handleNewAssignment(result[1].trim());
+
+        case CHANGE:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+            String[] inputProgression = result[1].split(" ", 2);
+
+            if (inputProgression.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_SET_PROGRESSION);
+            }
+
+            this.taskNo = inputProgression[0];
+            this.content = inputProgression[1];
+
+            return new ProgressionCommand(this.taskNo, this.content);
+
+        case TIMEFRAME:
+            if (result.length < 2) {
+                throw new ErrorHandler(ErrorMessage.EMPTY_TASK_NUMBER);
+            }
+
+            return this.handleDeadLine(result[1]);
+
         case PROGRESS:
             return new TaskProgressCommand();
+
         case BYE:
         default:
             return new ByeCommand();
@@ -146,4 +181,50 @@ public class Parser {
 
         return new AppointmentTimeCommand(this.taskNo, this.content);
     }
+
+    private Command handleDeadLine(String input) throws ErrorHandler {
+        String[] inputContent = input.split(" ", 2);
+
+        if (inputContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_TIME_DESCRIPTION);
+        }
+        this.taskNo = inputContent[0];
+        this.content = inputContent[1];
+
+        return new DueDateCommand(this.taskNo, this.content);
+    }
+
+    private Command handleNewAssignment(String inputContent) throws ErrorHandler {
+        String[] assignmentInput = inputContent.split("/due_on", 2);
+        this.content = assignmentInput[0].trim();
+
+        if (assignmentInput.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_MARKS);
+        }
+        String[] timeContent = assignmentInput[1].split("/l", 2);
+
+        if (timeContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_DUE_DATE);
+        }
+
+        String[] difficultyContent = timeContent[1].split("/D", 2);
+
+        if (difficultyContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_DIFFICULTY_LEVEL);
+        }
+
+        String[] progressionContent = difficultyContent[1].split("/P", 2);
+
+        if (progressionContent.length < 2) {
+            throw new ErrorHandler(ErrorMessage.EMPTY_PROGRESSION_LEVEL);
+        }
+
+        String dueOn = timeContent[0].trim();
+        String marks = difficultyContent[0].trim();
+        String difficulty = progressionContent[0].trim();
+        String progression = progressionContent[1].trim();
+
+        return new AssignmentCommand(this.content, dueOn, marks, difficulty, progression);
+    }
+
 }
