@@ -11,4 +11,4 @@ Please navigate via these links:
 
 [ABOUT US](AboutUs.md)
 
-[KHOR KEE YONG'S PPP](team/KhorKeeYongPPP.md)
+[KHOR KEE YONG'S PPP](/team/KhorKeeYongPPP.md)
