@@ -11,6 +11,13 @@ public class Ui {
 
     private static final String ERROR_LOADING_MSG = "Failed to load this Next Application from storage file.";
 
+    private static final String PROJECT_NEXT_LOGO =
+            " _   _           _\n"
+                    + "| \\ | | _____  _| |_\n"
+                    + "|  \\| |/ _ \\ \\/ / __|\n"
+                    + "| |\\  |  __/>  <| |_\n"
+                    + "|_| \\_|\\___/_/\\_\\\\__|\n";
+
     public Ui() {
         this(System.in, System.out);
     }
@@ -18,6 +25,10 @@ public class Ui {
     public Ui(InputStream in, PrintStream out) {
         this.in = new Scanner(in);
         this.out = out;
+    }
+
+    public void showWelcome() {
+        out.println("PROJECT\n" + PROJECT_NEXT_LOGO);
     }
 
     /**

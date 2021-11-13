@@ -19,11 +19,15 @@ Improved the `Parser` when there are new features or new commands coming.
 Helped on bug fixing during the progress of the project.
 
 #### Contributions to User Guide
-- 
+- Commands
+  - ExitCommand
+- Saving data
+- Stored data file
 
 
 #### Contributions to Developer Guide
--
+- UML
+    - [ClassDiagram.puml](pic/ClassDiagram.puml)
 
 #### Contributions to team-based tasks
 - Necessary general code enhancement

@@ -58,6 +58,7 @@ The program also adopts Command Pattern,which all Command
 extends to parent `Command` class and must implement the `execute()` method.
 
 ### UML
+<img src="pic/ClassDiagram.png">
 <img src="pic/SeqDiagram.png">
 
 
