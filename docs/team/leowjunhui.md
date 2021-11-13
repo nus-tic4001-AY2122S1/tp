@@ -14,8 +14,8 @@ Enhancements implemented:
 * NusModList class to store the data extracted from the api as well as function to extract the specific module via module codes.
 * Added j-unit test cases like NusModListTest
 
-Contributions to the UG: Quick start portion
-Contributions to the DG: Design & implementation portion
-Contributions to team-based tasks: Monitor tasks/assign work to individual members, review code and checks for bugs. 
+Contributions to the UG: Quick start portion   
+Contributions to the DG: Design & implementation portion   
+Contributions to team-based tasks: Monitor tasks/assign work to individual members, review code and checks for bugs.   
 Review/mentoring contributions: [here](https://github.com/AY2122S1-TIC4001-F18-1/tp/pulls?q=is%3Apr+author%3AIcyNoPeople)   
 Contributions beyond the project team: Also sharing of materials found and design it in a way where everyone could work at the same time.
