@@ -1,0 +1,4 @@
+add /from singapore /to malaysia /date 2021-12-12 2000 /price 2200
+add /from singapore /to malaysia /date 2021-12-12 2000 /price 22002
+add /from singapore /to malaysia /date 2021-12-12 2000 /price 220022
+add /from singapore /to malaysia /date 2021-12-12 2000 /price 2200
