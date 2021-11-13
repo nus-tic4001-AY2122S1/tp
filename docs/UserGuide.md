@@ -98,6 +98,36 @@ Example of usage:
 
 `progress`
 
+### Assignment: `homework`
+
+Add homework
+
+Format: `Homework maths /due_on {time} /l {marks} /D {diffuiculty level} /P {progression level}`
+
+Example of usage:
+
+`Homework maths /due_on 22-09-2018 1:23:43 pm /l 100 /D 5 /P 5`
+
+### Assignment: `timeframe`
+
+Add homework
+
+Format: `timeframe {task number} {time}`
+
+Example of usage:
+
+`timeframe 1 22-09-2018 1:23:42 pm`
+
+### Assignment: `change`
+
+Add homework
+
+Format: `change {task number} {progression level}`
+
+Example of usage:
+
+`change 1 5`
+
 ### Bye: `bye`
 
 To exit the program
