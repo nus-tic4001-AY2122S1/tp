@@ -37,15 +37,31 @@ Here are a list of commands you can enter, and the explanations of what the comm
 | view <ModuleCode> | Views a more detailed information of a more specific module. For example, use `view TIC1001` to view the module details.                  |
 
 ### Listing available modules: `list all`
-View a list of available modules for the acadamic year. 
 
 Format: `list all`
 
 
-Example of Usage: `list all`
-
-![LIST_ALL.png](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_ALL.png "Optional Title")
-
+Example of Usage: 
+```console
+Type something: list all
+Here are the list of available Modules (Limit to 10) : 
+AA1201 | Asian Challenges and Interconnections | Semester:1 | Exam date:null | Exam duration:null
+AC5001 | Architectural History of Singapore | 
+AC5002 | Conservation Approaches and Philosophies | Semester:2 | Exam date:null | Exam duration:null
+AC5003 | Urban Conservation and Regeneration | Semester:2 | Exam date:null | Exam duration:null
+AC5004 | Architectural Heritage Management | Semester:2 | Exam date:null | Exam duration:null
+AC5005 | Conservation Policy Methodology for Sustainable Development | Semester:2 | Exam date:null | Exam duration:null
+AC5006 | Disaster Risk Management of Cultural Heritage | 
+AC5007 | Dissertation | 
+AC5008 | Design for Conservation | 
+AC5009 | Design for Adaptive Reuse | 
+AC5010 | Historic Buildings Survey and Recording | Semester:2 | Exam date:null | Exam duration:null
+AC5011 | Conservation of C20th Buildings | 
+AC5012 | Practical Building Conservation Skills I | 
+AC5013 | Practical Building Conservation Skills II | 
+AC5014 | Internship | 
+* Data was retrieved using NUS MODS API. *
+```
 ### Searching details for a Particular Module: `list <Module Code>`
 
 Format: `List <Module Code>`
@@ -53,14 +69,33 @@ Format: `List <Module Code>`
 * The `List <Module Code>' command can work on fuzzy search. 
 * You can search with a partial Module code it would return a list of results instead.  
 
-Example of usage: `list TIC`
+Example of usage: 
+```console
+Type something: list TIC40
+TIC4001 | Software Engineering Practicum I | Semester:1 | Exam date:null | Exam duration:null
+TIC4002 | Software Engineering Practicum II | Semester:2 | Exam date:null | Exam duration:null
+TIC4003 | Software Project Management | Semester:2 | Exam date:Fri May 07 01:00:00 UTC 2021 | Exam duration:120
+TIC4004 | Software Quality Control | 
+TIC4005 | Parallel and Distributed Software Engineering | Semester:1 | Exam date:Wed Dec 02 01:00:00 UTC 2020 | Exam duration:120
+```
 
-![LIST_TIC.png](https://github.com/AY2122S1-TIC4001-F18-1/tp/blob/master/docs/LIST_TIC.png "Optional Title")
+### Adding a module into your list: `add <Module Code>`
 
+Format: `add <Module Code>`
+
+* Only 1 module code can be added at a time
+
+Example of usage:
+```console
+Type something: add TIC4001
+Got it. I've added this module:
+TIC4001 - Software Engineering Practicum I
+Now you have 2 modules in the list.
+```
 
 ## FAQ
 
-**Q**: How do I transfer my data to another computer? 
+**Q**: How do I transfer my data to another computer?
 
 **A**: {your answer here}
 
