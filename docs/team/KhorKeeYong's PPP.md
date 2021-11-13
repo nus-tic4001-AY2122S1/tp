@@ -15,7 +15,7 @@ https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=kaydenkhor&breakdown
 - Merging of all pull request so as to ensure all function are integrated smoothly (Includes bugs fixing, code reviews and manual code merging)
 - Overall project code refactoring after each merge of PRs.
 - J-Unit testing
-- Proper branching and code tagging
+- Proper branching and code tagging for team repo.
 
 ### Bugs fixing for:
 -	Search function
@@ -29,7 +29,8 @@ https://nus-tic4001-ay2122s1.github.io/tp-dashboard/?search=kaydenkhor&breakdown
 
 ## Contributions to the UG:
 Wrote all of the details of the user guide. From time to time, I have been updating the whole userguide.md file whenever I merge the PRs into the master repo. Although team mates have implemented function, but they didn’t update the UG or DG. Hence as I merge into the main repository, I update the UG from time to time. You can look at the amount of documents committed via my code contribution.
-I set up the website for our repo as well as linking up all the relevant documents to our website like developerguide.md, userguide.md, aboutus.md.
+
+I set up and maintained the website for our repo as well as linking up all the relevant documents to our website like developerguide.md, userguide.md, aboutus.md.
 
 ## Contribution to DG: 
 Drafted out the whole DG sections:
