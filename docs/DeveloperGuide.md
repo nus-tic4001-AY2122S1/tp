@@ -2,7 +2,7 @@
 
 ## Acknowledgements
 
-{list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+Thanks to NUS fundamental code for Duke as well as the idea and inspiration behind this project. Daffy is an extension beyond the original Duke project.
 
 ## Design & Implementation
 
@@ -159,4 +159,7 @@ Usability - System should be able to autocorrect some of the low-level typos in 
 
 ## Instructions for manual testing
 
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+1. Download the jar file from Release v3.0
+2. Run the application on your preferred terminal - `java -jar tp.jar`
+3. To add a task, enter `todo clean my fish tank`
+4. To view your task, enter `view`
