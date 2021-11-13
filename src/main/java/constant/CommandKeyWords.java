@@ -8,6 +8,7 @@ public enum CommandKeyWords {
     BYE("BYE"),
     HOMEWORK("HOMEWORK"), DIFFICULTY_LEVEL("DIFFICULTY_LEVEL"), PROGRESS("PROGRESS"), CHANGE("CHANGE"),
     TIMEFRAME("TIMEFRAME");
+
     private final String value;
 
     CommandKeyWords(String value) {
@@ -53,22 +54,7 @@ public enum CommandKeyWords {
         throw new ErrorHandler(ErrorMessage.INVALID_COMMAND + " Please starts your command with "
             + getSerializedString()
             + " (case insensitive)");
-
     }
-
-
-    /**
-     * Get value.
-     *
-     * @return enum value.
-     */
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return this.getValue();
     }
 
     /**
@@ -101,6 +87,20 @@ public enum CommandKeyWords {
             }
         }
         return null;
+    }
+
+    /**
+     * Get value.
+     *
+     * @return enum value.
+     */
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return this.getValue();
     }
 }
 
