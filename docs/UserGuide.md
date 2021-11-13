@@ -6,17 +6,16 @@ Air Rec is a desktop app for managing flight records, optimized for use via a Co
 2. Features
     1. Adding a flight: `add`
     2. Showing all flights: `show all`
-    3. Showing upcoming flight: `show upcoming` [to be implemented in v3.0]
+    3. Showing upcoming flight: `show upcoming` 
     4. Deleting a flight: `delete`
-    5. Edit a flight detail: `edit` [to be implemented in v3.0]
+    5. Edit a flight detail: `edit` 
     6. Help: `help`
-    7. Search a flight: `search`
-    8. Exiting the program : `bye`
+    7. Sort flight records by either price or dateTime only: `sort price` or `sort datetime`
+    8. Search a flight: `search`
+    9. Exiting the program : `bye`
 
 3. FAQ
 4. Command summary
-
-
 
 
 
@@ -47,8 +46,14 @@ Some example commands you can try:
     4. delete 3 : Deletes the 3rd flight shown in the current list.
     
     5. edit 2 /from new location: Edit old from with new from change the key word 'from' with other key word to edit the flight detail. 
+    
+    6. sort price : Sort all flight records by price in ascending order.
+    
+    7. sort datetime : Sort all flight records by datetime format, the earliest flight is at the top.
+    
+    8. search singapore : Search for the keyword "singapore" in the whole flight record.
 
-    6. exit : Exit the application.
+    7. exit : Exit the application.
 
 6. Duke has auto-save and auto-load function. The list is being save as a text file named "Duke.txt" which is auto created and overwritten in the root folder.
 
@@ -124,6 +129,28 @@ Get Support
 Format: [help]
 
 
+### Sort flight records by price: `sort price`
+
+Sort all flight records by price in ascending order.
+
+Format: [sort price]
+
+Example: 
+
+sort price
+
+
+### Sort flight records by datetime format: `sort datetime`
+
+Sort all flight records by datetime format, the earliest flight is at the top.
+
+Format: [sort datetime]
+
+Example: 
+
+sort datetime
+
+
 ### Search a flight: `search`
 
 Search a trip from the list
@@ -162,5 +189,7 @@ Action | Format, Examples
 <b>search</b> | Format: [search] [keyword] Example: search Australia
 <b>edit</b> | Format: [edit] [index] [/from] [from details] Example: edit 2 /from Japan
 <b>help</b> | Format: [help] 
+<b>sort price</b> | Format: [sort price] 
+<b>sort datetime</b> | Format: [sort datetime] 
 <b>delete</b> | Format: [delete] [index] Example: delete 3
 <b>bye</b> | Format: [bye] Example: bye
