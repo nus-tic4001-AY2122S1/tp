@@ -3,6 +3,7 @@
 ## Acknowledgements
 
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well}
+* [NUSMods API V2](https://api.nusmods.com/v2/)
 
 ## Design & implementation
 
@@ -27,7 +28,11 @@
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+- Each request should be processed within 3 seconds.
+- Program to function properly on different operating systems.
+- Program should have a 95 percent chance that the component can be fixed in 24 hours.
+- Program should be available all time during a month.
+- Program should not experience critical failure.
 
 ## Glossary
 
