@@ -1,20 +1,12 @@
 package parser;
 
 import category.Category;
-import command.SearchByDateCommand;
+import command.*;
 import command.category.AddCategory;
 import command.category.DeleteCategory;
 import command.category.TagCategory;
 import command.category.ViewCategory;
-import command.DeleteCommand;
-import command.LocationCommand;
-import command.ByeCommand;
-import command.AppointmentCommand;
-import command.AssignmentCommand;
-import command.TaskProgressCommand;
-import command.AppointmentTimeCommand;
-import command.ProgressionCommand;
-import command.DueDateCommand;
+
 import java.util.Date;
 
 
@@ -111,15 +103,16 @@ public class Parser {
 
             return this.handleSetTime(result[1]);
         case SEARCH:
-
-            return new SearchCommand(input);
-
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_SEARCH_CATEGORY);
             }
+            if (result[1].contains("--date")) {
+                return this.handleSearch(result[1]);
+            }
+            else {
+                return new SearchCommand(input);
+            }
 
-            return this.handleSearch(result[1]);
-            
         case HOMEWORK:
             if (result.length < 2) {
                 throw new ErrorHandler(ErrorMessage.EMPTY_ASSIGNMENT_DESCRIPTION);

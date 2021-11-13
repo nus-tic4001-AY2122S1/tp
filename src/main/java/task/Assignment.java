@@ -35,6 +35,11 @@ public class Assignment extends Task {
         return this.type;
     }
 
+    @Override
+    public Date getDate() {
+        return null;
+    }
+
     public void setProgressionLevel(String progression) {
         this.progressionLevel = progression;
     }
