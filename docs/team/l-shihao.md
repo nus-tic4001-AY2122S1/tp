@@ -42,6 +42,9 @@ Various bugs fixing among different places.
 
 #### Contributions to Developer Guide
 Documented sections:
+- Design & implementation
+- UML
+  - [SeqDiagram.puml](pic/SeqDiagram.puml)
 - target user profile
 - product value proposition
 - user persona
@@ -67,4 +70,3 @@ Documented sections:
 + [3b2f935](https://github.com/AY2122S1-TIC4001-F18-3/tp/commit/3b2f93500a50e83b8836c605cfa727b85d980074)
 + [3e7d675](https://github.com/AY2122S1-TIC4001-F18-3/tp/commit/3e7d675ebdcdb402b72ba0c57c390b88ccf29332)
 + [51ae254](https://github.com/AY2122S1-TIC4001-F18-3/tp/commit/51ae254afcd481994e94170f6f744ccb3cac4dc6)
-+ 
