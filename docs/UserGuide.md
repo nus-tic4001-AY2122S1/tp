@@ -9,7 +9,7 @@ Natural language will be implemented to avoid exceptions due to typing errors.
 ## Quick Start
 
 1. Ensure that you have Java 11 or above installed.
-1. Down the latest version of `Daffy` from [here](https://github.com/AY2122S1-TIC4001-F18-6/tp/releases/tag/v3.0).
+1. Down the latest version of `Daffy` from [here](https://github.com/AY2122S1-TIC4001-F18-6/tp/releases/tag/v3.0b).
 
 ## Features
 
