@@ -11,14 +11,40 @@
 
 
 Overview
-![image](https://user-images.githubusercontent.com/43517460/141647688-eaeb4429-adce-4b07-8880-19a1ec8c8265.png)
 
+![image](https://user-images.githubusercontent.com/43517460/141647688-eaeb4429-adce-4b07-8880-19a1ec8c8265.png)
 
 Command component
 ![image](https://user-images.githubusercontent.com/43517460/141647430-0364958b-006a-407a-aa2e-873ea0b65c1b.png)
 
 Module component
 ![image](https://user-images.githubusercontent.com/43517460/141647609-91b453de-9d9f-44f6-b72a-332efaa60474.png)
+
+
+
+The Diagrams above explains the high-level design of the App.
+
+Given below is a quick overview of main components and how they interact with each other.
+
+**Main components of the App
+
+`Duke` is responsible for,
+
+At app launch: Initializes the components in the correct sequence, and connects them up with each other.
+At shut down: Shuts down the components.
+
+The App consists of a few components.
+
+`UI`: The UI of the App.
+`Parser`: Parse instruction given by the user.
+`Api`: Extract data from the NUSMOD API.
+`Storage`: Reads data from, and writes data to, the hard disk.
+`Module`: Contains information for Modules.
+`Command`: The command executor.
+How the components interact with each other
+
+The Sequence Diagram below shows how the components interact with each other for the scenario where the user issues the command `list all`.
+![image](https://user-images.githubusercontent.com/43517460/141649574-dde6abbc-4bb6-407e-82b1-90bf63017c47.png)
 
 
 ## Product scope
