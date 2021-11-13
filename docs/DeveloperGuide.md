@@ -14,6 +14,8 @@ Air Rec will use a switch case to execute the different types of commands receiv
 After which, any message or UI display will be handled by Message Class.
 In the whole run sequence, there will always be 1 Flight list only, another instant of Flight list act as a temporary list when we are doing date compare or storage.
 
+Here's the UML class diagram:
+![UML CLASS DIAGRAM](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/Diagrams/Overall%20Class%20Diagram.jpg)
 
 
 ## Product scope
