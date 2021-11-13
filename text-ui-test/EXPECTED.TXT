@@ -27,6 +27,7 @@ Hello! I'm Daffy
    [A][ ] regression1, at 13-11-2021 09:00:00 PM. Location: school
 
    Noted. I've removed this task:
+
    [A][ ] regression4, at 13-11-2021 06:00:00 PM. Location: home
    Now you have 4 tasks in the list.
    Nice! I've marked this task as done:

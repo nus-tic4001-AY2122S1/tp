@@ -6,8 +6,12 @@ import category.Category;
 import tasklist.TaskList;
 
 import java.util.Date;
+import java.util.ArrayList;
 
 import static helpers.DateConverter.removeTime;
+
+
+
 
 /**
  * Ui class is only for printing message.
@@ -45,7 +49,7 @@ public class Ui {
 
     /**
      * Displays the response when a task is marked as done.
-    */
+     */
     public void printDoneCommand(String task) {
         System.out.println("   Nice! I've marked this task as done:\n   " + task);
     }
@@ -69,7 +73,7 @@ public class Ui {
             System.out.println(list.getCategory(i));
         }
     }
-      
+
     /**
      * Shows a list of pending tasks to the user, formatted as an indexed list.
      */
@@ -78,7 +82,7 @@ public class Ui {
         for (int i = 0; i < list.sizeOfTask(); i++) {
             Task task = list.returnTask(i);
             if (!task.getStatus()) { // pending task
-                count++; 
+                count++;
                 System.out.print("   " + i + ".");
                 System.out.println(list.returnTask(i).taskToStringFormat());
             }
@@ -204,7 +208,7 @@ public class Ui {
      */
     public void printAddedCategory(String category, int num) {
         System.out.println("   Noted. I've added this category:\n   " + category + "\n   Now you have " + num
-                + " categories in the list.");
+            + " categories in the list.");
     }
 
     /**
@@ -212,7 +216,7 @@ public class Ui {
      */
     public void printDeleteCategory(String category, int num) {
         System.out.println("   Noted. I've removed this category:\n   " + category + "\n   Now you have " + num
-                + " categories in the list.");
+            + " categories in the list.");
     }
 
     /**
@@ -220,7 +224,7 @@ public class Ui {
      */
     public void printTaggedCategory(int taskIndex, String category, int num) {
         System.out.println("   Noted. I've tagged task number "
-                + (taskIndex + 1) + " with the specified category:\n   " + category);
+            + (taskIndex + 1) + " with the specified category:\n   " + category);
     }
 
     public void printUpdatedTask(String task, int num) {
@@ -229,5 +233,22 @@ public class Ui {
 
     public void bye() {
         print("Bye. Hope to see you again soon!");
+    }
+
+    public void printProgress(int noOfCompleted, int totalTasks, String percentage) {
+        print(noOfCompleted + " out of " + totalTasks + " tasks are completed. " + "(" + percentage + ")");
+    }
+
+    public void printTasks(ArrayList<String> tasks) {
+        if (tasks.size() < 1) {
+            print("   No matching result.");
+        } else {
+            print("Matched results are: ");
+            int index = 1;
+            for (String task : tasks) {
+                print("   " + index + ". " + task);
+                index += 1;
+            }
+        }
     }
 }

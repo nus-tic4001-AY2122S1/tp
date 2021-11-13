@@ -38,11 +38,27 @@ public class ErrorMessage {
         + "'NEXT-FRI 1:23:43 pm'\n"
         + "'NEXT-SAT 1:23:43 pm'\n"
         + "'NEXT-SUN 1:23:43 pm'\n";
+
+    public static final String INVALID_DATE_FORMAT = "OOPS!!! The date format is invalid, please use 'dd-MM-YYYY ";
     public static final String INVALID_APPOINTMENT_TASK = "OOPS!!! Set location fail, the task is not of Appointment "
         + "type.";
     public static final String EMPTY_APPOINTMENT_DESCRIPTION = "OOPS!!! The appointment description cannot be empty.";
     public static final String EMPTY_APPOINTMENT_TIME = "OOPS!!! The appointment time is missing, missing '/at'";
+    public static final String EMPTY_SEARCH_CATEGORY =
+        "OOPS!!! The searching category is missing, available categories are: '--date'";
+    public static final String INVALID_SEARCH_CATEGORY =
+        "OOPS!!! The searching category is missing, available categories are: '--date'";
+    public static final String MISSING_SEARCHING_DESCRIPTION = "OOPS!!! The searching description is missing";
+
     public static final String EMPTY_APPOINTMENT_LOCATION = "OOPS!!! The appointment location is missing, missing "
         + "'/l'";
     public static final String INVALID_INDEX = "Error: Index is greater than array size";
+    public static final String EMPTY_ASSIGNMENT_DESCRIPTION = "OOPS!!! The homework description cannot be empty.";
+    public static final String EMPTY_ASSIGNMENT_MARKS = "OOPS!!! The homework due date is missing, missing '/due_on'";
+    public static final String EMPTY_ASSIGNMENT_DUE_DATE = "OOPS!!! The homework marks is missing, missing '/l'";
+    public static final String EMPTY_DIFFICULTY_LEVEL = "OOPS!!! The difficulty level is empty, missing '/D'";
+    public static final String EMPTY_PROGRESSION_LEVEL = "OOPS!!! The progression level is empty, missing '/P'";
+    public static final String INVALID_ASSIGNMENT_TASK =
+        "OOPS!!! Set Progression failed, the task is not of Assignment";
+    public static final String EMPTY_SET_PROGRESSION = "OOPS!!! Progression cannot be empty";
 }

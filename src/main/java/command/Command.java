@@ -55,4 +55,18 @@ public abstract class Command {
     }
 
     public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ErrorHandler, ParseException;
+
+    protected Date parseDate(String date) throws ErrorHandler {
+        String day = DateConverter.convert(date).trim();
+        SimpleDateFormat formatter = new SimpleDateFormat(Utils.DATE_FORMAT);
+
+        try {
+            return formatter.parse(day);
+        } catch (ParseException e) {
+            throw new ErrorHandler(ErrorMessage.INVALID_DATE_FORMAT);
+        }
+    }
+
+    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ErrorHandler;
+
 }

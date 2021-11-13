@@ -29,6 +29,10 @@ public abstract class Task {
         this.category = category;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public Boolean getStatus() {
         return isDone;
     }
