@@ -102,6 +102,10 @@ TagCategory extends `Command` class. It tags an existing category to a task by t
 #### ViewCategory Command
 ViewCategory extends `Command` class. `Ui` will print all the tasks in `Category`.
 
+### Search Command
+Search Command extends `Command` class. It filters and prints the task list based on user's input. 
+<img src="images/SearchCommandSequenceDiagram.png" alt="search-command-uml"/>
+
 ## Product scope
 Daffy is a task tracker specifically built for computing students that are comfortable with the CLI. Working on improving and adding features to the existing Duke project and making it useful for students to manage their schedule and work. Natural language will be implemented to avoid exceptions due to typing errors. 
 
