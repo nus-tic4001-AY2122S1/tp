@@ -5,8 +5,8 @@ Air Rec is a desktop app for managing flight records, optimized for use via a Co
 
 Please navigate via these links:
 
-[DEVELOPER GUIDE](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/docs/DeveloperGuide.md)
+[DEVELOPER GUIDE](DeveloperGuide.md)
 
-[USER GUIDE](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/docs/UserGuide.md)
+[USER GUIDE](UserGuide.md)
 
-[ABOUT US](https://github.com/AY2122S1-TIC4001-F18-5/tp/blob/master/docs/AboutUs.md)
+[ABOUT US](AboutUs.md)
