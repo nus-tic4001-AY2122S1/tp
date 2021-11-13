@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.time.LocalDate;
+import java.time.DateTimeException;
 
 /**
  * Decodes the storage data file into an {@code gtdList} object.
@@ -16,7 +18,9 @@ import java.util.regex.Pattern;
 public class GtdListDecoder {
 
     public static final Pattern GTD_THOUGHT_TXT_FILE_FORMAT = Pattern.compile(
-            "(?<id>\\d+)[|](?<status>.*)[|](?<title>.*)[|][|][|](?<parents>[|\\d]*)"
+            "(?<id>\\d+)[|](?<status>.*)[|](?<title>.*)[|]"
+                    + "(?<dueYear>\\d{4})-(?<dueMonth>\\d{2})-(?<dueDay>\\d{2})"
+                    + "[|][|][|](?<parents>[|\\d]*)"
     );
 
     /**
@@ -24,13 +28,13 @@ public class GtdListDecoder {
      *
      * @throws IllegalValueException if any of the fields in any encoded GtdThought string is invalid.
      */
-    public static GtdList decodeTaskList(List<String> encodedGtdList) throws IllegalValueException {
+    public static GtdList decodeTaskList(List<String> encodedGtdList) throws IllegalValueException, DateTimeException {
 
         List<GtdThought> decodedGtdThoughts = new ArrayList<>();
         for (String encodedGtdThought : encodedGtdList) {
             HashMap<String, Object> elements = decodeGtdThoughtFromString(encodedGtdThought);
             GtdThought gtdThought = new GtdThought((int)elements.get("id"), (Stat)elements.get("status"),
-                    (String)elements.get("title"));
+                    (String)elements.get("title"), (LocalDate)elements.get("due"));
 
             String parents = (String)elements.get("parents");
             if (parents.equals("")) {
@@ -80,7 +84,7 @@ public class GtdListDecoder {
      * @throws IllegalValueException if any field in the {@code encodedGtdThought} is invalid.
      */
     private static HashMap<String, Object> decodeGtdThoughtFromString(String encodedGtdThought)
-            throws IllegalValueException {
+            throws IllegalValueException, DateTimeException {
         HashMap<String, Object> elements = new HashMap<>();
         Matcher matcher = GTD_THOUGHT_TXT_FILE_FORMAT.matcher(encodedGtdThought.trim());
         if (matcher.matches()) {
@@ -88,11 +92,17 @@ public class GtdListDecoder {
             Stat status = Stat.valueOf(matcher.group("status"));
             String title = matcher.group("title");
             String parents = matcher.group("parents");
+            int dueYear = Integer.parseInt(matcher.group("dueYear"));
+            int dueMonth = Integer.parseInt(matcher.group("dueMonth"));
+            int dueDay = Integer.parseInt(matcher.group("dueDay"));
+            LocalDate due = (dueYear == 0 && dueMonth == 0 && dueDay == 0)
+                    ? null : LocalDate.of(dueYear, dueMonth, dueDay);
 
             elements.put("id", id);
             elements.put("status", status);
             elements.put("title", title);
             elements.put("parents", parents);
+            elements.put("due", due);
             return elements;
 
         } else {

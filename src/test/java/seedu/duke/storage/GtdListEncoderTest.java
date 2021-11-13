@@ -20,9 +20,10 @@ public class GtdListEncoderTest {
         gtdList.add(gtdThought1);
 
         List<String> expect = new ArrayList<>();
-        expect.add(gtdThought1.getId() + "|PROJ|task1|||");
-        expect.add(gtdThought2.getId() + "|PROJ|task2|||" + gtdThought1.getId() + "|");
-        expect.add(gtdThought3.getId() + "|TODO|task3|||" + gtdThought1.getId() + "|" + gtdThought2.getId() + "|");
+        expect.add(gtdThought1.getId() + "|PROJ|task1|0000-00-00|||");
+        expect.add(gtdThought2.getId() + "|PROJ|task2|0000-00-00|||" + gtdThought1.getId() + "|");
+        expect.add(gtdThought3.getId() + "|TODO|task3|0000-00-00|||" + gtdThought1.getId() + "|"
+                + gtdThought2.getId() + "|");
 
         assertEquals(expect, GtdListEncoder.encodeGtdList(gtdList));
     }

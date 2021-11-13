@@ -6,6 +6,7 @@ import seedu.duke.storage.GtdList;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 /**
  * List all the tasks in the taskList.
@@ -14,17 +15,19 @@ public class ListCommand extends Command {
 
     public static final String COMMAND_WORD = "list";
 
-    private String folderType;
+    private String target;
 
-    public ListCommand(String folderType) {
-        this.folderType = folderType;
+    public ListCommand(String target) {
+        this.target = target;
     }
 
     @Override
     public void execute() throws InvalidListArgumentException {
-        System.out.println("this is " + folderType + " list");
+        System.out.println("this is " + target + " list");
+        boolean excludeChildren = false;
         Stat stat;
-        switch (folderType) {
+        switch (target) {
+        case "due":
         case "inbox":
             stat = Stat.NONE;
             break;
@@ -70,6 +73,13 @@ public class ListCommand extends Command {
             master.stream()
                     .filter(lv0 -> lv0.getStatus() == Stat.PROJ)
                     .forEach(proj -> current.add(proj));
+        } else if (target.equals("due")) {
+            excludeChildren = true;
+            master.stream()
+                    .forEach(lv0 -> {
+                        current.add(lv0.getDueList(new ArrayList<>()));
+                    });
+            current.sortDue();
         } else {
             master.stream()
                     .forEach(lv0 -> {
@@ -80,7 +90,7 @@ public class ListCommand extends Command {
         if (stat == Stat.NONE && current.size() == 0) {
             System.out.println("Empty inbox! Dump some thoughts");
         }
-        current.print();
+        current.print(excludeChildren);
 
     }
 }

@@ -9,6 +9,7 @@ import seedu.duke.commands.DeleteCommand;
 import seedu.duke.commands.DoneCommand;
 import seedu.duke.commands.ExitCommand;
 import seedu.duke.commands.IncorrectCommand;
+import seedu.duke.commands.DueCommand;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +18,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.time.LocalDate;
+import java.time.DateTimeException;
 
 public class Parser {
 
@@ -34,8 +37,11 @@ public class Parser {
                     Pattern.CASE_INSENSITIVE
             );
 
+    public static final Pattern DUE_CMD_FORMAT =
+            Pattern.compile("(?<targetIndex>.*)\\s(?<dueYear>\\d{4})-(?<dueMonth>\\d{2})-(?<dueDay>\\d{2})");
+
     public static final String[] LIST_FOLDER_TYPE = {"inbox", "next", "wait", "proj", "someday","some",
-                                                     "current", "master", "all", "done"};
+                                                     "current", "master", "all", "done", "due"};
 
     /**
      * Parses user input into command for execution.
@@ -62,6 +68,8 @@ public class Parser {
 
         case DoneCommand.COMMAND_WORD:
             return prepareDone(arguments);
+        case DueCommand.COMMAND_WORD:
+            return prepareDue(arguments);
         case DeleteCommand.COMMAND_WORD:
             return prepareDelete(arguments);
 
@@ -105,6 +113,29 @@ public class Parser {
             return new DoneCommand(targetIndex);
         } catch (ParseException pe) {
             return new IncorrectCommand(pe.getMessage());
+        }
+
+    }
+
+    private Command prepareDue(String args) {
+        try {
+            Matcher matcher = DUE_CMD_FORMAT.matcher(args.trim());
+            if (matcher.matches()) {
+                List<String> targetIndex = parseArgsAsIndexParam(matcher.group("targetIndex"));
+                int dueYear = Integer.parseInt(matcher.group("dueYear"));
+                int dueMonth = Integer.parseInt(matcher.group("dueMonth"));
+                int dueDay = Integer.parseInt(matcher.group("dueDay"));
+                LocalDate due = (dueYear == 0 && dueMonth == 0 && dueDay == 0)
+                        ? null : LocalDate.of(dueYear, dueMonth, dueDay);
+                return new DueCommand(targetIndex, due);
+            } else {
+                return new IncorrectCommand("This is a incorrect due command format, "
+                        + " you may type 'help' to see all the commands.");
+            }
+        } catch (ParseException pe) {
+            return new IncorrectCommand(pe.getMessage());
+        } catch (DateTimeException dte) {
+            return new IncorrectCommand("Incorrect due date format");
         }
 
     }

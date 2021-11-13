@@ -63,6 +63,8 @@ public class GtdListEncoder {
         encodedGtdThoughtBuilder.append(gtdThought.getStatus());
         encodedGtdThoughtBuilder.append("|");
         encodedGtdThoughtBuilder.append(gtdThought.getTitle());
+        encodedGtdThoughtBuilder.append("|");
+        encodedGtdThoughtBuilder.append(gtdThought.getDueString());
         encodedGtdThoughtBuilder.append("|||");
         encodedGtdThoughtBuilder.append(getParents(gtdThought));
 
