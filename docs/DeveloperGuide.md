@@ -28,7 +28,7 @@
 |v2.0|user|view a specific module|I can view module information that is relevant to me|
 |v2.0|user|view my list of added modules|I can do a review of what modules I’ve been interested in|
 |v2.0|user|remove modules from my list of added modules|my list will only contain the modules that I wanted|
-|v2.0|user|view all modules offered for the term|so that I can bid for my modules|
+|v2.0|user|view all modules offered for the term|I can bid for my modules|
 
 ## Non-Functional Requirements
 
