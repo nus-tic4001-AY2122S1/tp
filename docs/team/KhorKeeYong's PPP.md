@@ -60,6 +60,7 @@ Here's the sequence diagram when someone runs Air Rec:
 -	Updating user/developer docs that are not specific to a feature e.g. documenting the target user profile
 -	Incorporating more checkstyle plugin.
 -	Setting & planning milestones
+-	Presented software demos of v1.0 and v2.0 to professors. Shooting the demo video for v3.0.
 -	Assigning task to team members as well as setting deadlines to hit milestones for v1.0, 2.0 and 3.0.
 -	Bug fixing for team:
 Storage class – dealing with the checkstyle, as well as the test-UI that caused the CI fail. Tested a few rounds to look out for more bugs and solve the bugs using exception handling as well as the way of implementation.
