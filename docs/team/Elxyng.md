@@ -14,6 +14,9 @@ NUS Mods List is a program to help you choose and organize your NUS modules.
 5. Implement filter search API modules by semester
 6. Implement commands
 
+**Contributions to the UG:**
+1. Update overall UG
+
 **Contributions to the DG:**
 1. Wrote user stories
 2. Wrote non-functional requirements
