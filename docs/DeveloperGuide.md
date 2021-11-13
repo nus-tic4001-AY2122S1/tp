@@ -9,13 +9,17 @@
 
 {Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
 
+
+Overview
 ![image](https://user-images.githubusercontent.com/43517460/141647688-eaeb4429-adce-4b07-8880-19a1ec8c8265.png)
 
 
-
+Command component
 ![image](https://user-images.githubusercontent.com/43517460/141647430-0364958b-006a-407a-aa2e-873ea0b65c1b.png)
 
+Module component
 ![image](https://user-images.githubusercontent.com/43517460/141647609-91b453de-9d9f-44f6-b72a-332efaa60474.png)
+
 
 ## Product scope
 ### Target user profile
@@ -45,9 +49,7 @@
 - Program should be available all time during a month.
 - Program should not experience critical failure.
 
-## Glossary
 
-* *glossary item* - Definition
 
 ## Instructions for manual testing
 
