@@ -2,8 +2,7 @@
 
 Display | Name | Github Profile | Portfolio 
 --------|:----:|:--------------:|:---------:
-![](https://via.placeholder.com/100.png?text=Photo) | John Doe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Don Joe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Ron John | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | John Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
-![](https://via.placeholder.com/100.png?text=Photo) | Don Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)
+<img src="Member%20Photo/YangShuogeng.jpg" width="100" height="100"> | Yang Shuogeng | <a href="https://github.com/yangshuogeng/tp"><img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"></a> | [Portfolio](team/yangshuogeng.md)
+<img src="Member%20Photo/WangWenwei.jpg" width="100" height="100">| Wang Wenwei | <a href="https://github.com/e0373972/tp"><img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"></a> | [Portfolio](team/e0373972.md)
+<img src="https://avatars.githubusercontent.com/u/45939235?v=4" width="100" height="100">| Lim Chun Yong  | <a href="https://github.com/jr-mojito/tp"><img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"></a> | [Portfolio](team/jr-mojito.md)
+<img src="Member%20Photo/ZhangYun.jpg" width="100" height="100"> | Zhang Yun | <a href="https://github.com/zyjarvis/tp"><img src="Member%20Photo/github%20logo.png" width="100" height="100" alt="Github"></a> | [Portfolio](team/zyjarvis.md)
