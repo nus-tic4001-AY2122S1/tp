@@ -1,21 +1,47 @@
 package seedu.duke;
 
-import java.util.Scanner;
+import seedu.duke.command.Command;
+import seedu.duke.command.ExitCommand;
+import seedu.duke.module.NusModList;
+import seedu.duke.parser.Parser;
+import seedu.duke.ui.Ui;
+
+
+import java.io.IOException;
 
 public class Duke {
-    /**
-     * Main entry-point for the java.duke.Duke application.
-     */
-    public static void main(String[] args) {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
-        System.out.println("What is your name?");
 
-        Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+    private Ui ui;
+    private NusModList allModules;
+
+    public static void main(String[] args) throws IOException {
+        new Duke().run();
+    }
+
+    public void run() throws IOException {
+        start();
+        runCommandLoopUntilExitCommand();
+        exit();
+    }
+
+    private void start() throws IOException {
+        ui = new Ui();
+        ui.welcome();
+        Api api = new Api();
+        allModules = api.getAllModulesDetailed();
+    }
+
+    private void runCommandLoopUntilExitCommand() throws IOException {
+        Command command;
+        do {
+            String userInstruction = ui.readCommand();
+            command = new Parser().parse(userInstruction);
+            command.execute();
+            ui.lineBreak();
+        } while (!ExitCommand.isExit(command));
+    }
+
+    private void exit() {
+        Ui.exitMsg();
     }
 }
