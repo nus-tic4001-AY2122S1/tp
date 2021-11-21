@@ -1,0 +1,331 @@
+@startuml
+
+class Next {
+    ~ui : Ui
+    ~storage : Storage
+    ~{static} lists : ArrayList<GtdList>
+    ~master : GtdList
+    ~current : GtdList
+
+    +Next(filePath : String)
+    +{static} main(args : String) : void
+    +run() : void
+}
+class Storage {
+    +{static} DEFAULT_STORAGE_FILEPATH : String
+    +path : Path
+
+    +Storage(filePath : String)
+    -{static} isValidPath(filePath : Path) : boolean
+    +save(gtdList : GtdList) : void
+    +load() : GtdList
+}
+class Ui {
+    -in : Scanner
+    -out : PrintStream
+    -{static} SEPARATE_LINE : String
+    -{static} ERROR_LOADING_MSG : String
+
+    +Ui()
+    +Ui(in : InputStream, out : PrintStream)
+    +readCommand() : String
+    +readPut() : String
+    +showLine() : void
+    +showError(message : String) : void
+    +showLoadingError() :void
+}
+
+class Parser {
+    +{static} BASIC_COMMAND_FORMAT : Pattern
+    +{static} INDEX_ARGS_FORMAT : Pattern
+    +{static} INDEX_FORMAT : Pattern
+    +{static} CHK_INDEX_FORMAT_STEP_1 : Pattern
+    +{static} CHK_INDEX_FORMAT_STEP_2 : Pattern
+    +{static} SET_CMD_FORMAT : Pattern
+    +{static} SET_CMD_FORMAT_OPTIONAL : Pattern
+    +{static} DUE_CMD_FORMAT : Pattern
+    +{static} LIST_FOLDER_TYPE : String[]
+
+    +parse(inputCommand : String) : Command
+    -prepareAdd(args : String) : Command
+    -prepareList(args : String) : Command
+    -prepareDone(args : String) : Command
+    -prepareDelete(args : String) :Command
+    -prepareSet(args : String) :Command
+    -prepareDue(args : String) :Command
+    -parseArgsAsIndexParam(args : String) : List<String>
+}
+class Command {
+    #master: GtdList
+    #current :GtdList
+
+    +Command()
+    +execute() : void
+    +setData(lists : ArrayList<GtdList>) :void
+}
+class AddCommand {
+    +{static} COMMAND_WORD : String = add
+    -taskname : String
+
+    +AddCommand(taskname : String)
+    +execute() : void
+}
+class DeleteCommand {
+    +{static} COMMAND_WORD : String = delete
+    -targetIndex : List<String>
+
+    +DeleteCommand(targetIndex : List<String>)
+    +execute() : void
+}
+class DoneCommand {
+     +{static} COMMAND_WORD : String = done
+     -targetIndex : List<String>
+
+     +DoneCommand(targetIndex : List<String>)
+     +execute() : void
+}
+class ExitCommand {
+     +{static} COMMAND_WORD : String = bye
+
+     +execute() : void
+     +{static} isExit(command : Command) : boolean
+}
+class IncorrectCommand {
+    +feedbackToUser : String
+
+    +IncorrectCommand(feedbackToUser : String)
+    +execute() : void
+}
+class ListCommand {
+    +{static} COMMAND_WORD : String = list
+    -target : String
+
+    +ListCommand(target : String)
+    +execute() : void
+}
+class ProjModeCommand {
+    +{static} COMMAND_WORD : String = proj-mode
+    +{static} INDEN : String
+    -ui : Ui
+    -inbox : GtdList
+    -proj : GtdList
+
+    +ProjModeCommand()
+    -init() : void
+    +execute() : void
+    +printSideBySide() : void
+    -parse(input : String) : String[]
+    -longestWidth(left : String[]) : int
+}
+class SetCommand {
+    +{static} COMMAND_WORD : String = set
+    -targetIndex : List<String>
+    -folderType : String
+    -stat : Stat
+
+    +SetCommand(targetIndex : List<String>, folderType : String)
+    +execute() : void
+}
+class DueCommand {
+     +{static} COMMAND_WORD : String = due
+     -targetIndex : List<String>
+     -due : LocalDate
+
+     +DueCommand(targetIndex : List<String>, due : LocalDate)
+     +execute() : void
+}
+
+class GtdListDecoder {
+    +{static} GTD_THOUGHT_TXT_FILE_FORMAT : Pattern
+
+    +{static} decodeTaskList(encodedGtdList : List<String>) : GtdList
+    -{static} getParent_GtdList(gtdList : List<GtdThought>, parents : String) : GtdThought
+    -{static} getParent_GtdThought(gtdThought : GtdThought, parents : String) : GtdThought
+    -{static} decodeGtdThoughtFromString(encodedGtdThought : String) : HashMap<String, Object>
+}
+class GtdListEncoder {
+    +{static} encodeGtdList(toSave : GtdList) : List<String>
+    -{static} encodeGtdThought(toSave : GtdThought) : List<String>
+    -{static} getParents(gtdThought : GtdThought) : String
+    -{static} encodeGtdThoughtToString(gtdThought : GtdThought) : String
+}
+
+GtdListDecoder ..> GtdList
+GtdListEncoder ..> GtdList
+GtdListDecoder ..> GtdThought
+GtdListEncoder ..> GtdThought
+Storage ..> GtdListEncoder
+Storage ..> GtdListDecoder
+Storage ..> GtdList
+
+class GtdList {
+    -{static} INDEN : String
+    ~list : ArrayList<GtdThought>
+
+    +GtdList()
+    +GtdList(gtdThoughts : Collection<GtdThought>)
+    +GtdList(source : GtdList)
+    +stream() : Stream<GtdThought>
+    +size() : int
+    +add(thought : GtdThought) : void
+    +add(thoughts : ArrayList<GtdThought>) : void
+    +get(index : int) : GtdThought
+    +get(numbering : String) : GtdThought
+    +remove(index : int) : void
+    +removeAll(toRemove : ArrayList<GtdThought>) : void
+    +print() : void
+    +print(excludeChildren : boolean) : void
+    +getLines() : String
+    +addNum(text : String, startNum : int) : String
+    +countInden(str : String) : int
+    +clear() : void
+    +sortDue() : void
+    +iterator() : Iterator<GtdThought>
+}
+interface Iterable<GtdThought>
+GtdList ..|> Iterable
+GtdList --> "*" GtdThought
+GtdList ..> GtdList
+
+class GtdThought {
+    -{static} INDEN : String
+    -status : Stat
+    -lv : int[] = {0,1,2}
+    -level : int = lv[0]
+    -title : String
+    -note : String
+    -parent : Optional<GtdThought>
+    -children : ArrayList<GtdThought>
+    -creation : LocalDateTime
+    -due : LocalDate
+    -done : LocalDateTime
+    -id : int
+    -parentID : int
+    -levelNo : int
+    +{static} maxID : int
+
+    +GtdThought(title : String)
+    +GtdThought(title : String, parent : GtdThought)
+    +GtdThought(id : int, status : Stat, title : String, due : LocalDate)
+    +getId() : int
+    +getParentId() : int
+    +getParent() : Optional<GtdThought>
+    +getLevelNo() : int
+    +getTitle() : String
+    +getDueString() : String
+    +getlevel() : int
+    +setlevel(n : int) : void
+    +addSub(sub : GtdThought) : void
+    +removeSub(thought : GtdThought) : void
+    +getSub() : ArrayList<GtdThought>
+    +addParent(project : GtdThought) : void
+    +print() : void
+    +printRec() : void
+    +getTextRec() : String
+    +getTextRec(excludeChildren : boolean) : String
+    -auxgetTextRec(text : String, excludeChildren : boolean) : String
+    +setParent(thought : GtdThought) : void
+    +getRec(stat : Stat) : ArrayList<GtdThought>
+    +auxgetRec(stat : Stat, filtered : ArrayList<GtdThought> : void
+    +getDueList(dueList: ArrayList<GtdThought>) : ArrayList<GtdThought>
+    +getStatus() : Stat
+    +setStatus(status : Stat) : void
+    +hasChildren() : boolean
+    +getChildren() : ArrayList<GtdThought>
+    +setTitle(title : String) : void
+    +setNote(title : String) : void
+    +setDue(due : LocalDate) : void
+    +toString() : String
+    +compareTo(e : GtdThought) : int
+}
+GtdThought --> GtdThought
+GtdThought --> "1" Stat
+
+class GtdSpliterator{
+    -listToSplit : ArrayList<GtdThought>
+    ~count : int
+
+    +GtdSpliterator(listToSplit : ArrayList<GtdThought>)
+    +tryAdvance(action: Consumer<? super GtdThought>) : boolean
+    +trySplit() : Spliterator<GtdThought>
+    +estimateSize() : long
+    +characteristics() : int
+}
+interface Spliterator<GtdThought>
+
+GtdSpliterator ..|> Spliterator
+GtdSpliterator --> GtdThought
+GtdList ..> GtdSpliterator
+enum Stat{
+    NONE
+    TODO
+    PROJ
+    NEXT
+    WAIT
+    STRT
+    SOME
+    DONE
+}
+
+Next --> "1" Ui
+Next --> "1" Storage
+Next --> "2" GtdList
+Next ..> Command
+Next ..> Parser
+
+Command --> "2" GtdList
+
+AddCommand ..> "master" GtdList
+'AddCommand ..> GtdThought
+
+DeleteCommand ..> "master" GtdList
+DeleteCommand ..> "current" GtdList
+'DeleteCommand ..> GtdThought
+
+DoneCommand ..> "current" GtdList
+'DoneCommand ..> GtdThought
+DoneCommand ..> Stat
+
+ListCommand ..> Stat
+ListCommand ..> "master" GtdList
+ListCommand ..> "current" GtdList
+
+ProjModeCommand --> "inbox" GtdList
+ProjModeCommand --> "proj" GtdList
+ProjModeCommand ..> "master" GtdList
+ProjModeCommand --> Ui
+'ProjModeCommand ..> GtdThought
+ProjModeCommand ..> Stat
+
+SetCommand ..> Stat
+SetCommand ..> "master" GtdList
+SetCommand ..> "current" GtdList
+'SetCommand ..> GtdThought
+
+DueCommand ..> "current" GtdList
+
+Parser ..> Command
+Parser ..> AddCommand
+Parser ..> DeleteCommand
+Parser ..> DoneCommand
+Parser ..> ListCommand
+Parser ..> ProjModeCommand
+Parser ..> ExitCommand
+Parser ..> IncorrectCommand
+Parser ..> DueCommand
+
+Command <|-- AddCommand
+Command <|-- DeleteCommand
+Command <|-- DoneCommand
+Command <|-- ListCommand
+Command <|-- ProjModeCommand
+Command <|-- SetCommand
+Command <|-- ExitCommand
+Command <|-- IncorrectCommand
+Command <|-- DueCommand
+
+
+
+
+
+@enduml

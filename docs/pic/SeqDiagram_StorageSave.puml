@@ -1,0 +1,40 @@
+@startuml
+!include styleLsh.puml
+
+box Seq Diagram of \nStorage\n LOGIC_COLOR
+
+participant ":Next" as Next
+participant ":Storage" as Storage LOGIC_COLOR_G
+participant "<<class>>\nGtdListEncoder" as GtdListEncoder
+participant ":GtdList" as GtdList
+participant ":GtdThought" as GtdThought
+participant "<<class>>\nFile" as File
+
+Next -> Storage: save()
+Storage -> GtdListEncoder: encodeGtdList()
+loop Has children
+    GtdListEncoder -> GtdList: get()
+    GtdList --> GtdListEncoder: GtdThought
+    GtdListEncoder -> GtdListEncoder: encodeGtdThoughtToString()
+    GtdListEncoder -> GtdThought: getId()
+    GtdThought --> GtdListEncoder: id
+    GtdListEncoder -> GtdThought: getStatus()
+    GtdThought --> GtdListEncoder: status
+    GtdListEncoder -> GtdThought: getTitle()
+    GtdThought --> GtdListEncoder: title
+    GtdListEncoder -> GtdThought: getDueString()
+    GtdThought --> GtdListEncoder: dueString
+    GtdListEncoder -> GtdListEncoder: getParents()
+    loop Has parent
+        GtdListEncoder -> GtdThought: getParent()
+        GtdThought --> GtdListEncoder: parent
+    end
+    GtdListEncoder --> GtdListEncoder: parentsString
+    GtdListEncoder --> GtdListEncoder: gtdThoughtString
+end
+GtdListEncoder --> Storage: encodedGtdList
+Storage -> File: write()
+
+end box
+
+@enduml
