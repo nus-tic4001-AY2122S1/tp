@@ -1,4 +1,4 @@
-# Tan Chia Chun's Project Portfolio Page
+# Ivan Ho's Project Portfolio Page
 
 ## Overview
 Project NEXT provides a quick command line tool for GTD enthusiasts and daily practitioners who prefer the speed of text input,
