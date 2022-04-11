@@ -1,42 +1,195 @@
-# User Guide
+## User Guide
 
-## Introduction
+Air Rec is a desktop app for managing flight records, optimized for use via a Command Line Interface (CLI). User will not have to remember flight details and it can be found easily with commands.
 
-{Give a product intro}
+1. Quick start
+2. Features
+    1. Adding a flight: `add`
+    2. Showing all flights: `show all`
+    3. Showing upcoming flight: `show upcoming` 
+    4. Deleting a flight: `delete`
+    5. Edit a flight detail: `edit` 
+    6. Help: `help`
+    7. Sort flight records by either price or dateTime only: `sort price` or `sort datetime`
+    8. Search a flight: `search`
+    9. Exiting the program : `bye`
+
+3. FAQ
+4. Command summary
+
+
 
 ## Quick Start
 
-{Give steps to get started quickly}
+Prerequisites: JDK 11, update Intellij to the most recent version.
 
-1. Ensure that you have Java 11 or above installed.
-1. Down the latest version of `Duke` from [here](http://link.to/duke).
+1. Ensure you have Java 11 or above installed in your computer.
+2. Download the latest airrec.jar from here.
+3. Copy the file to the folder you want to use as the home folder for your Air Record.
+4. Double-click the file to start the app. The GUI will greet you with:
 
-## Features 
+```
+    
+Hi I’m AIR REC, I can help you save all the flight details!
+How can I assist you today?”
+	
+   ```
+ 5. Type the command in the command box and press Enter to execute it. e.g. typing list and pressing Enter will display all task that you have saved so far in the window.
+Some example commands you can try:
 
-{Give detailed description of each feature}
+    1. add /from Australia /to Singapore /date 2021-10-31 1400 /price 500: Add a trip departing from Australia to Singapore on 31 Oct 2021 2pm with a price of $500
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+    2. show all: List out all flight details
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+    3. show upcoming: List out the flight that is the first index of the list
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
+    4. delete 3 : Deletes the 3rd flight shown in the current list.
+    
+    5. edit 2 /from new location: Edit old from with new from change the key word 'from' with other key word to edit the flight detail. 
+    
+    6. sort price : Sort all flight records by price in ascending order.
+    
+    7. sort datetime : Sort all flight records by datetime format, the earliest flight is at the top.
+    
+    8. search singapore : Search for the keyword "singapore" in the whole flight record.
 
-Example of usage: 
+    7. exit : Exit the application.
 
-`todo n/Write the rest of the User Guide d/next week`
+6. Duke has auto-save and auto-load function. The list is being save as a text file named "Duke.txt" which is auto created and overwritten in the root folder.
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+7. Refer to the Features below for details of each command.
+
+## Features
+
+<b>Notes about the command format:</b>
+
+	1. Date and time format are as shown: yyyy-mm-dd HHMM
+
+### Adding a flight: add
+
+Adds a new flight trip to the list.
+NOTE: For version 1.1 Air Rec will be reading the descriptions after add as a full string. We will work on to process 
+these strings into data on version 1.2 onwards.
+
+Format: [add] [/from] [depart details] [/to] [destination] [/date] [date & time of departure] [/price] [price of trip]
+
+Example: 
+
+add /from Australia /to Singapore /date 2021-10-31 1400 /price 500
+
+
+### Showing all flights: `show all`
+
+List out all flight trip
+
+Format: [show] [all]
+
+Example:
+
+show all
+
+
+### Showing upcoming flight: `show upcoming`
+
+List out the first index of the flight in the list
+
+Format: [show] [upcoming]
+
+Example: 
+
+show upcoming
+
+
+### Deleting a flight: `delete`
+
+Deletes a trip from the list
+
+Format: [delete] [index]
+
+Example:
+
+delete 3
+
+
+### Edit a flight: `edit`
+
+Edit a trip flight detail from the list
+
+Format: [edit] [index] [/command] [new data]
+
+Example: 
+
+edit 2 /date 2021-12-25
+
+
+### Help: `help`
+
+Get Support
+
+Format: [help]
+
+
+### Sort flight records by price: `sort price`
+
+Sort all flight records by price in ascending order.
+
+Format: [sort price]
+
+Example: 
+
+sort price
+
+
+### Sort flight records by datetime format: `sort datetime`
+
+Sort all flight records by datetime format, the earliest flight is at the top.
+
+Format: [sort datetime]
+
+Example: 
+
+sort datetime
+
+
+### Search a flight: `search`
+
+Search a trip from the list
+
+Format: [search] [keyword]
+
+Example:
+
+search Australia
+
+
+### Exiting the program : `exit`
+
+Exits the application.
+
+Format: [bye]
+
+Example:
+
+bye
+
 
 ## FAQ
 
-**Q**: How do I transfer my data to another computer? 
+<b>Q</b>: How do I save multiple trip?
 
-**A**: {your answer here}
+<b>A</b>: You only can save one trip at a time.
 
-## Command Summary
+## Command summary
 
-{Give a 'cheat sheet' of commands here}
-
-* Add todo `todo n/TODO_NAME d/DEADLINE`
+Action | Format, Examples
+------------ | -------------
+<b>add</b> | Format: [add] [/from] [depart details] [/to] [destination] [/date] [date & time of departure] [/price] [price of trip] Example: add /from Australia /to Singapore /date 10 Jan 2021 1200 /price 500
+<b>show all</b> | Format: [show] [all] Example: show all
+<b>show upcoming</b> | Format: [show] [upcoming] Example: show upcoming [to be implemented in v3.0]
+<b>search</b> | Format: [search] [keyword] Example: search Australia
+<b>edit</b> | Format: [edit] [index] [/from] [from details] Example: edit 2 /from Japan
+<b>help</b> | Format: [help] 
+<b>sort price</b> | Format: [sort price] 
+<b>sort datetime</b> | Format: [sort datetime] 
+<b>delete</b> | Format: [delete] [index] Example: delete 3
+<b>bye</b> | Format: [bye] Example: bye
